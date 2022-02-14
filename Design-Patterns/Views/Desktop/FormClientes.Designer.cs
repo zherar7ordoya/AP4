@@ -72,9 +72,13 @@
             this.Controls.Add(this.dgvClientes);
             this.Controls.Add(this.cmdBuscar);
             this.Controls.Add(this.tboxFiltrar);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormClientes";
-            this.Text = "FormClientes";
+            this.Text = "Clientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormClientes_FormClosing);
+            this.Load += new System.EventHandler(this.FormClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

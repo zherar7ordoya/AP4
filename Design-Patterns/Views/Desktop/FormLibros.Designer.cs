@@ -50,9 +50,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 426);
             this.Controls.Add(this.Coelho);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormLibros";
-            this.Text = "FormLibros";
+            this.Text = "Libros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormLibros_FormClosing);
             this.ResumeLayout(false);
 
         }

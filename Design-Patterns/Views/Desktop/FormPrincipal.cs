@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Design_Patterns.Views.Desktop
@@ -19,16 +12,22 @@ namespace Design_Patterns.Views.Desktop
 
         private void itemClientes_Click(object sender, EventArgs e)
         {
-            FormClientes formulario = new FormClientes();
+            //Línea que corresponde a la implementación del Patrón Singleton
+            FormClientes formulario = FormClientes.Instanciamiento();
+
             formulario.MdiParent = this;
             formulario.Show();
+            formulario.BringToFront();
         }
 
         private void itemLibros_Click(object sender, EventArgs e)
         {
-            FormLibros formulario = new FormLibros();
+            //Línea que corresponde a la implementación del Patrón Singleton
+            FormLibros formulario = FormLibros.Instanciamiento();
+
             formulario.MdiParent = this;
             formulario.Show();
+            formulario.BringToFront();
         }
     }
 }

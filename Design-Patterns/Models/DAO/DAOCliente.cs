@@ -1,11 +1,7 @@
 ﻿using Design_Patterns.Models.DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Design_Patterns.Models.DAO
 {
@@ -19,37 +15,37 @@ namespace Design_Patterns.Models.DAO
          * Esta clase solo debería contener métodos CRUD.
          */
 
-        SqlDataReader LeeRegistros;
+        SqlDataReader LecturaRegistros;
         readonly SqlCommand Comando = new SqlCommand();
 
-        public List<DTOClientes> VerRegistros(string Condicion)
+        public List<DTOClientes> RecuperarRegistros(string condicion)
         {
-            Comando.Connection = Conn;
-            Comando.CommandText = "VerRegistros"; //El "VerRegistros" aquí es el procedimiento almacenado en la BBDD.
-            Comando.CommandType = CommandType.StoredProcedure;
-            Comando.Parameters.AddWithValue("@Condicion", Condicion);
+            Comando.Connection = Conexion;
+            Comando.CommandText = "VerRegistros";   //Stored Procedure
+            Comando.CommandType = CommandType.StoredProcedure; //¿Ves?
+            Comando.Parameters.AddWithValue("@Condicion", condicion);
 
-            Conn.Open();
-            LeeRegistros = Comando.ExecuteReader();
-            List<DTOClientes> Clientes = new List<DTOClientes>();
+            Conexion.Open();
+            LecturaRegistros = Comando.ExecuteReader();
+            List<DTOClientes> ListadoClientes = new List<DTOClientes>();
 
-            while (LeeRegistros.Read())
+            while (LecturaRegistros.Read())
             {
-                Clientes.Add(new DTOClientes
+                ListadoClientes.Add(new DTOClientes
                 {
-                    ID = LeeRegistros.GetInt32(0),
-                    Nombre = LeeRegistros.GetString(1),
-                    Apellido = LeeRegistros.GetString(2),
-                    Direccion = LeeRegistros.GetString(3),
-                    Ciudad = LeeRegistros.GetString(4),
-                    Email = LeeRegistros.GetString(5),
-                    Telefono = LeeRegistros.GetString(6),
-                    Ocupacion = LeeRegistros.GetString(7),
+                    ID          = LecturaRegistros.GetInt32(0),
+                    Nombre      = LecturaRegistros.GetString(1),
+                    Apellido    = LecturaRegistros.GetString(2),
+                    Direccion   = LecturaRegistros.GetString(3),
+                    Ciudad      = LecturaRegistros.GetString(4),
+                    Email       = LecturaRegistros.GetString(5),
+                    Telefono    = LecturaRegistros.GetString(6),
+                    Ocupacion   = LecturaRegistros.GetString(7),
                 });
             }
-            LeeRegistros.Close();
-            Conn.Close();
-            return Clientes;
+            LecturaRegistros.Close();
+            Conexion.Close();
+            return ListadoClientes;
         }
         public static void Insert() { }
         public static void Edit() { }

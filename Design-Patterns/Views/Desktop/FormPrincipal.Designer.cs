@@ -65,10 +65,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuFormularios);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuFormularios;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormPrincipal";
-            this.Text = "FormPrincipal";
+            this.Text = "Principal";
             this.menuFormularios.ResumeLayout(false);
             this.menuFormularios.PerformLayout();
             this.ResumeLayout(false);
