@@ -7,14 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace DesignPatterns.UI.Desktop
 {
-    public partial class Libros : Form
+    public partial class FormularioLibros : Form
     {
-        public Libros()
+        public FormularioLibros()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }

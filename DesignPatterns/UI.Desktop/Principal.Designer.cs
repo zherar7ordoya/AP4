@@ -1,6 +1,6 @@
 ﻿namespace DesignPatterns.UI.Desktop
 {
-    partial class Principal
+    partial class FormularioPrincipal
     {
         /// <summary>
         /// Required designer variable.
@@ -28,12 +28,58 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
+            this.itemClientes = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemLibros = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStrip.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // MenuStrip
+            // 
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.itemClientes,
+            this.itemLibros});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Size = new System.Drawing.Size(887, 24);
+            this.MenuStrip.TabIndex = 0;
+            this.MenuStrip.Text = "menuStrip1";
+            // 
+            // itemClientes
+            // 
+            this.itemClientes.Name = "itemClientes";
+            this.itemClientes.Size = new System.Drawing.Size(61, 20);
+            this.itemClientes.Text = "Clientes";
+            this.itemClientes.Click += new System.EventHandler(this.ItemClientes_Click);
+            // 
+            // itemLibros
+            // 
+            this.itemLibros.Name = "itemLibros";
+            this.itemLibros.Size = new System.Drawing.Size(51, 20);
+            this.itemLibros.Text = "Libros";
+            this.itemLibros.Click += new System.EventHandler(this.ItemLibros_Click);
+            // 
+            // FormularioPrincipal
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(887, 493);
+            this.Controls.Add(this.MenuStrip);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.MenuStrip;
+            this.Name = "FormularioPrincipal";
             this.Text = "Principal";
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private MenuStrip MenuStrip;
+        private ToolStripMenuItem itemClientes;
+        private ToolStripMenuItem itemLibros;
     }
 }
