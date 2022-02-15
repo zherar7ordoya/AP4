@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using static System.Console;
 
@@ -49,6 +45,20 @@ namespace ActionFunc
             Func<int, int, int> sumFunc = (x, y) => x + y;
             WriteLine(sumFunc(7, 8));
 
+            // Comienzan los gatos
+            WriteLine("\nComienzan los gatos...");
+            Action<Cat> catAction = cat => cat.SayMiau();
+            var cat1 = new Cat
+            {
+                Name = "My Tested ASP.NET"
+            };
+            catAction(cat1);
+
+            Func<Cat, string> catFunc = cat => cat.Name;
+            WriteLine(catFunc(cat1));
+
+            MiGato(cat => cat.Name);
+
             ReadKey();
         }
 
@@ -82,6 +92,24 @@ namespace ActionFunc
         {
             WriteLine("Calling..." + text);
             return 100;
+        }
+
+        public static void MiGato(Func<Cat, string> func)
+        {
+            var cat = new Cat
+            {
+                Name = "Gris y disfónica"
+            };
+            WriteLine(func(cat));
+        }
+    }
+
+    public class Cat
+    {
+        public string Name { get; set; }
+        public void SayMiau()
+        {
+            WriteLine("Miau");
         }
     }
 }

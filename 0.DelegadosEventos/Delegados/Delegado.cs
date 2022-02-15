@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Delegados
+﻿namespace Delegados
 {
     // Cada entidad (un delegado es una entidad) debe tener su propia clase.
     // Un delegado es una variable que contiene una función.

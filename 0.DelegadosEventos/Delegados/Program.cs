@@ -1,11 +1,5 @@
 ﻿//https://www.youtube.com/playlist?list=PLLGdqRi7N09ZpC4k8Aoz4dH4QYcdAyjwM
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using static System.Console;
 
 namespace Delegados
