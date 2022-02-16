@@ -1,7 +1,5 @@
 ﻿# Analista Programador a Distancia - Plan T4 17
 
-
-
 ## Primer Año
 
 ### Primer Cuatrimestre
@@ -13,10 +11,6 @@
 |03|Laboratorio de Cáculo|-|06|96|
 |04|Inglés I|-|02|32|
 | | | | | |
-
-
-
-## Primer Año
 
 ### Segundo Cuatrimestre
 
@@ -42,10 +36,6 @@
 |12|Problemática del Mundo Actual|-|05|80|
 | | | | | |
 
-
-
-## Segundo Año
-
 ### Segundo Cuatrimestre
 
 |Código Asignat.|Asignaturas|Correlativas|Hs. Semanales|Hs. Totales|
@@ -55,8 +45,6 @@
 |15|Metodología de Desarrollo de Sistemas II|10|06|96|
 |16|Base de Datos\*|10|04|64|
 | | | | | |
-
-
 
 ## Tercer Año
 
@@ -76,10 +64,10 @@
 
 
 
-**Título:** Analista Programador - Modalidad a Distancia
+**Título:** Analista Programador (Modalidad a Distancia)
 
-**Carga Horaria Total:** 1648 Horas
+**Carga Horaria Total:** 1.648 Horas
 
 ---
 
-[Ver online](https://uai.edu.ar/ciiti/2019/libro/carreras-analista-plan.asp)
+[Ver este documento online](https://uai.edu.ar/ciiti/2019/libro/carreras-analista-plan.asp)
