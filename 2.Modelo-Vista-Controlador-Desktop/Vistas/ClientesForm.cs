@@ -3,12 +3,12 @@ using Desktop.Controladores;
 
 namespace Desktop.Vistas
 {
-    public partial class FormClientes : Form
+    public partial class ClientesForm : Form
     {
-        public FormClientes()
+        public ClientesForm()
         {
             InitializeComponent();
-            _ = new ClienteController(this);
+            _ = new ClientesController(this);
         }
     }
 }

@@ -4,13 +4,13 @@ using Desktop.Modelos.DAO;
 
 namespace Desktop.Controladores
 {
-    internal class ClienteController
+    internal class ClientesController
     {
-        readonly FormClientes Vista;
+        readonly ClientesForm Vista;
 
-        public ClienteController(FormClientes vista)
+        public ClientesController(ClientesForm vista)
         {
-            this.Vista = vista;
+            Vista = vista;
             Vista.Load += new EventHandler(ConsultaCliente);
             Vista.cmdBuscar.Click += new EventHandler(ConsultaCliente);
             Vista.tboxFiltrar.TextChanged += new EventHandler(ConsultaCliente);

@@ -1,6 +1,6 @@
 ﻿namespace Desktop.Vistas
 {
-    partial class FormClientes
+    partial class ClientesForm
     {
         /// <summary>
         /// Required designer variable.
@@ -62,7 +62,7 @@
             this.dgvClientes.Size = new System.Drawing.Size(776, 375);
             this.dgvClientes.TabIndex = 2;
             // 
-            // FormClientes
+            // ClientesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -72,7 +72,7 @@
             this.Controls.Add(this.tboxFiltrar);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FormClientes";
+            this.Name = "ClientesForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
