@@ -56,7 +56,8 @@ CREATE TABLE IMC
      idIMC      INT PRIMARY KEY IDENTITY,
 	 idPaciente INT FOREIGN KEY REFERENCES Pacientes(idPaciente),
      Peso       FLOAT NOT NULL,
-     Estatura   FLOAT NOT NULL
+     Estatura   FLOAT NOT NULL,
+	 Fecha		DATE NOT NULL
   ) 
 
 go
