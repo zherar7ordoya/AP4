@@ -48,5 +48,8 @@
     <Folder Include="Models\" />
     <Folder Include="ValueObjects\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
