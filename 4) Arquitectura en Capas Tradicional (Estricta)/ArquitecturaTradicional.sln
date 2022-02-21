@@ -11,7 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E4966435-1E27-45B4-BC53-C6E1119C1D3C}"
 	ProjectSection(SolutionItems) = preProject
-		4ta Capa.md = 4ta Capa.md
+		README.md = README.md
+		Support Layer.md = Support Layer.md
 	EndProjectSection
 EndProject
 Global
