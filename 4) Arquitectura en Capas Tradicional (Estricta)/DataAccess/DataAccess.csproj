@@ -43,13 +43,12 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Contracts\" />
-    <Folder Include="Entities\" />
-    <Folder Include="Repositories\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="README.md" />
+    <None Include="Capa de Datos.md" />
+    <None Include="Contracts\Componente Contratos.md" />
+    <None Include="Entities\Componente Entidades.md" />
+    <None Include="Repositories\Componente Repositorios.md" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
