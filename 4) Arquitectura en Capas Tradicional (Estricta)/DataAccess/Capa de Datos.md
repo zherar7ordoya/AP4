@@ -11,3 +11,12 @@ Opcionalmente, en ella podemos utilizar patrones tales como:
 - Objeto de acceso a datos
 - Repositorio
 - Etc...
+
+## Acerca de ésta implementación:
+
+Esta capa de acceso a datos está basada en los siguientes patrones de diseño:
+
+- Repository
+- Query Object
+- Data Mapper
+- Active Record

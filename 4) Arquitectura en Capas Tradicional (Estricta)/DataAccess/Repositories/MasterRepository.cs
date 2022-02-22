@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
@@ -17,13 +13,15 @@ namespace DataAccess.Repositories
     /// Al invocar a using en los métodos, invocamos a IDisposable.
     /// 
     /// </summary>
-    public abstract class MasterRepository : Repository
+    public abstract class MasterRepository : Repositorio
     {
 
 
         protected List<SqlParameter> parametros;
 
         /// <summary>
+        /// 
+        /// COMANDOS DE NO-CONSULTA
         /// 
         /// Este método se encargará de ejecutar comandos de no-consulta, es
         /// decir, comando para insertar, editar y eliminar datos.
@@ -58,6 +56,8 @@ namespace DataAccess.Repositories
         }
 
         /// <summary>
+        /// 
+        /// COMANDOS DE CONSULTA
         /// 
         /// Este método se encarga de ejecutar comandos de consulta, es decir,
         /// para leer filas de tablas y mostrar los datos de una tabla.
