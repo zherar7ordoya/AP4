@@ -2,7 +2,7 @@
 
 namespace DataAccess.Contracts
 {
-    internal interface IGenericoRepository<Entity> where Entity : class
+    public interface IGenericoRepository<Entity> where Entity : class
     {
         int Agregar(Entity entidad);
         int Eliminar(int id);

@@ -19,3 +19,7 @@ Opcionalmente, en esta capa se pueden usar patrones tales como:
 - Delegado de negocios
 - Unidad de trabajo
 - Etc...
+
+## Componentes
+
+Modelos de Dominio, Objetos de Valor, y Servicios de Dominio, son patrones de diseño.

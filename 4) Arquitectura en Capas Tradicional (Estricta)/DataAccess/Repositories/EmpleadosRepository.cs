@@ -22,10 +22,10 @@ namespace DataAccess.Repositories
         //Constructores
         public EmpleadosRepository()
         {
-            insert = "INSERT INTO Employee VALUES(@legajo, @nombre, @email, @nacimiento)";
-            delete = "DELETE FROM Employee WHERE id=@id";
-            update = "UPDATE Employee SET Legajo=@legajo, Nombre=@nombre, Email=@email, Nacimiento=@nacimiento WHERE id=@id";
-            select = "SELECT * FROM Employee";
+            insert = "INSERT INTO Empleados VALUES(@legajo, @nombre, @email, @nacimiento)";
+            delete = "DELETE FROM Empleados WHERE id=@id";
+            update = "UPDATE Empleados SET Legajo=@legajo, Nombre=@nombre, Email=@email, Nacimiento=@nacimiento WHERE id=@id";
+            select = "SELECT * FROM Empleados";
         }
 
         //Métodos, Comportamientos

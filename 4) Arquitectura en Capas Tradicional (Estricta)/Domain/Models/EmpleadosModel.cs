@@ -1,4 +1,5 @@
-﻿using DataAccess.Entities;
+﻿using DataAccess.Contracts;
+using DataAccess.Entities;
 using DataAccess.Repositories;
 using Domain.ValueObjects;
 using System;
@@ -8,8 +9,9 @@ using System.Data.SqlClient;
 
 namespace Domain.Models
 {
-    internal class EmpleadosModel
+    public class EmpleadosModel : IDisposable
     {
+        //Campos
         private int id;
         private string legajo;
         private string nombre;
@@ -17,11 +19,56 @@ namespace Domain.Models
         private DateTime nacimiento;
         private int edad;
 
-        private readonly EmpleadosRepository repositorio;
-        public EntityState Estado { private get; set; }
+        //Ver nota en constructor.
+        private readonly IEmpleadosRepository repositorio;
+
+        //El valor del estado puede ser asignado desde fuera de la clase, pero
+        //solo puede ser obtenido desde dentro de la clase (private get). Eso
+        //es encapsulamiento. Todo mecanismo de protección es encapsulamiento.
+        public EntityState Estado { private get ; set; }
+
         private List<EmpleadosModel> lista;
 
-        //Propiedades / Modelo de Vista / Validar Datos
+        #region PROPIEDADES------------------------------------------------------------
+
+        /**
+         *   PROPIEDADES DE LOS CAMPOS
+         * Modelo de Vista: Validaciones
+         * -----------------------------
+         * ¿En qué capa se coloca la validación de datos?
+         * ¿Cómo se hacen las validaciones?
+         * 
+         * Tanto en desarrollo web como escritorio, las validaciones se hacen
+         * en la capa presentación porque tiene eventos y controles que hacen
+         * de esta tarea más fácil y didáctica.
+         * 
+         * Con el patrón MVC, podemos usar la Anotaciones de Datos.
+         * La capa de dominio también puede validar los datos.
+         * En la capa de dominio se hace la validación de las reglas
+         * comerciales. En una aplicación web (por seguridad) se realiza tanto
+         * en la capa presentación como en la de dominio (es decir, tanto al
+         * lado del cliente como al lado del servidor) ya que los datos pueden
+         * ser alterados usando javascript u otro medio.
+         * En web, se puede tener la validación solo en la capa presentación
+         * pero no se puede tenerla solo en la capa de negocio ya que para
+         * validar un dato, el dato tendría que viajar hasta el servidor y
+         * volver desde allí el válido o no, y eso tomaría tiempo.
+         * En desktop, se puede tener la validación tanto en la capa de
+         * presentación como de dominio. Esto depende:
+         * 
+         * Si los modelos de vista y los modelos de dominio son completamente
+         * iguales, se puede realizar la validación en el modelo de dominio.
+         * 
+         * Si los modelos de vista y los modelos de dominio son totalmente
+         * diferentes, se puede realizar la validación en el modelo de vista.
+         * 
+         * En este caso (el presente) como ambos modelos son iguales, se usarán
+         * las (siguientes) propiedades (pragmático) para hacer validaciones.
+         * 
+         * Se podrían usar los setters para efectuar las validaciones. Pero lo
+         * más sencillo y con más funcionalidades es usar la librería de
+         * anotaciones (Data Annotations, propio del framework MVC).
+         */
         public int Id { get => id; set => id = value; }
 
         [Required(ErrorMessage = "Legajo es obligatorio")]
@@ -41,6 +88,16 @@ namespace Domain.Models
         public DateTime Nacimiento { get => nacimiento; set => nacimiento = value; }
         public int Age { get => edad; private set => edad = value; }
 
+        #endregion
+
+        //CONSTRUCTOR
+        //Se inicializa la interfaz del repositorio, que será:
+        //          intefaz repositorio = objeto repositorio
+        //Es decir, declaramos el repositorio no mediante su clase concreta,
+        //sino la declaramos desde su interfaz, donde están declarados los
+        //métodos. De esa manera, tenemos bajo acoplamiento y se mantiene
+        //encapsulada la clase concreta. Además, esto ayuda a realizar las
+        //pruebas unitarias.
         public EmpleadosModel()
         {
             repositorio = new EmpleadosRepository();
@@ -123,6 +180,22 @@ namespace Domain.Models
             return lista;
         }
 
+
+        private int CalcularEdad(DateTime fecha)
+        {
+            DateTime ahora = DateTime.Now;
+            return ahora.Year - fecha.Year;
+        }
+
+        //---
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
+
+        //---
+
         public IEnumerable<EmpleadosModel> EncontrarLegajo(string filtro)
         {
             return lista.FindAll(e =>
@@ -130,10 +203,5 @@ namespace Domain.Models
             );
         }
 
-        private int CalcularEdad(DateTime fecha)
-        {
-            DateTime ahora = DateTime.Now;
-            return ahora.Year - fecha.Year;
-        }
     }
 }
