@@ -17,7 +17,7 @@ namespace DataAccess.Contracts
     /// caso se puede implementar directamente el repositorio genérico.
     /// 
     /// </summary>
-    internal interface IEmployeeRepository : IGenericRepository<Employees>
+    interface IEmployeeRepository : IGenericRepository<Employees>
     {
         //Ejemplo: obtener todos los empleados por rango de salario.
         IEnumerable<Employees> GetBySalary();

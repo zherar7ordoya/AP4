@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Entities
 {
-    internal class Employees
+    public class Employees
     {
-        public int idPK { get; set; }
-        public string idNumber { get; set; }
-        public string name { get; set; }
-        public string mail { get; set; }
-        public DateTime birthday { get; set; }
+        public int IdPK { get; set; }
+        public string IdNumber { get; set; }
+        public string Name { get; set; }
+        public string Mail { get; set; }
+        public DateTime Birthday { get; set; }
     }
 }
