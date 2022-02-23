@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Capa de Dominio.md" />
+    <None Include="ClassDiagram.cd" />
     <None Include="Models\Componente Modelo de Dominio.md" />
     <None Include="packages.config" />
     <None Include="Services\Componente Servicios.md" />

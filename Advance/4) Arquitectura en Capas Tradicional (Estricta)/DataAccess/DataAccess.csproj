@@ -53,6 +53,7 @@
   <ItemGroup />
   <ItemGroup>
     <None Include="Capa de Datos.md" />
+    <None Include="ClassDiagram.cd" />
     <None Include="Contracts\Componente Contratos.md" />
     <None Include="Entities\Componente Entidades.md" />
     <None Include="Repositories\Componente Repositorios.md" />
