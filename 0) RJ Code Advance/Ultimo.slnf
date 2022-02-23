@@ -1,8 +1,0 @@
-{
-  "solution": {
-    "path": "RJCodeAdvance.sln",
-    "projects": [
-      "WinFormsApp\\WinFormsApp.csproj"
-    ]
-  }
-}

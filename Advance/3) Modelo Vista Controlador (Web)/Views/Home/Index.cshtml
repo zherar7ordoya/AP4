@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1 class="text-center">Bienvenido, Gerardo.</h1>
+</div>
+
+<section class="text-center">
+    <h2>@Html.ActionLink("Ver clientes", "Index", "Clientes")</h2>
+</section>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Desktop</h3>
+        <p>Patrón MVP</p>
+        <p>Model-View-Presenter</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Web</h3>
+        <p>Patrón MVC</p>
+        <p>Model-View-Controller</p>
+    </div>
+    <div class="col-md-4">
+        <h3>Mobile</h3>
+        <p>Patrón MVVM</p>
+        <p>Model-View-ViewModel</p>
+    </div>
+</div>

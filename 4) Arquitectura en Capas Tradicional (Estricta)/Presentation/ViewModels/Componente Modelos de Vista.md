@@ -1,2 +1,0 @@
-# Componente Modelos de Vista
-

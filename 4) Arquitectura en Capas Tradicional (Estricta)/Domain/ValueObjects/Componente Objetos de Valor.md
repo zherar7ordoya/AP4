@@ -1,2 +1,0 @@
-# Componente Objetos de Valor
-
