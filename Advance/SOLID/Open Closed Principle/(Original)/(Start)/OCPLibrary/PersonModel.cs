@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace OCPLibrary
 {
-    public class Class1
+    public class PersonModel
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }

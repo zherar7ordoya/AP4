@@ -1,18 +1,21 @@
 ﻿using OCPLibrary;
+using System;
 using System.Collections.Generic;
-using static System.Console;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace ConsoleUI
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
             List<PersonModel> applicants = new List<PersonModel>
             {
-                new PersonModel {FirstName = "Tim", LastName = "Corey"},
-                new PersonModel {FirstName = "Sue", LastName = "Storm"},
-                new PersonModel {FirstName = "Nancy", LastName = "Roman"}
+                new PersonModel { FirstName = "Tim", LastName = "Corey" },
+                new PersonModel { FirstName = "Sue", LastName = "Storm" },
+                new PersonModel { FirstName = "Nancy", LastName = "Roman" }
             };
 
             List<EmployeeModel> employees = new List<EmployeeModel>();
@@ -25,14 +28,10 @@ namespace ConsoleUI
 
             foreach (var emp in employees)
             {
-                WriteLine(
-                    $"{emp.FirstName} " +
-                    $"{emp.LastName}: " +
-                    $"\t{emp.EmailAddress} ");
+                Console.WriteLine($"{ emp.FirstName } { emp.LastName }: { emp.EmailAddress } IsManager: { emp.IsManager } IsExecutive: { emp.IsExecutive }");
             }
 
-            Write("\nPress enter to close...");
-            ReadKey();
+            Console.ReadLine();
         }
     }
 }
