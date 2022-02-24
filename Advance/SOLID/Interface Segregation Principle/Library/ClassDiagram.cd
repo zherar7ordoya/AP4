@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Library.Item.AudioBook.AudioBook" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAEABEAAgAIAAAAgAAAAAGAAAAAAAAAABAA=</HashCode>
+      <FileName>Item\AudioBook\AudioBook.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Library.Item.Book.Book" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAEABEAggAIAAAAgAAAAAGAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\Book\Book.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Library.Item.DigitalMovie.DigitalMovie" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAEAhEAAAAIAAAAgAAAAAGAAAAAAAAAABAA=</HashCode>
+      <FileName>Item\DigitalMovie\DigitalMovie.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Library.Item.DVD.DVD" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAEAhEAAAAIAAAAgAAAAAGAAAAAAAAAABAA=</HashCode>
+      <FileName>Item\DVD\DVD.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Library.Item.ReferenceBook.ReferenceBook" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAggAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\ReferenceBook\ReferenceBook.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Library.Base.IBorrowableItem" Collapsed="true">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAEABAAAAAIAAAAgAAAAACAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\IBorrowableItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Library.Base.ILibraryItem" Collapsed="true">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Base\ILibraryItem.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Library.Classic.IBookBase" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classic\IBookBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Library.Classic.IPaperBook" Collapsed="true">
+    <Position X="7.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Classic\IPaperBook.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Library.Digital.IPlayable" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Digital\IPlayable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Library.Digital.IScreenable" Collapsed="true">
+    <Position X="15" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Digital\IScreenable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Library.Item.AudioBook.IAudioBook" Collapsed="true">
+    <Position X="7.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\AudioBook\IAudioBook.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Library.Item.Book.IBook" Collapsed="true">
+    <Position X="4.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\Book\IBook.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Library.Item.DigitalMovie.IDigitalMovie" Collapsed="true">
+    <Position X="1.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\DigitalMovie\IDigitalMovie.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Library.Item.DVD.IDVD" Collapsed="true">
+    <Position X="4.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\DVD\IDVD.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Library.Item.ReferenceBook.IReferenceBook" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Item\ReferenceBook\IReferenceBook.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
