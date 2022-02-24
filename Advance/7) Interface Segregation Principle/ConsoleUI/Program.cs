@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Library.Item.DVD;
 using static System.Console;
-using Library;
 
 namespace ConsoleUI
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            IBorrowableDVD dvd = new DVD();
-
+            IDVD dvd = new DVD();
+            
 
 
             ReadKey();

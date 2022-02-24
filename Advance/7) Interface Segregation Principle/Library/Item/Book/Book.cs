@@ -1,28 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Library
+namespace Library.Item.Book
 {
-    public class AudioBook : IBorrowableAudioBook
+    public class Book : IBook
     {
         public string LibraryId { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Title { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        public int RuntimeInMinutes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        public string Author { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public DateTime BorrowDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string Borrower { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int CheckOutDurationInDays { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int Pages { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public void CheckIn()
         {
             throw new NotImplementedException();
         }
 
-        public void CheckOut()
+        public void CheckOut(string borrower)
         {
             throw new NotImplementedException();
         }

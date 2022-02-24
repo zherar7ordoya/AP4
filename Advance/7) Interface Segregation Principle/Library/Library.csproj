@@ -41,20 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AudioBook\AudioBook.cs" />
-    <Compile Include="Book\Book.cs" />
-    <Compile Include="DigitalMovie\DigitalMovie.cs" />
-    <Compile Include="DVD\DVD.cs" />
-    <Compile Include="AudioBook\IAudioBook.cs" />
-    <Compile Include="Book\IBook.cs" />
-    <Compile Include="GeneralInterface\IBorrowable.cs" />
-    <Compile Include="AudioBook\IBorrowableAudioBook.cs" />
-    <Compile Include="Book\IBorrowableBook.cs" />
-    <Compile Include="DVD\IBorrowableDVD.cs" />
-    <Compile Include="DVD\IDVD.cs" />
-    <Compile Include="GeneralInterface\ILibraryItem.cs" />
+    <Compile Include="Base\IBorrowableItem.cs" />
+    <Compile Include="Base\ILibraryItem.cs" />
+    <Compile Include="Classic\IBookBase.cs" />
+    <Compile Include="Classic\IPaperBook.cs" />
+    <Compile Include="Digital\IPlayable.cs" />
+    <Compile Include="Digital\IScreenable.cs" />
+    <Compile Include="Item\AudioBook\AudioBook.cs" />
+    <Compile Include="Item\AudioBook\IAudioBook.cs" />
+    <Compile Include="Item\Book\Book.cs" />
+    <Compile Include="Item\Book\IBook.cs" />
+    <Compile Include="Item\DigitalMovie\DigitalMovie.cs" />
+    <Compile Include="Item\DigitalMovie\IDigitalMovie.cs" />
+    <Compile Include="Item\DVD\DVD.cs" />
+    <Compile Include="Item\DVD\IDVD.cs" />
+    <Compile Include="Item\ReferenceBook\IReferenceBook.cs" />
+    <Compile Include="Item\ReferenceBook\ReferenceBook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Book\ReferenceBook.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
