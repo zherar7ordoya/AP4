@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8E5DEE1F-D377-4232-A7DC-6FF40F17D9FA}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>ConsoleUI</RootNamespace>
-    <AssemblyName>ConsoleUI</AssemblyName>
+    <ProjectGuid>{1D8B4B50-C8CB-4CD6-A418-BD3DDCD0683B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Filtro</RootNamespace>
+    <AssemblyName>Filtro</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +23,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,21 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Cliente.cs" />
+    <Compile Include="EspecificacionFiltroCliente.cs" />
+    <Compile Include="FiltroClientes.cs" />
+    <Compile Include="FiltroLocalidad.cs" />
+    <Compile Include="Localidades.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Filtro\Filtro.csproj">
-      <Project>{1d8b4b50-c8cb-4cd6-a418-bd3ddcd0683b}</Project>
-      <Name>Filtro</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OCPLibrary\OCPLibrary.csproj">
-      <Project>{1EDCCE50-54C7-4DDF-BBC6-D81B553BF573}</Project>
-      <Name>OCPLibrary</Name>
-    </ProjectReference>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
