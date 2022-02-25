@@ -13,20 +13,19 @@ namespace ConsoleUI
             ///////////////////////////////////////////////////////////////////
             WriteLine("\nEJEMPLO ORIGINAL.--------------------------------\n");
 
-            List<PersonModel> applicants = new List<PersonModel>
+            List<IApplicantModel> applicants = new List<IApplicantModel>
             {
                 new PersonModel {FirstName = "Tim", LastName = "Corey"},
-                new PersonModel {FirstName = "Sue", LastName = "Storm"},
-                new PersonModel {FirstName = "Nancy", LastName = "Roman"}
+                new ManagerModel {FirstName = "Sue", LastName = "Storm"},
+                new ExecutiveModel {FirstName = "Nancy", LastName = "Roman"}
             };
 
             List<EmployeeModel> employees = new List<EmployeeModel>();
-            Accounts accountProcessor = new Accounts();
 
             foreach (var person in applicants)
             {
                 employees
-                    .Add(accountProcessor
+                    .Add(person.AccountProcessor
                     .Create(person));
             }
 
@@ -35,9 +34,9 @@ namespace ConsoleUI
                 WriteLine(
                     $"{emp.FirstName} " +
                     $"{emp.LastName}: " +
-                    $"\t{emp.EmailAddress} " +
-                    $"\tManager: {emp.IsManager} " +
-                    $"\tExecutive: {emp.IsExecutive} ");
+                    $"{emp.EmailAddress} " +
+                    (emp.IsManager ? "\tMANAGER" : string.Empty) +
+                    (emp.IsExecutive ? "\tEXECUTIVE" : string.Empty));
             }
 
             ///////////////////////////////////////////////////////////////////

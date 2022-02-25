@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1EDCCE50-54C7-4DDF-BBC6-D81B553BF573}</ProjectGuid>
+    <ProjectGuid>{3EBD8AE5-4E3F-4A65-8076-32BDEAAC5D1C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OCPLibrary</RootNamespace>
-    <AssemblyName>OCPLibrary</AssemblyName>
+    <RootNamespace>DemoLibrary</RootNamespace>
+    <AssemblyName>DemoLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,15 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accounts.cs" />
-    <Compile Include="EmployeeModel.cs" />
-    <Compile Include="ExecutiveAccount.cs" />
-    <Compile Include="ExecutiveModel.cs" />
-    <Compile Include="IAccounts.cs" />
-    <Compile Include="IApplicantModel.cs" />
-    <Compile Include="ManagerAccounts.cs" />
-    <Compile Include="ManagerModel.cs" />
-    <Compile Include="PersonModel.cs" />
+    <Compile Include="BaseEmployee.cs" />
+    <Compile Include="CEO.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="IEmployee.cs" />
+    <Compile Include="IManaged.cs" />
+    <Compile Include="IManager.cs" />
+    <Compile Include="Manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
