@@ -5,6 +5,7 @@
         None,
         Zaragoza,
         Huesca,
-        Teruel
+        Teruel,
+        Jujuy
     }
 }

@@ -14,7 +14,7 @@ namespace Filtro
 
         protected override IEnumerable<Cliente> AplicarFiltro(IList<Cliente> clientes)
         {
-            return clientes.Where(c => c.Localidad == this.localidad);
+            return clientes.Where(x => x.Localidad == this.localidad);
         }
     }
 }

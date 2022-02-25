@@ -8,10 +8,7 @@
 
             output.FirstName = person.FirstName;
             output.LastName = person.LastName;
-
-            string minusculas = $"{ person.FirstName.Substring(0, 1) }{person.LastName}@acme.com";
-
-            output.EmailAddress = minusculas.ToLower();
+            output.EmailAddress = $"{ person.FirstName.Substring(0, 1) }{person.LastName}@acme.com";
 
             return output;
         }

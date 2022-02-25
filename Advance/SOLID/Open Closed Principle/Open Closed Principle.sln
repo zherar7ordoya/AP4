@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OCPLibrary", "OCPLibrary\OC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filtro", "Filtro\Filtro.csproj", "{1D8B4B50-C8CB-4CD6-A418-BD3DDCD0683B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protegido", "Protegido\Protegido.csproj", "{2EF6CF44-C9E2-4688-8F73-DF67AA6D3FFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1D8B4B50-C8CB-4CD6-A418-BD3DDCD0683B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D8B4B50-C8CB-4CD6-A418-BD3DDCD0683B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D8B4B50-C8CB-4CD6-A418-BD3DDCD0683B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EF6CF44-C9E2-4688-8F73-DF67AA6D3FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EF6CF44-C9E2-4688-8F73-DF67AA6D3FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EF6CF44-C9E2-4688-8F73-DF67AA6D3FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EF6CF44-C9E2-4688-8F73-DF67AA6D3FFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
