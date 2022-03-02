@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Inventario.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="InventarioStoreContainer">
+    <EntitySet Name="ProveedorSet" EntityType="Inventario.Store.ProveedorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductoSet" EntityType="Inventario.Store.ProductoSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="ProveedorProducto" Association="Inventario.Store.ProveedorProducto">
+      <End Role="Proveedor" EntitySet="ProveedorSet" />
+      <End Role="Producto" EntitySet="ProductoSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ProveedorSet">
+    <Key>
+      <PropertyRef Name="ProveedorID" />
+    </Key>
+    <Property Name="ProveedorID" Type="int" Nullable="false" />
+    <Property Name="ProveedorNombre" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ProveedorDireccion" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProveedorTelefono" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="ProveedorEmail" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ProductoSet">
+    <Key>
+      <PropertyRef Name="ProductoID" />
+    </Key>
+    <Property Name="ProductoID" Type="int" Nullable="false" />
+    <Property Name="ProductoNombre" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="ProductoPrecio" Type="decimal" Nullable="false" Precision="5" />
+    <Property Name="ProductoDescripcion" Type="nvarchar" Nullable="false" MaxLength="150" />
+    <Property Name="ProductoProveedor" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="ProveedorProducto">
+    <End Role="Proveedor" Type="Inventario.Store.ProveedorSet" Multiplicity="1" />
+    <End Role="Producto" Type="Inventario.Store.ProductoSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proveedor">
+        <PropertyRef Name="ProveedorID" />
+      </Principal>
+      <Dependent Role="Producto">
+        <PropertyRef Name="ProductoProveedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Inventario" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="InventarioContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ProveedorSet" EntityType="Inventario.Proveedor" />
+          <EntitySet Name="ProductoSet" EntityType="Inventario.Producto" />
+          <AssociationSet Name="ProveedorProducto" Association="Inventario.ProveedorProducto">
+            <End Role="Proveedor" EntitySet="ProveedorSet" />
+            <End Role="Producto" EntitySet="ProductoSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Proveedor">
+          <Key>
+            <PropertyRef Name="ProveedorID" />
+          </Key>
+          <Property Name="ProveedorID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="ProveedorNombre" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="ProveedorDireccion" Type="String" Nullable="false" MaxLength="100" />
+          <Property Name="ProveedorTelefono" Type="String" Nullable="false" MaxLength="20" />
+          <Property Name="ProveedorEmail" Type="String" Nullable="false" MaxLength="20" />
+          <NavigationProperty Name="Producto" Relationship="Inventario.ProveedorProducto" FromRole="Proveedor" ToRole="Producto" />
+        </EntityType>
+        <EntityType Name="Producto">
+          <Key>
+            <PropertyRef Name="ProductoID" />
+          </Key>
+          <Property Name="ProductoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="ProductoNombre" Type="String" Nullable="false" MaxLength="100" />
+          <Property Name="ProductoPrecio" Type="Decimal" Nullable="false" Precision="5" />
+          <Property Name="ProductoDescripcion" Type="String" Nullable="false" MaxLength="150" />
+          <Property Name="ProductoProveedor" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Proveedor" Relationship="Inventario.ProveedorProducto" FromRole="Producto" ToRole="Proveedor" />
+        </EntityType>
+        <Association Name="ProveedorProducto">
+          <End Type="Inventario.Proveedor" Role="Proveedor" Multiplicity="1" />
+          <End Type="Inventario.Producto" Role="Producto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedor">
+              <PropertyRef Name="ProveedorID" />
+            </Principal>
+            <Dependent Role="Producto">
+              <PropertyRef Name="ProductoProveedor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InventarioStoreContainer" CdmEntityContainer="InventarioContainer">
+    <EntitySetMapping Name="ProveedorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Inventario.Proveedor)">
+        <MappingFragment StoreEntitySet="ProveedorSet">
+          <ScalarProperty Name="ProveedorID" ColumnName="ProveedorID" />
+          <ScalarProperty Name="ProveedorNombre" ColumnName="ProveedorNombre" />
+          <ScalarProperty Name="ProveedorDireccion" ColumnName="ProveedorDireccion" />
+          <ScalarProperty Name="ProveedorTelefono" ColumnName="ProveedorTelefono" />
+          <ScalarProperty Name="ProveedorEmail" ColumnName="ProveedorEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Inventario.Producto)">
+        <MappingFragment StoreEntitySet="ProductoSet">
+          <ScalarProperty Name="ProductoID" ColumnName="ProductoID" />
+          <ScalarProperty Name="ProductoNombre" ColumnName="ProductoNombre" />
+          <ScalarProperty Name="ProductoPrecio" ColumnName="ProductoPrecio" />
+          <ScalarProperty Name="ProductoDescripcion" ColumnName="ProductoDescripcion" />
+          <ScalarProperty Name="ProductoProveedor" ColumnName="ProductoProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
