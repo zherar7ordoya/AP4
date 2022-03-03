@@ -12,6 +12,8 @@ namespace Bodega
 {
     public partial class ListadoForm : Form
     {
+        public static int IdProveedor = 0;
+
         public ListadoForm() => InitializeComponent();
 
         private void ListadoForm_Activated(object sender, EventArgs e) => LlenarGrid();
@@ -61,6 +63,14 @@ namespace Bodega
             modelo.SaveChanges();
             MessageBox.Show("Registro eliminado");
             LlenarGrid();
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            IdProveedor = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            EditarProveedorForm x = new EditarProveedorForm();
+            x.MdiParent = this.MdiParent;
+            x.Show();
         }
     }
 }

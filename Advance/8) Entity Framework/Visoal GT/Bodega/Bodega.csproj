@@ -98,6 +98,12 @@
     <Compile Include="Proveedor.cs">
       <DependentUpon>Inventario.tt</DependentUpon>
     </Compile>
+    <Compile Include="EditarProveedorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditarProveedorForm.Designer.cs">
+      <DependentUpon>EditarProveedorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ProveedorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditarProveedorForm.resx">
+      <DependentUpon>EditarProveedorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProveedorForm.resx">
       <DependentUpon>ProveedorForm.cs</DependentUpon>
     </EmbeddedResource>
