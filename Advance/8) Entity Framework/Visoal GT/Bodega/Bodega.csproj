@@ -84,6 +84,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Inventario.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ListadoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ListadoForm.Designer.cs">
+      <DependentUpon>ListadoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Producto.cs">
       <DependentUpon>Inventario.tt</DependentUpon>
     </Compile>
@@ -100,6 +106,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListadoForm.resx">
+      <DependentUpon>ListadoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

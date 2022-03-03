@@ -9,9 +9,9 @@ namespace Bodega
             InitializeComponent();
         }
 
-        private void proveedorToolStripMenuItem_Click(object sender, System.EventArgs e)
+        private void ProveedoresToolStripMenuItem_Click(object sender, System.EventArgs e)
         {
-            ProveedorForm x = new ProveedorForm();
+            ListadoForm x = new ListadoForm();
             x.MdiParent = this;
             x.Show();
         }
