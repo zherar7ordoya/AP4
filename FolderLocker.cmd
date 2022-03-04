@@ -31,7 +31,6 @@ if NOT EXIST Locker goto MDLOCKER
     echo Folder unlocked successfully
     cd Locker
     Brave
-    echo Ready to leave...
     goto End
 
 :FAIL
