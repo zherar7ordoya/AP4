@@ -7,18 +7,25 @@ using System.Threading.Tasks;
 
 namespace ConsoleUI
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-      List<Person> people = ListManager.LoadSampleData();
+        static void Main(string[] args)
+        {
+            List<Person> people = ListManager.LoadSampleData();
 
-      foreach (var person in people)
-      {
-        Console.WriteLine($"{ person.FirstName } { person.LastName } ({ person.Birthday.ToShortDateString() }): Experience { person.YearsExperience }");
-      }
+            //people = people.OrderByDescending(x => x.LastName).ThenBy(x => x.YearsExperience).ToList();
+            //people = people.Where(x => x.YearsExperience > 9 && x.Birthday.Month == 3).ToList();
 
-      Console.ReadLine();
+            //foreach (var person in people)
+            //{
+            //    Console.WriteLine($"{ person.FirstName } { person.LastName } ({ person.Birthday.ToShortDateString() }): Experience { person.YearsExperience }");
+            //}
+
+            //int yearsTotal = people.Sum(x => x.YearsExperience);
+            int yearsTotal = people.Where(x=>x.Birthday.Month==3).Sum(x => x.YearsExperience);
+            Console.WriteLine($"The total years experience is {yearsTotal}");
+
+            Console.ReadLine();
+        }
     }
-  }
 }
