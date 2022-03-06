@@ -12,11 +12,11 @@ namespace Parte3
         static void Main(string[] args)
         {
             Random rand = new Random();
-            int[] numeros = new int[10];
+            int[] numeros = new int[5];
 
             for (int i = 0; i < numeros.Length; i++)
             {
-                numeros[i] = rand.Next(0, 100);
+                numeros[i] = rand.Next(0, 10);
             }
 
             int[] todos = (from x in numeros select x).ToArray();
@@ -71,6 +71,20 @@ namespace Parte3
 
             int sumatoria = (from x in numeros select x).Sum();
             WriteLine($"Sumatoria: {sumatoria}");
+
+            int agregado = numeros.Aggregate(0, (t, n) => t + (n * 2));
+            WriteLine($"Agregado: {agregado}");
+
+            bool cumplen = numeros.All(x => x < 7);
+            WriteLine("¿Todos son menores a 7?: " + cumplen);
+
+            int[] comparado = { 1, 2, 3, 4, 5 };
+            WriteLine("Vector a comparar: " + String.Join(", ", comparado));
+            bool iguales = comparado.SequenceEqual(numeros);
+            WriteLine("¿Ambos vectores son iguales?: " + iguales);
+
+            var rango = Enumerable.Range(15, 5);
+            WriteLine("Rango: " + String.Join(", ", rango));
 
             // Make an IsPrime delegate.
             Func<int, bool> IsPrime = number =>
