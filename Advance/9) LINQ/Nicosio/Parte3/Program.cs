@@ -12,7 +12,7 @@ namespace Parte3
         static void Main(string[] args)
         {
             Random rand = new Random();
-            int[] numeros = new int[15];
+            int[] numeros = new int[10];
 
             for (int i = 0; i < numeros.Length; i++)
             {
@@ -25,7 +25,22 @@ namespace Parte3
             //*/////////////////////////////////////////////////////////////*//
 
             IEnumerable<int> primeros = numeros.Take(5);
-            WriteLine("5 primeros: " + string.Join(", ", primeros));
+            WriteLine("Solo 5 primeros: " + string.Join(", ", primeros));
+
+            IEnumerable<int> brincados = numeros.Skip(5);
+            WriteLine("Brinca 5 primeros: " + string.Join(", ", brincados));
+
+            IEnumerable<int> reversa = numeros.Reverse();
+            WriteLine("Reversa: " + string.Join(", ", reversa));
+
+            int indice = numeros.ElementAt(2);
+            WriteLine("El que está en el índice 2: " + indice);
+
+            WriteLine("¿El vector tiene un 7?: " + numeros.Contains(7));
+
+            WriteLine("¿El vector tiene elemento alguno?: " + numeros.Any());
+
+            WriteLine("¿El vector tiene múltiplos de 7?: " + numeros.Any(x => x % 7 == 0));
 
             int[] pares = (from x in numeros where x % 2 == 0 select x).ToArray();
             WriteLine("Pares: " + string.Join(", ", pares));
