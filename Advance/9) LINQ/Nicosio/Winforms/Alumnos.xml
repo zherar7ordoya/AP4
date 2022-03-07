@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Creado con XML Notepad.-->
+<Alumnos>
+  <Alumno Nombre="Luis">
+    <Curso>UML</Curso>
+    <Calificacion>10</Calificacion>
+  </Alumno>
+  <Alumno Nombre="María">
+    <Curso>Orientado a Objetos</Curso>
+    <Calificacion>10</Calificacion>
+  </Alumno>
+  <Alumno Nombre="Susana">
+    <Curso>UML</Curso>
+    <Calificacion>9</Calificacion>
+  </Alumno>
+  <Alumno Nombre="José">
+    <Curso>Programación</Curso>
+    <Calificacion>8</Calificacion>
+  </Alumno>
+</Alumnos>

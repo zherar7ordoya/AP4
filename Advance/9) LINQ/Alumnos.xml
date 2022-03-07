@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Yo, Gerardo Tordoya, he creado este documento con el maravilloso XML Notepad de Microsoft.-->
+<Personas>
+  <Alumnos>
+    <Alumno Nombre="José">
+      <Curso>Programación</Curso>
+      <Calificación>8</Calificación>
+    </Alumno>
+    <Alumno Nombre="Susana">
+      <Curso>UML</Curso>
+      <Calificación>9</Calificación>
+    </Alumno>
+    <Alumno Nombre="María">
+      <Curso>Orientado a Objetos</Curso>
+      <Calificación>10</Calificación>
+    </Alumno>
+    <Alumno Nombre="Luis">
+      <Curso>UML</Curso>
+      <Calificación>10</Calificación>
+    </Alumno>
+  </Alumnos>
+  <Maestros>
+    <Maestro Nombre="Juan">
+      <Curso>Programación</Curso>
+      <Horario>Completo</Horario>
+    </Maestro>
+    <Maestro Nombre="Denis">
+      <Curso>UML</Curso>
+      <Horario>Medio</Horario>
+    </Maestro>
+    <Maestro Nombre="Sofía">
+      <Curso>Orientado a Objetos</Curso>
+      <Horario>Completo</Horario>
+    </Maestro>
+    <Maestro Nombre="Carlos">
+      <Curso>Bases de Datos</Curso>
+      <Horario>Medio</Horario>
+    </Maestro>
+  </Maestros>
+</Personas>

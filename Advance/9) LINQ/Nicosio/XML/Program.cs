@@ -12,6 +12,8 @@ namespace XML
     {
         static void Main(string[] args)
         {
+            goto Señalador;
+
             WriteLine("\nEJEMPLO 1");
 
             XElement raiz = new XElement("raiz");
@@ -25,7 +27,7 @@ namespace XML
 
             WriteLine("\nEJEMPLO 2");
 
-            XElement documento = 
+            XElement documento =
                 new XElement("Alumnos",
                 new XElement("Ana", new XAttribute("ID", "10100"),
                 new XElement("Promedio", "10")
@@ -57,6 +59,109 @@ namespace XML
                 ));
             WriteLine(alumnos);
             alumnos.Save("Alumnos.xml");
+
+            //*-----------------------------------------*
+
+            WriteLine("\nNODOS");
+
+            var escuela =
+                new XElement("Escuela",
+                    new XElement("Ciencias",
+                        new XElement("Materia", "Matemáticas"),
+                        new XElement("Materia", "Física")
+                    ),
+                    new XElement("Artes",
+                        new XElement("Materia", "Historia del Arte"),
+                        new XElement("Práctica", "Pintura")
+                    )
+                );
+
+            WriteLine("\nEstructura:\n" + escuela);
+
+            WriteLine("\nNodos:");
+            foreach (XNode nodo in escuela.Nodes()) WriteLine(nodo.ToString());
+
+            WriteLine("\nElementos:");
+            foreach (XElement elemento in escuela.Elements()) WriteLine(elemento.Name + "=" + elemento.Value);
+
+            WriteLine("\nFirstNode regresa el primer nodo:\n" + escuela.FirstNode);
+
+            WriteLine("\nPadre del primer nodo:\n" + escuela.FirstNode.Parent.Name);
+
+            WriteLine("\nEl último nodo:\n" + escuela.LastNode);
+
+            /*-------------------*/
+
+            WriteLine("\nQueries sobre XML\n");
+
+            IEnumerable<string> materias = from curso in escuela.Elements()
+                                           where curso.Elements().Any(materia => materia.Value == "Física")
+                                           select curso.Value;
+
+            foreach (string materia in materias) WriteLine(materia);
+
+            IEnumerable<XName> nombres = from curso in escuela.Elements()
+                                         where curso.Elements().Any(materia => materia.Value == "Física")
+                                         select curso.Name;
+            foreach (XName nombre in nombres) WriteLine(nombre.ToString());
+
+            WriteLine("\nMas consultas sobre XML\n");
+
+            materias = from curso in escuela.Elements()
+                       from asignatura in curso.Elements()
+                       where asignatura.Name == "Materia"
+                       select asignatura.Value;
+            foreach (string materia in materias) WriteLine(materia);
+
+            int conteo = escuela.Elements("Ciencias").Count();
+            WriteLine("Ciencias: " + conteo);
+
+            WriteLine("\nNEXTNODE\n");
+
+            XNode inicio = escuela.FirstNode;
+            WriteLine(inicio);
+            inicio = inicio.NextNode;
+            WriteLine(inicio);
+
+            WriteLine("\nAGREGAR ELEMENTO\n");
+
+            escuela.SetElementValue("Deportes", "No hay...");
+            WriteLine(escuela);
+
+            WriteLine("*********************************************");
+
+            escuela.SetElementValue("Deportes", "Sin presupuesto");
+            WriteLine(escuela);
+
+            WriteLine("*********************************************");
+
+            WriteLine("\nAGREGAR ELEMENTO CON NODO COMO REFERENCIA\n");
+            escuela.FirstNode.AddAfterSelf(new XElement("Asignaturas"));
+            WriteLine(escuela);
+
+            WriteLine("*********************************************");
+
+            escuela.FirstNode.AddBeforeSelf(new XElement("EscuelaLibre"));
+            WriteLine(escuela);
+
+            WriteLine("*********************************************");
+
+            //*/////////////////////////////////////////////////////////////*//
+
+            Señalador:
+
+            WriteLine("\nXML Notepad (Rocks!)\n");
+
+            XDocument alumnado = XDocument.Load("Alumnos.xml");
+            WriteLine(alumnado);
+
+            WriteLine("\nEliminar maestros");
+            alumnado.Descendants("Maestros").Remove();
+            WriteLine(alumnado);
+
+            WriteLine("\nEliminar calificaciones");
+            alumnado.Descendants("Calificación").Remove();
+            WriteLine(alumnado);
 
             //*/////////////////////////////////////////////////////////////*//
             ReadKey();
