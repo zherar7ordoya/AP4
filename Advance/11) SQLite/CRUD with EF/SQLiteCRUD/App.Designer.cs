@@ -47,7 +47,7 @@
             // 
             // CreateButton
             // 
-            this.CreateButton.Location = new System.Drawing.Point(12, 439);
+            this.CreateButton.Location = new System.Drawing.Point(35, 439);
             this.CreateButton.Name = "CreateButton";
             this.CreateButton.Size = new System.Drawing.Size(75, 23);
             this.CreateButton.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             // ReadButton
             // 
-            this.ReadButton.Location = new System.Drawing.Point(93, 439);
+            this.ReadButton.Location = new System.Drawing.Point(116, 439);
             this.ReadButton.Name = "ReadButton";
             this.ReadButton.Size = new System.Drawing.Size(75, 23);
             this.ReadButton.TabIndex = 1;
@@ -67,7 +67,7 @@
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(177, 439);
+            this.UpdateButton.Location = new System.Drawing.Point(197, 439);
             this.UpdateButton.Name = "UpdateButton";
             this.UpdateButton.Size = new System.Drawing.Size(75, 23);
             this.UpdateButton.TabIndex = 2;
@@ -77,7 +77,7 @@
             // 
             // DeleteButton
             // 
-            this.DeleteButton.Location = new System.Drawing.Point(258, 439);
+            this.DeleteButton.Location = new System.Drawing.Point(278, 439);
             this.DeleteButton.Name = "DeleteButton";
             this.DeleteButton.Size = new System.Drawing.Size(75, 23);
             this.DeleteButton.TabIndex = 3;
@@ -104,13 +104,14 @@
             this.NameLabel.Size = new System.Drawing.Size(100, 23);
             this.NameLabel.TabIndex = 6;
             this.NameLabel.Text = "Name";
+            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // NameTextBox
             // 
             this.NameTextBox.Enabled = false;
             this.NameTextBox.Location = new System.Drawing.Point(152, 357);
             this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.Size = new System.Drawing.Size(100, 23);
+            this.NameTextBox.Size = new System.Drawing.Size(201, 23);
             this.NameTextBox.TabIndex = 7;
             // 
             // AddressTextBox
@@ -118,7 +119,7 @@
             this.AddressTextBox.Enabled = false;
             this.AddressTextBox.Location = new System.Drawing.Point(152, 386);
             this.AddressTextBox.Name = "AddressTextBox";
-            this.AddressTextBox.Size = new System.Drawing.Size(100, 23);
+            this.AddressTextBox.Size = new System.Drawing.Size(201, 23);
             this.AddressTextBox.TabIndex = 9;
             // 
             // AddressLabel
@@ -129,10 +130,11 @@
             this.AddressLabel.Size = new System.Drawing.Size(100, 23);
             this.AddressLabel.TabIndex = 8;
             this.AddressLabel.Text = "Address";
+            this.AddressLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ItemList
             // 
-            this.ItemList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.ItemList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ItemList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ItemList.ContextMenuStrip = this.ContextMenuStrip;
             this.ItemList.Location = new System.Drawing.Point(12, 12);
@@ -140,7 +142,7 @@
             this.ItemList.Name = "ItemList";
             this.ItemList.RowTemplate.Height = 25;
             this.ItemList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ItemList.Size = new System.Drawing.Size(321, 311);
+            this.ItemList.Size = new System.Drawing.Size(341, 294);
             this.ItemList.TabIndex = 10;
             this.ItemList.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ItemList_RowEnter);
             // 
@@ -162,7 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 479);
+            this.ClientSize = new System.Drawing.Size(367, 479);
             this.Controls.Add(this.ItemList);
             this.Controls.Add(this.AddressTextBox);
             this.Controls.Add(this.AddressLabel);
