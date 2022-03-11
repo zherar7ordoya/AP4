@@ -15,7 +15,7 @@ namespace ConsoleUI
         static void Main()
         {
             PopulateCartWithDemoData();
-            WriteLine($"2) Total: \t {cart.GenerateTotal(SubTotalAlert, CalculateLeveledDiscount):C2}");
+            WriteLine($"2) Total: \t {cart.GenerateTotal(SubTotalAlert, CalculateLeveledDiscount, AlertUser):C2}");
             ReadKey();
         }
 
@@ -28,6 +28,8 @@ namespace ConsoleUI
         }
 
         private static void SubTotalAlert(decimal subTotal) => WriteLine($"1) Subtotal: \t {subTotal:C2}");
+
+        private static void AlertUser(string message) => WriteLine(message);
 
         private static decimal CalculateLeveledDiscount(List<ProductModel> items, decimal subTotal)
         {
