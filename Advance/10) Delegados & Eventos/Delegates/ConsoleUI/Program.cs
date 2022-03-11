@@ -8,19 +8,15 @@ using static System.Console;
 
 namespace ConsoleUI
 {
-    class Program
+    public class Program
     {
-        static ShoppingCartModel cart = new ShoppingCartModel();
+        static readonly ShoppingCartModel cart = new ShoppingCartModel();
 
-        static void Main(string[] args)
+        static void Main()
         {
             PopulateCartWithDemoData();
-
-            WriteLine($"The total for the cart is {cart.GenerateTotal(SubTotalAlert):C2}");
-
-            Console.WriteLine();
-            Console.Write("Please press any key to exit the application...");
-            Console.ReadKey();
+            WriteLine($"2) Total: \t {cart.GenerateTotal(SubTotalAlert, CalculateLeveledDiscount):C2}");
+            ReadKey();
         }
 
         private static void PopulateCartWithDemoData()
@@ -31,9 +27,14 @@ namespace ConsoleUI
             cart.Items.Add(new ProductModel { ItemName = "Blueberries", Price = 8.84M });
         }
 
-        private static void SubTotalAlert(decimal subTotal)
+        private static void SubTotalAlert(decimal subTotal) => WriteLine($"1) Subtotal: \t {subTotal:C2}");
+
+        private static decimal CalculateLeveledDiscount(List<ProductModel> items, decimal subTotal)
         {
-            WriteLine($"The subtotal is {subTotal:C2}");
+            if (subTotal > 100) return subTotal * 0.80M;
+            else if (subTotal > 50) return subTotal * 0.85M;
+            else if (subTotal > 10) return subTotal * 0.90M;
+            else return subTotal;
         }
     }
 }
