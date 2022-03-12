@@ -16,6 +16,18 @@ namespace ConsoleUI
         {
             PopulateCartWithDemoData();
             WriteLine($"2) Total: \t {cart.GenerateTotal(SubTotalAlert, CalculateLeveledDiscount, AlertUser):C2}");
+
+            decimal total = cart.GenerateTotal(
+                (sub) => WriteLine($"\n\nCart 2 sub: \t {sub:C}"),
+                (products, sub) =>
+                {
+                    if (products.Count > 3) return sub * 0.5M;
+                    else return sub;
+                },
+                (message) => WriteLine($"Cart 2 alert: \t { message }")
+                );
+            WriteLine($"Cart 2 total: \t {total:C}");
+
             ReadKey();
         }
 
