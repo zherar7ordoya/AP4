@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubMembership", "ClubMembership.csproj", "{366741E3-7528-4B03-BCC7-C7D8010748E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClubMembership", "ClubMembership\ClubMembership.csproj", "{366741E3-7528-4B03-BCC7-C7D8010748E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldValidatorAPI", "..\FieldValidatorAPI\FieldValidatorAPI.csproj", "{892E441A-1ACD-443E-A4E9-6F7FC5E15D57}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FieldValidatorAPI", "FieldValidatorAPI\FieldValidatorAPI.csproj", "{892E441A-1ACD-443E-A4E9-6F7FC5E15D57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
