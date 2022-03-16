@@ -14,7 +14,7 @@ namespace Example_1
         static void Main(string[] args)
         {
             Contador conteo = new Contador(new Random().Next(10));
-            conteo.EventoLimiteAlcanzado += MetodoLimiteAlcanzado;
+            conteo.OnLimiteAlcanzado += MetodoLimiteAlcanzado;
 
             Console.WriteLine("press 'a' key to increase total");
             while (Console.ReadKey(true).KeyChar == 'a')
@@ -40,15 +40,14 @@ namespace Example_1
 
         public int limite;
         public int total;
+        public event EventHandler OnLimiteAlcanzado;
 
-        public Contador(int pLimite) => limite = pLimite;
+        public Contador(int limite) => this.limite = limite;
 
         public void Add(int x)
         {
             total += x;
-            if (total >= limite) EventoLimiteAlcanzado?.Invoke(this, EventArgs.Empty);
+            if (total >= limite) OnLimiteAlcanzado?.Invoke(this, EventArgs.Empty);
         }
-
-        public event EventHandler EventoLimiteAlcanzado;
     }
 }

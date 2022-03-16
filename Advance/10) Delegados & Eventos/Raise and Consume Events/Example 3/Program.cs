@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Example_3
 {
@@ -15,7 +11,7 @@ namespace Example_3
     /// rare scenarios, such as making your class available to legacy code that
     /// cannot use generics.
     /// </summary>
-    
+
     public delegate void ThresholdReachedEventHandler(Object sender, ThresholdReachedEventArgs e);
 
     class Program

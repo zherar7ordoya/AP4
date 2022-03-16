@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using static System.Console;
 
 // ÉSTE SERÍA EL EJEMPLO MÁS FORMAL, MÁS COMPLETO.
 
@@ -15,25 +12,26 @@ namespace Example_2
     /// </summary>
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Counter c = new Counter(new Random().Next(10));
-            c.ThresholdReached += c_ThresholdReached;
+            Counter contador = new Counter(new Random().Next(3, 10));
+            contador.LimiteAlcanzadoEventHandler += LimiteAlcanzadoMetodo;
 
+            WriteLine($"\nLÍMITE ASIGNADO: {contador.Limite}\n");
 
             //TODO Si pulso algo diferente a 'a', el programa termina sin más.
-            Console.WriteLine("press 'a' key to increase total");
-            while (Console.ReadKey(true).KeyChar == 'a')
+            Console.WriteLine("Press '+' key to increase total");
+            while (Console.ReadKey(true).KeyChar == '+')
             {
-                Console.WriteLine("adding one");
-                c.Add(1);
+                Console.WriteLine("Adding 1...");
+                contador.Agregar(1);
             }
         }
 
-        static void c_ThresholdReached(object sender, ThresholdReachedEventArgs e)
+        static void LimiteAlcanzadoMetodo(object sender, LimiteAlcanzadoEventArgs e)
         {
-            Console.WriteLine("The threshold of {0} was reached at {1}.", e.Threshold, e.TimeReached);
-            Console.ReadKey();
+            WriteLine("The threshold of {0} was reached at {1}", e.Limite, e.Cuando);
+            ReadKey();
             Environment.Exit(0);
         }
     }
@@ -41,35 +39,29 @@ namespace Example_2
 
     class Counter
     {
-        private int threshold;
+        public int Limite { get; private set; }
         private int total;
-        public event EventHandler<ThresholdReachedEventArgs> ThresholdReached;
+        public event EventHandler<LimiteAlcanzadoEventArgs> LimiteAlcanzadoEventHandler;
 
-        public Counter(int passedThreshold) => threshold = passedThreshold;
+        public Counter(int limite) => Limite = limite;
 
-        public void Add(int x)
+        public void Agregar(int x)
         {
             total += x;
-            if (total >= threshold)
+            if (total >= Limite)
             {
-                ThresholdReachedEventArgs args = new ThresholdReachedEventArgs();
-                args.Threshold = threshold;
-                args.TimeReached = DateTime.Now;
-                OnThresholdReached(args);
+                LimiteAlcanzadoEventArgs args = new LimiteAlcanzadoEventArgs();
+                args.Limite = Limite;
+                args.Cuando = DateTime.Now;
+                LimiteAlcanzadoEventHandler?.Invoke(this, args);
             }
-        }
-
-        protected virtual void OnThresholdReached(ThresholdReachedEventArgs e)
-        {
-            EventHandler<ThresholdReachedEventArgs> handler = ThresholdReached;
-            if (handler != null) handler(this, e);
         }
     }
 
 
-    public class ThresholdReachedEventArgs : EventArgs
+    public class LimiteAlcanzadoEventArgs : EventArgs
     {
-        public int Threshold { get; set; }
-        public DateTime TimeReached { get; set; }
+        public int Limite { get; set; }
+        public DateTime Cuando { get; set; }
     }
 }
