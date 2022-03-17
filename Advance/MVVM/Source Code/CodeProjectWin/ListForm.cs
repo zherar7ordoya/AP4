@@ -2,8 +2,5 @@
 
 namespace CodeProjectWin
 {
-    public partial class ListForm : Form
-    {
-
-    }
+    public partial class ListForm : Form { }
 }

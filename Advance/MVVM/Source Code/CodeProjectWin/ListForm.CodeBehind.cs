@@ -4,24 +4,16 @@ namespace CodeProjectWin
 {
     public partial class ListForm
     {
-        #region CTor
-
         public ListForm()
         {
             InitializeComponent();
             InitializeEventHandlers();
         }
 
-        #endregion
-
-        #region Properties
-
+        //Properties
         public ViewModel ViewModel { get; set; }
 
-        #endregion
-
-        #region Methods
-
+        //Methods
         private void InitializeEventHandlers()
         {
             Load += (sender, e) =>
@@ -30,7 +22,6 @@ namespace CodeProjectWin
                 {
                     DataSource = ViewModel.NameList
                 };
-
                 DataGridView.DataSource = binding;
                 ViewModel.PropertyChanged += (o, eventArg) => BindDataGridView();
             };
@@ -42,10 +33,7 @@ namespace CodeProjectWin
             {
                 DataSource = ViewModel.NameList
             };
-
             DataGridView.DataSource = binding;
         }
-
-        #endregion
     }
 }

@@ -16,7 +16,7 @@ namespace CodeProjectWin
             _names = new GenerateName().FullNames();
         }
 
-        public static ObservableCollection<StringValue> Data = new ObservableCollection<StringValue>();
+        public static ObservableCollection<StringValue> Data = new ObservableCollection<StringValue>();                
 
         public ObservableCollection<StringValue> Select()
         {
