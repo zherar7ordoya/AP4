@@ -8,9 +8,9 @@ using System.Data.SqlClient;
 
 namespace DataAccess
 {
-    public class OrderDAO : ConnectionSQL
+    public class OrderDao : ConnectionSQL
     {
-        public DataTable getSalesOrder(DateTime fromDate, DateTime toDate)
+        public DataTable GetSalesOrder(DateTime fromDate, DateTime toDate)
         {
             using (var connection = GetConnection())
             {
