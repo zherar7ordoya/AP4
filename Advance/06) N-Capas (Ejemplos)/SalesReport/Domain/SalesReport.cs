@@ -17,7 +17,7 @@ namespace Domain
         public DateTime endDate { get; private set; }
 
         public List<SalesListing> salesListing { get; private set; }
-        public List<NetSalesByPeriod> netSalesByPeriod { get; private set }
+        public List<NetSalesByPeriod> netSalesByPeriod { get; private set; }
         public double totalNetSales { get; private set; }
 
         // Métodos.------------------------------------------------------------
