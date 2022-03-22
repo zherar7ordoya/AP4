@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -15,6 +11,21 @@ namespace DataAccess
             using (var connection = GetConnection())
             {
                 connection.Open();
+
+                //try
+                //{
+                //    connection.Open();
+                //}
+                //catch (DbEntityValidationException ex)
+                //{
+                //    foreach (var entityValidationErrors in ex.EntityValidationErrors)
+                //    {
+                //        foreach (var validationError in entityValidationErrors.ValidationErrors)
+                //        {
+                //            Debug.WriteLine("Property: " + validationError.PropertyName + " Error: " + validationError.ErrorMessage);
+                //        }
+                //    }
+                //}
 
                 using (var command = new SqlCommand())
                 {

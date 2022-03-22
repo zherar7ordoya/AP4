@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 
 namespace DataAccess
 {
@@ -11,7 +6,7 @@ namespace DataAccess
     {
         protected SqlConnection GetConnection()
         {
-            return new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB; DataBase=Bike_Store; Integrated Security=True;");
+            return new SqlConnection("Data Source = (LocalDB)\\MSSQLLocalDB; Initial Catalog=C:\\DOCUMENTS\\AP4\\ADVANCE\\06) N - CAPAS(EJEMPLOS)\\SALESREPORT\\BIKE_STORE.MDF; Integrated Security = True");
         }
     }
 }

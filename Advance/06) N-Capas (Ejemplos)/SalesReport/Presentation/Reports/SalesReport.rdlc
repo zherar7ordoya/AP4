@@ -140,11 +140,6 @@
                       <GroupExpression>=Fields!period.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
-                  <SortExpressions>
-                    <SortExpression>
-                      <Value>=Fields!period.Value</Value>
-                    </SortExpression>
-                  </SortExpressions>
                   <Label>=Fields!period.Value</Label>
                 </ChartMember>
               </ChartMembers>
@@ -757,7 +752,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!period.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>d</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1095,7 +1092,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>=Fields!orderDate.Value</Value>
-                                  <Style />
+                                  <Style>
+                                    <Format>d</Format>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style />
@@ -1113,6 +1112,7 @@
                             <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
+                        <rd:Selected>true</rd:Selected>
                       </CellContents>
                     </TablixCell>
                     <TablixCell>
