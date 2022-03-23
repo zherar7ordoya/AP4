@@ -33,7 +33,7 @@ namespace DataAccess
                     command.CommandText = @"
                                             SELECT o.order_id,
                                                    o.order_date,
-                                                   c.first_name + ', ' + c.last_name    AS customer,
+                                                   c.first_name + ', ' + c.last_name AS customer,
                                                    products=Stuff((SELECT ' - ' + 'x'
                                                                           + CONVERT(VARCHAR (10), oi2.quantity) + ' '
                                                                           + product_name
