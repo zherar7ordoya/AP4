@@ -29,51 +29,31 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.netSalesByPeriodBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salesReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.salesListingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ApplyButton = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpTo = new System.Windows.Forms.DateTimePicker();
+            this.ApplyButton = new System.Windows.Forms.Button();
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dtpTo = new System.Windows.Forms.DateTimePicker();
             this.ThisYearButton = new System.Windows.Forms.Button();
             this.Last30daysButton = new System.Windows.Forms.Button();
             this.ThisMonthButton = new System.Windows.Forms.Button();
             this.Last7daysButton = new System.Windows.Forms.Button();
             this.TodayButton = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.netSalesByPeriodBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesReportBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesListingBindingSource)).BeginInit();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.SalesReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.SalesListingBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.NetSalesByPeriodBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesReportBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesListingBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NetSalesByPeriodBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.DataBindings.Add(new System.Windows.Forms.Binding("Tag", this.netSalesByPeriodBindingSource, "period", true));
-            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentation.Reports.SalesReport.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(170, 0);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(630, 352);
-            this.reportViewer1.TabIndex = 0;
-            // 
-            // netSalesByPeriodBindingSource
-            // 
-            this.netSalesByPeriodBindingSource.DataSource = typeof(Domain.NetSalesByPeriod);
-            // 
-            // salesReportBindingSource
-            // 
-            this.salesReportBindingSource.DataSource = typeof(Domain.SalesReport);
-            // 
-            // salesListingBindingSource
-            // 
-            this.salesListingBindingSource.DataSource = typeof(Domain.SalesListing);
             // 
             // panel1
             // 
@@ -89,24 +69,19 @@
             this.panel1.Size = new System.Drawing.Size(164, 352);
             this.panel1.TabIndex = 1;
             // 
-            // ApplyButton
+            // groupBox1
             // 
-            this.ApplyButton.Location = new System.Drawing.Point(42, 71);
-            this.ApplyButton.Name = "ApplyButton";
-            this.ApplyButton.Size = new System.Drawing.Size(80, 23);
-            this.ApplyButton.TabIndex = 10;
-            this.ApplyButton.Text = "Apply";
-            this.ApplyButton.UseVisualStyleBackColor = true;
-            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "To";
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.ApplyButton);
+            this.groupBox1.Controls.Add(this.dtpFrom);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.dtpTo);
+            this.groupBox1.Location = new System.Drawing.Point(12, 236);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(137, 104);
+            this.groupBox1.TabIndex = 11;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Custom";
             // 
             // label1
             // 
@@ -117,13 +92,15 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "From";
             // 
-            // dtpTo
+            // ApplyButton
             // 
-            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpTo.Location = new System.Drawing.Point(42, 45);
-            this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(80, 20);
-            this.dtpTo.TabIndex = 7;
+            this.ApplyButton.Location = new System.Drawing.Point(42, 71);
+            this.ApplyButton.Name = "ApplyButton";
+            this.ApplyButton.Size = new System.Drawing.Size(80, 23);
+            this.ApplyButton.TabIndex = 10;
+            this.ApplyButton.Text = "Apply";
+            this.ApplyButton.UseVisualStyleBackColor = true;
+            this.ApplyButton.Click += new System.EventHandler(this.ApplyButton_Click);
             // 
             // dtpFrom
             // 
@@ -132,6 +109,23 @@
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(80, 20);
             this.dtpFrom.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(20, 13);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "To";
+            // 
+            // dtpTo
+            // 
+            this.dtpTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpTo.Location = new System.Drawing.Point(42, 45);
+            this.dtpTo.Name = "dtpTo";
+            this.dtpTo.Size = new System.Drawing.Size(80, 20);
+            this.dtpTo.TabIndex = 7;
             // 
             // ThisYearButton
             // 
@@ -183,47 +177,58 @@
             this.TodayButton.UseVisualStyleBackColor = true;
             this.TodayButton.Click += new System.EventHandler(this.TodayButton_Click);
             // 
-            // groupBox1
+            // reportViewer1
             // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.ApplyButton);
-            this.groupBox1.Controls.Add(this.dtpFrom);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.dtpTo);
-            this.groupBox1.Location = new System.Drawing.Point(12, 236);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(137, 104);
-            this.groupBox1.TabIndex = 11;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Custom";
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            reportDataSource1.Name = "salesReport";
+            reportDataSource1.Value = this.SalesReportBindingSource;
+            reportDataSource2.Name = "salesListing";
+            reportDataSource2.Value = this.SalesListingBindingSource;
+            reportDataSource3.Name = "netSalesByPeriod";
+            reportDataSource3.Value = this.NetSalesByPeriodBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentation.Reports.SalesReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(164, 0);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.Size = new System.Drawing.Size(636, 352);
+            this.reportViewer1.TabIndex = 5;
+            // 
+            // SalesReportBindingSource
+            // 
+            this.SalesReportBindingSource.DataSource = typeof(Domain.SalesReport);
+            // 
+            // SalesListingBindingSource
+            // 
+            this.SalesListingBindingSource.DataSource = typeof(Domain.SalesListing);
+            // 
+            // NetSalesByPeriodBindingSource
+            // 
+            this.NetSalesByPeriodBindingSource.DataSource = typeof(Domain.NetSalesByPeriod);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 352);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.reportViewer1);
+            this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.netSalesByPeriodBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesReportBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.salesListingBindingSource)).EndInit();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesReportBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SalesListingBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NetSalesByPeriodBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource netSalesByPeriodBindingSource;
-        private System.Windows.Forms.BindingSource salesReportBindingSource;
-        private System.Windows.Forms.BindingSource salesListingBindingSource;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ApplyButton;
         private System.Windows.Forms.Label label2;
@@ -236,6 +241,10 @@
         private System.Windows.Forms.Button Last7daysButton;
         private System.Windows.Forms.Button TodayButton;
         private System.Windows.Forms.GroupBox groupBox1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource SalesReportBindingSource;
+        private System.Windows.Forms.BindingSource SalesListingBindingSource;
+        private System.Windows.Forms.BindingSource NetSalesByPeriodBindingSource;
     }
 }
 

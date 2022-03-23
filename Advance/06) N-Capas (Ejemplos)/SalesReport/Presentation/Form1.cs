@@ -6,17 +6,23 @@ namespace Presentation
 {
     public partial class Form1 : Form
     {
-        public Form1() => InitializeComponent();
-        private void Form1_Load(object sender, EventArgs e) { }
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        private void Form1_Load(object sender, EventArgs e) {
+            //this.reportViewer1.RefreshReport();
+            this.reportViewer1.RefreshReport();
+        }
 
         private void GetSalesReport(DateTime startDate, DateTime endDAte)
         {
             SalesReport reportModel = new SalesReport();
             reportModel.CreateSalesOrderReport(startDate, endDAte);
 
-            salesReportBindingSource.DataSource = reportModel;
-            salesListingBindingSource.DataSource = reportModel.salesListing;
-            netSalesByPeriodBindingSource.DataSource = reportModel.netSalesByPeriod;
+            SalesReportBindingSource.DataSource = reportModel;
+            SalesListingBindingSource.DataSource = reportModel.salesListing;
+            NetSalesByPeriodBindingSource.DataSource = reportModel.netSalesByPeriod;
 
             this.reportViewer1.RefreshReport();
         }

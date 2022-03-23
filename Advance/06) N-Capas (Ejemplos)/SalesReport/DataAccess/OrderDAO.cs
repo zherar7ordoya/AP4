@@ -37,7 +37,7 @@ namespace DataAccess
                                                    products=Stuff((SELECT ' - ' + 'x'
                                                                           + CONVERT(VARCHAR (10), oi2.quantity) + ' '
                                                                           + product_name
-                                                                   FROM   order_items oi2
+                                                                   FROM   Order_Items oi2
                                                                           INNER JOIN products
                                                                                   ON products.product_id = oi2.product_id
                                                                    WHERE  oi2.order_id = oi1.order_id
@@ -46,7 +46,7 @@ namespace DataAccess
                                             FROM   orders o
                                                    INNER JOIN customers c
                                                            ON c.customer_id = o.customer_id
-                                                   INNER JOIN order_items oi1
+                                                   INNER JOIN Order_Items oi1
                                                            ON oi1.order_id = o.order_id
                                             WHERE  o.order_date BETWEEN @fromDate AND @toDate
                                             GROUP  BY o.order_id,
