@@ -7,7 +7,7 @@ namespace Presentation
     public partial class ReportViewerForm : Form
     {
         public ReportViewerForm() { InitializeComponent(); }
-        private void ReportViewerForm_Load(object sender, EventArgs e) { this.reportViewer1.RefreshReport(); }
+        private void ReportViewerForm_Load(object sender, EventArgs e) { TodayButton_Click(this, EventArgs.Empty); }
 
         private void GetSalesReport(DateTime startDate, DateTime endDAte)
         {

@@ -100,6 +100,7 @@
               <ChartAxis Name="Primary">
                 <Style>
                   <FontSize>8pt</FontSize>
+                  <Format>d</Format>
                 </Style>
                 <ChartAxisTitle>
                   <Caption>Period</Caption>
