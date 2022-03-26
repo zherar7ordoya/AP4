@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource7 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource8 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.SalesReportBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SalesListingBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.NetSalesByPeriodBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -78,7 +78,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(164, 352);
+            this.panel1.Size = new System.Drawing.Size(164, 656);
             this.panel1.TabIndex = 1;
             // 
             // groupBox1
@@ -192,34 +192,35 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource7.Name = "salesReport";
-            reportDataSource7.Value = this.SalesReportBindingSource;
-            reportDataSource8.Name = "salesListing";
-            reportDataSource8.Value = this.SalesListingBindingSource;
-            reportDataSource9.Name = "netSalesByPeriod";
-            reportDataSource9.Value = this.NetSalesByPeriodBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource7);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource8);
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource9);
+            reportDataSource1.Name = "salesReport";
+            reportDataSource1.Value = this.SalesReportBindingSource;
+            reportDataSource2.Name = "salesListing";
+            reportDataSource2.Value = this.SalesListingBindingSource;
+            reportDataSource3.Name = "netSalesByPeriod";
+            reportDataSource3.Value = this.NetSalesByPeriodBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentation.Reports.SalesReport.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(164, 0);
             this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.Size = new System.Drawing.Size(636, 352);
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(815, 656);
             this.reportViewer1.TabIndex = 5;
             // 
             // ReportViewerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 352);
+            this.ClientSize = new System.Drawing.Size(979, 656);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ReportViewerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report Viewer";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ReportViewerForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.SalesReportBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SalesListingBindingSource)).EndInit();
