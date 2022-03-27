@@ -6,7 +6,7 @@ namespace DataAccess
     {
         protected SqlConnection GetConnection()
         {
-            return new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=BikeStore;Integrated Security=True");
+            return new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB; Initial Catalog=BikeStore; Integrated Security=True; Connection Timeout=60");
         }
     }
 }
