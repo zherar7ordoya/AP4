@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ListadoDeVentas.cs" />
+    <Compile Include="ReporteDeVentas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentasNetasPorPeríodo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Capa de Acceso a Datos\Capa de Acceso a Datos.csproj">
