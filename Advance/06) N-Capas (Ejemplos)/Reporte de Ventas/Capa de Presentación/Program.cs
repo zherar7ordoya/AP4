@@ -13,7 +13,7 @@ namespace Capa_de_Presentación
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ReporteForm());
+            Application.Run(new ReporteDeVentas());
         }
     }
 }

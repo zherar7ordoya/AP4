@@ -4,14 +4,14 @@ using Capa_de_Dominio;
 
 namespace Capa_de_Presentación
 {
-    public partial class ReporteForm : Form
+    public partial class ReporteDeVentas : Form
     {
-        public ReporteForm() => InitializeComponent();
+        public ReporteDeVentas() => InitializeComponent();
         private void ReporteForm_Load(object sender, EventArgs e) => HoyButton_Click(this, EventArgs.Empty);
 
         private void ObtenerReporteDeVentas(DateTime desde, DateTime hasta)
         {
-            ReporteDeVentas modelo_de_reporte = new ReporteDeVentas();
+            Capa_de_Dominio.ReporteDeVentas modelo_de_reporte = new Capa_de_Dominio.ReporteDeVentas();
             modelo_de_reporte.CrearReporteDeÓrdenesDeVentas(desde, hasta);
 
             reporteDeVentasBindingSource.DataSource = modelo_de_reporte;
