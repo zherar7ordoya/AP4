@@ -1,0 +1,8 @@
+Primary
+#e74c3c
+
+Dark
+#c0392b
+
+Accent
+#34495e
