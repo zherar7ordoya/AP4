@@ -4,14 +4,20 @@
              Title="Agregar Tarea"
              x:Class="ToDo.App.Views.AddPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="BtnGuardar" Text="Guardar" Clicked="BtnGuardar_Clicked"></ToolbarItem>
+        <ToolbarItem x:Name="BtnGuardar" 
+                     Text="Guardar" 
+                     Clicked="BtnGuardar_Clicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Padding="15">
-            <Label Text="Nombre" FontSize="Medium" TextColor="{StaticResource colorPrimary}"></Label>
+            <Label Text="Nombre" 
+                   FontSize="Medium" 
+                   TextColor="{StaticResource colorPrimary}"></Label>
             <Entry x:Name="nombre"></Entry>
-            <Label Text="Descripción" TextColor="{StaticResource colorPrimary}"></Label>
-            <Editor x:Name="descripcion" HeightRequest="200"></Editor>
+            <Label Text="Descripción" 
+                   TextColor="{StaticResource colorPrimary}"></Label>
+            <Editor x:Name="descripcion" 
+                    HeightRequest="200"></Editor>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
