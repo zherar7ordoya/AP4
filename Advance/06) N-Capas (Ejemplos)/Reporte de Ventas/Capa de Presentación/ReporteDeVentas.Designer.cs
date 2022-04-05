@@ -1,7 +1,7 @@
 ﻿
 namespace Capa_de_Presentación
 {
-    partial class ReporteForm
+    partial class ReporteDeVentas
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +33,9 @@ namespace Capa_de_Presentación
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.listadoDeVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reporteDeVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ventasNetasPorPeríodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ReportViewer = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.HastaDateTimePicker = new System.Windows.Forms.DateTimePicker();
@@ -45,14 +48,23 @@ namespace Capa_de_Presentación
             this.EsteMesButton = new System.Windows.Forms.Button();
             this.Últimos7díasButton = new System.Windows.Forms.Button();
             this.HoyButton = new System.Windows.Forms.Button();
-            this.listadoDeVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.reporteDeVentasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ventasNetasPorPeríodoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listadoDeVentasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporteDeVentasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventasNetasPorPeríodoBindingSource)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // listadoDeVentasBindingSource
+            // 
+            this.listadoDeVentasBindingSource.DataSource = typeof(Capa_de_Dominio.ListadoDeVentas);
+            // 
+            // reporteDeVentasBindingSource
+            // 
+            this.reporteDeVentasBindingSource.DataSource = typeof(Capa_de_Dominio.ReporteDeVentas);
+            // 
+            // ventasNetasPorPeríodoBindingSource
+            // 
+            this.ventasNetasPorPeríodoBindingSource.DataSource = typeof(Capa_de_Dominio.VentasNetasPorPeríodo);
             // 
             // ReportViewer
             // 
@@ -70,7 +82,7 @@ namespace Capa_de_Presentación
             this.ReportViewer.Location = new System.Drawing.Point(147, 0);
             this.ReportViewer.Name = "ReportViewer";
             this.ReportViewer.ServerReport.BearerToken = null;
-            this.ReportViewer.Size = new System.Drawing.Size(747, 871);
+            this.ReportViewer.Size = new System.Drawing.Size(747, 416);
             this.ReportViewer.TabIndex = 0;
             // 
             // panel1
@@ -88,7 +100,7 @@ namespace Capa_de_Presentación
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(147, 871);
+            this.panel1.Size = new System.Drawing.Size(147, 416);
             this.panel1.TabIndex = 1;
             // 
             // HastaDateTimePicker
@@ -185,35 +197,23 @@ namespace Capa_de_Presentación
             this.HoyButton.UseVisualStyleBackColor = true;
             this.HoyButton.Click += new System.EventHandler(this.HoyButton_Click);
             // 
-            // listadoDeVentasBindingSource
-            // 
-            this.listadoDeVentasBindingSource.DataSource = typeof(Capa_de_Dominio.ListadoDeVentas);
-            // 
-            // reporteDeVentasBindingSource
-            // 
-            this.reporteDeVentasBindingSource.DataSource = typeof(Capa_de_Dominio.ReporteDeVentas);
-            // 
-            // ventasNetasPorPeríodoBindingSource
-            // 
-            this.ventasNetasPorPeríodoBindingSource.DataSource = typeof(Capa_de_Dominio.VentasNetasPorPeríodo);
-            // 
-            // ReporteForm
+            // ReporteDeVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 871);
+            this.ClientSize = new System.Drawing.Size(894, 416);
             this.Controls.Add(this.ReportViewer);
             this.Controls.Add(this.panel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ReporteForm";
+            this.Name = "ReporteDeVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte de Ventas";
             this.Load += new System.EventHandler(this.ReporteForm_Load);
-            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.listadoDeVentasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.reporteDeVentasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventasNetasPorPeríodoBindingSource)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
