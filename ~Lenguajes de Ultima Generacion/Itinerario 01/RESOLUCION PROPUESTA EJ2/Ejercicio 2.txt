@@ -1,0 +1,26 @@
+Ejercicio2
+
+ Una empresa de cable vende paquetes de promociones, los paquetes pueden incluir el/los canales exclusivos. De los canales se conoces las series, cantidad de temporadas, episodios, duración, ranking, género y director.
+
+ En el caso de que el paquete Premium el mimo se encarece en un 20 % el abono del cliente, mientas que si es silver se incrementa un 15% del abono. De los clientes se conoce el código de cliente, nombre, apellido, DNI y fecha de nacimiento.
+
+Se pide:
+
+Dibujar el diagrama de clases.
+Crear un formulario Windows MDI y SDI que muestre los resultados
+Los campos se llenan por formulario. (ABM necesarios)
+Informar que incluye cada paquete, con sus respectivas series, temporadas y los episodios de las mimas (cantidad y nombre), que paquete contrato cada cliente (en caso de contratarlo) y los importes de los paquetes incluidos los abonos.
+Informar el total recaudado mensualmente por la empresa.
+Informar cuál fue el paquete más vendido, mostrar paquete y series.
+Informar todos las series de ranking mayor a 3.5
+
+
+El sistema debe incluir:
+
+Namespacedistintos en 3 clases
+Regionespor lo menos en 2 clases
+Untipo Enum
+Utilizardistintos controles para mostrar los informes
+Utilizarjerarquía de herencia y polimorfismo.
+6. Uno de los constructores sea sobrecargado
+

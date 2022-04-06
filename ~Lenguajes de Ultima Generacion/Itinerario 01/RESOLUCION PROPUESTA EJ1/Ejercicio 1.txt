@@ -1,0 +1,62 @@
+
+Ejercicio 1
+
+-------------------------------------------------------------------------------
+
+Un banco nos ha solicitado una aplicación que permita gestionar las operaciones
+de las cuentas otorgadas a sus clientes. Las condiciones son las siguientes:
+
+    1) La entidad requiere para cada cliente los siguientes datos:
+        a. DNI. Se debe verificar que no está registrado en otro cliente
+        b. Nombre y apellido. Verificar que se complete este campo
+        c. Número de teléfono. Verificar que se complete este campo
+        d. Email para envío de notificaciones. Verificar que se complete este
+           campo
+        e. Fecha de Nacimiento para calcular la edad del cliente
+
+    2) El cliente puede solicitar más de una cuenta.
+
+    3) Cada cuenta solo puede tener asociado un único titular (que debe estar
+       registrado como cliente del banco).
+       Además:
+           a. Cada cuenta posee un código que la identifica y es único.
+           b. Posee un saldo en el cual es posible incorporar dinero mediante
+              una operación de depósito o retirar el mismo mediante una
+              extracción.
+
+    4) El banco ofrece 2 tipos de cuentas:
+        a. Caja de ahorro:
+           El cliente puede realizar extracciones siempre y cuando posea saldo
+           disponible y no supere el importe máximo permitido por extracción.
+        b. Cuenta Corriente:
+           El cliente puede realizar extracciones siempre y no supere el límite
+           de extracción en descubierto, es decir que se fija un tope de saldo
+           negativo dentro del cual puede realizar extracciones.
+
+-------------------------------------------------------------------------------
+
+Operaciones:
+
+1) El programa deberá permitir agregar nuevos clientes, modificar los datos de
+   los clientes existentes y eliminar aquellos que no posean cuentas asignadas.
+
+2) También deberá permitir agregar nuevas cuentas, modificar el titular de las
+   mismas o eliminar las cuentas que no posean saldo (saldo igual a cero). Una 
+   vez que se define un tipo de cuenta no es posible convertirla a otro tipo 
+   disponible (Ej: una caja de ahorro no podría convertirse a cuenta corriente)
+
+3) Los usuarios efectuaran en el sistema las operaciones de depósito y 
+   extracción de acuerdo a las características de la cuenta seleccionada:
+
+    a. La misma deberá actualizar el saldo de la cuenta de acuerdo a tipo e
+       importe afectado.
+
+    b. Se registrará en el sistema: fecha, tipo de operación e importe
+       afectado.
+
+-------------------------------------------------------------------------------
+
+El sistema deberá brindar la siguiente información:
+
+a) Listado de clientes de la entidad, en este listado es posible encontrar un
+   cliente buscando por número de documento o nombre.
