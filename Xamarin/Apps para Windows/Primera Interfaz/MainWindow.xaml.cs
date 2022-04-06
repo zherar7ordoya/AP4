@@ -23,26 +23,21 @@ namespace Primera_Interfaz
         public MainWindow()
         {
             InitializeComponent();
-            Grid grid = new Grid();
-            this.Content = grid;
-            Button button = new Button();
+        }
 
-            WrapPanel panel = new WrapPanel();
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Pulsaste el Botón 2");
+        }
 
-            TextBlock txt1 = new TextBlock();
-            txt1.Text = "Click";
-            panel.Children.Add(txt1);
+        private void panel_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Pulsaste el Panel");
+        }
 
-            TextBlock txt2 = new TextBlock();
-            txt2.Text = "Enviar";
-            panel.Children.Add(txt2);
-
-            TextBlock txt3 = new TextBlock();
-            txt3.Text = "Algo";
-            panel.Children.Add(txt3);
-
-            button.Content = panel;
-            grid.Children.Add(button);
+        private void panel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            Console.WriteLine("Pulsaste el Panel");
         }
     }
 }
