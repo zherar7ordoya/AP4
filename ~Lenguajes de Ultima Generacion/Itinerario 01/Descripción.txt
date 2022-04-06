@@ -1,1 +1,0 @@
-Resuelva el ejercicio y adjunte diagrama de clases y proyecto en Visual Studio .Net

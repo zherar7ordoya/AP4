@@ -1,7 +1,9 @@
 
-Ejercicio 1
+Resuelva el ejercicio y adjunte diagrama de clases y proyecto en Visual Studio.
 
 -------------------------------------------------------------------------------
+
+Ejercicio 1
 
 Un banco nos ha solicitado una aplicación que permita gestionar las operaciones
 de las cuentas otorgadas a sus clientes. Las condiciones son las siguientes:
