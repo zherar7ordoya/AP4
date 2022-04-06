@@ -7,21 +7,22 @@
         mc:Ignorable="d"
         Title="Primera Interfaz" 
         Height="400" 
-        Width="600">
+        Width="600" WindowStartupLocation="CenterScreen">
 
-    <Grid>
-        <Button>
-            <Button.Height>100</Button.Height>
-            <Button.Width>200</Button.Width>
-            <Button.FontSize>18</Button.FontSize>
-            <Button.Content>
-                <WrapPanel>
-                    <TextBlock Foreground="Red">Welcome!</TextBlock>
-                    <TextBlock Foreground="Green">Click me</TextBlock>
-                    <TextBlock Foreground="Blue">...and send</TextBlock>
-                </WrapPanel>
-            </Button.Content>
-        </Button>
-    </Grid>
-
+    <StackPanel x:Name="panel" PreviewMouseLeftButtonDown="panel_PreviewMouseLeftButtonDown">
+        <Button Content="Dale!" 
+                Margin="15"
+                Width="150"
+                HorizontalAlignment="Left"></Button>
+        <Button Content="CON EVENTO"
+                Margin="15"
+                Width="150"
+                HorizontalAlignment="Center"
+               Click="Button_Click"></Button>
+        <Button Content="Dale 3!"
+                Margin="15"
+                Width="150"
+                HorizontalAlignment="Right"></Button>
+    </StackPanel>
+    
 </Window>
