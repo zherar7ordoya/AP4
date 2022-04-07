@@ -158,7 +158,7 @@ namespace VISTA
                 return;
             }
             oCUENTA = (CUENTA)dgvCUENTAS.CurrentRow.DataBoundItem;
-            string IMPORTE = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el importe a depositar", "DEPOSITAR", "0");
+            string IMPORTE = Microsoft.VisualBasic.Interaction.InputBox("Ingrese el importe a depositar", "Extracciones", "0");
             if (IMPORTE != "0" && IMPORTE != "")
             {
                 try
