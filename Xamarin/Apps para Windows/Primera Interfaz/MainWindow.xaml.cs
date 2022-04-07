@@ -24,20 +24,5 @@ namespace Primera_Interfaz
         {
             InitializeComponent();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Console.WriteLine("Pulsaste el Botón 2");
-        }
-
-        private void panel_Click(object sender, RoutedEventArgs e)
-        {
-            Console.WriteLine("Pulsaste el Panel");
-        }
-
-        private void panel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            Console.WriteLine("Pulsaste el Panel");
-        }
     }
 }

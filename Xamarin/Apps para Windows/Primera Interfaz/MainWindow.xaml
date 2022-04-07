@@ -6,23 +6,23 @@
         xmlns:local="clr-namespace:Primera_Interfaz"
         mc:Ignorable="d"
         Title="Primera Interfaz" 
-        Height="400" 
-        Width="600" WindowStartupLocation="CenterScreen">
+        Height="450" 
+        Width="900" WindowStartupLocation="CenterScreen">
 
-    <StackPanel x:Name="panel" PreviewMouseLeftButtonDown="panel_PreviewMouseLeftButtonDown">
-        <Button Content="Dale!" 
-                Margin="15"
-                Width="150"
-                HorizontalAlignment="Left"></Button>
-        <Button Content="CON EVENTO"
-                Margin="15"
-                Width="150"
-                HorizontalAlignment="Center"
-               Click="Button_Click"></Button>
-        <Button Content="Dale 3!"
-                Margin="15"
-                Width="150"
-                HorizontalAlignment="Right"></Button>
-    </StackPanel>
+    <Grid>
+        <Button Height="150" Width="300" Content="XAML" Background="LightBlue">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="FontSize" Value="25"></Setter>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+    </Grid>
+
+    
     
 </Window>
