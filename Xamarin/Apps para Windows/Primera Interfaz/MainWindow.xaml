@@ -6,23 +6,29 @@
         xmlns:local="clr-namespace:Primera_Interfaz"
         mc:Ignorable="d"
         Title="Primera Interfaz" 
-        Height="450" 
-        Width="900" WindowStartupLocation="CenterScreen">
+        Height="250" 
+        Width="400" WindowStartupLocation="CenterScreen">
 
-    <Grid>
-        <Button Height="150" Width="300" Content="XAML" Background="LightBlue">
-            <Button.Style>
-                <Style TargetType="Button">
-                    <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="FontSize" Value="25"></Setter>
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
-    </Grid>
+    <StackPanel>
+        <Label Content="Nombre"></Label>
+        <TextBox Width="100"
+                 Height="30"
+                 Text="{ Binding Path=Nombre, Mode=TwoWay}">
+        </TextBox>
 
-    
-    
+        <Label Content="Apellido"></Label>
+        <TextBox Width="100"
+                 Height="30"
+                 Text="{ Binding Path=Apellido, Mode=TwoWay}">
+        </TextBox>
+
+        <Label Content="Nombre y Apellido"></Label>
+        <TextBox Width="100"
+                 Height="30"
+                 Text="{ Binding Path=Nombre_Completo, Mode=TwoWay}">
+        </TextBox>
+    </StackPanel>
+
+
+
 </Window>

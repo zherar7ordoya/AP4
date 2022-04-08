@@ -20,14 +20,13 @@ namespace Primera_Interfaz
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow() => InitializeComponent();
+        public JuntaNombre JuntaNombreYApellido;
 
-        public int MiProperty
+        public MainWindow()
         {
-            get { return (int)GetValue(MiDependencyProperty); }
-            set { SetValue(MiDependencyProperty, value); }
+            InitializeComponent();
+            JuntaNombreYApellido = new JuntaNombre { Nombre = "Juan", Apellido = "Díaz" };
+            this.DataContext = JuntaNombreYApellido;
         }
-
-        public static readonly DependencyProperty MiDependencyProperty = DependencyProperty.Register("MiProperty", typeof(int), typeof(MainWindow), new PropertyMetadata(0));
     }
 }
