@@ -51,6 +51,15 @@ namespace VISTA
                 return;
             }
 
+            foreach(var cliente in oBANCO.CLIENTES)
+            {
+                if (cliente.DNI == Convert.ToInt32(txtDNI.Text))
+                {
+                    MessageBox.Show("Ya existe...");
+                    return;
+                }
+            }
+
             if (string.IsNullOrWhiteSpace(txtNOMBRE.Text))
             {
                 MessageBox.Show("Ingrese el nombre del cliente");
