@@ -20,9 +20,14 @@ namespace Primera_Interfaz
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow() => InitializeComponent();
+
+        public int MiProperty
         {
-            InitializeComponent();
+            get { return (int)GetValue(MiDependencyProperty); }
+            set { SetValue(MiDependencyProperty, value); }
         }
+
+        public static readonly DependencyProperty MiDependencyProperty = DependencyProperty.Register("MiProperty", typeof(int), typeof(MainWindow), new PropertyMetadata(0));
     }
 }
