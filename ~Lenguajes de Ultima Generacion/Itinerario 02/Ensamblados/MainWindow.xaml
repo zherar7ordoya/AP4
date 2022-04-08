@@ -6,7 +6,9 @@
         mc:Ignorable="d"
         Title="Corazones" 
         Height="250" 
-        Width="550" WindowStartupLocation="CenterScreen" Icon="icon.jpg">
+        Width="550"
+        WindowStartupLocation="CenterScreen"
+        Icon="icon.jpg">
 
         <Button VerticalAlignment="Center"
                 HorizontalAlignment="Center"

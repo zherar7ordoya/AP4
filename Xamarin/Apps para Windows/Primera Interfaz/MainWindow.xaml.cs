@@ -25,7 +25,7 @@ namespace Primera_Interfaz
         public MainWindow()
         {
             InitializeComponent();
-            JuntaNombreYApellido = new JuntaNombre { Nombre = "Juan", Apellido = "Díaz" };
+            JuntaNombreYApellido = new JuntaNombre { Nombre = "Gerardo", Apellido = "Tordoya" };
             this.DataContext = JuntaNombreYApellido;
         }
     }

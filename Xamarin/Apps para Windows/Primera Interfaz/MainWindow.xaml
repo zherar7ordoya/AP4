@@ -3,32 +3,69 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Primera_Interfaz"
         mc:Ignorable="d"
         Title="Primera Interfaz" 
-        Height="250" 
+        Height="200" 
         Width="400" WindowStartupLocation="CenterScreen">
 
-    <StackPanel>
-        <Label Content="Nombre"></Label>
-        <TextBox Width="100"
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0"
+               Grid.Row="0"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Right"
+               Content="Nombre:" />
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="0"
+                 Width="175"
                  Height="30"
-                 Text="{ Binding Path=Nombre, Mode=TwoWay}">
-        </TextBox>
+                 FontSize="14"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Text="{ Binding Path=Nombre, Mode=TwoWay}" />
 
-        <Label Content="Apellido"></Label>
-        <TextBox Width="100"
+        <Label Grid.Column="0"
+               Grid.Row="1"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Right"
+               Content="Apellido:" />
+
+        <TextBox Grid.Column="1"
+                 Grid.Row="1"
+                 Width="175"
                  Height="30"
-                 Text="{ Binding Path=Apellido, Mode=TwoWay}">
-        </TextBox>
+                 FontSize="14"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Text="{ Binding Path=Apellido, Mode=TwoWay}" />
 
-        <Label Content="Nombre y Apellido"></Label>
-        <TextBox Width="100"
-                 Height="30"
-                 Text="{ Binding Path=Nombre_Completo, Mode=TwoWay}">
-        </TextBox>
-    </StackPanel>
+        <Label Grid.Column="0"
+               Grid.Row="2"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Right"
+               Content="Nombre y Apellido:" />
 
-
+        <TextBox Grid.Column="1"
+                 Grid.Row="2"
+                 Width="175"
+                 Height="35"
+                 FontSize="14"
+                 FontWeight="Bold"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Text="{ Binding Path=Nombre_Completo, Mode=TwoWay}" />
+    </Grid>
 
 </Window>
