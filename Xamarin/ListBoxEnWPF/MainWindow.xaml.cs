@@ -32,7 +32,7 @@ namespace ListBoxEnWPF
                 Poblacion2 = "Barcelona",
                 Temperatura1 = 15,
                 Temperatura2 = 17,
-                Diferencia = 3
+                // Diferencia = 3
             });
             poblaciones.Add(new Poblaciones
             {
@@ -40,7 +40,7 @@ namespace ListBoxEnWPF
                 Poblacion2 = "Alicane",
                 Temperatura1 = 19,
                 Temperatura2 = 20,
-                Diferencia = 6
+                // Diferencia = 6
             });
             poblaciones.Add(new Poblaciones
             {
@@ -48,7 +48,7 @@ namespace ListBoxEnWPF
                 Poblacion2 = "Bilbao",
                 Temperatura1 = 20,
                 Temperatura2 = 7,
-                Diferencia = -3
+                // Diferencia = -3
             });
             poblaciones.Add(new Poblaciones
             {
@@ -56,7 +56,7 @@ namespace ListBoxEnWPF
                 Poblacion2 = "Coruña",
                 Temperatura1 = 22,
                 Temperatura2 = 8,
-                Diferencia = -6
+                // Diferencia = -6
             });
 
             ListaPoblaciones.ItemsSource = poblaciones;
