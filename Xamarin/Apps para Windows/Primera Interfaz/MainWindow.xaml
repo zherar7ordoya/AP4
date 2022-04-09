@@ -6,7 +6,8 @@
         mc:Ignorable="d"
         Title="Primera Interfaz" 
         Height="200" 
-        Width="400" WindowStartupLocation="CenterScreen">
+        Width="400"
+        WindowStartupLocation="CenterScreen">
 
 
     <Grid>
