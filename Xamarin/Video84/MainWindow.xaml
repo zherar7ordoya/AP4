@@ -1,0 +1,58 @@
+﻿<Window x:Class="Video84.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Video84"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0"  Margin="100">
+            <ComboBox Name="Capitales">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding NombreCapital}"  FontSize="16"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="100">
+            <Label FontSize="16" FontWeight="Bold">Países</Label>
+            <CheckBox Name="TodosLosCB" 
+                      IsThreeState="True" 
+                      Content="Agregar Todas"
+                      Checked="TodosLosCB_CheckedChanged"
+                      Unchecked="TodosLosCB_CheckedChanged" />
+            <StackPanel Margin="10">
+                <CheckBox Name="Madrid" 
+                          Content="Madrid" 
+                          Checked="Capital_CheckedChanged"
+                          Unchecked="Capital_CheckedChanged" />
+                <CheckBox Name="Bogotá" 
+                          Content="Bogotá" 
+                          Checked="Capital_CheckedChanged"
+                          Unchecked="Capital_CheckedChanged" />
+                <CheckBox Name="Lima" 
+                          Content="Lima" 
+                          Checked="Capital_CheckedChanged"
+                          Unchecked="Capital_CheckedChanged" />
+                <CheckBox Name="DF" 
+                          Content="DF"
+                          Checked="Capital_CheckedChanged"
+                          Unchecked="Capital_CheckedChanged" />
+                <CheckBox Name="Santiago" 
+                          Content="Santiago" 
+                          Checked="Capital_CheckedChanged" 
+                          Unchecked="Capital_CheckedChanged" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
