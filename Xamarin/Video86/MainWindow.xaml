@@ -1,0 +1,45 @@
+﻿<Window x:Class="Video86.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Video86"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="600">
+    <Grid Margin="0,0,0,57">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="Semáforo"
+                   FontSize="45"
+                   TextAlignment="Center"
+                   Foreground="BlueViolet"/>
+
+        <StackPanel Grid.Row="1" Margin="0,0,0,52">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="0">
+                    <RadioButton Click="RadioRojo_Click" Margin="50, 100, 50, 10" Content="Rojo" />
+                    <RadioButton Click="RadioAmarillo_Click" Margin="50, 10, 50, 10" Content="Amarillo" />
+                    <RadioButton Click="RadioVerde_Click" Margin="50, 10, 50, 100" Content="Verde" />
+                </StackPanel>
+
+                <Grid Grid.Column="1">
+                    <Image Margin="0,0,0,300" Source="C:\Documents\AP4\Xamarin\Video86\semaforo.png"/>
+                    <Ellipse Visibility="Hidden" Name="eRojo" Width="90" Height="90" Fill="Red" Margin="100,60,96,540" />
+                    <Ellipse Visibility="Hidden" Name="eAmarillo" Width="90" Height="90" Fill="Yellow" Margin="100,165,96,435"  />
+                    <Ellipse Visibility="Hidden" Name="eVerde" Width="90" Height="90" Fill="Green" Margin="100,268,96,330" />
+                </Grid>
+
+                
+            </Grid>
+        </StackPanel>
+    </Grid>
+</Window>
