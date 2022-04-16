@@ -30,6 +30,7 @@ if NOT EXIST Locker goto MDLOCKER
     ren "Control Panel.{21EC2020-3AEA-1069-A2DD-08002B30309D}" Locker
     echo Folder unlocked successfully
     cd Locker
+    echo You can now close this window
     Brave
     goto End
 
