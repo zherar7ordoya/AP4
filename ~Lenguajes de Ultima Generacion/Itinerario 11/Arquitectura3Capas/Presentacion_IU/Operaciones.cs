@@ -1,5 +1,4 @@
-﻿//#error version
-
+﻿
 using System;
 using System.Windows.Forms;
 using Reglas_de_Negocio_BLL;

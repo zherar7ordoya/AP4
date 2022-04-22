@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Presentacion_IU
@@ -15,7 +10,8 @@ namespace Presentacion_IU
         public FrmEquipo()
         {
             InitializeComponent();
-            //intancio la lista de tecnico y equipos en el constructor del form
+
+            // Instancio la lista de técnicos y equipos en el constructor del Form
             LTecnico = new List<ClsTecnico>();
             LEquipo = new List<ClsEquipo>();
         }

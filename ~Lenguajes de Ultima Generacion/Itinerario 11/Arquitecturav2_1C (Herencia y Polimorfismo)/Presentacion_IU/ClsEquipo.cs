@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Presentacion_IU
 {
     public class ClsEquipo
     {
+
         #region "Propiedades"
         public string Nombre { get; set; }
         public string Color { get; set; }
@@ -18,7 +15,6 @@ namespace Presentacion_IU
         //relacion de 1 a muchos
         internal List<ClsJugador> ListaJugadores = new List<ClsJugador>();
         #endregion
-
      
 
         #region "Metodos"
@@ -28,10 +24,12 @@ namespace Presentacion_IU
 
             foreach (ClsJugador jugador in ListaJugadores)
             {
-                ptos = jugador.ObtenerPuntaje() + ptos;
+                ptos += jugador.ObtenerPuntaje();
             }
+
             return ptos;
         }
         #endregion
+
     }
 }

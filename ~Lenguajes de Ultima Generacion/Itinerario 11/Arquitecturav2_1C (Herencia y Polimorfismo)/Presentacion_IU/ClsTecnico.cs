@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Presentacion_IU
 {
@@ -15,7 +11,7 @@ namespace Presentacion_IU
 
         public int DNI { get; set; }
 
-        #region "cosntructores"
+        #region Constructores
         //constructor vacio
         public ClsTecnico() { }
 
