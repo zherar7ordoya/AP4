@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataAccessLayerUtility.cs" />
+    <Compile Include="DataAccessLayerCatalogo.cs" />
+    <Compile Include="DataAccessLayerEmpleado.cs" />
+    <Compile Include="DataAccessLayerUtilidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
