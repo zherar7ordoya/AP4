@@ -1,0 +1,32 @@
+PSO
+
+	Categorias
+	PK	Id_Categoria
+		Nombre
+		Descripcion
+
+	Productos
+	PK	Id_Producto
+	FK	Id_Categoria
+		Nombre
+		Descripcion
+		Precio
+
+	Empleados
+	PK	Id_Empleado
+		Usuario
+		Contraseña
+
+
+
+---
+
+PA
+RealizarPedido(string @orden)
+
+The DALOrder class contains the PlaceOrder method that receives an XML order string from the Order class and passes it into a stored procedure in the SQL Server database.
+*The stored procedure updates the database and passes back the order number*
+This order number is then returned to the Order class, which in turn passes it back to the client.
+
+---
+
