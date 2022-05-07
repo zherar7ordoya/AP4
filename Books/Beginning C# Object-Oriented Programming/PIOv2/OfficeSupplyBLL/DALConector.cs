@@ -1,9 +1,8 @@
-﻿using System;
-using System.Configuration;
+﻿using System.Configuration;
 
 namespace OfficeSupplyBLL
 {
-    public static class DALUtility
+    public static class DALConector
     {
         public static string GetSQLConnection(string name)
         {

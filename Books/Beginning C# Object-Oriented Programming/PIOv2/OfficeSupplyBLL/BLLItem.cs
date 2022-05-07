@@ -3,14 +3,14 @@ using System.ComponentModel;
 
 namespace OfficeSupplyBLL
 {
-    public class OrderItem : INotifyPropertyChanged
+    public class BLLItem : INotifyPropertyChanged
     {
 
         #region INotifyPropertyChanged Members
         public event PropertyChangedEventHandler PropertyChanged;
         protected void Notify(string propName)
         {
-            if (this.PropertyChanged != null)
+            if (PropertyChanged != null)
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propName));
             }
@@ -44,7 +44,7 @@ namespace OfficeSupplyBLL
         {
             get { return _SubTotal; }
         }
-        public OrderItem(String productID, double unitPrice, int quantity)
+        public BLLItem(String productID, double unitPrice, int quantity)
         {
             _ProdID = productID;
             _UnitPrice = unitPrice;

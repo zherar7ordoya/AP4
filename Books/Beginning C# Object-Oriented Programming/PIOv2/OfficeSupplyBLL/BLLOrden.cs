@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 
 namespace OfficeSupplyBLL
 {
-    public class Order
+    public class BLLOrden
     {
 
-        ObservableCollection<OrderItem> _orderItemList = new
-            ObservableCollection<OrderItem>();
+        ObservableCollection<BLLItem> _orderItemList = new
+            ObservableCollection<BLLItem>();
 
-        public ObservableCollection<OrderItem> OrderItemList
+        public ObservableCollection<BLLItem> ItemsList
         {
             get { return _orderItemList; }
         }
-        public void AddItem(OrderItem orderItem)
+        public void AddItem(BLLItem orderItem)
         {
             foreach (var item in _orderItemList)
             {
@@ -62,7 +61,7 @@ namespace OfficeSupplyBLL
                 xmlOrder += item.ToString();
             }
             xmlOrder += "</Order>";
-            DALOrder dbOrder = new DALOrder();
+            DALOrden dbOrder = new DALOrden();
             return dbOrder.PlaceOrder(xmlOrder);
         }
     }

@@ -1,84 +1,65 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 using System.Data;
 using OfficeSupplyBLL;
-using System.Collections.ObjectModel;
 
-namespace OfficeSupplyWPF
+namespace UIInsumosOficina
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+        DataSet _catalogo;
+        BLLEmpleado _empleado;
+        BLLOrden _orden;
 
-        DataSet _dsProdCat;
-        Employee _employee;
-        Order _order;
+        public MainWindow() => InitializeComponent();
 
-
-        public MainWindow()
+        private void Despegue(object sender, RoutedEventArgs e)
         {
-            InitializeComponent();
-
+            BLLCatalogo catalogo = new BLLCatalogo();
+            _catalogo = catalogo.ObtenerInfoProducto();
+            DataContext = _catalogo.Tables["Categorias"];
+            _orden = new BLLOrden();
+            _empleado = new BLLEmpleado();
+            OrdenesListView.ItemsSource = _orden.ItemsList;
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            ProductCatalog prodCat = new ProductCatalog();
-            _dsProdCat = prodCat.GetProductInfo();
-            this.DataContext = _dsProdCat.Tables["Categorias"];
-            _order = new Order();
-            _employee = new Employee();
-            this.orderListView.ItemsSource = _order.OrderItemList;
-        }
-
-        private void loginButton_Click(object sender, RoutedEventArgs e)
+        private void Login_Click(object sender, RoutedEventArgs e)
         {
 
-            LoginDialog dlg = new LoginDialog();
-            dlg.Owner = this;
-            dlg.ShowDialog();
-            // Process data entered by user if dialog box is accepted
-            if (dlg.DialogResult == true)
+            LoginDialogo ldialogo = new LoginDialogo();
+            ldialogo.Owner = this;
+            ldialogo.ShowDialog();
+
+            if (ldialogo.DialogResult == true)
             {
-                _employee.LoginName = dlg.nameTextBox.Text;
-                _employee.Password = dlg.passwordTextBox.Password;
-                if (_employee.LogIn() == true)
+                _empleado.Usuario = ldialogo.NombreTextBox.Text;
+                _empleado.Contraseña = ldialogo.ContraseñaTextBox.Password;
+                if (_empleado.Login() == true)
                 {
-                    this.statusTextBlock.Text = "You are logged in as employee number " +
-                      _employee.EmployeeID.ToString();
+                    EstadoTextBlock.Text = "Está logueado como empleado código " +
+                      _empleado.EmployeeID.ToString();
                 }
                 else
                 {
-                    MessageBox.Show("You could not be verified. Please try again.");
+                    MessageBox.Show("Necesita identificarse. Intente otra vez.");
                 }
             }
         }
 
-        private void exitButton_Click(object sender, RoutedEventArgs e)
+        private void Salir_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
         {
 
-            OrderItemDialog orderItemDialog = new OrderItemDialog();
+            ItemDialogo orderItemDialog = new ItemDialogo();
 
             DataRowView selectedRow;
-            selectedRow = (DataRowView)this.ProductsDataGrid.SelectedItems[0];
+            selectedRow = (DataRowView)ProductsDataGrid.SelectedItems[0];
             orderItemDialog.productIdTextBox.Text = selectedRow.Row.ItemArray[0].ToString();
             orderItemDialog.unitPriceTextBox.Text = selectedRow.Row.ItemArray[4].ToString();
             orderItemDialog.Owner = this;
@@ -88,32 +69,32 @@ namespace OfficeSupplyWPF
                 string productId = orderItemDialog.productIdTextBox.Text;
                 double unitPrice = double.Parse(orderItemDialog.unitPriceTextBox.Text);
                 int quantity = int.Parse(orderItemDialog.quantityTextBox.Text);
-                _order.AddItem(new OrderItem(productId, unitPrice, quantity));
+                _orden.AddItem(new BLLItem(productId, unitPrice, quantity));
             }
         }
 
-        private void removeButton_Click(object sender, RoutedEventArgs e)
+        private void Quitar_Click(object sender, RoutedEventArgs e)
         {
-            if (this.orderListView.SelectedItem != null)
+            if (OrdenesListView.SelectedItem != null)
             {
-                var selectedOrderItem = this.orderListView.SelectedItem as OrderItem;
-                _order.RemoveItem(selectedOrderItem.ProdID);
+                var selectedOrderItem = OrdenesListView.SelectedItem as BLLItem;
+                _orden.RemoveItem(selectedOrderItem.ProdID);
             }
         }
 
-        private void placeOrderButton_Click(object sender, RoutedEventArgs e)
+        private void RealizarPedido_Click(object sender, RoutedEventArgs e)
         {
-            if (_employee.LoggedIn == true)
+            if (_empleado.LoggedIn == true)
             {
                 //place order
                 int orderId;
-                orderId = _order.PlaceOrder(_employee.EmployeeID);
-                MessageBox.Show("Your order has been placed. Your order id is " +
+                orderId = _orden.PlaceOrder(_empleado.EmployeeID);
+                MessageBox.Show("Pedido efectuado con código de orden " +
                      orderId.ToString());
             }
             else
             {
-                MessageBox.Show("You must be logged in to place an order.");
+                MessageBox.Show("Debe estar logueado para realizar un pedido.");
             }
         }
     }

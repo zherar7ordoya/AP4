@@ -2,7 +2,7 @@
 
 namespace OfficeSupplyBLL
 {
-    public class Employee
+    public class BLLEmpleado
     {
         int _employeeID;
 
@@ -14,14 +14,14 @@ namespace OfficeSupplyBLL
 
         string _loginName;
 
-        public string LoginName
+        public string Usuario
         {
             get { return _loginName; }
             set { _loginName = value; }
         }
         string _password;
 
-        public string Password
+        public string Contraseña
         {
             get { return _password; }
             set { _password = value; }
@@ -33,20 +33,20 @@ namespace OfficeSupplyBLL
             get { return _loggedIn; }
         }
 
-        public Boolean LogIn()
+        public Boolean Login()
         {
-            DALEmployee dbEmp = new DALEmployee();
+            DALEmpleado dbEmp = new DALEmpleado();
             int empId;
-            empId = dbEmp.LogIn(this.LoginName, this.Password);
+            empId = dbEmp.LogIn(Usuario, Contraseña);
             if (empId > 0)
             {
-                this.EmployeeID = empId;
-                this._loggedIn = true;
+                EmployeeID = empId;
+                _loggedIn = true;
                 return true;
             }
             else
             {
-                this._loggedIn = false;
+                _loggedIn = false;
                 return false;
             }
 

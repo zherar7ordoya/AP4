@@ -1,12 +1,11 @@
-﻿using System;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 namespace OfficeSupplyBLL
 {
-    class DALEmployee
+    class DALEmpleado
     {
         public int LogIn(string username, string password)
         {
-            string connString = DALUtility.GetSQLConnection("ConexionConBBDD");
+            string connString = DALConector.GetSQLConnection("ConexionConBBDD");
             using (SqlConnection conn = new SqlConnection(connString))
 
             {

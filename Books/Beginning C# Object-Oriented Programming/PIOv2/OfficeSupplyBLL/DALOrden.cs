@@ -1,14 +1,13 @@
-﻿using System;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace OfficeSupplyBLL
 {
-    class DALOrder
+    class DALOrden
     {
         public int PlaceOrder(string xmlOrder)
         {
-            string connString = DALUtility.GetSQLConnection("ConexionConBBDD");
+            string connString = DALConector.GetSQLConnection("ConexionConBBDD");
             using (SqlConnection cn = new SqlConnection(connString))
             {
                 using (SqlCommand cmd = cn.CreateCommand())

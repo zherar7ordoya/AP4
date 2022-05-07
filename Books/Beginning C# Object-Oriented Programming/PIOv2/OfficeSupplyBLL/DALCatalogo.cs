@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OfficeSupplyBLL
 {
-    public class DALProductCatalog
+    public class DALCatalogo
     {
         public DataSet GetProductInfo()
         {
             DataSet _dsProducts;
-            string connString = DALUtility.GetSQLConnection("ConexionConBBDD");
+            string connString = DALConector.GetSQLConnection("ConexionConBBDD");
             using (SqlConnection _conn = new SqlConnection(connString))
             {
                 _dsProducts = new DataSet("Productos");
