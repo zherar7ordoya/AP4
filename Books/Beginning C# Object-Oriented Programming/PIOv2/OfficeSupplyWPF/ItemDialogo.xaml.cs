@@ -2,9 +2,6 @@
 
 namespace UIInsumosOficina
 {
-    /// <summary>
-    /// Interaction logic for OrderItemDialog.xaml
-    /// </summary>
     public partial class ItemDialogo : Window
     {
         public ItemDialogo()
@@ -12,7 +9,7 @@ namespace UIInsumosOficina
             InitializeComponent();
         }
 
-        private void OK_Click(object sender, RoutedEventArgs e)
+        private void Aceptar_Click(object sender, RoutedEventArgs e)
         {
             DialogResult = true;
         }

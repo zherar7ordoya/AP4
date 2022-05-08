@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace OfficeSupplyBLL
+namespace BLLInsumosOficina
 {
     public class BLLCatalogo
     {

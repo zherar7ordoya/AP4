@@ -1,61 +1,60 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace OfficeSupplyBLL
+namespace BLLInsumosOficina
 {
     public class BLLItem : INotifyPropertyChanged
     {
-
-        #region INotifyPropertyChanged Members
         public event PropertyChangedEventHandler PropertyChanged;
-        protected void Notify(string propName)
+        protected void Notify(string propiedad)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propiedad));
         }
-        #endregion
 
-        string _ProdID;
-        int _Quantity;
-        double _UnitPrice;
-        double _SubTotal;
-        public string ProdID
+        string _idProducto;
+        public string IdProducto
         {
-            get { return _ProdID; }
-            set { _ProdID = value; }
+            get { return _idProducto; }
+            set { _idProducto = value; }
         }
-        public int Quantity
+
+        int _cantidad;
+        public int Cantidad
         {
-            get { return _Quantity; }
+            get { return _cantidad; }
             set
             {
-                _Quantity = value;
-                Notify("Quantity");
+                _cantidad = value;
+                Notify("Cantidad");
             }
         }
-        public double UnitPrice
+
+        double _precio;
+        public double Precio
         {
-            get { return _UnitPrice; }
-            set { _UnitPrice = value; }
+            get { return _precio; }
+            set { _precio = value; }
         }
-        public double SubTotal
+
+        readonly double _total;
+        public double Total
         {
-            get { return _SubTotal; }
+            get { return _total; }
         }
-        public BLLItem(String productID, double unitPrice, int quantity)
+
+        public BLLItem(String idProducto, double precio, int cantidad)
         {
-            _ProdID = productID;
-            _UnitPrice = unitPrice;
-            _Quantity = quantity;
-            _SubTotal = _UnitPrice * _Quantity;
+            _idProducto = idProducto;
+            _precio = precio;
+            _cantidad = cantidad;
+            _total = _precio * _cantidad;
         }
+
         public override string ToString()
         {
-            string xml = "<OrderItem";
-            xml += " ProductID='" + _ProdID + "'";
-            xml += " Quantity='" + _Quantity + "'";
+            string xml = "<Item";
+            xml += " IdProducto='" + _idProducto + "'";
+            xml += " Cantidad='" + _cantidad + "'";
             xml += " />";
             return xml;
         }

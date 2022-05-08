@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace OfficeSupplyBLL
+namespace BLLInsumosOficina
 {
     public class DALCatalogo
     {

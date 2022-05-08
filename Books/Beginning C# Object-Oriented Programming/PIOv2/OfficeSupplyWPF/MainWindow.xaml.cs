@@ -1,12 +1,9 @@
 ﻿using System.Windows;
 using System.Data;
-using OfficeSupplyBLL;
+using BLLInsumosOficina;
 
 namespace UIInsumosOficina
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         DataSet _catalogo;
@@ -27,19 +24,22 @@ namespace UIInsumosOficina
 
         private void Login_Click(object sender, RoutedEventArgs e)
         {
-
-            LoginDialogo ldialogo = new LoginDialogo();
-            ldialogo.Owner = this;
-            ldialogo.ShowDialog();
-
-            if (ldialogo.DialogResult == true)
+            LoginDialogo dialogo = new LoginDialogo
             {
-                _empleado.Usuario = ldialogo.NombreTextBox.Text;
-                _empleado.Contraseña = ldialogo.ContraseñaTextBox.Password;
+                Owner = this
+            };
+
+            dialogo.ShowDialog();
+
+            if (dialogo.DialogResult == true)
+            {
+                _empleado.Usuario = dialogo.NombreTextBox.Text;
+                _empleado.Contraseña = dialogo.ContraseñaTextBox.Password;
                 if (_empleado.Login() == true)
                 {
-                    EstadoTextBlock.Text = "Está logueado como empleado código " +
-                      _empleado.EmployeeID.ToString();
+                    EstadoTextBlock.Text =
+                        "Está logueado como empleado código " +
+                        _empleado.IdEmpleado.ToString();
                 }
                 else
                 {
@@ -53,23 +53,22 @@ namespace UIInsumosOficina
             Close();
         }
 
-        private void addButton_Click(object sender, RoutedEventArgs e)
+        private void Agregar_Click(object sender, RoutedEventArgs e)
         {
+            ItemDialogo dialogo = new ItemDialogo();
 
-            ItemDialogo orderItemDialog = new ItemDialogo();
-
-            DataRowView selectedRow;
-            selectedRow = (DataRowView)ProductsDataGrid.SelectedItems[0];
-            orderItemDialog.productIdTextBox.Text = selectedRow.Row.ItemArray[0].ToString();
-            orderItemDialog.unitPriceTextBox.Text = selectedRow.Row.ItemArray[4].ToString();
-            orderItemDialog.Owner = this;
-            orderItemDialog.ShowDialog();
-            if (orderItemDialog.DialogResult == true)
+            DataRowView fila;
+            fila = (DataRowView)ProductosDataGrid.SelectedItems[0];
+            dialogo.IdProductoTextBox.Text = fila.Row.ItemArray[0].ToString();
+            dialogo.PrecioTextBox.Text = fila.Row.ItemArray[4].ToString();
+            dialogo.Owner = this;
+            dialogo.ShowDialog();
+            if (dialogo.DialogResult == true)
             {
-                string productId = orderItemDialog.productIdTextBox.Text;
-                double unitPrice = double.Parse(orderItemDialog.unitPriceTextBox.Text);
-                int quantity = int.Parse(orderItemDialog.quantityTextBox.Text);
-                _orden.AddItem(new BLLItem(productId, unitPrice, quantity));
+                string idProducto = dialogo.IdProductoTextBox.Text;
+                double precio = double.Parse(dialogo.PrecioTextBox.Text);
+                int cantidad = int.Parse(dialogo.CantidadTextBox.Text);
+                _orden.AgregarItem(new BLLItem(idProducto, precio, cantidad));
             }
         }
 
@@ -77,20 +76,18 @@ namespace UIInsumosOficina
         {
             if (OrdenesListView.SelectedItem != null)
             {
-                var selectedOrderItem = OrdenesListView.SelectedItem as BLLItem;
-                _orden.RemoveItem(selectedOrderItem.ProdID);
+                var item = OrdenesListView.SelectedItem as BLLItem;
+                _orden.QuitarItem(item.IdProducto);
             }
         }
 
         private void RealizarPedido_Click(object sender, RoutedEventArgs e)
         {
-            if (_empleado.LoggedIn == true)
+            if (_empleado.Logueado == true)
             {
-                //place order
-                int orderId;
-                orderId = _orden.PlaceOrder(_empleado.EmployeeID);
-                MessageBox.Show("Pedido efectuado con código de orden " +
-                     orderId.ToString());
+                int id;
+                id = _orden.RealizarPedido(_empleado.IdEmpleado);
+                MessageBox.Show("Pedido efectuado con código de orden " + id.ToString());
             }
             else
             {

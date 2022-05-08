@@ -7,8 +7,8 @@
     <ProjectGuid>{9A35EE58-7BFC-438D-938D-932558E42565}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OfficeSupplyBLL</RootNamespace>
-    <AssemblyName>OfficeSupplyBLL</AssemblyName>
+    <RootNamespace>BLLInsumosOficina</RootNamespace>
+    <AssemblyName>BLLInsumosOficina</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

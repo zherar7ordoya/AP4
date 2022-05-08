@@ -1,11 +1,11 @@
 ﻿using System.Data;
 using System.Data.SqlClient;
 
-namespace OfficeSupplyBLL
+namespace BLLInsumosOficina
 {
     class DALOrden
     {
-        public int PlaceOrder(string xmlOrder)
+        public int RealizarPedido(string xmlOrder)
         {
             string connString = DALConector.GetSQLConnection("ConexionConBBDD");
             using (SqlConnection cn = new SqlConnection(connString))
@@ -14,15 +14,19 @@ namespace OfficeSupplyBLL
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.CommandText = "up_PlaceOrder";
-                    SqlParameter inParameter = new SqlParameter();
-                    inParameter.ParameterName = "@xmlOrder";
-                    inParameter.Value = xmlOrder;
-                    inParameter.DbType = DbType.String;
-                    inParameter.Direction = ParameterDirection.Input;
+                    SqlParameter inParameter = new SqlParameter
+                    {
+                        ParameterName = "@xmlOrder",
+                        Value = xmlOrder,
+                        DbType = DbType.String,
+                        Direction = ParameterDirection.Input
+                    };
                     cmd.Parameters.Add(inParameter);
-                    SqlParameter ReturnParameter = new SqlParameter();
-                    ReturnParameter.ParameterName = "@OrderID";
-                    ReturnParameter.Direction = ParameterDirection.ReturnValue;
+                    SqlParameter ReturnParameter = new SqlParameter
+                    {
+                        ParameterName = "@OrderID",
+                        Direction = ParameterDirection.ReturnValue
+                    };
                     cmd.Parameters.Add(ReturnParameter);
                     int intOrderNo;
                     cn.Open();

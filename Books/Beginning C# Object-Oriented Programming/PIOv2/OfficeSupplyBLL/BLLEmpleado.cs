@@ -1,55 +1,52 @@
 ﻿using System;
 
-namespace OfficeSupplyBLL
+namespace BLLInsumosOficina
 {
     public class BLLEmpleado
     {
-        int _employeeID;
-
-        public int EmployeeID
+        int _idEmpleado;
+        public int IdEmpleado
         {
-            get { return _employeeID; }
-            set { _employeeID = value; }
+            get { return _idEmpleado; }
+            set { _idEmpleado = value; }
         }
 
-        string _loginName;
-
+        string _usuario;
         public string Usuario
         {
-            get { return _loginName; }
-            set { _loginName = value; }
+            get { return _usuario; }
+            set { _usuario = value; }
         }
-        string _password;
 
+        string _contraseña;
         public string Contraseña
         {
-            get { return _password; }
-            set { _password = value; }
+            get { return _contraseña; }
+            set { _contraseña = value; }
         }
-        Boolean _loggedIn = false;
 
-        public Boolean LoggedIn
+        Boolean _logueado = false;
+        public Boolean Logueado
         {
-            get { return _loggedIn; }
+            get { return _logueado; }
         }
 
         public Boolean Login()
         {
-            DALEmpleado dbEmp = new DALEmpleado();
-            int empId;
-            empId = dbEmp.LogIn(Usuario, Contraseña);
-            if (empId > 0)
+            DALEmpleado empleado = new DALEmpleado();
+            int id;
+            id = empleado.LogIn(Usuario, Contraseña);
+            if (id > 0)
             {
-                EmployeeID = empId;
-                _loggedIn = true;
+                IdEmpleado = id;
+                _logueado = true;
                 return true;
             }
             else
             {
-                _loggedIn = false;
+                _logueado = false;
                 return false;
             }
-
         }
     }
 }

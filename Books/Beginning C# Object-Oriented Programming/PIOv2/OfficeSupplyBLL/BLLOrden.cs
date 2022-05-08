@@ -1,68 +1,70 @@
 ﻿using System.Collections.ObjectModel;
 
-namespace OfficeSupplyBLL
+namespace BLLInsumosOficina
 {
     public class BLLOrden
     {
-
-        ObservableCollection<BLLItem> _orderItemList = new
-            ObservableCollection<BLLItem>();
+        readonly ObservableCollection<BLLItem> listado = new ObservableCollection<BLLItem>();
 
         public ObservableCollection<BLLItem> ItemsList
         {
-            get { return _orderItemList; }
+            get { return listado; }
         }
-        public void AddItem(BLLItem orderItem)
+
+        public void AgregarItem(BLLItem item)
         {
-            foreach (var item in _orderItemList)
+            foreach (var x in listado)
             {
-                if (item.ProdID == orderItem.ProdID)
+                if (x.IdProducto == item.IdProducto)
                 {
-                    item.Quantity += orderItem.Quantity;
+                    x.Cantidad += item.Cantidad;
 
                     return;
                 }
             }
-            _orderItemList.Add(orderItem);
+            listado.Add(item);
         }
-        public void RemoveItem(string productID)
+
+        public void QuitarItem(string id)
         {
-            foreach (var item in _orderItemList)
+            foreach (var item in listado)
             {
-                if (item.ProdID == productID)
+                if (item.IdProducto == id)
                 {
-                    _orderItemList.Remove(item);
+                    listado.Remove(item);
                     return;
                 }
             }
         }
-        public double GetOrderTotal()
+
+        public double ObtenerTotal()
         {
-            if (_orderItemList.Count == 0)
+            if (listado.Count == 0)
             {
                 return 0.00;
             }
             else
             {
                 double total = 0;
-                foreach (var item in _orderItemList)
+                foreach (var item in listado)
                 {
-                    total += item.SubTotal;
+                    total += item.Total;
                 }
                 return total;
             }
         }
-        public int PlaceOrder(int employeeID)
+
+        public int RealizarPedido(int id)
         {
-            string xmlOrder;
-            xmlOrder = "<Order EmployeeID='" + employeeID.ToString() + "'>";
-            foreach (var item in _orderItemList)
+            string xmlOrden;
+            xmlOrden = "<Orden IdEmpleado='" + id.ToString() + "'>";
+            foreach (var item in listado)
             {
-                xmlOrder += item.ToString();
+                xmlOrden += item.ToString();
             }
-            xmlOrder += "</Order>";
-            DALOrden dbOrder = new DALOrden();
-            return dbOrder.PlaceOrder(xmlOrder);
+            xmlOrden += "</Orden>";
+            DALOrden orden = new DALOrden();
+            return orden.RealizarPedido(xmlOrden);
         }
     }
 }

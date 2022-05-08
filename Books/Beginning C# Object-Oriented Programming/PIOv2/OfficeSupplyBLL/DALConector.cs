@@ -1,6 +1,6 @@
 ﻿using System.Configuration;
 
-namespace OfficeSupplyBLL
+namespace BLLInsumosOficina
 {
     public static class DALConector
     {
