@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALInsumosOficina", "DALIns
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UILInsumosOficina", "UILInsumosOficina\UILInsumosOficina.csproj", "{00819858-70F4-4F9D-A554-84C9B87A6BA2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Capa de Presentación", "1. Capa de Presentación", "{8B26FEE9-7831-4B2F-A286-6BC8CEB90B7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EscritorioWinForms", "EscritorioWinForms\EscritorioWinForms.csproj", "{B4791024-9924-4091-9593-4F1C0D420B56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,9 +31,16 @@ Global
 		{00819858-70F4-4F9D-A554-84C9B87A6BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00819858-70F4-4F9D-A554-84C9B87A6BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00819858-70F4-4F9D-A554-84C9B87A6BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4791024-9924-4091-9593-4F1C0D420B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4791024-9924-4091-9593-4F1C0D420B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4791024-9924-4091-9593-4F1C0D420B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4791024-9924-4091-9593-4F1C0D420B56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B4791024-9924-4091-9593-4F1C0D420B56} = {8B26FEE9-7831-4B2F-A286-6BC8CEB90B7D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F3CB3AE4-6FC5-4782-8328-D95C1B8D2B4D}

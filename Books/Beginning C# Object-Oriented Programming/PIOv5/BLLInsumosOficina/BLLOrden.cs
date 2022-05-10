@@ -5,6 +5,8 @@ namespace BLLInsumosOficina
 {
     public class BLLOrden
     {
+        public BLLEmpleado oEmpleado { get; set; }
+
         //Relación 1 a muchos (parece que la única...)
         readonly ObservableCollection<BLLItem> listado = new ObservableCollection<BLLItem>();
 
