@@ -39,7 +39,7 @@ namespace BLLInsumosOficina
         {
             DALEmpleado empleado = new DALEmpleado();
             int id;
-            id = empleado.LogIn(Usuario, Contraseña);
+            id = empleado.Login(Usuario, Contraseña);
             if (id > 0)
             {
                 IdEmpleado = id;

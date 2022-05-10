@@ -18,6 +18,7 @@ namespace DALInsumosOficina
                 String cadenaCategoria =
                     "SELECT ID_Categoria, Nombre, Descripcion " +
                     "FROM Categorias";
+
                 using (SqlCommand comandoCategoria = new SqlCommand(cadenaCategoria, conexion))
                 {
                     using (SqlDataAdapter adaptadorCategoria = new SqlDataAdapter(comandoCategoria))

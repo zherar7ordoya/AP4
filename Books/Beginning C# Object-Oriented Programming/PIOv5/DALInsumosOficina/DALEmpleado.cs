@@ -4,7 +4,7 @@ namespace DALInsumosOficina
 {
     public class DALEmpleado
     {
-        public int LogIn(string usuario, string contraseña)
+        public int Login(string usuario, string contraseña)
         {
             string cadena = DALConector.ObtenerConexionSQL("ConexionConBBDD");
             using (SqlConnection conexion = new SqlConnection(cadena))
@@ -23,6 +23,7 @@ namespace DALInsumosOficina
                     int id;
                     conexion.Open();
                     id = (int)comando.ExecuteScalar();
+
                     if (id > 0)
                     {
                         return id;
