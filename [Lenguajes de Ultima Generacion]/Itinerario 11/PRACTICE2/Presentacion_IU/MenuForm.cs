@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Presentacion_IU
 {
-    public partial class Menu : Form
+    public partial class MenuForm : Form
     {
-        public Menu()
+        public MenuForm()
         {
             InitializeComponent();
         }
@@ -15,11 +15,9 @@ namespace Presentacion_IU
             Application.Exit();
         }
 
-        private void OperacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void GestionarEquipoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Línea que corresponde a la implementación del Patrón Singleton
-            Operaciones formulario = Operaciones.Instanciamiento();
-
+            EquipoForm formulario = EquipoForm.Instancia();
             formulario.MdiParent = this;
             formulario.Show();
             formulario.BringToFront();
