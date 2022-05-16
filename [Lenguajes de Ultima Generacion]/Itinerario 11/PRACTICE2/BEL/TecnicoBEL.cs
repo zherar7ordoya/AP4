@@ -1,8 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace BLL
+namespace BEL
 {
-    public class TecnicoBLL
+    public class TecnicoBEL
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -10,10 +14,10 @@ namespace BLL
 
         #region Constructores
         //constructor vacio
-        public TecnicoBLL() { }
+        public TecnicoBEL() { }
 
         //constructor sobrecargado
-        public TecnicoBLL(string _Nom, String _Ape, int _DNI)
+        public TecnicoBEL(string _Nom, String _Ape, int _DNI)
         {
             Nombre = _Nom;
             Apellido = _Ape;

@@ -1,4 +1,5 @@
-﻿using BLL;
+﻿using BEL;
+using BLL;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -9,9 +10,9 @@ namespace Presentacion_IU
     public partial class EquipoForm : Form
     {
         //defino los objetos
-        List<TecnicoBLL> LTecnico;
-        List<EquipoBLL> LEquipo;
-        EquipoBLL oEquipo;
+        List<TecnicoBEL> LTecnico;
+        List<EquipoBEL> LEquipo;
+        EquipoBEL oEquipo;
 
         #region CONSTRUCTOR DEL FORM
         private EquipoForm()
@@ -19,8 +20,8 @@ namespace Presentacion_IU
             InitializeComponent();
 
             // Instancio la lista de técnicos y equipos en el constructor del Form
-            LTecnico = new List<TecnicoBLL>();
-            LEquipo = new List<EquipoBLL>();
+            LTecnico = new List<TecnicoBEL>();
+            LEquipo = new List<EquipoBEL>();
         }
         #endregion
 
@@ -35,11 +36,11 @@ namespace Presentacion_IU
 
         private void FrmEquipo_Load(object sender, EventArgs e)
         {
-            //cargo la lista de TecnicoBLLs
-            LTecnico.Add(new TecnicoBLL() { Nombre = "Juan", Apellido = "Perez", DNI = 25234567 });
-            LTecnico.Add(new TecnicoBLL() { Nombre = "Pedro", Apellido = "Lopez", DNI = 23333567 });
-            LTecnico.Add(new TecnicoBLL() { Nombre = "Joaquin", Apellido = "Leguizamon", DNI = 15289067 });
-            LTecnico.Add(new TecnicoBLL() { Nombre = "Arnaldo", Apellido = "Conmebol", DNI = 32456789 });
+            //cargo la lista de TecnicoBELs
+            LTecnico.Add(new TecnicoBEL() { Nombre = "Juan", Apellido = "Perez", DNI = 25234567 });
+            LTecnico.Add(new TecnicoBEL() { Nombre = "Pedro", Apellido = "Lopez", DNI = 23333567 });
+            LTecnico.Add(new TecnicoBEL() { Nombre = "Joaquin", Apellido = "Leguizamon", DNI = 15289067 });
+            LTecnico.Add(new TecnicoBEL() { Nombre = "Arnaldo", Apellido = "Conmebol", DNI = 32456789 });
 
             //cargo el técnico en load, para cuando cargue el form ya aparezcan los datos del mismo 
             CargarTecnico();
@@ -79,15 +80,15 @@ namespace Presentacion_IU
         private void Button1_Click(object sender, EventArgs e)
         {
             //instancio el objeto equipo en el bloque
-            oEquipo = new EquipoBLL();
+            oEquipo = new EquipoBEL();
             //asigno los valores en el bloque para el Objeto Equipo
             oEquipo.Nombre = this.TxtNombreEquipo.Text;
             oEquipo.Color = this.TxtColoresEquipo.Text;
-            oEquipo.Tecnico = (TecnicoBLL)comboBox1.SelectedItem;
+            oEquipo.Tecnico = (TecnicoBEL)comboBox1.SelectedItem;
 
             //aclaración una vez asignado el técnico debo borrarlo de la lista de técnicos
 
-            foreach (TecnicoBLL ObjetoTecnico in LTecnico)
+            foreach (TecnicoBEL ObjetoTecnico in LTecnico)
             {
                 //Si esta lo borro
                 if (oEquipo.Tecnico.DNI == ObjetoTecnico.DNI)
@@ -114,18 +115,18 @@ namespace Presentacion_IU
         private void Button2_Click(object sender, EventArgs e)
         {
             //defino el jugador
-            AJugadorBLL oJugador;
+            AJugadorBEL oJugador;
 
             //depende el tipo de jugador instancio una clase u otra
             if (comboBox2.Text == "Profesional")
             {
-                oJugador = new ProfesionalBLL();
+                oJugador = new ProfesionalBEL();
             }
             else
             {
-                PrincipianteBLL oJugadorp = new PrincipianteBLL();
+                PrincipianteBEL oJugadorp = new PrincipianteBEL();
                 oJugadorp.Rapado = true;
-                oJugador = new PrincipianteBLL();
+                oJugador = new PrincipianteBEL();
                 oJugador = oJugadorp;
                 
             }
@@ -153,7 +154,7 @@ namespace Presentacion_IU
 
         private void dataGridEquipo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            oEquipo = (EquipoBLL)this.dataGridEquipo.CurrentRow.DataBoundItem;
+            oEquipo = (EquipoBEL)this.dataGridEquipo.CurrentRow.DataBoundItem;
 
             dataGridJugadores.DataSource = null;
             //como el objeto Equipo tiene ya su lista de jugadores, la muestro
@@ -169,12 +170,14 @@ namespace Presentacion_IU
             int MaxPtje = 0;
             string MaxNomb = string.Empty;
 
-            foreach (EquipoBLL oEquipo in LEquipo)
+            EquipoBLL equipo = new EquipoBLL();
+
+            foreach (EquipoBEL oEquipo in LEquipo)
             {
-                if (oEquipo.ObtenerPuntajeEquipo() > MaxPtje)
+                if (equipo.ObtenerPuntajeEquipo(oEquipo) > MaxPtje)
                 {
                     MaxNomb = oEquipo.Nombre;
-                    MaxPtje = oEquipo.ObtenerPuntajeEquipo();
+                    MaxPtje = equipo.ObtenerPuntajeEquipo(oEquipo);
                 }
             }
 

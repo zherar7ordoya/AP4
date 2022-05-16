@@ -1,25 +1,27 @@
 ﻿using System.Collections.Generic;
+using BEL;
 
 namespace BLL
 {
     public class EquipoBLL
     {
-        #region Propiedades
-        public string Nombre { get; set; }
-        public string Color { get; set; }
-
-        //Relación 1 a 1
-        public TecnicoBLL Tecnico { get; set; }
-
-        //Relación 1 a Muchos
-        public List<AJugadorBLL> ListaJugadores = new List<AJugadorBLL>();
-        #endregion
-
         #region Métodos
-        public int ObtenerPuntajeEquipo()
+        public int ObtenerPuntajeEquipo(EquipoBEL equipo)
         {
             int ptos = 0;
-            foreach (AJugadorBLL jugador in ListaJugadores) ptos += jugador.ObtenerPuntaje();
+            foreach (AJugadorBEL jugador in equipo.ListaJugadores)
+            {
+                if (jugador is PrincipianteBEL)
+                {
+                    PrincipianteBLL principiante = new PrincipianteBLL();
+                    ptos = principiante.ObtenerPuntaje(jugador) + ptos;
+                }
+                else
+                {
+                    ProfesionalBLL profesional = new ProfesionalBLL();
+                    ptos = profesional.ObtenerPuntaje(jugador) + ptos;
+                }
+            }
             return ptos;
         }
         #endregion

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{25A95093-D718-4785-B3B5-29C0A3FE18D3}</ProjectGuid>
+    <ProjectGuid>{DF9D94A4-9FA2-4AD4-9349-747D0BCBD11A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BLL</RootNamespace>
-    <AssemblyName>BLL</AssemblyName>
+    <RootNamespace>BEL</RootNamespace>
+    <AssemblyName>BEL</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,17 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AJugadorBLL.cs" />
-    <Compile Include="EquipoBLL.cs" />
-    <Compile Include="PrincipianteBLL.cs" />
-    <Compile Include="ProfesionalBLL.cs" />
+    <Compile Include="AJugadorBEL.cs" />
+    <Compile Include="EquipoBEL.cs" />
+    <Compile Include="PrincipianteBEL.cs" />
+    <Compile Include="ProfesionalBEL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BEL\BEL.csproj">
-      <Project>{df9d94a4-9fa2-4ad4-9349-747d0bcbd11a}</Project>
-      <Name>BEL</Name>
-    </ProjectReference>
+    <Compile Include="TecnicoBEL.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
