@@ -150,7 +150,7 @@ namespace Presentacion_UI
             {
                 Asignar();
                 DialogResult Respuesta;
-                Respuesta = MessageBox.Show("¿Confirma la eleminación del Alumno?", "ALERTA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                Respuesta = MessageBox.Show("¿Confirma la eliminación de alumno?", "ALERTA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (Respuesta == DialogResult.Yes)
                 {
                     oBLLAlu.Baja(oBEAlu);
