@@ -13,7 +13,7 @@ namespace Negocio
     public class Acceso
     {
         //declaro el objeto del tipo conection y uso el constructor para pasar el ConnectionString
-        private SqlConnection oCnn = new SqlConnection(@"Data Source =.\SQLEXPRESS02; Initial Catalog = MiBaseV2; Integrated Security = True");
+        private SqlConnection oCnn = new SqlConnection(@"Data Source =(LocalDB)\MSSQLLocalDB; Initial Catalog = MiBaseV2; Integrated Security = True");
         //Creo el objeto command
         SqlCommand cmd;
 

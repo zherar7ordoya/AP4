@@ -15,13 +15,19 @@ namespace Presentacion_UI
 {
     public partial class frLocalidad : Form
     {
-        public frLocalidad()
+        private frLocalidad()
         {
             InitializeComponent();
             //intanacio el objeto en el constructor del form
             oLoc = new BLLLocalidad();
         }
 
+        private static frLocalidad instancia = null;
+        public static frLocalidad Instancia()
+        {
+            if (instancia == null) instancia = new frLocalidad();
+            return instancia;
+        }
       
         private void FrLocalidad_Load(object sender, EventArgs e)
         {

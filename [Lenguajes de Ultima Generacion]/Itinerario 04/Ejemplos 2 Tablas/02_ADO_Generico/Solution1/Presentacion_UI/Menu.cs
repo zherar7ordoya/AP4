@@ -24,16 +24,18 @@ namespace Presentacion_UI
 
         private void alumnosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frAlumno ofra = new frAlumno();
-            ofra.MdiParent = this;
-            ofra.Show();
+            frAlumno formulario = frAlumno.Instancia();
+            formulario.MdiParent = this;
+            formulario.Show();
+            formulario.BringToFront();
         }
 
         private void localidadToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frLocalidad ofrLoc = new frLocalidad();
-            ofrLoc.MdiParent = this;
-            ofrLoc.Show();
+            frLocalidad formulario = frLocalidad.Instancia();
+            formulario.MdiParent = this;
+            formulario.Show();
+            formulario.BringToFront();
         }
     }
 }

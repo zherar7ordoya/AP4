@@ -13,13 +13,21 @@ namespace Presentacion_UI
 {
     public partial class frAlumno : Form
     {
-        public frAlumno()
+        private frAlumno()
         {
             InitializeComponent();
             //instancio los objetos en el constructor del fomrulario
             oAlu = new BLLAlumno();
             oLoc= new BLLLocalidad();
         }
+
+        private static frAlumno instancia = null;
+        public static frAlumno Instancia()
+        {
+            if (instancia == null) instancia = new frAlumno();
+            return instancia;
+        }
+
 
         BLLAlumno oAlu;
         BLLLocalidad oLoc;
