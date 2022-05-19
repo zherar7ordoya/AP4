@@ -6,17 +6,18 @@ using System.Threading.Tasks;
 //uso las librerias de SQL
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration; // para usar el app.config
 
-
-namespace Negocio
+namespace DAL
 {
     public class Acceso
     {
         //declaro el objeto del tipo conection y uso el constructor para pasar el ConnectionString
-        private SqlConnection oCnn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=MiBaseListas;Integrated Security=True");
+        private SqlConnection oCnn = new SqlConnection(ConfigurationManager.ConnectionStrings["MiCadenaDeConexion"].ToString());
 
+        //declaro el objeto transacction
+        private SqlTransaction Tranx;
 
-        
         // creo una funcion para saber el estado de la conexion
         public string TestConnection()
         {
@@ -34,10 +35,10 @@ namespace Negocio
             }
         }
 
-        
-    
+
+
         //Metodo Generico para leer
-         public DataTable Leer(string consulta)
+        public DataTable Leer(string consulta)
         {
             DataTable tabla = new DataTable();
             try
@@ -46,7 +47,7 @@ namespace Negocio
                 SqlDataAdapter Da = new SqlDataAdapter(consulta, oCnn);
                 //lleno la tabla con el metodo fill
                 Da.Fill(tabla);
-               
+
             }
             catch (SqlException ex)
             { throw ex; }
@@ -76,10 +77,10 @@ namespace Negocio
                 { return false; }
             }
             catch (SqlException ex)
-            { throw ex;}
+            { throw ex; }
         }
-  
-        public DataSet Leer2 (string Consulta_SQL)
+
+        public DataSet Leer2(string Consulta_SQL)
         {
             DataSet Ds = new DataSet();
             try
@@ -102,27 +103,39 @@ namespace Negocio
 
         //realizo un método escribir generico, dado que recibo un string q es la consulta de SQL
         public bool Escribir(string Consulta_SQL)
-        {
-            
+        {  
+      
             oCnn.Open();
+            //declaro que comienza la transaccion
+            Tranx = oCnn.BeginTransaction();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.Text;
             cmd.Connection = oCnn;
             cmd.CommandText = Consulta_SQL;
+            //le paso el objeto transaccion al command
+            cmd.Transaction = Tranx;
             try
             {
                 int respuesta = cmd.ExecuteNonQuery();
+                //si esta OK confirma la transaccion
+                Tranx.Commit();
                 return true;
             }
             catch (SqlException ex)
-            {
+            {    //si pudo realizar la operacion hace un rollback
+                Tranx.Rollback();
+                throw ex;
+            }
+            catch (Exception ex)
+            {    //si pudo realizar la operacion hace un rollback
+                Tranx.Rollback();
                 throw ex;
             }
 
             finally
             { oCnn.Close(); }
 
-           
+
 
         }
     }
