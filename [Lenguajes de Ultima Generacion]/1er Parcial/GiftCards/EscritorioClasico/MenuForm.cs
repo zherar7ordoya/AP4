@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EscritorioClasico
@@ -29,7 +22,7 @@ namespace EscritorioClasico
 
         private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Application.ExitThread();
         }
 
         private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,7 +59,7 @@ namespace EscritorioClasico
 
         private void AcercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string message = "GERARDO TORDOYA\nEstudiante\nAnalista Programador";
+            string message = "Parcial 1\n\u00a9 2022 LUG";
             string caption = "Acerca de";
             MessageBoxButtons buttons = MessageBoxButtons.OK;
             MessageBox.Show(

@@ -28,12 +28,84 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesForm));
+            this.AltaClienteButton = new System.Windows.Forms.Button();
+            this.ClientesDataGridView = new System.Windows.Forms.DataGridView();
+            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Temporal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesDataGridView)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // AltaClienteButton
+            // 
+            this.AltaClienteButton.Location = new System.Drawing.Point(619, 289);
+            this.AltaClienteButton.Name = "AltaClienteButton";
+            this.AltaClienteButton.Size = new System.Drawing.Size(75, 23);
+            this.AltaClienteButton.TabIndex = 0;
+            this.AltaClienteButton.Text = "Alta";
+            this.AltaClienteButton.UseVisualStyleBackColor = true;
+            this.AltaClienteButton.Click += new System.EventHandler(this.AltaClienteButton_Click);
+            // 
+            // ClientesDataGridView
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.ClientesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.ClientesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.ClientesDataGridView.ColumnHeadersHeight = 25;
+            this.ClientesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Borrar,
+            this.Editar,
+            this.Temporal});
+            this.ClientesDataGridView.Location = new System.Drawing.Point(12, 12);
+            this.ClientesDataGridView.Name = "ClientesDataGridView";
+            this.ClientesDataGridView.Size = new System.Drawing.Size(600, 300);
+            this.ClientesDataGridView.TabIndex = 1;
+            // 
+            // Borrar
+            // 
+            this.Borrar.HeaderText = "Borrar";
+            this.Borrar.Image = ((System.Drawing.Image)(resources.GetObject("Borrar.Image")));
+            this.Borrar.Name = "Borrar";
+            this.Borrar.Width = 41;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 40;
+            // 
+            // Temporal
+            // 
+            this.Temporal.HeaderText = "Temporal";
+            this.Temporal.Name = "Temporal";
+            this.Temporal.Width = 76;
+            // 
+            // ClientesForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ClientesForm";
+            this.ClientSize = new System.Drawing.Size(709, 361);
+            this.Controls.Add(this.ClientesDataGridView);
+            this.Controls.Add(this.AltaClienteButton);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Name = "ClientesForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Clientes";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientesForm_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.ClientesDataGridView)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button AltaClienteButton;
+        private System.Windows.Forms.DataGridView ClientesDataGridView;
+        private System.Windows.Forms.DataGridViewImageColumn Borrar;
+        private System.Windows.Forms.DataGridViewImageColumn Editar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Temporal;
     }
 }

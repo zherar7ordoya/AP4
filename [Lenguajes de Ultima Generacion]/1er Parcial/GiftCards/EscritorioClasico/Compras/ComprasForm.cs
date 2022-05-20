@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EscritorioClasico.Compras
@@ -23,6 +16,21 @@ namespace EscritorioClasico.Compras
             if (instancia == null) instancia = new ComprasForm();
             return instancia;
         }
-        // *-------------------------------------------------------=> *********    }
+        // *-------------------------------------------------------=> *********
+        private void AltaCompraButton_Click(object sender, EventArgs e)
+        {
+            CompraForm formulario = CompraForm.Instancia();
+            DialogResult respuesta = formulario.ShowDialog();
+            if (respuesta == DialogResult.OK)
+            {
+                MessageBox.Show("DialogResult: OK");
+            }
+        }
+
+        private void ComprasForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            Hide();
+        }
     }
 }

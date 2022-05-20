@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.IngresoGroupBox = new System.Windows.Forms.GroupBox();
-            this.RegistroGroupBox = new System.Windows.Forms.GroupBox();
-            this.IngresoUsuarioLabel = new System.Windows.Forms.Label();
-            this.IngresoUsuarioTextBox = new System.Windows.Forms.TextBox();
             this.IngresoContraseñaTextBox = new System.Windows.Forms.TextBox();
             this.IngresoContraseñaLabel = new System.Windows.Forms.Label();
+            this.IngresoUsuarioTextBox = new System.Windows.Forms.TextBox();
+            this.IngresoUsuarioLabel = new System.Windows.Forms.Label();
+            this.RegistroGroupBox = new System.Windows.Forms.GroupBox();
             this.RegistroContraseñaTextBox = new System.Windows.Forms.TextBox();
             this.RegistroContraseñaLabel = new System.Windows.Forms.Label();
             this.RegistroUsuarioTextBox = new System.Windows.Forms.TextBox();
@@ -48,43 +48,12 @@
             this.IngresoGroupBox.Controls.Add(this.IngresoContraseñaLabel);
             this.IngresoGroupBox.Controls.Add(this.IngresoUsuarioTextBox);
             this.IngresoGroupBox.Controls.Add(this.IngresoUsuarioLabel);
-            this.IngresoGroupBox.Location = new System.Drawing.Point(75, 50);
+            this.IngresoGroupBox.Location = new System.Drawing.Point(300, 100);
             this.IngresoGroupBox.Name = "IngresoGroupBox";
             this.IngresoGroupBox.Size = new System.Drawing.Size(200, 250);
             this.IngresoGroupBox.TabIndex = 0;
             this.IngresoGroupBox.TabStop = false;
             this.IngresoGroupBox.Text = "Ingreso";
-            // 
-            // RegistroGroupBox
-            // 
-            this.RegistroGroupBox.Controls.Add(this.RegistroContraseñaTextBox);
-            this.RegistroGroupBox.Controls.Add(this.RegistroContraseñaLabel);
-            this.RegistroGroupBox.Controls.Add(this.RegistroUsuarioTextBox);
-            this.RegistroGroupBox.Controls.Add(this.RegistroUsuarioLabel);
-            this.RegistroGroupBox.Location = new System.Drawing.Point(325, 50);
-            this.RegistroGroupBox.Name = "RegistroGroupBox";
-            this.RegistroGroupBox.Size = new System.Drawing.Size(200, 250);
-            this.RegistroGroupBox.TabIndex = 1;
-            this.RegistroGroupBox.TabStop = false;
-            this.RegistroGroupBox.Text = "Registro";
-            // 
-            // IngresoUsuarioLabel
-            // 
-            this.IngresoUsuarioLabel.Enabled = false;
-            this.IngresoUsuarioLabel.Location = new System.Drawing.Point(25, 50);
-            this.IngresoUsuarioLabel.Name = "IngresoUsuarioLabel";
-            this.IngresoUsuarioLabel.Size = new System.Drawing.Size(150, 25);
-            this.IngresoUsuarioLabel.TabIndex = 1;
-            this.IngresoUsuarioLabel.Text = "Usuario";
-            this.IngresoUsuarioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // IngresoUsuarioTextBox
-            // 
-            this.IngresoUsuarioTextBox.Enabled = false;
-            this.IngresoUsuarioTextBox.Location = new System.Drawing.Point(28, 78);
-            this.IngresoUsuarioTextBox.Name = "IngresoUsuarioTextBox";
-            this.IngresoUsuarioTextBox.Size = new System.Drawing.Size(147, 20);
-            this.IngresoUsuarioTextBox.TabIndex = 2;
             // 
             // IngresoContraseñaTextBox
             // 
@@ -103,6 +72,37 @@
             this.IngresoContraseñaLabel.TabIndex = 3;
             this.IngresoContraseñaLabel.Text = "Contraseña";
             this.IngresoContraseñaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // IngresoUsuarioTextBox
+            // 
+            this.IngresoUsuarioTextBox.Enabled = false;
+            this.IngresoUsuarioTextBox.Location = new System.Drawing.Point(28, 78);
+            this.IngresoUsuarioTextBox.Name = "IngresoUsuarioTextBox";
+            this.IngresoUsuarioTextBox.Size = new System.Drawing.Size(147, 20);
+            this.IngresoUsuarioTextBox.TabIndex = 2;
+            // 
+            // IngresoUsuarioLabel
+            // 
+            this.IngresoUsuarioLabel.Enabled = false;
+            this.IngresoUsuarioLabel.Location = new System.Drawing.Point(25, 50);
+            this.IngresoUsuarioLabel.Name = "IngresoUsuarioLabel";
+            this.IngresoUsuarioLabel.Size = new System.Drawing.Size(150, 25);
+            this.IngresoUsuarioLabel.TabIndex = 1;
+            this.IngresoUsuarioLabel.Text = "Usuario";
+            this.IngresoUsuarioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // RegistroGroupBox
+            // 
+            this.RegistroGroupBox.Controls.Add(this.RegistroContraseñaTextBox);
+            this.RegistroGroupBox.Controls.Add(this.RegistroContraseñaLabel);
+            this.RegistroGroupBox.Controls.Add(this.RegistroUsuarioTextBox);
+            this.RegistroGroupBox.Controls.Add(this.RegistroUsuarioLabel);
+            this.RegistroGroupBox.Location = new System.Drawing.Point(550, 100);
+            this.RegistroGroupBox.Name = "RegistroGroupBox";
+            this.RegistroGroupBox.Size = new System.Drawing.Size(200, 250);
+            this.RegistroGroupBox.TabIndex = 1;
+            this.RegistroGroupBox.TabStop = false;
+            this.RegistroGroupBox.Text = "Registro";
             // 
             // RegistroContraseñaTextBox
             // 
@@ -144,10 +144,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(1034, 461);
             this.Controls.Add(this.RegistroGroupBox);
             this.Controls.Add(this.IngresoGroupBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "UsuarioForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
             this.IngresoGroupBox.ResumeLayout(false);
             this.IngresoGroupBox.PerformLayout();
