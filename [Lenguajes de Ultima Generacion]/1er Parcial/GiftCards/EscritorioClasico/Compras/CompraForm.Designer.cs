@@ -147,6 +147,8 @@
             this.Controls.Add(this.GiftcardTextBox);
             this.Controls.Add(this.GiftcardLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CompraForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compra";

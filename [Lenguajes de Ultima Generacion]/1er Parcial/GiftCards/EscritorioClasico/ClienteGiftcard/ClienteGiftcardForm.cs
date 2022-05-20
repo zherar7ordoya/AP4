@@ -15,12 +15,11 @@ namespace EscritorioClasico.ClienteGiftcard
             if (instancia == null) instancia = new ClienteGiftcardForm();
             return instancia;
         }
-
-        // *-------------------------------------------------------=> *********
         private void ClienteGiftcardForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
             Hide();
         }
+        // *-------------------------------------------------------=> *********
     }
 }

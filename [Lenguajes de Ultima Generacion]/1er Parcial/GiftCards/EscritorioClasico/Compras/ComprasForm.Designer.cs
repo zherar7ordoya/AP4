@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ComprasForm));
             this.AltaCompraButton = new System.Windows.Forms.Button();
             this.ComprasDataGridView = new System.Windows.Forms.DataGridView();
             this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Temporal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ComprasDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,38 +48,34 @@
             // 
             // ComprasDataGridView
             // 
+            this.ComprasDataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ComprasDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ComprasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ComprasDataGridView.ColumnHeadersHeight = 25;
             this.ComprasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Borrar,
-            this.Editar,
-            this.Temporal});
+            this.Editar});
             this.ComprasDataGridView.Location = new System.Drawing.Point(12, 12);
             this.ComprasDataGridView.Name = "ComprasDataGridView";
+            this.ComprasDataGridView.RowTemplate.Height = 32;
             this.ComprasDataGridView.Size = new System.Drawing.Size(600, 300);
             this.ComprasDataGridView.TabIndex = 3;
+            this.ComprasDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ComprasDataGridView_CellContentDoubleClick);
             // 
             // Borrar
             // 
             this.Borrar.HeaderText = "Borrar";
-            this.Borrar.Image = ((System.Drawing.Image)(resources.GetObject("Borrar.Image")));
+            this.Borrar.Image = global::EscritorioClasico.Properties.Resources.Borrar32x32;
             this.Borrar.Name = "Borrar";
             this.Borrar.Width = 41;
             // 
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.Image = global::EscritorioClasico.Properties.Resources.Editar32x32;
             this.Editar.Name = "Editar";
             this.Editar.Width = 40;
-            // 
-            // Temporal
-            // 
-            this.Temporal.HeaderText = "Temporal";
-            this.Temporal.Name = "Temporal";
-            this.Temporal.Width = 76;
             // 
             // ComprasForm
             // 
@@ -95,6 +89,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compras";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ComprasForm_FormClosing);
+            this.Load += new System.EventHandler(this.ComprasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ComprasDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -106,6 +101,5 @@
         private System.Windows.Forms.DataGridView ComprasDataGridView;
         private System.Windows.Forms.DataGridViewImageColumn Borrar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Temporal;
     }
 }

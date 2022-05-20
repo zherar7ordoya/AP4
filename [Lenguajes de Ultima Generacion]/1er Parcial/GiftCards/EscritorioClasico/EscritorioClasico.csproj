@@ -171,12 +171,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Borrar.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Editar.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
@@ -190,6 +184,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />
+    <None Include="Resources\Borrar96x96.png" />
+    <None Include="Resources\Borrar72x72.png" />
+    <None Include="Resources\Borrar64x64.png" />
+    <None Include="Resources\Borrar48x48.png" />
+    <None Include="Resources\Borrar32x32.png" />
+    <None Include="Resources\Editar96x96.png" />
+    <None Include="Resources\Editar72x72.png" />
+    <None Include="Resources\Editar64x64.png" />
+    <None Include="Resources\Editar48x48.png" />
+    <None Include="Resources\Editar32x32.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

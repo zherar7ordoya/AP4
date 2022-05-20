@@ -13,11 +13,7 @@ namespace EscritorioClasico
         private void MenuForm_Load(object sender, EventArgs e)
         {
             Usuarios.UsuarioForm formulario = new Usuarios.UsuarioForm();
-            formulario.MdiParent = this;
-            formulario.Dock = DockStyle.Fill;
-            formulario.Show();
-            formulario.WindowState = FormWindowState.Maximized;
-            formulario.BringToFront();
+            Singleton(formulario);
         }
 
         private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -28,33 +24,25 @@ namespace EscritorioClasico
         private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ABMs.ClientesForm formulario = ABMs.ClientesForm.Instancia();
-            formulario.MdiParent = this;
-            formulario.Show();
-            formulario.BringToFront();
+            Singleton(formulario);
         }
 
         private void GiftCardsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ABMs.GiftcardsForm formulario = ABMs.GiftcardsForm.Instancia();
-            formulario.MdiParent = this;
-            formulario.Show();
-            formulario.BringToFront();
+            Singleton(formulario);
         }
 
         private void AsociarDesasociarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ClienteGiftcard.ClienteGiftcardForm formulario = ClienteGiftcard.ClienteGiftcardForm.Instancia();
-            formulario.MdiParent = this;
-            formulario.Show();
-            formulario.BringToFront();
+            Singleton(formulario);
         }
 
         private void RegistrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Compras.ComprasForm formulario = Compras.ComprasForm.Instancia();
-            formulario.MdiParent = this;
-            formulario.Show();
-            formulario.BringToFront();
+            Singleton(formulario);
         }
 
         private void AcercaDeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,6 +58,15 @@ namespace EscritorioClasico
                 MessageBoxIcon.Question, 
                 MessageBoxDefaultButton.Button1,
                 MessageBoxOptions.RightAlign);
+
+        }
+
+        private void Singleton(Form formulario)
+        {
+            formulario.MdiParent = this;
+            formulario.Show();
+            formulario.WindowState = FormWindowState.Maximized;
+            formulario.BringToFront();
 
         }
     }

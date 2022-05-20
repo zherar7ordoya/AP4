@@ -29,17 +29,15 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GiftcardsForm));
             this.VistazoGroupBox = new System.Windows.Forms.GroupBox();
             this.MenorSaldoTextBox = new System.Windows.Forms.TextBox();
             this.MenorSaldoLabel = new System.Windows.Forms.Label();
             this.MayorDescuentoTextBox = new System.Windows.Forms.TextBox();
             this.MayorDescuentoLabel = new System.Windows.Forms.Label();
             this.GiftcardsDataGridView = new System.Windows.Forms.DataGridView();
+            this.AltaGiftcardButton = new System.Windows.Forms.Button();
             this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Temporal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AltaGiftcardButton = new System.Windows.Forms.Button();
             this.VistazoGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GiftcardsDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -91,38 +89,20 @@
             // 
             // GiftcardsDataGridView
             // 
+            this.GiftcardsDataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.GiftcardsDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GiftcardsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.GiftcardsDataGridView.ColumnHeadersHeight = 25;
             this.GiftcardsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Borrar,
-            this.Editar,
-            this.Temporal});
+            this.Editar});
             this.GiftcardsDataGridView.Location = new System.Drawing.Point(12, 98);
             this.GiftcardsDataGridView.Name = "GiftcardsDataGridView";
+            this.GiftcardsDataGridView.RowTemplate.Height = 32;
             this.GiftcardsDataGridView.Size = new System.Drawing.Size(600, 300);
             this.GiftcardsDataGridView.TabIndex = 3;
-            // 
-            // Borrar
-            // 
-            this.Borrar.HeaderText = "Borrar";
-            this.Borrar.Image = ((System.Drawing.Image)(resources.GetObject("Borrar.Image")));
-            this.Borrar.Name = "Borrar";
-            this.Borrar.Width = 41;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 40;
-            // 
-            // Temporal
-            // 
-            this.Temporal.HeaderText = "Temporal";
-            this.Temporal.Name = "Temporal";
-            this.Temporal.Width = 76;
+            this.GiftcardsDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GiftcardsDataGridView_CellContentDoubleClick);
             // 
             // AltaGiftcardButton
             // 
@@ -133,6 +113,20 @@
             this.AltaGiftcardButton.Text = "Alta";
             this.AltaGiftcardButton.UseVisualStyleBackColor = true;
             this.AltaGiftcardButton.Click += new System.EventHandler(this.AltaGitfcardButton_Click);
+            // 
+            // Borrar
+            // 
+            this.Borrar.HeaderText = "Borrar";
+            this.Borrar.Image = global::EscritorioClasico.Properties.Resources.Borrar32x32;
+            this.Borrar.Name = "Borrar";
+            this.Borrar.Width = 41;
+            // 
+            // Editar
+            // 
+            this.Editar.HeaderText = "Editar";
+            this.Editar.Image = global::EscritorioClasico.Properties.Resources.Editar32x32;
+            this.Editar.Name = "Editar";
+            this.Editar.Width = 40;
             // 
             // GiftcardsForm
             // 
@@ -147,6 +141,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gift Cards";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GiftcardsForm_FormClosing);
+            this.Load += new System.EventHandler(this.GiftcardsForm_Load);
             this.VistazoGroupBox.ResumeLayout(false);
             this.VistazoGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.GiftcardsDataGridView)).EndInit();
@@ -161,9 +156,8 @@
         private System.Windows.Forms.TextBox MenorSaldoTextBox;
         private System.Windows.Forms.Label MenorSaldoLabel;
         private System.Windows.Forms.DataGridView GiftcardsDataGridView;
+        private System.Windows.Forms.Button AltaGiftcardButton;
         private System.Windows.Forms.DataGridViewImageColumn Borrar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Temporal;
-        private System.Windows.Forms.Button AltaGiftcardButton;
     }
 }

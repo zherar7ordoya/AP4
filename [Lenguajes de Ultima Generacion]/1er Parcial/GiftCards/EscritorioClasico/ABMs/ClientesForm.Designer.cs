@@ -29,12 +29,10 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientesForm));
             this.AltaClienteButton = new System.Windows.Forms.Button();
             this.ClientesDataGridView = new System.Windows.Forms.DataGridView();
             this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Temporal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ClientesDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,38 +48,34 @@
             // 
             // ClientesDataGridView
             // 
+            this.ClientesDataGridView.AllowUserToAddRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClientesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ClientesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ClientesDataGridView.ColumnHeadersHeight = 25;
             this.ClientesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Borrar,
-            this.Editar,
-            this.Temporal});
+            this.Editar});
             this.ClientesDataGridView.Location = new System.Drawing.Point(12, 12);
             this.ClientesDataGridView.Name = "ClientesDataGridView";
+            this.ClientesDataGridView.RowTemplate.Height = 32;
             this.ClientesDataGridView.Size = new System.Drawing.Size(600, 300);
             this.ClientesDataGridView.TabIndex = 1;
+            this.ClientesDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ClientesDataGridView_CellContentDoubleClick);
             // 
             // Borrar
             // 
             this.Borrar.HeaderText = "Borrar";
-            this.Borrar.Image = ((System.Drawing.Image)(resources.GetObject("Borrar.Image")));
+            this.Borrar.Image = global::EscritorioClasico.Properties.Resources.Borrar32x32;
             this.Borrar.Name = "Borrar";
             this.Borrar.Width = 41;
             // 
             // Editar
             // 
             this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
+            this.Editar.Image = global::EscritorioClasico.Properties.Resources.Editar32x32;
             this.Editar.Name = "Editar";
             this.Editar.Width = 40;
-            // 
-            // Temporal
-            // 
-            this.Temporal.HeaderText = "Temporal";
-            this.Temporal.Name = "Temporal";
-            this.Temporal.Width = 76;
             // 
             // ClientesForm
             // 
@@ -95,6 +89,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Clientes";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientesForm_FormClosing);
+            this.Load += new System.EventHandler(this.ClientesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClientesDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -106,6 +101,5 @@
         private System.Windows.Forms.DataGridView ClientesDataGridView;
         private System.Windows.Forms.DataGridViewImageColumn Borrar;
         private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Temporal;
     }
 }

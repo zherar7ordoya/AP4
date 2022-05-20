@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClienteGiftcardForm));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GiftcardAsociadaGroupBox = new System.Windows.Forms.GroupBox();
             this.ProvinciaTextBox = new System.Windows.Forms.TextBox();
@@ -54,14 +53,8 @@
             this.CodigoLabel = new System.Windows.Forms.Label();
             this.GiftcardsDisponiblesGroupBox = new System.Windows.Forms.GroupBox();
             this.GiftcardsDisponiblesDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClienteGroupBox = new System.Windows.Forms.GroupBox();
             this.ClienteDataGridView = new System.Windows.Forms.DataGridView();
-            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Temporal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DesasociarButton = new System.Windows.Forms.Button();
             this.AsociarButton = new System.Windows.Forms.Button();
             this.GiftcardAsociadaGroupBox.SuspendLayout();
@@ -272,38 +265,17 @@
             // 
             // GiftcardsDisponiblesDataGridView
             // 
+            this.GiftcardsDisponiblesDataGridView.AllowUserToAddRows = false;
+            this.GiftcardsDisponiblesDataGridView.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.GiftcardsDisponiblesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.GiftcardsDisponiblesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.GiftcardsDisponiblesDataGridView.ColumnHeadersHeight = 25;
-            this.GiftcardsDisponiblesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewImageColumn1,
-            this.dataGridViewImageColumn2,
-            this.dataGridViewTextBoxColumn1});
             this.GiftcardsDisponiblesDataGridView.Location = new System.Drawing.Point(6, 19);
             this.GiftcardsDisponiblesDataGridView.Name = "GiftcardsDisponiblesDataGridView";
+            this.GiftcardsDisponiblesDataGridView.ReadOnly = true;
             this.GiftcardsDisponiblesDataGridView.Size = new System.Drawing.Size(300, 300);
             this.GiftcardsDisponiblesDataGridView.TabIndex = 3;
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "Borrar";
-            this.dataGridViewImageColumn1.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn1.Image")));
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 41;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "Editar";
-            this.dataGridViewImageColumn2.Image = ((System.Drawing.Image)(resources.GetObject("dataGridViewImageColumn2.Image")));
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Temporal";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 76;
             // 
             // ClienteGroupBox
             // 
@@ -317,38 +289,17 @@
             // 
             // ClienteDataGridView
             // 
+            this.ClienteDataGridView.AllowUserToAddRows = false;
+            this.ClienteDataGridView.AllowUserToDeleteRows = false;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
             this.ClienteDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ClienteDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ClienteDataGridView.ColumnHeadersHeight = 25;
-            this.ClienteDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Borrar,
-            this.Editar,
-            this.Temporal});
             this.ClienteDataGridView.Location = new System.Drawing.Point(6, 19);
             this.ClienteDataGridView.Name = "ClienteDataGridView";
+            this.ClienteDataGridView.ReadOnly = true;
             this.ClienteDataGridView.Size = new System.Drawing.Size(300, 300);
             this.ClienteDataGridView.TabIndex = 2;
-            // 
-            // Borrar
-            // 
-            this.Borrar.HeaderText = "Borrar";
-            this.Borrar.Image = ((System.Drawing.Image)(resources.GetObject("Borrar.Image")));
-            this.Borrar.Name = "Borrar";
-            this.Borrar.Width = 41;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = ((System.Drawing.Image)(resources.GetObject("Editar.Image")));
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 40;
-            // 
-            // Temporal
-            // 
-            this.Temporal.HeaderText = "Temporal";
-            this.Temporal.Name = "Temporal";
-            this.Temporal.Width = 76;
             // 
             // DesasociarButton
             // 
@@ -399,9 +350,6 @@
         private System.Windows.Forms.GroupBox GiftcardsDisponiblesGroupBox;
         private System.Windows.Forms.GroupBox ClienteGroupBox;
         private System.Windows.Forms.DataGridView ClienteDataGridView;
-        private System.Windows.Forms.DataGridViewImageColumn Borrar;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Temporal;
         private System.Windows.Forms.Label ProvinciaLabel;
         private System.Windows.Forms.Label PaisLabel;
         private System.Windows.Forms.TextBox EstadoTextBox;
@@ -419,9 +367,6 @@
         private System.Windows.Forms.TextBox CodigoTextBox;
         private System.Windows.Forms.Label CodigoLabel;
         private System.Windows.Forms.DataGridView GiftcardsDisponiblesDataGridView;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.Button DesasociarButton;
         private System.Windows.Forms.Button AsociarButton;
         private System.Windows.Forms.TextBox ProvinciaTextBox;
