@@ -1,5 +1,0 @@
-ABM
-https://youtu.be/uP15k54dlag?t=685
-
-LOGIN:
-https://stackoverflow.com/questions/55260809/maximize-mdichild-to-mdiparent-automatically-on-form-load
