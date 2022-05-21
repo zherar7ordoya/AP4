@@ -31,6 +31,7 @@ namespace SEC
             }
         }
 
+
         public static string GenerarSHA(string sCadena)
         {
             // Objeto de codificación
@@ -44,12 +45,11 @@ namespace SEC
             // Convierte el valor anterior en cadena y lo devuelve
             return Convert.ToBase64String(ByteHash);
         }
-
+        
         public static string Encriptar(string texto)
         {
             try
             {
-
                 string key = "qualityinfosolutions"; //llave para encriptar datos
                 byte[] keyArray;
                 byte[] Arreglo_a_Cifrar = UTF8Encoding.UTF8.GetBytes(texto);
@@ -71,10 +71,11 @@ namespace SEC
                 //se regresa el resultado en forma de una cadena
                 texto = Convert.ToBase64String(ArrayResultado, 0, ArrayResultado.Length);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                throw ex;
             }
+
             return texto;
         }
 
@@ -104,14 +105,13 @@ namespace SEC
                 byte[] resultArray = cTransform.TransformFinalBlock(Array_a_Descifrar, 0, Array_a_Descifrar.Length);
                 tdes.Clear();
                 textoEncriptado = UTF8Encoding.UTF8.GetString(resultArray);
-
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
+                throw ex;
             }
+
             return textoEncriptado;
         }
-
     }
 }
