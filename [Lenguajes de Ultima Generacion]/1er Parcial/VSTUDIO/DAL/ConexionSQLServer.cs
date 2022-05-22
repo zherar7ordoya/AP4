@@ -49,13 +49,15 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                WriteLine("Inner Exception: " + ex.Message);
+                WriteLine($"Excepción Interna: { ex.Message }");
                 ReadKey();
+                throw ex;
             }
             catch (Exception ex)
             {
-                WriteLine("Inner Exception: " + ex.Message);
+                WriteLine($"Excepción Interna: { ex.Message }");
                 ReadKey();
+                throw ex;
             }
             finally
             {
@@ -89,13 +91,13 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                WriteLine("Inner Exception: " + ex.Message);
+                WriteLine($"Excepción Interna: { ex.Message }");
                 ReadKey();
                 throw ex;
             }
             catch (Exception ex)
             {
-                WriteLine("Inner Exception: " + ex.Message);
+                WriteLine($"Excepción Interna: { ex.Message }");
                 ReadKey();
                 throw ex;
             }
@@ -132,13 +134,13 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                WriteLine("Inner Exception: " + ex.Message);
+                WriteLine($"Excepción Interna: { ex.Message }");
                 ReadKey();
                 throw ex;
             }
             catch (Exception ex)
             {
-                WriteLine("Inner Exception: " + ex.Message);
+                WriteLine($"Excepción Interna: { ex.Message }");
                 ReadKey();
                 throw ex;
             }

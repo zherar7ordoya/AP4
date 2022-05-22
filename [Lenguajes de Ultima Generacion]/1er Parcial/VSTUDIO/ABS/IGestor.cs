@@ -6,7 +6,7 @@ namespace ABS
     {
         bool Guardar(T objeto);
         bool Eliminar(T objeto);
+        T Detallar(T objeto);
         List<T> Listar();
-        T Objeto(T objeto);
     }
 }
