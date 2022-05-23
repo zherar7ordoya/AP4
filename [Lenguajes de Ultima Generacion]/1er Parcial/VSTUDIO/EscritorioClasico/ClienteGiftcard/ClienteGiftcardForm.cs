@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace EscritorioClasico.ClienteGiftcard
@@ -91,27 +92,53 @@ namespace EscritorioClasico.ClienteGiftcard
 
         public void GiftcardAsignada(BEL.Cliente objeto)
         {
-            List<BEL.TarjetaInternacional> ListaInternacionales = new List<BEL.TarjetaInternacional>();
-            List<BEL.TarjetaNacional> ListaNacionales = new List<BEL.TarjetaNacional>();
+            LimpiarTextBoxes();
+
             BEL.Cliente cliente = clientes.Detallar(objeto);
 
             if (cliente.Tarjeta != null)
             {
-                foreach (BEL.Tarjeta tarjeta in cliente.Tarjeta)
+                if (cliente.Tarjeta[0] is BEL.TarjetaInternacional)
                 {
-                    this.CodigoTextBox.Text = tarjeta.Codigo.ToString();
-                    if (tarjeta is BEL.TarjetaInternacional) this.TipoTextBox.Text = "Internacional";
-                    this.NumeroTextBox.Text = tarjeta.Numero.ToString();
-                    this.FechaVencimientoTextBox.Text = tarjeta.Vencimiento.ToString();
-                    this.SaldoTextBox.Text = tarjeta.Saldo.ToString();
-                    this.DescuentosTextBox.Text = tarjeta.Descuento.ToString();
-                    this.RubroTextBox.Text = tarjeta.Rubro.ToString();
-                    this.EstadoTextBox.Text = tarjeta.Estado.ToString();
-                    this.PaisTextBox.Text=tarjeta.Pais.ToString();
-                    //if (tarjeta is BEL.TarjetaNacional) this.ProvinciaTextBox.Text = tarjeta.Pr
+                    foreach (BEL.TarjetaInternacional tarjeta in cliente.Tarjeta)
+                    {
+                        this.TipoTextBox.Text = "Internacional";
+                        this.ProvinciaTextBox.Text = "(Sin asignar)";
+                    }
                 }
+                if (cliente.Tarjeta[0] is BEL.TarjetaNacional)
+                {
+                    foreach (BEL.TarjetaNacional tarjeta in cliente.Tarjeta)
+                    {
+                        this.TipoTextBox.Text = "Nacional";
+                        this.ProvinciaTextBox.Text = tarjeta.Provincia.ToString();
+                    }
+                }
+                this.CodigoTextBox.Text = cliente.Tarjeta[0].Codigo.ToString();
+                this.NumeroTextBox.Text = cliente.Tarjeta[0].Numero.ToString();
+                this.FechaVencimientoTextBox.Text = cliente.Tarjeta[0].Vencimiento.ToString();
+                this.SaldoTextBox.Text = cliente.Tarjeta[0].Saldo.ToString();
+                this.DescuentosTextBox.Text = cliente.Tarjeta[0].Descuento.ToString();
+                this.RubroTextBox.Text = cliente.Tarjeta[0].Rubro.ToString();
+                this.EstadoTextBox.Text = cliente.Tarjeta[0].Estado.ToString();
+                this.PaisTextBox.Text = cliente.Tarjeta[0].Pais.ToString();
             }
+        }
 
+        private void LimpiarTextBoxes()
+        {
+            Action<Control.ControlCollection> func = null;
+
+            func = (controls) =>
+            {
+                foreach (Control control in controls)
+                {
+                    if (control is TextBox) (control as TextBox).Clear();
+                    else { func(control.Controls); }
+                }
+            };
+
+            func(Controls);
         }
 
 
