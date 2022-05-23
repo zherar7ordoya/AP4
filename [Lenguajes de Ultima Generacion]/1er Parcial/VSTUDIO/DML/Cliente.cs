@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Windows.Forms;
 using static System.Console;
 
 namespace DML
@@ -153,9 +154,16 @@ namespace DML
             }
             catch (Exception ex)
             {
-                WriteLine($"Excepción Interna: { ex.Message }");
-                ReadKey();
-                throw ex;
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
             }
 
             return ListaClientes;
@@ -250,9 +258,16 @@ namespace DML
             }
             catch (Exception ex)
             {
-                WriteLine($"Excepción Interna: { ex.Message }");
-                ReadKey();
-                throw ex;
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
             }
 
             return cliente;

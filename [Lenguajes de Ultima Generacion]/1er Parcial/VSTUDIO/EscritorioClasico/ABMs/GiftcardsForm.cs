@@ -6,64 +6,27 @@ namespace EscritorioClasico.ABMs
 {
     public partial class GiftcardsForm : Form
     {
+        //APP-1
+        BLL.TarjetaInternacional internacional;
+        BLL.TarjetaNacional nacional;
+
         // *-------------------------------------------------------=> SINGLETON
         private GiftcardsForm()
         {
             InitializeComponent();
+
+            //APP-2
+            internacional = new BLL.TarjetaInternacional();
+            nacional = new BLL.TarjetaNacional();
         }
+
         private static GiftcardsForm instancia = null;
+
         public static GiftcardsForm Instancia()
         {
             if (instancia == null) instancia = new GiftcardsForm();
             return instancia;
         }
-        private void GiftcardsForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            e.Cancel = true;
-            Hide();
-        }
-        // *-------------------------------------------------------=> *********
-
-        #region DUMMY DATA
-        private void GiftcardsForm_Load(object sender, EventArgs e)
-        {
-            DataSet datos = new DataSet();
-            DataTable tabla = new DataTable();
-
-            tabla.Columns.Add("Código");
-            tabla.Columns.Add("Nombre");
-            tabla.Columns.Add("Apellido");
-
-            tabla.Rows.Add(new object[]
-            {
-                777,
-                "Gerardo",
-                "Tordoya"
-            });
-            tabla.Rows.Add(new object[]
-            {
-                987,
-                "Alfredo",
-                "Mamaní"
-            });
-
-            datos.Tables.Add(tabla);
-            GiftcardsDataGridView.DataSource = null;
-            GiftcardsDataGridView.DataSource = datos.Tables[0].DefaultView;
-        }
-        private void GiftcardsDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                if (e.ColumnIndex == 0) MessageBox.Show(GiftcardsDataGridView[(e.ColumnIndex + 3), e.RowIndex].Value.ToString() + ": estás a punto de borrar.");
-                if (e.ColumnIndex == 1) MessageBox.Show(GiftcardsDataGridView[(e.ColumnIndex + 2), e.RowIndex].Value.ToString() + ": vas a editar...");
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        #endregion
 
         private void AltaGitfcardButton_Click(object sender, EventArgs e)
         {
@@ -72,6 +35,70 @@ namespace EscritorioClasico.ABMs
             if (respuesta == DialogResult.OK)
             {
                 MessageBox.Show("DialogResult: OK");
+            }
+        }
+
+        private void GiftcardsForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
+            Hide();
+        }
+        // *-------------------------------------------------------=> *********
+
+
+        //APP-3
+        private void GiftcardsForm_Load(object sender, EventArgs e)
+        {
+            this.InternacionalesDataGridView.DataSource = null;
+            this.InternacionalesDataGridView.Rows.Clear();
+            this.InternacionalesDataGridView.DataSource = internacional.Listar();
+
+            this.NacionalesDataGridView.DataSource = null;
+            this.NacionalesDataGridView.Rows.Clear();
+            this.NacionalesDataGridView.DataSource = nacional.Listar();
+        }
+
+        private void InternacionalesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 0) MessageBox.Show(InternacionalesDataGridView[(e.ColumnIndex + 3), e.RowIndex].Value.ToString() + ": estás a punto de borrar.");
+                if (e.ColumnIndex == 1) MessageBox.Show(InternacionalesDataGridView[(e.ColumnIndex + 2), e.RowIndex].Value.ToString() + ": vas a editar...");
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
+            }
+        }
+
+        private void NacionalesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (e.ColumnIndex == 0) MessageBox.Show(NacionalesDataGridView[(e.ColumnIndex + 3), e.RowIndex].Value.ToString() + ": estás a punto de borrar.");
+                if (e.ColumnIndex == 1) MessageBox.Show(NacionalesDataGridView[(e.ColumnIndex + 2), e.RowIndex].Value.ToString() + ": vas a editar...");
+            }
+            catch (Exception ex)
+            {
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
+using System.Windows.Forms;
 
 namespace SEC
 {
@@ -23,11 +24,29 @@ namespace SEC
             }
             catch (CryptographicException ex)
             {
-                throw (ex);
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
             }
             catch (Exception ex)
             {
-                throw (ex);
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
             }
         }
 
@@ -73,7 +92,16 @@ namespace SEC
             }
             catch (Exception ex)
             {
-                throw ex;
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
             }
 
             return texto;
@@ -108,7 +136,16 @@ namespace SEC
             }
             catch (Exception ex)
             {
-                throw ex;
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
             }
 
             return textoEncriptado;

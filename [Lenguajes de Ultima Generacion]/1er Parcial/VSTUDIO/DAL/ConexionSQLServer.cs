@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 using static System.Console;
 
 namespace DAL
@@ -15,18 +16,18 @@ namespace DAL
 
         public ConexionSQLServer()
         {
-            conexion.Open();
-            if (conexion.State == ConnectionState.Open)
-            {
-                WriteLine("Conexión a la base de datos establecida correctamente.");
-                ReadKey();
-            }
-            else
-            {
-                WriteLine("No se pudo establecer conexión a la base de datos.");
-                ReadKey();
-            }
-            conexion.Close();
+            //conexion.Open();
+            //if (conexion.State == ConnectionState.Open)
+            //{
+            //    WriteLine("Conexión a la base de datos establecida correctamente.");
+            //    ReadKey();
+            //}
+            //else
+            //{
+            //    WriteLine("No se pudo establecer conexión a la base de datos.");
+            //    ReadKey();
+            //}
+            //conexion.Close();
         }
 
 
@@ -49,15 +50,29 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                WriteLine($"Excepción Interna: { ex.Message }");
-                ReadKey();
-                throw ex;
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
             }
             catch (Exception ex)
             {
-                WriteLine($"Excepción Interna: { ex.Message }");
-                ReadKey();
-                throw ex;
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
             }
             finally
             {
@@ -91,14 +106,30 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                WriteLine($"Excepción Interna: { ex.Message }");
-                ReadKey();
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
                 throw ex;
             }
             catch (Exception ex)
             {
-                WriteLine($"Excepción Interna: { ex.Message }");
-                ReadKey();
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
                 throw ex;
             }
             finally
@@ -134,14 +165,30 @@ namespace DAL
             }
             catch (SqlException ex)
             {
-                WriteLine($"Excepción Interna: { ex.Message }");
-                ReadKey();
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
                 throw ex;
             }
             catch (Exception ex)
             {
-                WriteLine($"Excepción Interna: { ex.Message }");
-                ReadKey();
+                string message = ex.Message;
+                string caption = "Informe de Excepciones";
+                MessageBoxButtons buttons = MessageBoxButtons.OK;
+                MessageBox.Show(
+                    message,
+                    caption,
+                    buttons,
+                    MessageBoxIcon.Error,
+                    MessageBoxDefaultButton.Button1,
+                    MessageBoxOptions.RightAlign);
                 throw ex;
             }
             finally

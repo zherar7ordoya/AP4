@@ -195,6 +195,15 @@
     <None Include="Resources\Editar48x48.png" />
     <None Include="Resources\Editar32x32.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BEL\BEL.csproj">
+      <Project>{67239864-5c82-4edb-8e0b-32c7ae10579f}</Project>
+      <Name>BEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{e3efb1e3-5f6d-4781-b49f-6bbba25cddc7}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
