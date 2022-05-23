@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -56,6 +57,9 @@ namespace EscritorioClasico.ABMs
             this.NacionalesDataGridView.DataSource = null;
             this.NacionalesDataGridView.Rows.Clear();
             this.NacionalesDataGridView.DataSource = nacional.Listar();
+
+            CalcularTarjetaMayorDescuento();
+            TarjetaMenorMonto();
         }
 
         private void InternacionalesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -101,5 +105,94 @@ namespace EscritorioClasico.ABMs
                     MessageBoxOptions.RightAlign);
             }
         }
+
+
+
+
+
+        BLL.DescuentoCalculado oBLDesc = new BLL.DescuentoCalculado();
+        BLL.TarjetaNacional oBLTarjetaNac = new BLL.TarjetaNacional();
+        BLL.TarjetaInternacional oBLTarjetaInt = new BLL.TarjetaInternacional();
+
+
+
+
+        private void TarjetaMenorMonto()
+        {
+            BEL.Tarjeta oBETarjAux = new BEL.Tarjeta();
+            oBETarjAux.Saldo = 999999;
+            List<BEL.TarjetaNacional> ListaTarjetasNac = oBLTarjetaNac.Listar();
+            List<BEL.TarjetaInternacional> ListaTarjetasInt = oBLTarjetaInt.Listar();
+
+
+            if (ListaTarjetasNac != null)
+            {
+                foreach (BEL.TarjetaNacional oBETarjNacAux in ListaTarjetasNac)
+                {
+                    if (oBETarjNacAux.Saldo < oBETarjAux.Saldo && oBETarjNacAux.Saldo != 0)
+                    {
+                        oBETarjAux = oBETarjNacAux;
+                    }
+                }
+            }
+
+
+            if (ListaTarjetasInt != null)
+            {
+                foreach (BEL.TarjetaInternacional oBETarjIntAux in ListaTarjetasInt)
+                {
+                    if (oBETarjIntAux.Saldo < oBETarjAux.Saldo && oBETarjIntAux.Saldo != 0)
+                    {
+                        oBETarjAux = oBETarjIntAux;
+                    }
+                }
+            }
+            InternacionalesMenorSaldoTextBox.Text = "Gift Card " + oBETarjAux.Numero + " || Saldo: $" + oBETarjAux.Saldo;
+        }
+
+
+
+
+        private void CalcularTarjetaMayorDescuento()
+        {
+            List<BEL.DescuentoCalculado> ListaDescuentos = oBLDesc.Listar();
+            List<BEL.TarjetaNacional> ListaTarjetasNac = oBLTarjetaNac.Listar();
+            List<BEL.TarjetaInternacional> ListaTarjetasInt = oBLTarjetaInt.Listar();
+            double aux1 = 0;
+            double aux = 0;
+            int numeroTarjeta = 0;
+            BEL.Tarjeta oBETarjAux = new BEL.Tarjeta();
+            if (ListaDescuentos != null)
+            {
+                foreach (BEL.DescuentoCalculado oBEDesAux in ListaDescuentos)
+                {
+                    aux1 += oBEDesAux.DescuentoOtorgado;
+                    numeroTarjeta = oBEDesAux.NumeroTarjeta;
+
+                    foreach (BEL.DescuentoCalculado oBEDesAux2 in ListaDescuentos)
+                    {
+                        if (oBEDesAux.NumeroTarjeta == oBEDesAux2.NumeroTarjeta && oBEDesAux.DescuentoOtorgado != oBEDesAux2.DescuentoOtorgado)
+                        {
+                            aux1 += oBEDesAux2.DescuentoOtorgado;
+                        }
+                    }
+                    if (aux1 > aux)
+                    {
+                        aux = aux1;
+                        aux1 = 0;
+                    }
+                }
+                InternacionalesMayorDescuentoTextBox.Text = "Gift Card: " + numeroTarjeta.ToString() + " || Descuento: $" + aux;
+            }
+            else
+            {
+                InternacionalesMayorDescuentoTextBox.Text = "No hay descuentos acumulados";
+            }
+        }
+
+
+
+
+
     }
 }

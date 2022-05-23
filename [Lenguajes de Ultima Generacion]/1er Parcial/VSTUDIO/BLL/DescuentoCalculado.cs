@@ -6,7 +6,7 @@ namespace BLL
     {
         // *---------------------------------------------------------=> COMUNES
         readonly DML.DescuentoCalculado descuento;
-        public DescuentoCalculado(DML.DescuentoCalculado descuento) => this.descuento = new DML.DescuentoCalculado();
+        public DescuentoCalculado() => this.descuento = new DML.DescuentoCalculado();
 
 
         // *------------------------------------------------=> IMPLEMENTACIONES
