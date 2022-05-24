@@ -76,33 +76,33 @@ namespace DML
         }
 
 
-        public bool Guardar(BEL.TarjetaInternacional tarjeta)
+        public bool Guardar(BEL.TarjetaInternacional giftcard)
         {
             string consulta;
-            if (tarjeta.Codigo == 0)
+            if (giftcard.Codigo == 0)
             {
                 consulta =
                     "INSERT INTO " +
                     "Tarjetas(Numero, Vencimiento, Estado, Rubro, TipoNacProv) " +
                     "VALUES(" +
-                    $"{ tarjeta.Numero }, " +
-                    $"{ tarjeta.Vencimiento }, " +
-                    $"{ tarjeta.Estado }, " +
-                    $"{ tarjeta.Rubro }, " +
-                    $"{ tarjeta.Pais })";
+                    $"{ giftcard.Numero }, " +
+                    $"'{ giftcard.Vencimiento }', " +
+                    $"'{ giftcard.Estado }', " +
+                    $"'{ giftcard.Rubro }', " +
+                    $"'{ giftcard.Pais }')";
             }
             else
             {
                 consulta = 
                     "UPDATE Tarjetas " +
                     "SET " +
-                    $"Numero = { tarjeta.Numero }, " +
-                    $"Vencimiento = { tarjeta.Vencimiento }, " +
-                    $"Estado = { tarjeta.Estado }, " +
-                    $"Rubro = { tarjeta.Rubro }, " +
-                    $"Saldo = { tarjeta.Saldo }, " +
-                    $"TipoNacProv = { tarjeta.Pais } " +
-                    $"WHERE Codigo = { tarjeta.Codigo }";
+                    $"Numero = { giftcard.Numero }, " +
+                    $"Vencimiento = '{ giftcard.Vencimiento }', " +
+                    $"Estado = '{ giftcard.Estado }', " +
+                    $"Rubro = '{ giftcard.Rubro }', " +
+                    $"Saldo = { giftcard.Saldo }, " +
+                    $"TipoNacProv = '{ giftcard.Pais }' " +
+                    $"WHERE Codigo = { giftcard.Codigo }";
             }
             conexion = new DAL.ConexionSQLServer();
             return conexion.Escritura(consulta);

@@ -40,10 +40,12 @@ namespace EscritorioClasico.ABMs
             Hide();
         }
         #endregion
-        
+
 
         //APP-3
-        private void GiftcardsForm_Load(object sender, EventArgs e)
+        private void GiftcardsForm_Load(object sender, EventArgs e) => CargaInicial();
+
+        private void CargaInicial()
         {
             this.InternacionalesDataGridView.DataSource = null;
             this.InternacionalesDataGridView.Rows.Clear();
@@ -133,12 +135,46 @@ namespace EscritorioClasico.ABMs
         // *------------------------------------------=> FINALIZA CARGA INICIAL
 
 
+        BEL.TarjetaInternacional belGiftcardInternacional = new BEL.TarjetaInternacional();
+        BLL.TarjetaInternacional lgcGiftcardInternacional = new BLL.TarjetaInternacional();
+
         private void InternacionalesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            belGiftcardInternacional = (BEL.TarjetaInternacional)this.InternacionalesDataGridView.CurrentRow.DataBoundItem;
+
             try
             {
-                if (e.ColumnIndex == 0) MessageBox.Show(InternacionalesDataGridView[(e.ColumnIndex + 3), e.RowIndex].Value.ToString() + ": estás a punto de borrar.");
-                if (e.ColumnIndex == 1) MessageBox.Show(InternacionalesDataGridView[(e.ColumnIndex + 2), e.RowIndex].Value.ToString() + ": vas a editar...");
+                // ELIMINA
+                if (e.ColumnIndex == 0)
+                {
+                    DialogResult respuesta;
+                    respuesta = MessageBox.Show("¿Confirma eliminación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        if (lgcGiftcardInternacional.Eliminar(belGiftcardInternacional) == false) MessageBox.Show("Registro asociado", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                        else { CargaInicial(); }
+                    }
+                }
+
+                // EDITA
+                if (e.ColumnIndex == 1)
+                {
+                    GiftcardForm formulario = new GiftcardForm();
+
+                    formulario.CodigoTextBox.Text = belGiftcardInternacional.Codigo.ToString();
+                    formulario.CodigoTextBox.Enabled = false;
+
+                    formulario.NumeroTextBox.Text = belGiftcardInternacional.Numero.ToString();
+                    formulario.FechaVencimientoDateTimePicker.Value = belGiftcardInternacional.Vencimiento;
+                    formulario.RubroComboBox.Text = belGiftcardInternacional.Rubro.ToString();
+                    formulario.PaisComboBox.Text = belGiftcardInternacional.Pais.ToString();
+
+                    formulario.ProvinciaComboBox.Text = String.Empty;
+                    formulario.ProvinciaComboBox.Enabled = false;
+
+                    DialogResult respuesta = formulario.ShowDialog();
+                    if (respuesta == DialogResult.OK) CargaInicial();
+                }
             }
             catch (Exception ex)
             {
@@ -156,12 +192,44 @@ namespace EscritorioClasico.ABMs
         }
 
 
+        BEL.TarjetaNacional belGiftcardNacional = new BEL.TarjetaNacional();
+        BLL.TarjetaNacional lgcGiftcardNacional = new BLL.TarjetaNacional();
+
         private void NacionalesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            belGiftcardNacional = (BEL.TarjetaNacional)this.NacionalesDataGridView.CurrentRow.DataBoundItem;
+
             try
             {
-                if (e.ColumnIndex == 0) MessageBox.Show(NacionalesDataGridView[(e.ColumnIndex + 3), e.RowIndex].Value.ToString() + ": estás a punto de borrar.");
-                if (e.ColumnIndex == 1) MessageBox.Show(NacionalesDataGridView[(e.ColumnIndex + 2), e.RowIndex].Value.ToString() + ": vas a editar...");
+                // ELIMINA
+                if (e.ColumnIndex == 0)
+                {
+                    DialogResult respuesta;
+                    respuesta = MessageBox.Show("¿Confirma eliminación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        if (lgcGiftcardNacional.Eliminar(belGiftcardNacional) == false) MessageBox.Show("Registro asociado", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                        else { CargaInicial(); }
+                    }
+                }
+
+                // EDITA
+                if (e.ColumnIndex == 1)
+                {
+                    GiftcardForm formulario = new GiftcardForm();
+
+                    formulario.CodigoTextBox.Text = belGiftcardNacional.Codigo.ToString();
+                    formulario.CodigoTextBox.Enabled = false;
+
+                    formulario.NumeroTextBox.Text = belGiftcardNacional.Numero.ToString();
+                    formulario.FechaVencimientoDateTimePicker.Value = belGiftcardNacional.Vencimiento;
+                    formulario.RubroComboBox.Text = belGiftcardNacional.Rubro.ToString();
+                    formulario.PaisComboBox.Text = belGiftcardNacional.Pais.ToString();
+                    formulario.ProvinciaComboBox.Text = belGiftcardNacional.Provincia.ToString();
+
+                    DialogResult respuesta = formulario.ShowDialog();
+                    if (respuesta == DialogResult.OK) CargaInicial();
+                }
             }
             catch (Exception ex)
             {

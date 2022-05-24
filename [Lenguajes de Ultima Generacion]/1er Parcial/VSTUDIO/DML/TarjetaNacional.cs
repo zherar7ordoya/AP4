@@ -100,12 +100,12 @@ namespace DML
                     "UPDATE Tarjetas " +
                     "SET " +
                     $"Numero = { tarjeta.Numero }, " +
-                    $"Vencimiento = { tarjeta.Vencimiento }, " +
-                    $"Estado = { tarjeta.Estado }, " +
+                    $"Vencimiento = '{ tarjeta.Vencimiento }', " +
+                    $"Estado = '{ tarjeta.Estado }', " +
                     $"Saldo = { tarjeta.Saldo }, " +
-                    $"Rubro = { tarjeta.Rubro }, " +
-                    $"TipoNacProv = { tarjeta.Pais }, " +
-                    $"Provincia = { tarjeta.Provincia } " +
+                    $"Rubro = '{ tarjeta.Rubro }', " +
+                    $"TipoNacProv = '{ tarjeta.Pais }', " +
+                    $"Provincia = '{ tarjeta.Provincia }' " +
                     $"WHERE Codigo = { tarjeta.Codigo }";
             }
             conexion = new DAL.ConexionSQLServer();

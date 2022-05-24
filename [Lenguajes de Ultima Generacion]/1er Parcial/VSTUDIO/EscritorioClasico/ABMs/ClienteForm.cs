@@ -5,18 +5,15 @@ namespace EscritorioClasico.ABMs
 {
     public partial class ClienteForm : Form
     {
-        BLL.Cliente bCliente = new BLL.Cliente();
-        BEL.Cliente eCliente = new BEL.Cliente();
+        BLL.Cliente lgcCliente = new BLL.Cliente();
+        BEL.Cliente belCliente = new BEL.Cliente();
 
 
         // *-------------------------------------------------------=> SINGLETON
         // NOTA:
         // Para el ABM, tuve que hacerlo público. Es decir, es un singleton mal
         // implementado. Será materia de estudio posterior.
-        public ClienteForm()
-        {
-            InitializeComponent();
-        }
+        public ClienteForm() => InitializeComponent();
         private static ClienteForm instancia = null;
         public static ClienteForm Instancia()
         {
@@ -40,25 +37,22 @@ namespace EscritorioClasico.ABMs
             func(Controls);
         }
 
-        private void ClienteForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            LimpiarTextBoxes();
-        }
+        private void ClienteForm_FormClosing(object sender, FormClosingEventArgs e) => LimpiarTextBoxes();
 
         private void RegistrarButton_Click(object sender, EventArgs e)
         {
             try
             {
                 // Si el TextBox tiene código es porque el registro existe.
-                if (CodigoTextBox.Text != "") eCliente.Codigo = Convert.ToInt32(CodigoTextBox.Text);
-                else { eCliente.Codigo = 0; }
+                if (CodigoTextBox.Text != "") belCliente.Codigo = Convert.ToInt32(CodigoTextBox.Text);
+                else { belCliente.Codigo = 0; }
 
-                eCliente.Nombre = NombreTextBox.Text;
-                eCliente.Apellido = ApellidoTextBox.Text;
-                eCliente.DNI = Convert.ToInt32(DNITextBox.Text);
-                eCliente.FechaNacimiento = FechaVencimientoDateTimePicker.Value;
+                belCliente.Nombre = NombreTextBox.Text;
+                belCliente.Apellido = ApellidoTextBox.Text;
+                belCliente.DNI = Convert.ToInt32(DNITextBox.Text);
+                belCliente.FechaNacimiento = FechaVencimientoDateTimePicker.Value;
                 
-                bCliente.Guardar(eCliente);
+                lgcCliente.Guardar(belCliente);
 
                 LimpiarTextBoxes();
                 this.DialogResult = DialogResult.OK;

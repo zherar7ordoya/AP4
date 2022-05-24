@@ -7,8 +7,8 @@ namespace EscritorioClasico.ABMs
     public partial class ClientesForm : Form
     {
         //APP-1
-        BLL.Cliente bCliente;
-        BEL.Cliente eCliente;
+        BLL.Cliente lgcCliente;
+        BEL.Cliente belCliente;
 
         // *-------------------------------------------------------=> SINGLETON
         private static ClientesForm instancia = null;
@@ -18,7 +18,7 @@ namespace EscritorioClasico.ABMs
             InitializeComponent();
 
             //APP-2
-            bCliente = new BLL.Cliente(); 
+            lgcCliente = new BLL.Cliente(); 
         }
 
         public static ClientesForm Instancia()
@@ -55,14 +55,14 @@ namespace EscritorioClasico.ABMs
         {
             this.ClientesDataGridView.DataSource = null;
             this.ClientesDataGridView.Rows.Clear();
-            this.ClientesDataGridView.DataSource = bCliente.Listar();
+            this.ClientesDataGridView.DataSource = lgcCliente.Listar();
         }
 
         private void ClientesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                eCliente = (BEL.Cliente)this.ClientesDataGridView.CurrentRow.DataBoundItem;
+                belCliente = (BEL.Cliente)this.ClientesDataGridView.CurrentRow.DataBoundItem;
 
                 // ELIMINACIÓN
                 if (e.ColumnIndex == 0)
@@ -71,7 +71,7 @@ namespace EscritorioClasico.ABMs
                     respuesta = MessageBox.Show("¿Confirma eliminación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (respuesta == DialogResult.Yes)
                     {
-                        if (bCliente.Eliminar(eCliente) == false) MessageBox.Show("Registro asociado", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                        if (lgcCliente.Eliminar(belCliente) == false) MessageBox.Show("Registro asociado", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
                         else { CargaInicial(); }
                     }
                 }
@@ -82,18 +82,15 @@ namespace EscritorioClasico.ABMs
                     //instancio el form ABM de materia y le paso los para editar
                     ClienteForm formulario = new ClienteForm();
 
-                    formulario.CodigoTextBox.Text = eCliente.Codigo.ToString();
-                    formulario.NombreTextBox.Text = eCliente.Nombre.ToString();
-                    formulario.ApellidoTextBox.Text = eCliente.Apellido.ToString();
-                    formulario.DNITextBox.Text = eCliente.DNI.ToString();
-                    formulario.FechaVencimientoDateTimePicker.Value = eCliente.FechaNacimiento;
+                    formulario.CodigoTextBox.Text = belCliente.Codigo.ToString();
+                    formulario.NombreTextBox.Text = belCliente.Nombre.ToString();
+                    formulario.ApellidoTextBox.Text = belCliente.Apellido.ToString();
+                    formulario.DNITextBox.Text = belCliente.DNI.ToString();
+                    formulario.FechaVencimientoDateTimePicker.Value = belCliente.FechaNacimiento;
 
                     //si la respuesta es OK, actualizo la grilla
                     DialogResult respuesta = formulario.ShowDialog();
-                    if (respuesta == DialogResult.OK)
-                    {
-                        CargaInicial();
-                    }
+                    if (respuesta == DialogResult.OK) CargaInicial();
                 }
             }
             catch (Exception ex)
