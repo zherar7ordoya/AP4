@@ -46,10 +46,7 @@ namespace EscritorioClasico.ABMs
 
 
         //APP-3
-        private void ClientesForm_Load(object sender, EventArgs e)
-        {
-            CargaInicial();
-        }
+        private void ClientesForm_Load(object sender, EventArgs e) => CargaInicial();
 
         private void CargaInicial()
         {
@@ -79,7 +76,7 @@ namespace EscritorioClasico.ABMs
                 //  EDICIÓN
                 if (e.ColumnIndex == 1)
                 {
-                    //instancio el form ABM de materia y le paso los para editar
+                    // Instancio el Form ABM y le paso los datos a editar.
                     ClienteForm formulario = new ClienteForm();
 
                     formulario.CodigoTextBox.Text = belCliente.Codigo.ToString();
@@ -88,7 +85,7 @@ namespace EscritorioClasico.ABMs
                     formulario.DNITextBox.Text = belCliente.DNI.ToString();
                     formulario.FechaVencimientoDateTimePicker.Value = belCliente.FechaNacimiento;
 
-                    //si la respuesta es OK, actualizo la grilla
+                    // Si la respuesta es OK, actualizo la grilla.
                     DialogResult respuesta = formulario.ShowDialog();
                     if (respuesta == DialogResult.OK) CargaInicial();
                 }

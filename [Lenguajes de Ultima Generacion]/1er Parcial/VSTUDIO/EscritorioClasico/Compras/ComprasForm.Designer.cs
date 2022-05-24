@@ -31,8 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.AltaCompraButton = new System.Windows.Forms.Button();
             this.ComprasDataGridView = new System.Windows.Forms.DataGridView();
-            this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
-            this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ComprasDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,29 +51,10 @@
             this.ComprasDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.ComprasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ComprasDataGridView.ColumnHeadersHeight = 25;
-            this.ComprasDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Borrar,
-            this.Editar});
             this.ComprasDataGridView.Location = new System.Drawing.Point(12, 12);
             this.ComprasDataGridView.Name = "ComprasDataGridView";
-            this.ComprasDataGridView.RowTemplate.Height = 32;
             this.ComprasDataGridView.Size = new System.Drawing.Size(600, 300);
             this.ComprasDataGridView.TabIndex = 3;
-            this.ComprasDataGridView.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ComprasDataGridView_CellContentDoubleClick);
-            // 
-            // Borrar
-            // 
-            this.Borrar.HeaderText = "Borrar";
-            this.Borrar.Image = global::EscritorioClasico.Properties.Resources.Borrar32x32;
-            this.Borrar.Name = "Borrar";
-            this.Borrar.Width = 41;
-            // 
-            // Editar
-            // 
-            this.Editar.HeaderText = "Editar";
-            this.Editar.Image = global::EscritorioClasico.Properties.Resources.Editar32x32;
-            this.Editar.Name = "Editar";
-            this.Editar.Width = 40;
             // 
             // ComprasForm
             // 
@@ -99,7 +78,5 @@
 
         private System.Windows.Forms.Button AltaCompraButton;
         private System.Windows.Forms.DataGridView ComprasDataGridView;
-        private System.Windows.Forms.DataGridViewImageColumn Borrar;
-        private System.Windows.Forms.DataGridViewImageColumn Editar;
     }
 }

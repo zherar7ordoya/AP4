@@ -5,10 +5,7 @@ namespace EscritorioClasico.Compras
     public partial class CompraForm : Form
     {
         // *-------------------------------------------------------=> SINGLETON
-        private CompraForm()
-        {
-            InitializeComponent();
-        }
+        public CompraForm() => InitializeComponent();
         private static CompraForm instancia = null;
         public static CompraForm Instancia()
         {
