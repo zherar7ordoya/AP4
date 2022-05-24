@@ -28,16 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.InternacionalesGroupBox = new System.Windows.Forms.GroupBox();
             this.InternacionalesMenorSaldoTextBox = new System.Windows.Forms.TextBox();
-            this.InternacionalesMenorSaldoLabel = new System.Windows.Forms.Label();
-            this.InternacionalesMayorDescuentoTextBox = new System.Windows.Forms.TextBox();
-            this.InternacionalesMayorDescuentoLabel = new System.Windows.Forms.Label();
             this.InternacionalesDataGridView = new System.Windows.Forms.DataGridView();
             this.Borrar = new System.Windows.Forms.DataGridViewImageColumn();
             this.Editar = new System.Windows.Forms.DataGridViewImageColumn();
+            this.InternacionalesMenorSaldoLabel = new System.Windows.Forms.Label();
+            this.InternacionalesMayorDescuentoTextBox = new System.Windows.Forms.TextBox();
+            this.InternacionalesMayorDescuentoLabel = new System.Windows.Forms.Label();
             this.AltaGitfcardButton = new System.Windows.Forms.Button();
             this.NacionalesGroupBox = new System.Windows.Forms.GroupBox();
             this.NacionalesMenorSaldoTextBox = new System.Windows.Forms.TextBox();
@@ -62,7 +62,7 @@
             this.InternacionalesGroupBox.Controls.Add(this.InternacionalesMayorDescuentoLabel);
             this.InternacionalesGroupBox.Location = new System.Drawing.Point(12, 12);
             this.InternacionalesGroupBox.Name = "InternacionalesGroupBox";
-            this.InternacionalesGroupBox.Size = new System.Drawing.Size(851, 213);
+            this.InternacionalesGroupBox.Size = new System.Drawing.Size(900, 213);
             this.InternacionalesGroupBox.TabIndex = 1;
             this.InternacionalesGroupBox.TabStop = false;
             this.InternacionalesGroupBox.Text = "Internacionales";
@@ -71,39 +71,14 @@
             // 
             this.InternacionalesMenorSaldoTextBox.Location = new System.Drawing.Point(690, 174);
             this.InternacionalesMenorSaldoTextBox.Name = "InternacionalesMenorSaldoTextBox";
-            this.InternacionalesMenorSaldoTextBox.Size = new System.Drawing.Size(150, 20);
+            this.InternacionalesMenorSaldoTextBox.Size = new System.Drawing.Size(200, 20);
             this.InternacionalesMenorSaldoTextBox.TabIndex = 5;
-            // 
-            // InternacionalesMenorSaldoLabel
-            // 
-            this.InternacionalesMenorSaldoLabel.Location = new System.Drawing.Point(687, 146);
-            this.InternacionalesMenorSaldoLabel.Name = "InternacionalesMenorSaldoLabel";
-            this.InternacionalesMenorSaldoLabel.Size = new System.Drawing.Size(150, 25);
-            this.InternacionalesMenorSaldoLabel.TabIndex = 4;
-            this.InternacionalesMenorSaldoLabel.Text = "Gift Card con menor saldo";
-            this.InternacionalesMenorSaldoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // InternacionalesMayorDescuentoTextBox
-            // 
-            this.InternacionalesMayorDescuentoTextBox.Location = new System.Drawing.Point(690, 47);
-            this.InternacionalesMayorDescuentoTextBox.Name = "InternacionalesMayorDescuentoTextBox";
-            this.InternacionalesMayorDescuentoTextBox.Size = new System.Drawing.Size(150, 20);
-            this.InternacionalesMayorDescuentoTextBox.TabIndex = 3;
-            // 
-            // InternacionalesMayorDescuentoLabel
-            // 
-            this.InternacionalesMayorDescuentoLabel.Location = new System.Drawing.Point(687, 19);
-            this.InternacionalesMayorDescuentoLabel.Name = "InternacionalesMayorDescuentoLabel";
-            this.InternacionalesMayorDescuentoLabel.Size = new System.Drawing.Size(150, 25);
-            this.InternacionalesMayorDescuentoLabel.TabIndex = 2;
-            this.InternacionalesMayorDescuentoLabel.Text = "Gift Card con más descuento";
-            this.InternacionalesMayorDescuentoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // InternacionalesDataGridView
             // 
             this.InternacionalesDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.InternacionalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.InternacionalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.InternacionalesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.InternacionalesDataGridView.ColumnHeadersHeight = 25;
             this.InternacionalesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -130,9 +105,34 @@
             this.Editar.Name = "Editar";
             this.Editar.Width = 40;
             // 
+            // InternacionalesMenorSaldoLabel
+            // 
+            this.InternacionalesMenorSaldoLabel.Location = new System.Drawing.Point(687, 146);
+            this.InternacionalesMenorSaldoLabel.Name = "InternacionalesMenorSaldoLabel";
+            this.InternacionalesMenorSaldoLabel.Size = new System.Drawing.Size(150, 25);
+            this.InternacionalesMenorSaldoLabel.TabIndex = 4;
+            this.InternacionalesMenorSaldoLabel.Text = "Gift Card con menor saldo";
+            this.InternacionalesMenorSaldoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // InternacionalesMayorDescuentoTextBox
+            // 
+            this.InternacionalesMayorDescuentoTextBox.Location = new System.Drawing.Point(690, 47);
+            this.InternacionalesMayorDescuentoTextBox.Name = "InternacionalesMayorDescuentoTextBox";
+            this.InternacionalesMayorDescuentoTextBox.Size = new System.Drawing.Size(200, 20);
+            this.InternacionalesMayorDescuentoTextBox.TabIndex = 3;
+            // 
+            // InternacionalesMayorDescuentoLabel
+            // 
+            this.InternacionalesMayorDescuentoLabel.Location = new System.Drawing.Point(687, 19);
+            this.InternacionalesMayorDescuentoLabel.Name = "InternacionalesMayorDescuentoLabel";
+            this.InternacionalesMayorDescuentoLabel.Size = new System.Drawing.Size(150, 25);
+            this.InternacionalesMayorDescuentoLabel.TabIndex = 2;
+            this.InternacionalesMayorDescuentoLabel.Text = "Gift Card con más descuento";
+            this.InternacionalesMayorDescuentoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // AltaGitfcardButton
             // 
-            this.AltaGitfcardButton.Location = new System.Drawing.Point(788, 231);
+            this.AltaGitfcardButton.Location = new System.Drawing.Point(837, 231);
             this.AltaGitfcardButton.Name = "AltaGitfcardButton";
             this.AltaGitfcardButton.Size = new System.Drawing.Size(75, 23);
             this.AltaGitfcardButton.TabIndex = 2;
@@ -149,7 +149,7 @@
             this.NacionalesGroupBox.Controls.Add(this.NacionalesMayorDescuentoLabel);
             this.NacionalesGroupBox.Location = new System.Drawing.Point(12, 260);
             this.NacionalesGroupBox.Name = "NacionalesGroupBox";
-            this.NacionalesGroupBox.Size = new System.Drawing.Size(851, 213);
+            this.NacionalesGroupBox.Size = new System.Drawing.Size(900, 213);
             this.NacionalesGroupBox.TabIndex = 5;
             this.NacionalesGroupBox.TabStop = false;
             this.NacionalesGroupBox.Text = "Nacionales";
@@ -158,14 +158,14 @@
             // 
             this.NacionalesMenorSaldoTextBox.Location = new System.Drawing.Point(690, 174);
             this.NacionalesMenorSaldoTextBox.Name = "NacionalesMenorSaldoTextBox";
-            this.NacionalesMenorSaldoTextBox.Size = new System.Drawing.Size(150, 20);
+            this.NacionalesMenorSaldoTextBox.Size = new System.Drawing.Size(200, 20);
             this.NacionalesMenorSaldoTextBox.TabIndex = 5;
             // 
             // NacionalesDataGridView
             // 
             this.NacionalesDataGridView.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.NacionalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.NacionalesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.NacionalesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.NacionalesDataGridView.ColumnHeadersHeight = 25;
             this.NacionalesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -205,7 +205,7 @@
             // 
             this.NacionalesMayorDescuentoTextBox.Location = new System.Drawing.Point(690, 47);
             this.NacionalesMayorDescuentoTextBox.Name = "NacionalesMayorDescuentoTextBox";
-            this.NacionalesMayorDescuentoTextBox.Size = new System.Drawing.Size(150, 20);
+            this.NacionalesMayorDescuentoTextBox.Size = new System.Drawing.Size(200, 20);
             this.NacionalesMayorDescuentoTextBox.TabIndex = 3;
             // 
             // NacionalesMayorDescuentoLabel
@@ -221,7 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 486);
+            this.ClientSize = new System.Drawing.Size(934, 486);
             this.Controls.Add(this.NacionalesGroupBox);
             this.Controls.Add(this.InternacionalesGroupBox);
             this.Controls.Add(this.AltaGitfcardButton);

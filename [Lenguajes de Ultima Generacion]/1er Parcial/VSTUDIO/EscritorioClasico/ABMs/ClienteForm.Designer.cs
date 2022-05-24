@@ -36,11 +36,9 @@
             this.ApellidoLabel = new System.Windows.Forms.Label();
             this.DNITextBox = new System.Windows.Forms.TextBox();
             this.DNILabel = new System.Windows.Forms.Label();
-            this.FechaNacimientoTextBox = new System.Windows.Forms.TextBox();
             this.FechaNacimientoLabel = new System.Windows.Forms.Label();
-            this.GiftcardTextBox = new System.Windows.Forms.TextBox();
-            this.GiftcardLabel = new System.Windows.Forms.Label();
             this.RegistrarButton = new System.Windows.Forms.Button();
+            this.FechaVencimientoDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.SuspendLayout();
             // 
             // CodigoLabel
@@ -107,13 +105,6 @@
             this.DNILabel.Text = "DNI";
             this.DNILabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // FechaNacimientoTextBox
-            // 
-            this.FechaNacimientoTextBox.Location = new System.Drawing.Point(168, 116);
-            this.FechaNacimientoTextBox.Name = "FechaNacimientoTextBox";
-            this.FechaNacimientoTextBox.Size = new System.Drawing.Size(150, 20);
-            this.FechaNacimientoTextBox.TabIndex = 9;
-            // 
             // FechaNacimientoLabel
             // 
             this.FechaNacimientoLabel.Location = new System.Drawing.Point(12, 113);
@@ -123,40 +114,32 @@
             this.FechaNacimientoLabel.Text = "Fecha de Nacimiento";
             this.FechaNacimientoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // GiftcardTextBox
-            // 
-            this.GiftcardTextBox.Location = new System.Drawing.Point(168, 142);
-            this.GiftcardTextBox.Name = "GiftcardTextBox";
-            this.GiftcardTextBox.Size = new System.Drawing.Size(150, 20);
-            this.GiftcardTextBox.TabIndex = 11;
-            // 
-            // GiftcardLabel
-            // 
-            this.GiftcardLabel.Location = new System.Drawing.Point(12, 139);
-            this.GiftcardLabel.Name = "GiftcardLabel";
-            this.GiftcardLabel.Size = new System.Drawing.Size(150, 25);
-            this.GiftcardLabel.TabIndex = 10;
-            this.GiftcardLabel.Text = "Gift Card";
-            this.GiftcardLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // RegistrarButton
             // 
-            this.RegistrarButton.Location = new System.Drawing.Point(324, 142);
+            this.RegistrarButton.Location = new System.Drawing.Point(324, 115);
             this.RegistrarButton.Name = "RegistrarButton";
             this.RegistrarButton.Size = new System.Drawing.Size(75, 23);
             this.RegistrarButton.TabIndex = 12;
             this.RegistrarButton.Text = "Registrar";
             this.RegistrarButton.UseVisualStyleBackColor = true;
+            this.RegistrarButton.Click += new System.EventHandler(this.RegistrarButton_Click);
+            // 
+            // FechaVencimientoDateTimePicker
+            // 
+            this.FechaVencimientoDateTimePicker.CustomFormat = "yyyy/MM/dd";
+            this.FechaVencimientoDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaVencimientoDateTimePicker.Location = new System.Drawing.Point(168, 116);
+            this.FechaVencimientoDateTimePicker.Name = "FechaVencimientoDateTimePicker";
+            this.FechaVencimientoDateTimePicker.Size = new System.Drawing.Size(150, 20);
+            this.FechaVencimientoDateTimePicker.TabIndex = 13;
             // 
             // ClienteForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(409, 186);
+            this.Controls.Add(this.FechaVencimientoDateTimePicker);
             this.Controls.Add(this.RegistrarButton);
-            this.Controls.Add(this.GiftcardTextBox);
-            this.Controls.Add(this.GiftcardLabel);
-            this.Controls.Add(this.FechaNacimientoTextBox);
             this.Controls.Add(this.FechaNacimientoLabel);
             this.Controls.Add(this.DNITextBox);
             this.Controls.Add(this.DNILabel);
@@ -172,6 +155,7 @@
             this.Name = "ClienteForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABM de Cliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClienteForm_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -180,17 +164,15 @@
         #endregion
 
         private System.Windows.Forms.Label CodigoLabel;
-        private System.Windows.Forms.TextBox CodigoTextBox;
-        private System.Windows.Forms.TextBox NombreTextBox;
         private System.Windows.Forms.Label NombreLabel;
-        private System.Windows.Forms.TextBox ApellidoTextBox;
         private System.Windows.Forms.Label ApellidoLabel;
-        private System.Windows.Forms.TextBox DNITextBox;
         private System.Windows.Forms.Label DNILabel;
-        private System.Windows.Forms.TextBox FechaNacimientoTextBox;
         private System.Windows.Forms.Label FechaNacimientoLabel;
-        private System.Windows.Forms.TextBox GiftcardTextBox;
-        private System.Windows.Forms.Label GiftcardLabel;
-        private System.Windows.Forms.Button RegistrarButton;
+        public System.Windows.Forms.TextBox CodigoTextBox;
+        public System.Windows.Forms.TextBox NombreTextBox;
+        public System.Windows.Forms.TextBox ApellidoTextBox;
+        public System.Windows.Forms.TextBox DNITextBox;
+        public System.Windows.Forms.Button RegistrarButton;
+        public System.Windows.Forms.DateTimePicker FechaVencimientoDateTimePicker;
     }
 }

@@ -44,20 +44,20 @@ namespace DML
                 consulta = 
                     "INSERT INTO Clientes(Nombre, Apellido, DNI, FechaNacimiento) " +
                     "VALUES(" +
-                    $"{ cliente.Nombre }, " +
-                    $"{ cliente.Apellido }, " +
+                    $"'{ cliente.Nombre }', " +
+                    $"'{ cliente.Apellido }', " +
                     $"{ cliente.DNI }, " +
-                    $"{ cliente.FechaNacimiento })";
+                    $"'{ cliente.FechaNacimiento }')";
             }
             else
             {
                 consulta =
                     "UPDATE Clientes " +
                     "SET " +
-                    $"Nombre = { cliente.Nombre }, " +
-                    $"Apellido = { cliente.Apellido }, " +
+                    $"Nombre = '{ cliente.Nombre }', " +
+                    $"Apellido = '{ cliente.Apellido }', " +
                     $"DNI = { cliente.DNI }, " +
-                    $"FechaNacimiento = { cliente.FechaNacimiento } " +
+                    $"FechaNacimiento = '{ cliente.FechaNacimiento }'" +
                     $"WHERE Codigo = { cliente.Codigo }";
             }
             conexion = new DAL.ConexionSQLServer();

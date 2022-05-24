@@ -128,7 +128,6 @@ namespace EscritorioClasico.ClienteGiftcard
         private void LimpiarTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
-
             func = (controls) =>
             {
                 foreach (Control control in controls)
@@ -137,7 +136,6 @@ namespace EscritorioClasico.ClienteGiftcard
                     else { func(control.Controls); }
                 }
             };
-
             func(Controls);
         }
 

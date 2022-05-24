@@ -7,7 +7,8 @@ namespace EscritorioClasico.ABMs
     public partial class ClientesForm : Form
     {
         //APP-1
-        BLL.Cliente cliente;
+        BLL.Cliente bCliente;
+        BEL.Cliente eCliente;
 
         // *-------------------------------------------------------=> SINGLETON
         private static ClientesForm instancia = null;
@@ -17,7 +18,7 @@ namespace EscritorioClasico.ABMs
             InitializeComponent();
 
             //APP-2
-            cliente = new BLL.Cliente(); 
+            bCliente = new BLL.Cliente(); 
         }
 
         public static ClientesForm Instancia()
@@ -47,17 +48,53 @@ namespace EscritorioClasico.ABMs
         //APP-3
         private void ClientesForm_Load(object sender, EventArgs e)
         {
+            CargaInicial();
+        }
+
+        private void CargaInicial()
+        {
             this.ClientesDataGridView.DataSource = null;
             this.ClientesDataGridView.Rows.Clear();
-            this.ClientesDataGridView.DataSource = cliente.Listar();
+            this.ClientesDataGridView.DataSource = bCliente.Listar();
         }
 
         private void ClientesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                if (e.ColumnIndex == 0) MessageBox.Show(ClientesDataGridView[(e.ColumnIndex + 3), e.RowIndex].Value.ToString() + ": estás a punto de borrar.");
-                if (e.ColumnIndex == 1) MessageBox.Show(ClientesDataGridView[(e.ColumnIndex + 2), e.RowIndex].Value.ToString() + ": vas a editar...");
+                eCliente = (BEL.Cliente)this.ClientesDataGridView.CurrentRow.DataBoundItem;
+
+                // ELIMINACIÓN
+                if (e.ColumnIndex == 0)
+                {
+                    DialogResult respuesta;
+                    respuesta = MessageBox.Show("¿Confirma eliminación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (respuesta == DialogResult.Yes)
+                    {
+                        if (bCliente.Eliminar(eCliente) == false) MessageBox.Show("Registro asociado", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                        else { CargaInicial(); }
+                    }
+                }
+                
+                //  EDICIÓN
+                if (e.ColumnIndex == 1)
+                {
+                    //instancio el form ABM de materia y le paso los para editar
+                    ClienteForm formulario = new ClienteForm();
+
+                    formulario.CodigoTextBox.Text = eCliente.Codigo.ToString();
+                    formulario.NombreTextBox.Text = eCliente.Nombre.ToString();
+                    formulario.ApellidoTextBox.Text = eCliente.Apellido.ToString();
+                    formulario.DNITextBox.Text = eCliente.DNI.ToString();
+                    formulario.FechaVencimientoDateTimePicker.Value = eCliente.FechaNacimiento;
+
+                    //si la respuesta es OK, actualizo la grilla
+                    DialogResult respuesta = formulario.ShowDialog();
+                    if (respuesta == DialogResult.OK)
+                    {
+                        CargaInicial();
+                    }
+                }
             }
             catch (Exception ex)
             {
