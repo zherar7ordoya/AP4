@@ -8,7 +8,6 @@ namespace BLL
         readonly DML.DescuentoCalculado descuento;
         public DescuentoCalculado() => this.descuento = new DML.DescuentoCalculado();
 
-
         // *------------------------------------------------=> IMPLEMENTACIONES
         public BEL.DescuentoCalculado Detallar(BEL.DescuentoCalculado descuento) => this.descuento.Detallar(descuento);
         public bool Eliminar(BEL.DescuentoCalculado descuento) => this.descuento.Eliminar(descuento);

@@ -139,7 +139,6 @@ namespace DML
                         if (fila[7].ToString() != "") tarjeta.Saldo = Convert.ToInt32(fila[7]);
                         ListaTarjetas.Add(tarjeta);
                     }
-
                 }
             }
 

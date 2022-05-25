@@ -51,9 +51,10 @@
             this.ClientesDataGridView.ColumnHeadersHeight = 25;
             this.ClientesDataGridView.Location = new System.Drawing.Point(12, 12);
             this.ClientesDataGridView.Name = "ClientesDataGridView";
+            this.ClientesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ClientesDataGridView.Size = new System.Drawing.Size(600, 300);
             this.ClientesDataGridView.TabIndex = 3;
-            this.ClientesDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ComprasDataGridView_MouseClick);
+            this.ClientesDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ClientesDataGridView_MouseClick);
             // 
             // FechaCompraDateTimePicker
             // 

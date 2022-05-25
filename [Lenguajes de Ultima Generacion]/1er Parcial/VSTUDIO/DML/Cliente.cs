@@ -208,7 +208,7 @@ namespace DML
                             "Saldo, " +
                             "Provincia " +
                             "FROM Tarjetas, Cliente_Tarjeta " +
-                            "WHERE Cliente_Tarjeta.CoDTarjeta = Tarjetas.Codigo " +
+                            "WHERE Cliente_Tarjeta.CodTarjeta = Tarjetas.Codigo " +
                             $"AND Cliente_Tarjeta.CodCliente = { codigo.Codigo }";
 
                         DatosTarjeta = conexion.Lectura(consulta);

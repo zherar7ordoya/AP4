@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GiftcardAsociadaGroupBox = new System.Windows.Forms.GroupBox();
             this.ProvinciaTextBox = new System.Windows.Forms.TextBox();
             this.DesasociarButton = new System.Windows.Forms.Button();
@@ -54,12 +54,11 @@
             this.CodigoTextBox = new System.Windows.Forms.TextBox();
             this.CodigoLabel = new System.Windows.Forms.Label();
             this.InternacionalesDisponiblesGroupBox = new System.Windows.Forms.GroupBox();
-            this.InternacionalesAsociarButton = new System.Windows.Forms.Button();
+            this.AsociarButton = new System.Windows.Forms.Button();
             this.InternacionalesDisponiblesDataGridView = new System.Windows.Forms.DataGridView();
             this.ClienteGroupBox = new System.Windows.Forms.GroupBox();
             this.ClientesDataGridView = new System.Windows.Forms.DataGridView();
             this.NacionalesDisponiblesGroupBox = new System.Windows.Forms.GroupBox();
-            this.NacionalesAsociarButton = new System.Windows.Forms.Button();
             this.NacionalesDisponiblesDataGridView = new System.Windows.Forms.DataGridView();
             this.GiftcardAsociadaGroupBox.SuspendLayout();
             this.InternacionalesDisponiblesGroupBox.SuspendLayout();
@@ -95,7 +94,7 @@
             this.GiftcardAsociadaGroupBox.Controls.Add(this.CodigoLabel);
             this.GiftcardAsociadaGroupBox.Location = new System.Drawing.Point(343, 12);
             this.GiftcardAsociadaGroupBox.Name = "GiftcardAsociadaGroupBox";
-            this.GiftcardAsociadaGroupBox.Size = new System.Drawing.Size(325, 424);
+            this.GiftcardAsociadaGroupBox.Size = new System.Drawing.Size(325, 385);
             this.GiftcardAsociadaGroupBox.TabIndex = 0;
             this.GiftcardAsociadaGroupBox.TabStop = false;
             this.GiftcardAsociadaGroupBox.Text = "Gift Card Asociada";
@@ -109,12 +108,13 @@
             // 
             // DesasociarButton
             // 
-            this.DesasociarButton.Location = new System.Drawing.Point(237, 296);
+            this.DesasociarButton.Location = new System.Drawing.Point(237, 356);
             this.DesasociarButton.Name = "DesasociarButton";
             this.DesasociarButton.Size = new System.Drawing.Size(75, 23);
             this.DesasociarButton.TabIndex = 3;
             this.DesasociarButton.Text = "Desasociar";
             this.DesasociarButton.UseVisualStyleBackColor = true;
+            this.DesasociarButton.Click += new System.EventHandler(this.DesasociarButton_Click);
             // 
             // PaisTextBox
             // 
@@ -271,36 +271,37 @@
             // 
             // InternacionalesDisponiblesGroupBox
             // 
-            this.InternacionalesDisponiblesGroupBox.Controls.Add(this.InternacionalesAsociarButton);
             this.InternacionalesDisponiblesGroupBox.Controls.Add(this.InternacionalesDisponiblesDataGridView);
             this.InternacionalesDisponiblesGroupBox.Location = new System.Drawing.Point(674, 12);
             this.InternacionalesDisponiblesGroupBox.Name = "InternacionalesDisponiblesGroupBox";
-            this.InternacionalesDisponiblesGroupBox.Size = new System.Drawing.Size(325, 209);
+            this.InternacionalesDisponiblesGroupBox.Size = new System.Drawing.Size(325, 170);
             this.InternacionalesDisponiblesGroupBox.TabIndex = 1;
             this.InternacionalesDisponiblesGroupBox.TabStop = false;
             this.InternacionalesDisponiblesGroupBox.Text = "Gift Cards Internacionales Disponibles";
             // 
-            // InternacionalesAsociarButton
+            // AsociarButton
             // 
-            this.InternacionalesAsociarButton.Location = new System.Drawing.Point(231, 19);
-            this.InternacionalesAsociarButton.Name = "InternacionalesAsociarButton";
-            this.InternacionalesAsociarButton.Size = new System.Drawing.Size(75, 23);
-            this.InternacionalesAsociarButton.TabIndex = 4;
-            this.InternacionalesAsociarButton.Text = "Asociar";
-            this.InternacionalesAsociarButton.UseVisualStyleBackColor = true;
+            this.AsociarButton.Location = new System.Drawing.Point(911, 368);
+            this.AsociarButton.Name = "AsociarButton";
+            this.AsociarButton.Size = new System.Drawing.Size(75, 23);
+            this.AsociarButton.TabIndex = 4;
+            this.AsociarButton.Text = "Asociar";
+            this.AsociarButton.UseVisualStyleBackColor = true;
+            this.AsociarButton.Click += new System.EventHandler(this.AsociarButton_Click);
             // 
             // InternacionalesDisponiblesDataGridView
             // 
             this.InternacionalesDisponiblesDataGridView.AllowUserToAddRows = false;
             this.InternacionalesDisponiblesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.InternacionalesDisponiblesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.InternacionalesDisponiblesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.InternacionalesDisponiblesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.InternacionalesDisponiblesDataGridView.ColumnHeadersHeight = 25;
-            this.InternacionalesDisponiblesDataGridView.Location = new System.Drawing.Point(6, 48);
+            this.InternacionalesDisponiblesDataGridView.Location = new System.Drawing.Point(12, 19);
             this.InternacionalesDisponiblesDataGridView.Name = "InternacionalesDisponiblesDataGridView";
             this.InternacionalesDisponiblesDataGridView.ReadOnly = true;
-            this.InternacionalesDisponiblesDataGridView.Size = new System.Drawing.Size(300, 150);
+            this.InternacionalesDisponiblesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.InternacionalesDisponiblesDataGridView.Size = new System.Drawing.Size(300, 140);
             this.InternacionalesDisponiblesDataGridView.TabIndex = 3;
             // 
             // ClienteGroupBox
@@ -308,7 +309,7 @@
             this.ClienteGroupBox.Controls.Add(this.ClientesDataGridView);
             this.ClienteGroupBox.Location = new System.Drawing.Point(12, 12);
             this.ClienteGroupBox.Name = "ClienteGroupBox";
-            this.ClienteGroupBox.Size = new System.Drawing.Size(325, 424);
+            this.ClienteGroupBox.Size = new System.Drawing.Size(325, 385);
             this.ClienteGroupBox.TabIndex = 2;
             this.ClienteGroupBox.TabStop = false;
             this.ClienteGroupBox.Text = "Cliente";
@@ -317,57 +318,49 @@
             // 
             this.ClientesDataGridView.AllowUserToAddRows = false;
             this.ClientesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.ClientesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.ClientesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ClientesDataGridView.ColumnHeadersHeight = 25;
             this.ClientesDataGridView.Location = new System.Drawing.Point(6, 19);
             this.ClientesDataGridView.Name = "ClientesDataGridView";
             this.ClientesDataGridView.ReadOnly = true;
             this.ClientesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.ClientesDataGridView.Size = new System.Drawing.Size(300, 394);
+            this.ClientesDataGridView.Size = new System.Drawing.Size(300, 360);
             this.ClientesDataGridView.TabIndex = 2;
             this.ClientesDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ClientesDataGridView_MouseClick);
             // 
             // NacionalesDisponiblesGroupBox
             // 
-            this.NacionalesDisponiblesGroupBox.Controls.Add(this.NacionalesAsociarButton);
             this.NacionalesDisponiblesGroupBox.Controls.Add(this.NacionalesDisponiblesDataGridView);
-            this.NacionalesDisponiblesGroupBox.Location = new System.Drawing.Point(674, 227);
+            this.NacionalesDisponiblesGroupBox.Location = new System.Drawing.Point(674, 195);
             this.NacionalesDisponiblesGroupBox.Name = "NacionalesDisponiblesGroupBox";
-            this.NacionalesDisponiblesGroupBox.Size = new System.Drawing.Size(325, 209);
+            this.NacionalesDisponiblesGroupBox.Size = new System.Drawing.Size(325, 170);
             this.NacionalesDisponiblesGroupBox.TabIndex = 5;
             this.NacionalesDisponiblesGroupBox.TabStop = false;
             this.NacionalesDisponiblesGroupBox.Text = "Gift Cards Nacionales Disponibles";
-            // 
-            // NacionalesAsociarButton
-            // 
-            this.NacionalesAsociarButton.Location = new System.Drawing.Point(231, 19);
-            this.NacionalesAsociarButton.Name = "NacionalesAsociarButton";
-            this.NacionalesAsociarButton.Size = new System.Drawing.Size(75, 23);
-            this.NacionalesAsociarButton.TabIndex = 4;
-            this.NacionalesAsociarButton.Text = "Asociar";
-            this.NacionalesAsociarButton.UseVisualStyleBackColor = true;
             // 
             // NacionalesDisponiblesDataGridView
             // 
             this.NacionalesDisponiblesDataGridView.AllowUserToAddRows = false;
             this.NacionalesDisponiblesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.NacionalesDisponiblesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.NacionalesDisponiblesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.NacionalesDisponiblesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.NacionalesDisponiblesDataGridView.ColumnHeadersHeight = 25;
-            this.NacionalesDisponiblesDataGridView.Location = new System.Drawing.Point(6, 48);
+            this.NacionalesDisponiblesDataGridView.Location = new System.Drawing.Point(12, 19);
             this.NacionalesDisponiblesDataGridView.Name = "NacionalesDisponiblesDataGridView";
             this.NacionalesDisponiblesDataGridView.ReadOnly = true;
-            this.NacionalesDisponiblesDataGridView.Size = new System.Drawing.Size(300, 150);
+            this.NacionalesDisponiblesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.NacionalesDisponiblesDataGridView.Size = new System.Drawing.Size(300, 140);
             this.NacionalesDisponiblesDataGridView.TabIndex = 3;
             // 
             // ClienteGiftcardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 461);
+            this.ClientSize = new System.Drawing.Size(1009, 411);
+            this.Controls.Add(this.AsociarButton);
             this.Controls.Add(this.NacionalesDisponiblesGroupBox);
             this.Controls.Add(this.ClienteGroupBox);
             this.Controls.Add(this.InternacionalesDisponiblesGroupBox);
@@ -414,13 +407,12 @@
         private System.Windows.Forms.Label CodigoLabel;
         private System.Windows.Forms.DataGridView InternacionalesDisponiblesDataGridView;
         private System.Windows.Forms.Button DesasociarButton;
-        private System.Windows.Forms.Button InternacionalesAsociarButton;
+        private System.Windows.Forms.Button AsociarButton;
         private System.Windows.Forms.TextBox ProvinciaTextBox;
         private System.Windows.Forms.TextBox PaisTextBox;
         private System.Windows.Forms.TextBox RubroTextBox;
         private System.Windows.Forms.TextBox TipoTextBox;
         private System.Windows.Forms.GroupBox NacionalesDisponiblesGroupBox;
-        private System.Windows.Forms.Button NacionalesAsociarButton;
         private System.Windows.Forms.DataGridView NacionalesDisponiblesDataGridView;
     }
 }

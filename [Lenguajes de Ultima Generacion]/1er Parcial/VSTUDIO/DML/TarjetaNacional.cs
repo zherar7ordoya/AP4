@@ -88,11 +88,11 @@ namespace DML
                     "(Numero, Vencimiento, Estado, Rubro, TipoNacProv, Provincia) " +
                     "VALUES(" +
                     $"{ tarjeta.Numero }, " +
-                    $"{ tarjeta.Vencimiento }, " +
-                    $"{ tarjeta.Estado }, " +
-                    $"{ tarjeta.Rubro }, " +
-                    $"{ tarjeta.Pais }, " +
-                    $"{ tarjeta.Provincia })";
+                    $"'{ tarjeta.Vencimiento }', " +
+                    $"'{ tarjeta.Estado }', " +
+                    $"'{ tarjeta.Rubro }', " +
+                    $"'{ tarjeta.Pais }', " +
+                    $"'{ tarjeta.Provincia }')";
             }
             else
             {

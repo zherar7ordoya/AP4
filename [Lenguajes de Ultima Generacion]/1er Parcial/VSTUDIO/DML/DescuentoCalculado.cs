@@ -37,7 +37,7 @@ namespace DML
                     "INSERT INTO DescuentoOtorgado(NumeroTarjeta, Tipo, MontoDescuento) " +
                     "VALUES(" +
                     $"{ descuento.NumeroTarjeta }, " +
-                    $"{ descuento.Tipo }, " +
+                    $"'{ descuento.Tipo }', " +
                     $"{ descuento.DescuentoOtorgado })";
             }
             else
