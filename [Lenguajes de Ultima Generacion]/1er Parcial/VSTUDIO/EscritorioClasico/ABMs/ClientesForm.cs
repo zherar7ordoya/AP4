@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Windows.Forms;
 
 namespace EscritorioClasico.ABMs
@@ -7,19 +6,12 @@ namespace EscritorioClasico.ABMs
     public partial class ClientesForm : Form
     {
         //APP-1
-        BLL.Cliente lgcCliente;
-        BEL.Cliente belCliente;
+        BLL.Cliente bllCliente = new BLL.Cliente();
+        BEL.Cliente belCliente = new BEL.Cliente();
 
         // *-------------------------------------------------------=> SINGLETON
         private static ClientesForm instancia = null;
-
-        private ClientesForm()
-        {
-            InitializeComponent();
-
-            //APP-2
-            lgcCliente = new BLL.Cliente(); 
-        }
+        private ClientesForm() => InitializeComponent();
 
         public static ClientesForm Instancia()
         {
@@ -33,7 +25,8 @@ namespace EscritorioClasico.ABMs
             DialogResult respuesta = formulario.ShowDialog();
             if (respuesta == DialogResult.OK)
             {
-                MessageBox.Show("DialogResult: OK");
+                MessageBox.Show("Operación correcta");
+                InauguraFormulario();
             }
         }
 
@@ -46,13 +39,13 @@ namespace EscritorioClasico.ABMs
 
 
         //APP-3
-        private void ClientesForm_Load(object sender, EventArgs e) => CargaInicial();
+        private void ClientesForm_Load(object sender, EventArgs e) => InauguraFormulario();
 
-        private void CargaInicial()
+        private void InauguraFormulario()
         {
             this.ClientesDataGridView.DataSource = null;
             this.ClientesDataGridView.Rows.Clear();
-            this.ClientesDataGridView.DataSource = lgcCliente.Listar();
+            this.ClientesDataGridView.DataSource = bllCliente.Listar();
         }
 
         private void ClientesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -68,8 +61,8 @@ namespace EscritorioClasico.ABMs
                     respuesta = MessageBox.Show("¿Confirma eliminación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (respuesta == DialogResult.Yes)
                     {
-                        if (lgcCliente.Eliminar(belCliente) == false) MessageBox.Show("Registro asociado", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
-                        else { CargaInicial(); }
+                        if (bllCliente.Eliminar(belCliente) == false) MessageBox.Show("Registro asociado", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                        else { InauguraFormulario(); }
                     }
                 }
                 
@@ -87,7 +80,7 @@ namespace EscritorioClasico.ABMs
 
                     // Si la respuesta es OK, actualizo la grilla.
                     DialogResult respuesta = formulario.ShowDialog();
-                    if (respuesta == DialogResult.OK) CargaInicial();
+                    if (respuesta == DialogResult.OK) InauguraFormulario();
                 }
             }
             catch (Exception ex)
@@ -104,8 +97,5 @@ namespace EscritorioClasico.ABMs
                     MessageBoxOptions.RightAlign);
             }
         }
-
-
-        
     }
 }

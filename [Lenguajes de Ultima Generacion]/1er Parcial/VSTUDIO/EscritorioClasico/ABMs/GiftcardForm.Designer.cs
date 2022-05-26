@@ -139,11 +139,8 @@
             // 
             // RubroComboBox
             // 
+            this.RubroComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RubroComboBox.FormattingEnabled = true;
-            this.RubroComboBox.Items.AddRange(new object[] {
-            "Calzado",
-            "Electrodomesticos",
-            "Libre"});
             this.RubroComboBox.Location = new System.Drawing.Point(168, 90);
             this.RubroComboBox.Name = "RubroComboBox";
             this.RubroComboBox.Size = new System.Drawing.Size(150, 21);

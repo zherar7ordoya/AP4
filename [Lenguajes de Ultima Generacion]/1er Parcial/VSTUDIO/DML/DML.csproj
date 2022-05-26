@@ -47,8 +47,8 @@
     <Compile Include="Pais.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provincia.cs" />
-    <Compile Include="TarjetaInternacional.cs" />
-    <Compile Include="TarjetaNacional.cs" />
+    <Compile Include="GiftcardInternacional.cs" />
+    <Compile Include="GiftcardNacional.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ABS\ABS.csproj">

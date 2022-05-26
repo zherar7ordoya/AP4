@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using static System.Console;
 
 namespace DML
 {
@@ -19,7 +18,7 @@ namespace DML
 
             if (cliente.Tarjeta != null)
             {
-                foreach (BEL.TarjetaNacional tarjeta in cliente.Tarjeta)
+                foreach (BEL.GiftcardNacional tarjeta in cliente.Tarjeta)
                 {
                     consulta =
                         "UPDATE Tarjetas " +
@@ -105,21 +104,21 @@ namespace DML
                             "TipoNacProv, " +
                             "Provincia, " +
                             "Saldo " +
-                            "FROM Tarjetas, Cliente_Tarjeta " +
-                            "WHERE Cliente_Tarjeta.CoDTarjeta = Tarjetas.Codigo " +
-                            $"AND Cliente_Tarjeta.CodCliente = { cliente.Codigo }";
+                            "FROM Tarjetas, ClientesGiftcards " +
+                            "WHERE ClientesGiftcards.CoDTarjeta = Tarjetas.Codigo " +
+                            $"AND ClientesGiftcards.CodCliente = { cliente.Codigo }";
 
                         DatosTarjeta = conexion.Lectura(consulta);
 
                         if (DatosTarjeta.Tables[0].Rows.Count > 0)
                         {
-                            List<BEL.Tarjeta> ListaTarjetas = new List<BEL.Tarjeta>();
+                            List<BEL.Giftcard> ListaTarjetas = new List<BEL.Giftcard>();
 
                             foreach (DataRow FilaTarjeta in DatosTarjeta.Tables[0].Rows)
                             {
                                 if (FilaTarjeta[7] == null)
                                 {
-                                    BEL.TarjetaInternacional tarjeta = new BEL.TarjetaInternacional
+                                    BEL.GiftcardInternacional tarjeta = new BEL.GiftcardInternacional
                                     {
                                         Codigo = Convert.ToInt32(FilaTarjeta[0]),
                                         Numero = Convert.ToInt32(FilaTarjeta[1]),
@@ -133,7 +132,7 @@ namespace DML
                                 }
                                 else
                                 {
-                                    BEL.TarjetaNacional tarjeta = new BEL.TarjetaNacional
+                                    BEL.GiftcardNacional tarjeta = new BEL.GiftcardNacional
                                     {
                                         Codigo = Convert.ToInt32(FilaTarjeta[0]),
                                         Numero = Convert.ToInt32(FilaTarjeta[1]),
@@ -207,21 +206,21 @@ namespace DML
                             "TipoNacProv, " +
                             "Saldo, " +
                             "Provincia " +
-                            "FROM Tarjetas, Cliente_Tarjeta " +
-                            "WHERE Cliente_Tarjeta.CodTarjeta = Tarjetas.Codigo " +
-                            $"AND Cliente_Tarjeta.CodCliente = { codigo.Codigo }";
+                            "FROM Tarjetas, ClientesGiftcards " +
+                            "WHERE ClientesGiftcards.CodTarjeta = Tarjetas.Codigo " +
+                            $"AND ClientesGiftcards.CodCliente = { codigo.Codigo }";
 
                         DatosTarjeta = conexion.Lectura(consulta);
 
                         if (DatosTarjeta.Tables[0].Rows.Count > 0)
                         {
-                            List<BEL.Tarjeta> ListaTarjetas = new List<BEL.Tarjeta>();
+                            List<BEL.Giftcard> ListaTarjetas = new List<BEL.Giftcard>();
 
                             foreach (DataRow FilaTarjeta in DatosTarjeta.Tables[0].Rows)
                             {
                                 if (FilaTarjeta[7].ToString() == "")
                                 {
-                                    BEL.TarjetaInternacional tarjeta = new BEL.TarjetaInternacional
+                                    BEL.GiftcardInternacional tarjeta = new BEL.GiftcardInternacional
                                     {
                                         Codigo = Convert.ToInt32(FilaTarjeta[0]),
                                         Numero = Convert.ToInt32(FilaTarjeta[1]),
@@ -236,7 +235,7 @@ namespace DML
                                 }
                                 else
                                 {
-                                    BEL.TarjetaNacional tarjeta = new BEL.TarjetaNacional
+                                    BEL.GiftcardNacional tarjeta = new BEL.GiftcardNacional
                                     {
                                         Codigo = Convert.ToInt32(FilaTarjeta[0]),
                                         Numero = Convert.ToInt32(FilaTarjeta[1]),
@@ -276,35 +275,35 @@ namespace DML
 
 
         #region MÉTODOS
-        public bool AgregarTarjetaInternacional(BEL.Cliente cliente, BEL.TarjetaInternacional tarjeta)
+        public bool AsociarGiftcardInternacional(BEL.Cliente cliente, BEL.GiftcardInternacional tarjeta)
         {
             string consulta =
-                "INSERT INTO Cliente_Tarjeta(CodCliente, CodTarjeta) " +
+                "INSERT INTO ClientesGiftcards(CodCliente, CodTarjeta) " +
                 $"VALUES({ cliente.Codigo }, { tarjeta.Codigo })";
             return EscribirConsulta(consulta);
         }
 
-        public bool AgregarTarjetaNacional(BEL.Cliente cliente, BEL.TarjetaNacional tarjeta)
+        public bool AsociarGiftcardNacional(BEL.Cliente cliente, BEL.GiftcardNacional tarjeta)
         {
             string consulta =
-                "INSERT INTO Cliente_Tarjeta(CodCliente, CodTarjeta) " +
+                "INSERT INTO ClientesGiftcards(CodCliente, CodTarjeta) " +
                 $"VALUES({ cliente.Codigo }, { tarjeta.Codigo })";
             return EscribirConsulta(consulta);
         }
 
-        public bool QuitarTarjetaInternacional(BEL.Cliente cliente, BEL.TarjetaInternacional tarjeta)
+        public bool DesasociarGiftcardInternacional(BEL.Cliente cliente, BEL.GiftcardInternacional tarjeta)
         {
             string consulta = 
-                "DELETE FROM Cliente_Tarjeta " +
+                "DELETE FROM ClientesGiftcards " +
                 $"WHERE CodCliente = { cliente.Codigo } " +
                 $"AND CodTarjeta = { tarjeta.Codigo }";
             return EscribirConsulta(consulta);
         }
 
-        public bool QuitarTarjetaNacional(BEL.Cliente cliente, BEL.TarjetaNacional tarjeta)
+        public bool DesasociarGiftcardNacional(BEL.Cliente cliente, BEL.GiftcardNacional tarjeta)
         {
             string consulta = 
-                "DELETE FROM Cliente_Tarjeta " +
+                "DELETE FROM ClientesGiftcards " +
                 $"WHERE CodCliente = { cliente.Codigo } " +
                 $"AND CodTarjeta = { tarjeta.Codigo }";
             return EscribirConsulta(consulta);

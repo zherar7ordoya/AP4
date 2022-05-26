@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
-using static System.Console;
 
 namespace DML
 {
@@ -13,23 +12,9 @@ namespace DML
 
         #region IMPLEMENTA INTERFAZ
 
-        public BEL.Pais Detallar(BEL.Pais pais)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public bool Eliminar(BEL.Pais pais)
-        {
-            throw new NotImplementedException();
-        }
-
-
-        public bool Guardar(BEL.Pais pais)
-        {
-            throw new NotImplementedException();
-        }
-
+        public BEL.Pais Detallar(BEL.Pais pais) => throw new NotImplementedException();
+        public bool Eliminar(BEL.Pais pais) => throw new NotImplementedException();
+        public bool Guardar(BEL.Pais pais) => throw new NotImplementedException();
 
         public List<BEL.Pais> Listar()
         {
@@ -70,10 +55,8 @@ namespace DML
                     MessageBoxDefaultButton.Button1,
                     MessageBoxOptions.RightAlign);
             }
-
             return ListaPaises;
         }
-
         #endregion
     }
 }

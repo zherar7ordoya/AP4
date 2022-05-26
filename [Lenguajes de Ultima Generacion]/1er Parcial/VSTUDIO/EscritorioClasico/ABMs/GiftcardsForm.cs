@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Windows.Forms;
 
 namespace EscritorioClasico.ABMs
@@ -8,19 +7,17 @@ namespace EscritorioClasico.ABMs
     public partial class GiftcardsForm : Form
     {
         //APP-1
-        BEL.Tarjeta giftcard = new BEL.Tarjeta();
-        BLL.TarjetaInternacional giftcardInternacional = new BLL.TarjetaInternacional();
-        BLL.TarjetaNacional giftcardNacional = new BLL.TarjetaNacional();
-        BLL.DescuentoCalculado descuento = new BLL.DescuentoCalculado();
-        List<BEL.TarjetaInternacional> ListaInternacionales = new List<BEL.TarjetaInternacional>();
-        List<BEL.TarjetaNacional> ListaNacionales = new List<BEL.TarjetaNacional>();
+        BEL.Giftcard belGiftcard = new BEL.Giftcard();
+        BLL.GiftcardInternacional bllGiftcardInternacional = new BLL.GiftcardInternacional();
+        BLL.GiftcardNacional bllGiftcardNacional = new BLL.GiftcardNacional();
+        BLL.DescuentoCalculado bllDescuentoCalculado = new BLL.DescuentoCalculado();
+        List<BEL.GiftcardInternacional> ListaInternacionales = new List<BEL.GiftcardInternacional>();
+        List<BEL.GiftcardNacional> ListaNacionales = new List<BEL.GiftcardNacional>();
         List<BEL.DescuentoCalculado> ListaDescuentos = new List<BEL.DescuentoCalculado>();
 
         #region *--------------------------------------------------=> SINGLETON
         private GiftcardsForm() => InitializeComponent();
-
         private static GiftcardsForm instancia = null;
-
         public static GiftcardsForm Instancia()
         {
             if (instancia == null) instancia = new GiftcardsForm();
@@ -49,12 +46,12 @@ namespace EscritorioClasico.ABMs
         {
             this.InternacionalesDataGridView.DataSource = null;
             this.InternacionalesDataGridView.Rows.Clear();
-            this.InternacionalesDataGridView.DataSource = giftcardInternacional.Listar();
+            this.InternacionalesDataGridView.DataSource = bllGiftcardInternacional.Listar();
             this.InternacionalesDataGridView.Columns["Pais"].DisplayIndex = 2;
 
             this.NacionalesDataGridView.DataSource = null;
             this.NacionalesDataGridView.Rows.Clear();
-            this.NacionalesDataGridView.DataSource = giftcardNacional.Listar();
+            this.NacionalesDataGridView.DataSource = bllGiftcardNacional.Listar();
             this.NacionalesDataGridView.Columns["Provincia"].DisplayIndex = 2;
 
             GiftcardMenorSaldo();
@@ -64,30 +61,30 @@ namespace EscritorioClasico.ABMs
 
         private void GiftcardMenorSaldo()
         {
-            ListaInternacionales = giftcardInternacional.Listar();
-            ListaNacionales = giftcardNacional.Listar();
+            ListaInternacionales = bllGiftcardInternacional.Listar();
+            ListaNacionales = bllGiftcardNacional.Listar();
 
-            giftcard.Saldo = 999999;
+            belGiftcard.Saldo = 999999;
 
             if (ListaInternacionales != null)
             {
-                foreach (BEL.TarjetaInternacional item in ListaInternacionales)
+                foreach (BEL.GiftcardInternacional item in ListaInternacionales)
                 {
-                    if (item.Saldo < giftcard.Saldo && item.Saldo != 0) giftcard = item;
+                    if (item.Saldo < belGiftcard.Saldo && item.Saldo != 0) belGiftcard = item;
                 }
-                InternacionalesMenorSaldoTextBox.Text = $"Gift Card {giftcard.Numero} || Saldo: {giftcard.Saldo:C}";
+                InternacionalesMenorSaldoTextBox.Text = $"Gift Card {belGiftcard.Numero} || Saldo: {belGiftcard.Saldo:C}";
             }
             else { InternacionalesMenorSaldoTextBox.Text = "(Sin datos disponibles)"; }
 
-            giftcard.Saldo = 999999;
+            belGiftcard.Saldo = 999999;
 
             if (ListaNacionales != null)
             {
-                foreach (BEL.TarjetaNacional item in ListaNacionales)
+                foreach (BEL.GiftcardNacional item in ListaNacionales)
                 {
-                    if (item.Saldo < giftcard.Saldo && item.Saldo != 0) giftcard = item;
+                    if (item.Saldo < belGiftcard.Saldo && item.Saldo != 0) belGiftcard = item;
                 }
-                NacionalesMenorSaldoTextBox.Text = $"Gift Card {giftcard.Numero} || Saldo: {giftcard.Saldo:C}";
+                NacionalesMenorSaldoTextBox.Text = $"Gift Card {belGiftcard.Numero} || Saldo: {belGiftcard.Saldo:C}";
             }
             else { NacionalesMenorSaldoTextBox.Text = "(Sin datos disponibles)"; }
         }
@@ -95,7 +92,7 @@ namespace EscritorioClasico.ABMs
 
         private void GiftcardMayorDescuento()
         {
-            ListaDescuentos = descuento.Listar();
+            ListaDescuentos = bllDescuentoCalculado.Listar();
             double iDescuento = 0, nDescuento = 0;
             int iGiftcard = 0, nGiftcard = 0;
 
@@ -135,12 +132,12 @@ namespace EscritorioClasico.ABMs
         // *------------------------------------------=> FINALIZA CARGA INICIAL
 
 
-        BEL.TarjetaInternacional belGiftcardInternacional = new BEL.TarjetaInternacional();
-        BLL.TarjetaInternacional lgcGiftcardInternacional = new BLL.TarjetaInternacional();
+        BEL.GiftcardInternacional belGiftcardInternacional = new BEL.GiftcardInternacional();
+        BLL.GiftcardInternacional lgcGiftcardInternacional = new BLL.GiftcardInternacional();
 
         private void InternacionalesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            belGiftcardInternacional = (BEL.TarjetaInternacional)this.InternacionalesDataGridView.CurrentRow.DataBoundItem;
+            belGiftcardInternacional = (BEL.GiftcardInternacional)this.InternacionalesDataGridView.CurrentRow.DataBoundItem;
 
             try
             {
@@ -192,12 +189,12 @@ namespace EscritorioClasico.ABMs
         }
 
 
-        BEL.TarjetaNacional belGiftcardNacional = new BEL.TarjetaNacional();
-        BLL.TarjetaNacional lgcGiftcardNacional = new BLL.TarjetaNacional();
+        BEL.GiftcardNacional belGiftcardNacional = new BEL.GiftcardNacional();
+        BLL.GiftcardNacional lgcGiftcardNacional = new BLL.GiftcardNacional();
 
         private void NacionalesDataGridView_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            belGiftcardNacional = (BEL.TarjetaNacional)this.NacionalesDataGridView.CurrentRow.DataBoundItem;
+            belGiftcardNacional = (BEL.GiftcardNacional)this.NacionalesDataGridView.CurrentRow.DataBoundItem;
 
             try
             {

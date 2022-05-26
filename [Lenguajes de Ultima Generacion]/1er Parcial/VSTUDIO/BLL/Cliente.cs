@@ -17,9 +17,9 @@ namespace BLL
         
 
         // *---------------------------------------------------------=> MÉTODOS
-        public bool AsociarGiftcardInternacional(BEL.Cliente cliente, BEL.TarjetaInternacional tarjeta) => this.cliente.AgregarTarjetaInternacional(cliente, tarjeta);
-        public bool AsociarGiftcardNacional(BEL.Cliente cliente, BEL.TarjetaNacional tarjeta) => this.cliente.AgregarTarjetaNacional(cliente, tarjeta);
-        public bool DesasociarGiftcardInternacional(BEL.Cliente cliente, BEL.TarjetaInternacional tarjeta) => this.cliente.QuitarTarjetaInternacional(cliente, tarjeta);
-        public bool DesasociarGiftcardNacional(BEL.Cliente cliente, BEL.TarjetaNacional tarjeta) => this.cliente.QuitarTarjetaNacional(cliente, tarjeta);
+        public bool AsociarGiftcardInternacional(BEL.Cliente cliente, BEL.GiftcardInternacional giftcard) => this.cliente.AsociarGiftcardInternacional(cliente, giftcard);
+        public bool AsociarGiftcardNacional(BEL.Cliente cliente, BEL.GiftcardNacional giftcard) => this.cliente.AsociarGiftcardNacional(cliente, giftcard);
+        public bool DesasociarGiftcardInternacional(BEL.Cliente cliente, BEL.GiftcardInternacional giftcard) => this.cliente.DesasociarGiftcardInternacional(cliente, giftcard);
+        public bool DesasociarGiftcardNacional(BEL.Cliente cliente, BEL.GiftcardNacional giftcard) => this.cliente.DesasociarGiftcardNacional(cliente, giftcard);
     }
 }

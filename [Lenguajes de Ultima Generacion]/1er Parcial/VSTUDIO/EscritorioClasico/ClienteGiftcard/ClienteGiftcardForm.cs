@@ -9,11 +9,11 @@ namespace EscritorioClasico.ClienteGiftcard
         BEL.Cliente belCliente=new BEL.Cliente();
         BLL.Cliente bllCliente=new BLL.Cliente();
 
-        BEL.TarjetaInternacional belGiftcardInternacional = new BEL.TarjetaInternacional();
-        BLL.TarjetaInternacional bllGiftcardInternacional=new BLL.TarjetaInternacional();
+        BEL.GiftcardInternacional belGiftcardInternacional = new BEL.GiftcardInternacional();
+        BLL.GiftcardInternacional bllGiftcardInternacional=new BLL.GiftcardInternacional();
 
-        BEL.TarjetaNacional belGiftcardNacional = new BEL.TarjetaNacional();
-        BLL.TarjetaNacional bllGiftcardNacional=new BLL.TarjetaNacional();
+        BEL.GiftcardNacional belGiftcardNacional = new BEL.GiftcardNacional();
+        BLL.GiftcardNacional bllGiftcardNacional=new BLL.GiftcardNacional();
 
         // *-------------------------------------------------------=> SINGLETON
         private ClienteGiftcardForm() => InitializeComponent();
@@ -42,10 +42,14 @@ namespace EscritorioClasico.ClienteGiftcard
             this.InternacionalesDisponiblesDataGridView.DataSource = null;
             this.InternacionalesDisponiblesDataGridView.Rows.Clear();
             this.InternacionalesDisponiblesDataGridView.DataSource = bllGiftcardInternacional.ListarDisponibles();
+            this.InternacionalesDisponiblesDataGridView.Columns["Pais"].DisplayIndex = 0;
+            this.InternacionalesDisponiblesDataGridView.Columns["Estado"].DisplayIndex = 1;
 
             this.NacionalesDisponiblesDataGridView.DataSource = null;
             this.NacionalesDisponiblesDataGridView.Rows.Clear();
             this.NacionalesDisponiblesDataGridView.DataSource = bllGiftcardNacional.ListarDisponibles();
+            this.NacionalesDisponiblesDataGridView.Columns["Provincia"].DisplayIndex = 0;
+            this.NacionalesDisponiblesDataGridView.Columns["Estado"].DisplayIndex = 2;
 
             LimpiarTextBoxes();
         }
@@ -62,27 +66,22 @@ namespace EscritorioClasico.ClienteGiftcard
 
         public void GiftcardAsignada(BEL.Cliente objeto)
         {
-            
-
             BEL.Cliente cliente = bllCliente.Detallar(objeto);
 
-            if (cliente.Tarjeta == null)
-            {
-                LimpiarTextBoxes();
-            }
+            if (cliente.Tarjeta == null) LimpiarTextBoxes();
             else
             {
-                if (cliente.Tarjeta[0] is BEL.TarjetaInternacional)
+                if (cliente.Tarjeta[0] is BEL.GiftcardInternacional)
                 {
-                    foreach (BEL.TarjetaInternacional tarjeta in cliente.Tarjeta)
+                    foreach (BEL.GiftcardInternacional tarjeta in cliente.Tarjeta)
                     {
                         this.TipoTextBox.Text = "Internacional";
                         this.ProvinciaTextBox.Text = "(Sin asignar)";
                     }
                 }
-                if (cliente.Tarjeta[0] is BEL.TarjetaNacional)
+                if (cliente.Tarjeta[0] is BEL.GiftcardNacional)
                 {
-                    foreach (BEL.TarjetaNacional tarjeta in cliente.Tarjeta)
+                    foreach (BEL.GiftcardNacional tarjeta in cliente.Tarjeta)
                     {
                         this.TipoTextBox.Text = "Nacional";
                         this.ProvinciaTextBox.Text = tarjeta.Provincia.ToString();
@@ -117,38 +116,52 @@ namespace EscritorioClasico.ClienteGiftcard
 
         // *---------------------------------------------------------------=> *
 
-        public List<BEL.TarjetaInternacional> ListarInternacionales(BEL.Cliente objeto)
+        public List<BEL.GiftcardInternacional> ListarInternacionales(BEL.Cliente objeto)
         {
-            List<BEL.TarjetaInternacional> ListaTarjetas = new List<BEL.TarjetaInternacional>();
+            List<BEL.GiftcardInternacional> ListaTarjetas = new List<BEL.GiftcardInternacional>();
             BEL.Cliente cliente = bllCliente.Detallar(objeto);
 
             if (cliente.Tarjeta != null)
             {
-                foreach (BEL.Tarjeta tarjeta in cliente.Tarjeta)
+                foreach (BEL.Giftcard tarjeta in cliente.Tarjeta)
                 {
-                    if (tarjeta is BEL.TarjetaInternacional) ListaTarjetas.Add((BEL.TarjetaInternacional)tarjeta);
+                    if (tarjeta is BEL.GiftcardInternacional) ListaTarjetas.Add((BEL.GiftcardInternacional)tarjeta);
                 }
             }
             return ListaTarjetas;
         }
         
 
-        public List<BEL.TarjetaNacional> ListarNacionales(BEL.Cliente objeto)
+        public List<BEL.GiftcardNacional> ListarNacionales(BEL.Cliente objeto)
         {
-            List<BEL.TarjetaNacional> ListaTarjetas = new List<BEL.TarjetaNacional>();
+            List<BEL.GiftcardNacional> ListaTarjetas = new List<BEL.GiftcardNacional>();
             BEL.Cliente cliente = bllCliente.Detallar(objeto);
 
             if (cliente.Tarjeta != null)
             {
-                foreach (BEL.Tarjeta tarjeta in cliente.Tarjeta)
+                foreach (BEL.Giftcard tarjeta in cliente.Tarjeta)
                 {
-                    if (tarjeta is BEL.TarjetaNacional) ListaTarjetas.Add((BEL.TarjetaNacional)tarjeta);
+                    if (tarjeta is BEL.GiftcardNacional) ListaTarjetas.Add((BEL.GiftcardNacional)tarjeta);
                 }
             }
             return ListaTarjetas;
         }
 
         // *---------------------------------------------------------------=> *
+
+        private void InternacionalesDisponiblesDataGridView_MouseClick(object sender, MouseEventArgs e)
+        {
+            belGiftcardInternacional = (BEL.GiftcardInternacional)InternacionalesDisponiblesDataGridView.CurrentRow.DataBoundItem;
+            belGiftcardNacional = null;
+        }
+
+
+        private void NacionalesDisponiblesDataGridView_MouseClick(object sender, MouseEventArgs e)
+        {
+            belGiftcardNacional = (BEL.GiftcardNacional)NacionalesDisponiblesDataGridView.CurrentRow.DataBoundItem;
+            belGiftcardInternacional = null;
+        }
+
 
         private void DesasociarButton_Click(object sender, EventArgs e)
         {
@@ -221,67 +234,95 @@ namespace EscritorioClasico.ClienteGiftcard
             }
         }
 
+
         private void AsociarButton_Click(object sender, EventArgs e)
         {
             belCliente = (BEL.Cliente)ClientesDataGridView.CurrentRow.DataBoundItem;
             BEL.Cliente belClienteDetallado = bllCliente.Detallar(belCliente);
 
-            if (TextBox_Monto.Text != "")
+            if (ImporteImputadoTextBox.Text == "")
             {
-
-                if (VerificarEstadoTarjeta(oBEClienteAux) == true)
-                {
-                    if (DataGridView_Tarjetas_Int_Disponibles.SelectedRows.Count > 0)
-                    {
-                        oBETarjInt = (BETarjetaInternacional)DataGridView_Tarjetas_Int_Disponibles.CurrentRow.DataBoundItem;
-                        if (oBETarjInt.Estado != "Baja")
-                        {
-                            oBETarjInt.Saldo = Convert.ToInt32(TextBox_Monto.Text);
-                            oBETarjInt.Estado = "Alta";
-                            oBlTarjetaInt.Guardar(oBETarjInt);
-                            oBLCliente.AgregarTarjeta_Int_Cliente(oBEClienteAux, oBETarjInt);
-                            CargarGrillaTarjDispInt();
-                            oBEClienteAux2 = oBLCliente.ListarObjeto(oBEClienteAux);
-                            CargarGrillaTarjCliInt(oBEClienteAux2);
-                        }
-                        else
-                        {
-                            MessageBox.Show("La tarjeta fue dada de baja, seleccione otra tarjeta");
-                        }
-
-                    }
-                    else if (DataGridView_Tarjetas_Nac_Disponibles.SelectedRows.Count > 0)
-                    {
-                        if (oBETarjNac.Estado != "Baja")
-                        {
-                            oBETarjNac = (BETarjetaNacional)DataGridView_Tarjetas_Nac_Disponibles.CurrentRow.DataBoundItem;
-                            oBETarjNac.Saldo = Convert.ToInt32(TextBox_Monto.Text);
-                            oBETarjNac.Estado = "Alta";
-                            oBLTarjetaNac.Guardar(oBETarjNac);
-                            oBLCliente.AgregarTarjeta_Nac_Cliente(oBEClienteAux, oBETarjNac);
-                            CargarGrillaTarjDispNac();
-                            oBEClienteAux2 = oBLCliente.ListarObjeto(oBEClienteAux);
-                            CargarGrillaTarjCliNac(oBEClienteAux2);
-                        }
-                        else
-                        {
-                            MessageBox.Show("La tarjeta fue dada de baja, seleccione otra tarjeta");
-                        }
-
-
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("El cliente ya tiene una tarjeta dada de alta o la tarjeta no se puede asignar");
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("Ingrese el monto a cargar a la tarjeta");
+                MessageBox.Show("Ingrese importe a cargar");
+                return;
             }
 
+            if (EsLibre(belClienteDetallado) == false)
+            {
+                MessageBox.Show("No se puede asignar");
+                return;
+            }
+
+            if (belGiftcardInternacional == null && belGiftcardNacional == null)
+            {
+                MessageBox.Show("Seleccione Gift Card a asociar.");
+                return;
+            }
+
+            if (belGiftcardNacional == null)
+            {
+                if (belGiftcardInternacional.Estado != "Libre")
+                {
+                    MessageBox.Show("Tarjeta no disponible");
+                    return;
+                }
+            }
+
+            if (belGiftcardInternacional == null)
+            {
+                if (belGiftcardNacional.Estado != "Libre")
+                {
+                    MessageBox.Show("Tarjeta no disponible");
+                    return;
+                }
+            }
+
+            if (belGiftcardNacional == null)
+            {
+                belGiftcardInternacional.Saldo = Convert.ToInt32(ImporteImputadoTextBox.Text);
+                belGiftcardInternacional.Estado = "Activa";
+                bllGiftcardInternacional.Guardar(belGiftcardInternacional);
+                bllCliente.AsociarGiftcardInternacional(belClienteDetallado, belGiftcardInternacional);
+
+                MessageBox.Show(
+                    "Ingreso correcto",
+                    "Información",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+                InaugurarForm();
+            }
+
+            if (belGiftcardInternacional == null)
+            {
+
+                belGiftcardNacional.Saldo = Convert.ToInt32(ImporteImputadoTextBox.Text);
+                belGiftcardNacional.Estado = "Activa";
+                bllGiftcardNacional.Guardar(belGiftcardNacional);
+                bllCliente.AsociarGiftcardNacional(belClienteDetallado, belGiftcardNacional);
+
+                MessageBox.Show(
+                    "Ingreso correcto",
+                    "Información",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+
+                InaugurarForm();
+            }
         }
+
+
+        #region TEMPORAL (el código es demasiado largo, ¿debiera ser dividido?)
+        private bool EsLibre(BEL.Cliente cliente)
+        {
+            bool respuesta = true;
+            if (cliente.Tarjeta != null)
+            {
+                foreach (BEL.Giftcard Tarj in cliente.Tarjeta)
+                {
+                    if (Tarj.Estado == "Libre") respuesta = false;
+                }
+            }
+            return respuesta;
+        }
+        #endregion
     }
 }

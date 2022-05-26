@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Windows.Forms;
 
 namespace EscritorioClasico.Compras
@@ -27,7 +26,6 @@ namespace EscritorioClasico.Compras
 
         BLL.Cliente bllCliente = new BLL.Cliente();
         BEL.Cliente belCliente = new BEL.Cliente();
-                
 
         private void InaugurarForm()
         {
@@ -41,11 +39,11 @@ namespace EscritorioClasico.Compras
         {
             belCliente = (BEL.Cliente)ClientesDataGridView.CurrentRow.DataBoundItem;
             BEL.Cliente cliente = bllCliente.Detallar(belCliente);
-            BEL.Tarjeta giftcard = new BEL.Tarjeta();
+            BEL.Giftcard giftcard = new BEL.Giftcard();
 
             if (cliente.Tarjeta != null)
             {
-                foreach (BEL.Tarjeta item in cliente.Tarjeta)
+                foreach (BEL.Giftcard item in cliente.Tarjeta)
                 {
                     if (item.Estado == "Alta") giftcard = item;
                 }
@@ -72,10 +70,10 @@ namespace EscritorioClasico.Compras
         }
 
 
-        BEL.TarjetaInternacional belGiftcardInternacional = new BEL.TarjetaInternacional();
-        BEL.TarjetaNacional belGiftcardNacional = new BEL.TarjetaNacional();
-        BLL.TarjetaInternacional bllGiftcardInternacional = new BLL.TarjetaInternacional();
-        BLL.TarjetaNacional bllGiftcardNacional = new BLL.TarjetaNacional();
+        BEL.GiftcardInternacional belGiftcardInternacional = new BEL.GiftcardInternacional();
+        BEL.GiftcardNacional belGiftcardNacional = new BEL.GiftcardNacional();
+        BLL.GiftcardInternacional bllGiftcardInternacional = new BLL.GiftcardInternacional();
+        BLL.GiftcardNacional bllGiftcardNacional = new BLL.GiftcardNacional();
         BEL.DescuentoCalculado belDescuento = new BEL.DescuentoCalculado();
         BLL.DescuentoCalculado bllDescuento = new BLL.DescuentoCalculado();
 
@@ -83,11 +81,11 @@ namespace EscritorioClasico.Compras
         {
             BEL.Cliente belClienteAux = (BEL.Cliente)ClientesDataGridView.CurrentRow.DataBoundItem;
             belCliente = bllCliente.Detallar(belCliente);
-            BEL.Tarjeta giftcard = new BEL.Tarjeta();
+            BEL.Giftcard giftcard = new BEL.Giftcard();
 
             if (belCliente.Tarjeta != null)
             {
-                foreach (BEL.Tarjeta item in belCliente.Tarjeta)
+                foreach (BEL.Giftcard item in belCliente.Tarjeta)
                 {
                     if (item.Estado == "Alta") giftcard = item;
                 }
@@ -122,15 +120,15 @@ namespace EscritorioClasico.Compras
                 return;
             }
 
-            List<BEL.TarjetaInternacional> ListaInternacionales = bllGiftcardInternacional.Listar();
-            List<BEL.TarjetaNacional> ListaNacionales = bllGiftcardNacional.Listar();
+            List<BEL.GiftcardInternacional> ListaInternacionales = bllGiftcardInternacional.Listar();
+            List<BEL.GiftcardNacional> ListaNacionales = bllGiftcardNacional.Listar();
 
-            foreach (BEL.TarjetaInternacional item in ListaInternacionales)
+            foreach (BEL.GiftcardInternacional item in ListaInternacionales)
             {
                 if (giftcard.Codigo == item.Codigo) belGiftcardInternacional = item;
             }
 
-            foreach (BEL.TarjetaNacional item in ListaNacionales)
+            foreach (BEL.GiftcardNacional item in ListaNacionales)
             {
                 if (giftcard.Codigo == item.Codigo) belGiftcardNacional = item;
             }

@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.GiftcardAsociadaGroupBox = new System.Windows.Forms.GroupBox();
             this.ProvinciaTextBox = new System.Windows.Forms.TextBox();
             this.DesasociarButton = new System.Windows.Forms.Button();
@@ -54,12 +54,14 @@
             this.CodigoTextBox = new System.Windows.Forms.TextBox();
             this.CodigoLabel = new System.Windows.Forms.Label();
             this.InternacionalesDisponiblesGroupBox = new System.Windows.Forms.GroupBox();
-            this.AsociarButton = new System.Windows.Forms.Button();
             this.InternacionalesDisponiblesDataGridView = new System.Windows.Forms.DataGridView();
+            this.AsociarButton = new System.Windows.Forms.Button();
             this.ClienteGroupBox = new System.Windows.Forms.GroupBox();
             this.ClientesDataGridView = new System.Windows.Forms.DataGridView();
             this.NacionalesDisponiblesGroupBox = new System.Windows.Forms.GroupBox();
             this.NacionalesDisponiblesDataGridView = new System.Windows.Forms.DataGridView();
+            this.ImporteImputadoTextBox = new System.Windows.Forms.TextBox();
+            this.ImporteImputadoLabel = new System.Windows.Forms.Label();
             this.GiftcardAsociadaGroupBox.SuspendLayout();
             this.InternacionalesDisponiblesGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.InternacionalesDisponiblesDataGridView)).BeginInit();
@@ -279,6 +281,22 @@
             this.InternacionalesDisponiblesGroupBox.TabStop = false;
             this.InternacionalesDisponiblesGroupBox.Text = "Gift Cards Internacionales Disponibles";
             // 
+            // InternacionalesDisponiblesDataGridView
+            // 
+            this.InternacionalesDisponiblesDataGridView.AllowUserToAddRows = false;
+            this.InternacionalesDisponiblesDataGridView.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.InternacionalesDisponiblesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.InternacionalesDisponiblesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.InternacionalesDisponiblesDataGridView.ColumnHeadersHeight = 25;
+            this.InternacionalesDisponiblesDataGridView.Location = new System.Drawing.Point(12, 19);
+            this.InternacionalesDisponiblesDataGridView.Name = "InternacionalesDisponiblesDataGridView";
+            this.InternacionalesDisponiblesDataGridView.ReadOnly = true;
+            this.InternacionalesDisponiblesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.InternacionalesDisponiblesDataGridView.Size = new System.Drawing.Size(300, 140);
+            this.InternacionalesDisponiblesDataGridView.TabIndex = 3;
+            this.InternacionalesDisponiblesDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.InternacionalesDisponiblesDataGridView_MouseClick);
+            // 
             // AsociarButton
             // 
             this.AsociarButton.Location = new System.Drawing.Point(911, 368);
@@ -288,21 +306,6 @@
             this.AsociarButton.Text = "Asociar";
             this.AsociarButton.UseVisualStyleBackColor = true;
             this.AsociarButton.Click += new System.EventHandler(this.AsociarButton_Click);
-            // 
-            // InternacionalesDisponiblesDataGridView
-            // 
-            this.InternacionalesDisponiblesDataGridView.AllowUserToAddRows = false;
-            this.InternacionalesDisponiblesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.InternacionalesDisponiblesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.InternacionalesDisponiblesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.InternacionalesDisponiblesDataGridView.ColumnHeadersHeight = 25;
-            this.InternacionalesDisponiblesDataGridView.Location = new System.Drawing.Point(12, 19);
-            this.InternacionalesDisponiblesDataGridView.Name = "InternacionalesDisponiblesDataGridView";
-            this.InternacionalesDisponiblesDataGridView.ReadOnly = true;
-            this.InternacionalesDisponiblesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.InternacionalesDisponiblesDataGridView.Size = new System.Drawing.Size(300, 140);
-            this.InternacionalesDisponiblesDataGridView.TabIndex = 3;
             // 
             // ClienteGroupBox
             // 
@@ -318,8 +321,8 @@
             // 
             this.ClientesDataGridView.AllowUserToAddRows = false;
             this.ClientesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.ClientesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.ClientesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.ClientesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.ClientesDataGridView.ColumnHeadersHeight = 25;
             this.ClientesDataGridView.Location = new System.Drawing.Point(6, 19);
@@ -344,8 +347,8 @@
             // 
             this.NacionalesDisponiblesDataGridView.AllowUserToAddRows = false;
             this.NacionalesDisponiblesDataGridView.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.NacionalesDisponiblesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.NacionalesDisponiblesDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.NacionalesDisponiblesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.NacionalesDisponiblesDataGridView.ColumnHeadersHeight = 25;
             this.NacionalesDisponiblesDataGridView.Location = new System.Drawing.Point(12, 19);
@@ -354,12 +357,31 @@
             this.NacionalesDisponiblesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.NacionalesDisponiblesDataGridView.Size = new System.Drawing.Size(300, 140);
             this.NacionalesDisponiblesDataGridView.TabIndex = 3;
+            this.NacionalesDisponiblesDataGridView.MouseClick += new System.Windows.Forms.MouseEventHandler(this.NacionalesDisponiblesDataGridView_MouseClick);
+            // 
+            // ImporteImputadoTextBox
+            // 
+            this.ImporteImputadoTextBox.Location = new System.Drawing.Point(805, 371);
+            this.ImporteImputadoTextBox.Name = "ImporteImputadoTextBox";
+            this.ImporteImputadoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ImporteImputadoTextBox.TabIndex = 48;
+            // 
+            // ImporteImputadoLabel
+            // 
+            this.ImporteImputadoLabel.Location = new System.Drawing.Point(699, 368);
+            this.ImporteImputadoLabel.Name = "ImporteImputadoLabel";
+            this.ImporteImputadoLabel.Size = new System.Drawing.Size(100, 25);
+            this.ImporteImputadoLabel.TabIndex = 47;
+            this.ImporteImputadoLabel.Text = "Importe a imputar:";
+            this.ImporteImputadoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // ClienteGiftcardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 411);
+            this.ClientSize = new System.Drawing.Size(1009, 550);
+            this.Controls.Add(this.ImporteImputadoTextBox);
+            this.Controls.Add(this.ImporteImputadoLabel);
             this.Controls.Add(this.AsociarButton);
             this.Controls.Add(this.NacionalesDisponiblesGroupBox);
             this.Controls.Add(this.ClienteGroupBox);
@@ -380,6 +402,7 @@
             this.NacionalesDisponiblesGroupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.NacionalesDisponiblesDataGridView)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -414,5 +437,7 @@
         private System.Windows.Forms.TextBox TipoTextBox;
         private System.Windows.Forms.GroupBox NacionalesDisponiblesGroupBox;
         private System.Windows.Forms.DataGridView NacionalesDisponiblesDataGridView;
+        private System.Windows.Forms.TextBox ImporteImputadoTextBox;
+        private System.Windows.Forms.Label ImporteImputadoLabel;
     }
 }

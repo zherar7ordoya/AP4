@@ -1,4 +1,9 @@
-﻿using System.Windows.Forms;
+﻿/**
+ * SIN USO.
+ */
+
+
+using System.Windows.Forms;
 
 namespace EscritorioClasico.Compras
 {

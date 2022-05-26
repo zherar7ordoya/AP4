@@ -1,4 +1,9 @@
-﻿using System;
+﻿/**
+ * SIN USO.
+ */
+
+
+using System;
 using System.Security.Cryptography;
 using System.Text;
 using System.Windows.Forms;
@@ -34,6 +39,7 @@ namespace SEC
                     MessageBoxIcon.Error,
                     MessageBoxDefaultButton.Button1,
                     MessageBoxOptions.RightAlign);
+                throw ex;
             }
             catch (Exception ex)
             {
@@ -47,6 +53,7 @@ namespace SEC
                     MessageBoxIcon.Error,
                     MessageBoxDefaultButton.Button1,
                     MessageBoxOptions.RightAlign);
+                throw ex;
             }
         }
 

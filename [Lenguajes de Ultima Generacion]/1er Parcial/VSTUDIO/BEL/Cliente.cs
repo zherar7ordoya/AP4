@@ -9,6 +9,6 @@ namespace BEL
         public string Apellido { get; set; }
         public int DNI { get; set; }
         public DateTime FechaNacimiento { get; set; }
-        public List<Tarjeta> Tarjeta { get; set; }
+        public List<Giftcard> Tarjeta { get; set; }
     }
 }

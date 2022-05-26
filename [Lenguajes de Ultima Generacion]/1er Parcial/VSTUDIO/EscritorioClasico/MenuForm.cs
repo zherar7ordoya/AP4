@@ -5,10 +5,7 @@ namespace EscritorioClasico
 {
     public partial class MenuForm : Form
     {
-        public MenuForm()
-        {
-            InitializeComponent();
-        }
+        public MenuForm() => InitializeComponent();
 
         private void MenuForm_Load(object sender, EventArgs e)
         {
@@ -16,10 +13,7 @@ namespace EscritorioClasico
             Singleton(formulario);
         }
 
-        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.ExitThread();
-        }
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e) => Application.ExitThread();
 
         private void ClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -58,7 +52,6 @@ namespace EscritorioClasico
                 MessageBoxIcon.Question, 
                 MessageBoxDefaultButton.Button1,
                 MessageBoxOptions.RightAlign);
-
         }
 
         private void Singleton(Form formulario)
@@ -67,7 +60,6 @@ namespace EscritorioClasico
             formulario.Show();
             formulario.WindowState = FormWindowState.Maximized;
             formulario.BringToFront();
-
         }
     }
 }

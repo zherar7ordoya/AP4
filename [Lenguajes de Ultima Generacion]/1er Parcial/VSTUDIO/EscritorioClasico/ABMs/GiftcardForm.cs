@@ -36,6 +36,7 @@ namespace EscritorioClasico.ABMs
         {
             CargarPaises();
             CargarProvincias();
+            CargarRubros();
         }
 
         // *---------------------------------------------------------------=> *
@@ -47,8 +48,8 @@ namespace EscritorioClasico.ABMs
             {
                 if (PaisComboBox.Text != "Argentina")
                 {
-                    BLL.TarjetaInternacional lgcGiftcard = new BLL.TarjetaInternacional();
-                    BEL.TarjetaInternacional belGiftcard = new BEL.TarjetaInternacional();
+                    BLL.GiftcardInternacional bllGiftcard = new BLL.GiftcardInternacional();
+                    BEL.GiftcardInternacional belGiftcard = new BEL.GiftcardInternacional();
                     
                     if (CodigoTextBox.Text != "") belGiftcard.Codigo = Convert.ToInt32(CodigoTextBox.Text);
                     else { belGiftcard.Codigo = 0; }
@@ -59,13 +60,16 @@ namespace EscritorioClasico.ABMs
                     belGiftcard.Pais = PaisComboBox.Text;
                     ProvinciaComboBox.Text = string.Empty;
 
-                    lgcGiftcard.Guardar(belGiftcard);
+                    if (DateTime.Compare(DateTime.Now, FechaVencimientoDateTimePicker.Value) > 0) belGiftcard.Estado = "Vencida";
+                    else { belGiftcard.Estado = "Libre"; }
+
+                    bllGiftcard.Guardar(belGiftcard);
                 }
 
                 if (PaisComboBox.Text == "Argentina")
                 {
-                    BLL.TarjetaNacional lgcGiftcard = new BLL.TarjetaNacional();
-                    BEL.TarjetaNacional belGiftcard = new BEL.TarjetaNacional();
+                    BLL.GiftcardNacional bllGiftcard = new BLL.GiftcardNacional();
+                    BEL.GiftcardNacional belGiftcard = new BEL.GiftcardNacional();
 
                     if (CodigoTextBox.Text != "") belGiftcard.Codigo = Convert.ToInt32(CodigoTextBox.Text);
                     else { belGiftcard.Codigo = 0; }
@@ -76,7 +80,10 @@ namespace EscritorioClasico.ABMs
                     belGiftcard.Pais = "Argentina";
                     belGiftcard.Provincia = ProvinciaComboBox.Text;
 
-                    lgcGiftcard.Guardar(belGiftcard);
+                    if (DateTime.Compare(DateTime.Now, FechaVencimientoDateTimePicker.Value) > 0) belGiftcard.Estado = "Vencida";
+                    else { belGiftcard.Estado = "Libre"; }
+
+                    bllGiftcard.Guardar(belGiftcard);
                 }
                 LimpiarTextBoxes();
                 this.DialogResult = DialogResult.OK;
@@ -125,6 +132,11 @@ namespace EscritorioClasico.ABMs
             ProvinciaComboBox.DataSource = provincias;
             ProvinciaComboBox.DisplayMember = "Nombre";
             ProvinciaComboBox.Refresh();
+        }
+
+        private void CargarRubros()
+        {
+            RubroComboBox.Items.AddRange(Enum.GetNames(typeof(Rubro)));
         }
     }
 }
