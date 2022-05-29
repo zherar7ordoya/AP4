@@ -128,7 +128,7 @@
                 </Column>
                 <Column Id="c2">
                     <Name>Nombre</Name>
-                    <Type>varchar(50)</Type>
+                    <Type>varchar(25)</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
@@ -137,7 +137,7 @@
                 </Column>
                 <Column Id="c3">
                     <Name>Apellido</Name>
-                    <Type>varchar(50)</Type>
+                    <Type>varchar(25)</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
@@ -155,7 +155,7 @@
                 </Column>
                 <Column Id="c5">
                     <Name>Calle</Name>
-                    <Type>varchar(50)</Type>
+                    <Type>varchar(25)</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
@@ -189,18 +189,18 @@
             <Name>Libros</Name>
             <Description></Description>
             <Columns>
-                <Column Id="c8">
-                    <Name>ISBN</Name>
-                    <Type>varchar(17)</Type>
+                <Column Id="c7">
+                    <Name>AñoEdicion</Name>
+                    <Type>int</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
                     <Properties/>
                 </Column>
-                <Column Id="c7">
-                    <Name>AnioEdicion</Name>
-                    <Type>int</Type>
+                <Column Id="c8">
+                    <Name>ISBN</Name>
+                    <Type>varchar(17)</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
@@ -226,7 +226,7 @@
                     <Properties/>
                 </Column>
                 <Column Id="c11">
-                    <Name>AnioEscritura</Name>
+                    <Name>AñoEscritura</Name>
                     <Type>int</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
@@ -252,15 +252,6 @@
             <Name>Volumenes</Name>
             <Description></Description>
             <Columns>
-                <Column Id="c14">
-                    <Name>ISBN</Name>
-                    <Type>varchar(17)</Type>
-                    <Description></Description>
-                    <Nullable>false</Nullable>
-                    <DefaultValue></DefaultValue>
-                    <CheckExpression></CheckExpression>
-                    <Properties/>
-                </Column>
                 <Column Id="c12">
                     <Name>EjemplarNumero</Name>
                     <Type>int</Type>
@@ -272,7 +263,16 @@
                 </Column>
                 <Column Id="c13">
                     <Name>Deteriorado</Name>
-                    <Type>bit</Type>
+                    <Type>int</Type>
+                    <Description></Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c14">
+                    <Name>ISBN</Name>
+                    <Type>varchar(17)</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
@@ -297,26 +297,8 @@
             <Name>Prestamos</Name>
             <Description></Description>
             <Columns>
-                <Column Id="c18">
-                    <Name>SocioID</Name>
-                    <Type>int</Type>
-                    <Description></Description>
-                    <Nullable>false</Nullable>
-                    <DefaultValue></DefaultValue>
-                    <CheckExpression></CheckExpression>
-                    <Properties/>
-                </Column>
-                <Column Id="c19">
-                    <Name>ISBN</Name>
-                    <Type>varchar(17)</Type>
-                    <Description></Description>
-                    <Nullable>false</Nullable>
-                    <DefaultValue></DefaultValue>
-                    <CheckExpression></CheckExpression>
-                    <Properties/>
-                </Column>
                 <Column Id="c15">
-                    <Name>Fecha</Name>
+                    <Name>FechaPrestamo</Name>
                     <Type>date</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
@@ -342,6 +324,24 @@
                     <CheckExpression></CheckExpression>
                     <Properties/>
                 </Column>
+                <Column Id="c18">
+                    <Name>SocioID</Name>
+                    <Type>int</Type>
+                    <Description></Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
+                <Column Id="c19">
+                    <Name>ISBN</Name>
+                    <Type>varchar(17)</Type>
+                    <Description></Description>
+                    <Nullable>false</Nullable>
+                    <DefaultValue></DefaultValue>
+                    <CheckExpression></CheckExpression>
+                    <Properties/>
+                </Column>
             </Columns>
             <PrimaryKey>
                 <Name>Prestamos_pk</Name>
@@ -361,18 +361,18 @@
             <Name>Socio_Telefono</Name>
             <Description></Description>
             <Columns>
-                <Column Id="c21">
-                    <Name>SocioID</Name>
-                    <Type>int</Type>
+                <Column Id="c20">
+                    <Name>Telefono</Name>
+                    <Type>varchar(15)</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
                     <CheckExpression></CheckExpression>
                     <Properties/>
                 </Column>
-                <Column Id="c20">
-                    <Name>Telefono</Name>
-                    <Type>varchar(17)</Type>
+                <Column Id="c21">
+                    <Name>SocioID</Name>
+                    <Type>int</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
@@ -400,7 +400,7 @@
             <Columns>
                 <Column Id="c22">
                     <Name>Autor</Name>
-                    <Type>int</Type>
+                    <Type>varchar(50)</Type>
                     <Description></Description>
                     <Nullable>false</Nullable>
                     <DefaultValue></DefaultValue>
@@ -449,7 +449,7 @@
                     <FKColumn>c14</FKColumn>
                 </ReferenceColumn>
             </ReferenceColumns>
-            <Cardinality>0..1</Cardinality>
+            <Cardinality>1..*</Cardinality>
             <Mandatory>true</Mandatory>
             <OnUpdateAction>None</OnUpdateAction>
             <OnDeleteAction>None</OnDeleteAction>
@@ -538,60 +538,60 @@
     <Texts/>
     <TableDisplays>
         <TableDisplay Id="td1">
-            <X>6734.5</X>
-            <Y>7057.5</Y>
-            <Width>220.0</Width>
-            <Height>131.0</Height>
+            <X>7002.5</X>
+            <Y>6876.5</Y>
+            <Width>160.0</Width>
+            <Height>120.0</Height>
             <LineColor>#000000</LineColor>
             <FillColor>#ffffff</FillColor>
             <Table>t1</Table>
             <FixedSize>false</FixedSize>
         </TableDisplay>
         <TableDisplay Id="td2">
-            <X>7061.5</X>
-            <Y>7271.5</Y>
-            <Width>208.0</Width>
-            <Height>119.0</Height>
+            <X>7218.5</X>
+            <Y>7048.5</Y>
+            <Width>168.0</Width>
+            <Height>104.0</Height>
             <LineColor>#000000</LineColor>
             <FillColor>#ffffff</FillColor>
             <Table>t2</Table>
             <FixedSize>false</FixedSize>
         </TableDisplay>
         <TableDisplay Id="td3">
-            <X>6735.5</X>
-            <Y>7268.5</Y>
-            <Width>222.0</Width>
-            <Height>122.0</Height>
+            <X>6774.5</X>
+            <Y>7064.5</Y>
+            <Width>152.0</Width>
+            <Height>72.0</Height>
             <LineColor>#000000</LineColor>
             <FillColor>#ffffff</FillColor>
             <Table>t3</Table>
             <FixedSize>false</FixedSize>
         </TableDisplay>
         <TableDisplay Id="td4">
-            <X>7055.5</X>
-            <Y>7057.5</Y>
-            <Width>214.0</Width>
-            <Height>130.0</Height>
+            <X>7222.5</X>
+            <Y>6884.5</Y>
+            <Width>160.0</Width>
+            <Height>104.0</Height>
             <LineColor>#000000</LineColor>
             <FillColor>#ffffff</FillColor>
             <Table>t4</Table>
             <FixedSize>false</FixedSize>
         </TableDisplay>
         <TableDisplay Id="td5">
-            <X>6739.5</X>
+            <X>6758.5</X>
             <Y>6908.5</Y>
-            <Width>213.0</Width>
-            <Height>75.0</Height>
+            <Width>184.0</Width>
+            <Height>56.0</Height>
             <LineColor>#000000</LineColor>
             <FillColor>#ffffff</FillColor>
             <Table>t5</Table>
             <FixedSize>false</FixedSize>
         </TableDisplay>
         <TableDisplay Id="td6">
-            <X>7058.5</X>
-            <Y>7462.5</Y>
-            <Width>204.0</Width>
-            <Height>84.0</Height>
+            <X>7222.5</X>
+            <Y>7212.5</Y>
+            <Width>160.0</Width>
+            <Height>56.0</Height>
             <LineColor>#000000</LineColor>
             <FillColor>#ffffff</FillColor>
             <Table>t6</Table>
@@ -604,23 +604,15 @@
     <ReferenceDisplays>
         <ReferenceDisplay Id="rd1">
             <Color>#000000</Color>
-            <Type>Horizontal_4CP</Type>
+            <Type>Horizontal_2CP</Type>
             <ControlPoints>
                 <ControlPoint>
-                    <X>7071.5</X>
-                    <Y>7281.5</Y>
+                    <X>7227.0</X>
+                    <Y>7099.0</Y>
                 </ControlPoint>
                 <ControlPoint>
-                    <X>6970.5</X>
-                    <Y>7281.5</Y>
-                </ControlPoint>
-                <ControlPoint>
-                    <X>6970.5</X>
-                    <Y>7283.5</Y>
-                </ControlPoint>
-                <ControlPoint>
-                    <X>6876.5</X>
-                    <Y>7283.5</Y>
+                    <X>6915.0</X>
+                    <Y>7099.0</Y>
                 </ControlPoint>
             </ControlPoints>
             <PkTableDisplay>td2</PkTableDisplay>
@@ -632,12 +624,12 @@
             <Type>Horizontal_2CP</Type>
             <ControlPoints>
                 <ControlPoint>
-                    <X>6844.5</X>
-                    <Y>7073.5</Y>
+                    <X>7151.0</X>
+                    <Y>6935.0</Y>
                 </ControlPoint>
                 <ControlPoint>
-                    <X>7065.5</X>
-                    <Y>7073.5</Y>
+                    <X>7231.0</X>
+                    <Y>6935.0</Y>
                 </ControlPoint>
             </ControlPoints>
             <PkTableDisplay>td1</PkTableDisplay>
@@ -649,12 +641,12 @@
             <Type>Vertical_2CP</Type>
             <ControlPoints>
                 <ControlPoint>
-                    <X>7064.5</X>
-                    <Y>7281.5</Y>
+                    <X>7301.0</X>
+                    <Y>7057.0</Y>
                 </ControlPoint>
                 <ControlPoint>
-                    <X>7064.5</X>
-                    <Y>7150.5</Y>
+                    <X>7301.0</X>
+                    <Y>6977.0</Y>
                 </ControlPoint>
             </ControlPoints>
             <PkTableDisplay>td2</PkTableDisplay>
@@ -663,23 +655,15 @@
         </ReferenceDisplay>
         <ReferenceDisplay Id="rd4">
             <Color>#000000</Color>
-            <Type>Horizontal_4CP</Type>
+            <Type>Horizontal_2CP</Type>
             <ControlPoints>
                 <ControlPoint>
-                    <X>6744.5</X>
-                    <Y>7067.5</Y>
+                    <X>7011.0</X>
+                    <Y>6935.0</Y>
                 </ControlPoint>
                 <ControlPoint>
-                    <X>6853.5</X>
-                    <Y>7067.5</Y>
-                </ControlPoint>
-                <ControlPoint>
-                    <X>6853.5</X>
-                    <Y>6935.5</Y>
-                </ControlPoint>
-                <ControlPoint>
-                    <X>6876.5</X>
-                    <Y>6935.5</Y>
+                    <X>6931.0</X>
+                    <Y>6935.0</Y>
                 </ControlPoint>
             </ControlPoints>
             <PkTableDisplay>td1</PkTableDisplay>
@@ -688,23 +672,15 @@
         </ReferenceDisplay>
         <ReferenceDisplay Id="rd5">
             <Color>#000000</Color>
-            <Type>Vertical_4CP</Type>
+            <Type>Vertical_2CP</Type>
             <ControlPoints>
                 <ControlPoint>
-                    <X>7087.5</X>
-                    <Y>7362.5</Y>
+                    <X>7301.0</X>
+                    <Y>7141.0</Y>
                 </ControlPoint>
                 <ControlPoint>
-                    <X>7087.5</X>
-                    <Y>7350.5</Y>
-                </ControlPoint>
-                <ControlPoint>
-                    <X>7068.5</X>
-                    <Y>7350.5</Y>
-                </ControlPoint>
-                <ControlPoint>
-                    <X>7068.5</X>
-                    <Y>7472.5</Y>
+                    <X>7301.0</X>
+                    <Y>7221.0</Y>
                 </ControlPoint>
             </ControlPoints>
             <PkTableDisplay>td2</PkTableDisplay>

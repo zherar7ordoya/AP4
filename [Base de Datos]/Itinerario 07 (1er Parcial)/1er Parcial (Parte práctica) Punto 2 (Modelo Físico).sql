@@ -1,21 +1,21 @@
 CREATE TABLE Socios
 (
   SocioID INT NOT NULL,
-  Nombre VARCHAR(50) NOT NULL,
-  Apellido VARCHAR(50) NOT NULL,
+  Nombre VARCHAR(25) NOT NULL,
+  Apellido VARCHAR(25) NOT NULL,
   DNI INT NOT NULL,
-  Calle VARCHAR(50) NOT NULL,
+  Calle VARCHAR(25) NOT NULL,
   Numero INT NOT NULL,
   PRIMARY KEY (SocioID)
 );
 
 CREATE TABLE Libros
 (
-  AnioEdicion INT NOT NULL,
+  AñoEdicion INT NOT NULL,
   ISBN VARCHAR(17) NOT NULL,
   Titulo VARCHAR(50) NOT NULL,
   Editorial VARCHAR(50) NOT NULL,
-  AnioEscritura INT NOT NULL,
+  AñoEscritura INT NOT NULL,
   PRIMARY KEY (ISBN)
 );
 
@@ -30,7 +30,7 @@ CREATE TABLE Volumenes
 
 CREATE TABLE Prestamos
 (
-  Fecha DATE NOT NULL,
+  FechaPrestamo DATE NOT NULL,
   FechaTope DATE NOT NULL,
   FechaDevolucion DATE NOT NULL,
   SocioID INT NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE Prestamos
 
 CREATE TABLE Socio_Telefono
 (
-  Telefono VARCHAR(17) NOT NULL,
+  Telefono VARCHAR(15) NOT NULL,
   SocioID INT NOT NULL,
   PRIMARY KEY (Telefono, SocioID),
   FOREIGN KEY (SocioID) REFERENCES Socios(SocioID)
@@ -50,7 +50,7 @@ CREATE TABLE Socio_Telefono
 
 CREATE TABLE Libro_Autor
 (
-  Autor INT NOT NULL,
+  Autor VARCHAR(50) NOT NULL,
   ISBN VARCHAR(17) NOT NULL,
   PRIMARY KEY (Autor, ISBN),
   FOREIGN KEY (ISBN) REFERENCES Libros(ISBN)
