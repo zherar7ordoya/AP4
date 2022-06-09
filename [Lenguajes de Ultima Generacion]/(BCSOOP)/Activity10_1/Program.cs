@@ -13,7 +13,10 @@ namespace Activity10_1
             try
             {
                 Author author = new Author();
-                Console.WriteLine(author.CountAuthors());
+                foreach (string name in author.GetAuthorList(25))
+                {
+                    Console.WriteLine(name);
+                }
                 Console.ReadLine();
             }
             catch (Exception ex)

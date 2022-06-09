@@ -25,33 +25,55 @@ namespace Activity10_1
                 {
                     pubCommand.Connection = pubConnection;
                     pubCommand.CommandText = "Select Count(au_id) from authors";
-                    pubConnection.Open();
+
+                    try
+                    {
+                        pubConnection.Open();
+                    }
+                    catch (SqlException ex) { throw ex; }
+                    catch (Exception ex) { throw ex; }
+                    finally { pubConnection.Dispose(); }
+
                     return (int)pubCommand.ExecuteScalar();
                 }
             }
         }
 
 
-        public List<string> GetAuthorList()
+        public List<string> GetAuthorList(int royalty)
         {
             List<string> nameList = new List<string>();
-            using (SqlConnection pubConnection = new SqlConnection(_connString))
+
+            SqlConnection pubConnection = new SqlConnection(_connString);
+
+            SqlCommand authorsCommand = new SqlCommand
             {
-                using (SqlCommand authorsCommand = new SqlCommand())
-                {
-                    authorsCommand.Connection = pubConnection;
-                    authorsCommand.CommandText = "Select au_lname from authors";
-                    pubConnection.Open();
-                    using (SqlDataReader authorDataReader = authorsCommand.ExecuteReader())
-                    {
-                        while (authorDataReader.Read() == true)
-                        {
-                            nameList.Add(authorDataReader.GetString(0));
-                        }
-                        return nameList;
-                    }
-                }
+                Connection = pubConnection,
+                CommandType = CommandType.StoredProcedure,
+                CommandText = "byroyalty"
+            };
+
+            SqlParameter inputParameter = new SqlParameter
+            {
+                ParameterName = "@percentage",
+                Direction = ParameterDirection.Input,
+                SqlDbType = SqlDbType.Int,
+                Value = royalty
+            };
+
+            authorsCommand.Parameters.Add(inputParameter);
+
+            pubConnection.Open();
+
+            SqlDataReader authorDataReader = authorsCommand.ExecuteReader();
+
+            while (authorDataReader.Read() == true)
+            {
+                nameList.Add(authorDataReader.GetString(0));
             }
+
+            pubConnection.Close();
+            return nameList;
         }
 
 
