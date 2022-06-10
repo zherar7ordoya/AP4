@@ -19,24 +19,22 @@ namespace Activity10_1
 
         public int CountAuthors()
         {
-            using (SqlConnection pubConnection = new SqlConnection(_connString))
+            SqlConnection pubConnection = new SqlConnection(_connString);
+
+            SqlCommand pubCommand = new SqlCommand
             {
-                using (SqlCommand pubCommand = new SqlCommand())
-                {
-                    pubCommand.Connection = pubConnection;
-                    pubCommand.CommandText = "Select Count(au_id) from authors";
+                Connection = pubConnection,
+                CommandText = "Select Count(au_id) from authors"
+            };
 
-                    try
-                    {
-                        pubConnection.Open();
-                    }
-                    catch (SqlException ex) { throw ex; }
-                    catch (Exception ex) { throw ex; }
-                    finally { pubConnection.Dispose(); }
-
-                    return (int)pubCommand.ExecuteScalar();
-                }
+            try
+            {
+                pubConnection.Open();
+                return (int)pubCommand.ExecuteScalar();
             }
+            catch (SqlException ex) { throw ex; }
+            catch (Exception ex) { throw ex; }
+            finally { pubConnection.Dispose(); }
         }
 
 
@@ -63,17 +61,20 @@ namespace Activity10_1
 
             authorsCommand.Parameters.Add(inputParameter);
 
-            pubConnection.Open();
-
-            SqlDataReader authorDataReader = authorsCommand.ExecuteReader();
-
-            while (authorDataReader.Read() == true)
+            try
             {
-                nameList.Add(authorDataReader.GetString(0));
-            }
+                pubConnection.Open();
+                SqlDataReader authorDataReader = authorsCommand.ExecuteReader();
 
-            pubConnection.Close();
-            return nameList;
+                while (authorDataReader.Read())
+                {
+                    nameList.Add(authorDataReader.GetString(0));
+                }
+                return nameList;
+            }
+            catch (SqlException ex) { throw ex; }
+            catch (Exception ex) { throw ex; }
+            finally { pubConnection.Dispose(); }
         }
 
 

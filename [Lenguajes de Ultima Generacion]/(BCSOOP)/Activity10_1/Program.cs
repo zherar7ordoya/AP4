@@ -17,6 +17,7 @@ namespace Activity10_1
                 {
                     Console.WriteLine(name);
                 }
+                Console.WriteLine(author.CountAuthors());
                 Console.ReadLine();
             }
             catch (Exception ex)
