@@ -20,17 +20,25 @@ namespace Presentacion
         }
 
 
-        //DECLARAMOS LA CONEXION A ESTE NIVEL PARA PODER APROVECHAR LOS EVENTOS EN TODO EL FORMULARIO
-           SqlConnection Cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS02;Initial Catalog=Ejemplos_LUG;Integrated Security=True");
-        //CREO EL OBJETO PERSONA SOLO PARA USAR EL LISTAR 
-        ClsPersona oPersona = new ClsPersona();
-        //DECLARAMOS LE DATASEET
-        public DataSet Ds = new DataSet();
-        //DECLARAMOS EL DATAROW PARA APROVECHAR LOS EVENTOS DEL FORMULARIO
-        DataRow Dr;
-        //DECLARAMOS EL DA PARA APROVECHAR LOS EVENTOS DEL FORMULARIO
+        //DECLARAMOS LA CONEXION A ESTE NIVEL PARA PODER APROVECHAR LOS EVENTOS
+        //EN TODO EL FORMULARIO.
+           SqlConnection Cnn = new SqlConnection(
+                @"Data Source=(LocalDB)\MSSQLLocalDB;
+                Initial Catalog=Ejemplos_LUG;
+                Integrated Security=True");
 
+        //CREO EL OBJETO PERSONA SOLO PARA USAR EL LISTAR.
+        ClsPersona oPersona = new ClsPersona();
+
+        //DECLARAMOS EL DATASET.
+        public DataSet Ds = new DataSet();
+
+        //DECLARAMOS EL DATAROW PARA APROVECHAR LOS EVENTOS DEL FORMULARIO.
+        DataRow Dr;
+
+        //DECLARAMOS EL DATAADAPTER PARA APROVECHAR LOS EVENTOS DEL FORMULARIO.
         public SqlDataAdapter Da;
+
         //UTILIZAREMOS ESTE ENUMERADOS Y ESTA VARIABLE COMO FLAG PARA SABER SI VAMOS A MODIFICAR O AGREGAR UNA PERSONA
         public enum Accion
         {

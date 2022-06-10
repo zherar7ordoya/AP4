@@ -8,11 +8,11 @@ using System.Data.SqlClient;
 
 namespace BLL
 {
-   public class Metodos
+    public class Metodos
     {
-       
+
         SqlDataAdapter Da;
-        
+
         public DataSet ArmarDataSet()
         {
             DataSet Ds = new DataSet();
@@ -45,7 +45,7 @@ namespace BLL
             //SE PODRIA TRABAJAR DIRECTAMENTE CON EL DATATABLE, PERO LO AGREGAMOS AL DATASET PORQUE QUEREMOS
             //AGREGAR OTRA TABLA RELACIONADA
             Ds.Tables.Add(Tabla);
-         
+
             //UNA TABLA SE PUEDE INSTANCIAR FUERA Y LUEGO AGREGAR
             //AGREGAMOS OTRA TABLA PARA LOS PAISES
             Ds.Tables.Add("Pais");
@@ -69,28 +69,28 @@ namespace BLL
             return Ds;
         }
 
- 
-          public void CargarDs(DataSet DSet)
-            {
-	            //LLENAMOS LA TABLA PAIS
-	            var _with1 = DSet.Tables["Pais"].Rows;
-	            _with1.Add(1, "Argentina");
-	            _with1.Add(2, "Chile");
-	            _with1.Add(3, "Brasil");
-	            _with1.Add(4, "Peru");
-	            _with1.Add(5, "Paraguay");
-	            _with1.Add(6, "Bolivia");
-	            _with1.Add(7, "Venezuela");
-	            _with1.Add(8, "Ecuador");
-                _with1.Add(9, "Uruguay");
-                _with1.Add(10, "Colombia");
+
+        public void CargarDs(DataSet DSet)
+        {
+            //LLENAMOS LA TABLA PAIS
+            DataRowCollection _with1 = DSet.Tables["Pais"].Rows;
+            _with1.Add(1, "Argentina");
+            _with1.Add(2, "Chile");
+            _with1.Add(3, "Brasil");
+            _with1.Add(4, "Peru");
+            _with1.Add(5, "Paraguay");
+            _with1.Add(6, "Bolivia");
+            _with1.Add(7, "Venezuela");
+            _with1.Add(8, "Ecuador");
+            _with1.Add(9, "Uruguay");
+            _with1.Add(10, "Colombia");
 
             //LLENAMOS LA TABLA PERSONA
             LlenarTabla(DSet, "Persona");
-          
+
         }
-        
-    
+
+
         public static void LlenarTabla(DataSet DSet, string NombreTabla)
         {
             // Creo una Fila
@@ -98,48 +98,47 @@ namespace BLL
             for (i = 0; (i <= 9); i++)
             {
                 DataRow drow = DSet.Tables[NombreTabla].NewRow();
-                drow["Nombre"] = FNombre();
+                drow["Nombre"] = NombreAleatorio();
                 drow["Apellido"] = FApellido();
                 drow["FechaNac"] = Convert.ToDateTime(FechaAleatoria());
                 drow["Persona_Pais_Id"] = FPais();
-              DSet.Tables[NombreTabla].Rows.Add(drow);
+                DSet.Tables[NombreTabla].Rows.Add(drow);
                 drow = null;
+                System.Threading.Thread.Sleep(1000);
             }
-
-            
-
         }
 
-        static string FNombre()
-        {
-            string N = null;
-            Random rdn = new Random();
-            int a = rdn.Next(1, 5);
 
-            switch (a)
+        static string NombreAleatorio()
+        {
+            string nombre = String.Empty;
+            Random aleatorio = new Random();
+            int caso = aleatorio.Next(1, 5);
+
+            switch (caso)
             {
                 case 1:
-                    N = "Juan";
+                    nombre = "Juan";
                     break;
                 case 2:
-                    N = "Pedro";
+                    nombre = "Pedro";
                     break;
                 case 3:
-                    N = "Lorena";
+                    nombre = "Lorena";
                     break;
                 case 4:
-                    N = "Analia";
+                    nombre = "Analia";
                     break;
                 case 5:
-                    N = "Pepe";
+                    nombre = "Pepe";
                     break;
             }
-            return N;
+            return nombre;
         }
- 
+
         static string FApellido()
         {
-            string N = null;
+            string N = String.Empty;
             Random rdn = new Random();
             int a = rdn.Next(1, 5);
 
@@ -169,14 +168,13 @@ namespace BLL
             Random rdnD = new Random();
             Random rdnM = new Random();
             Random rdnA = new Random();
-            string Fecha = null;
-            return Fecha = Fecha = rdnD.Next(1, 31) + "/" + rdnM.Next(1, 12) + "/" + rdnA.Next(1960, 2020);
+            return _ = rdnD.Next(1, 31) + "/" + rdnM.Next(1, 12) + "/" + rdnA.Next(1960, 2020);
         }
 
         static int FPais()
         {
             Random rdnP = new Random();
-            return rdnP.Next(1,10 );
+            return rdnP.Next(1, 10);
         }
 
 
@@ -189,9 +187,12 @@ namespace BLL
             Dset.RejectChanges();
         }
 
-      public void GrabarCambios(string NombreTabla, DataSet Dset)
+        public void GrabarCambios(string NombreTabla, DataSet Dset)
         {
-            string Str = @"Data Source=.\SQLEXPRESS02;Initial Catalog=Ejemplos_LUG;Integrated Security=True";
+            string Str =
+                @"Data Source=(LocalDB)\MSSQLLocalDB;
+                Initial Catalog=Ejemplos_LUG;
+                Integrated Security=True";
             Da = new SqlDataAdapter(("SELECT * FROM " + NombreTabla), Str);
             // SE SETEAN LOS METODOS PARA GUARDAR DATOS EN BASE DE DATOS
             SqlCommandBuilder Cb = new SqlCommandBuilder(Da);

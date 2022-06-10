@@ -10,14 +10,20 @@ namespace DAL
 {
     public class Datos
     {
-        SqlConnection cnn = new SqlConnection(@"Data Source=.\SQLEXPRESS02;Initial Catalog=Ejemplos_LUG;Integrated Security=True");
+        SqlConnection cnn = new SqlConnection(
+            @"Data Source=(LocalDB)\MSSQLLocalDB;
+            Initial Catalog=Ejemplos_LUG;
+            Integrated Security=True");
     
 
         public void AbrirCnn()
         {
             try
             {
-                cnn = new SqlConnection(@"Data Source=.\SQL_SQLEXPRESS02;Initial Catalog=Ejemplos_LUG;Integrated Security=True ");
+                cnn = new SqlConnection(
+                    @"Data Source=(LocalDB)\MSSQLLocalDB;
+                    Initial Catalog=Ejemplos_LUG;
+                    Integrated Security=True ");
                 cnn.Open();
             }
             catch (SqlException ex)

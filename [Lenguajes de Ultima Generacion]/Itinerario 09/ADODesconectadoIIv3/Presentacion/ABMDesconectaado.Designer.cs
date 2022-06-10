@@ -176,6 +176,7 @@
             // 
             // mGrilla
             // 
+            this.mGrilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.mGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mGrilla.Location = new System.Drawing.Point(17, 166);
             this.mGrilla.Name = "mGrilla";
