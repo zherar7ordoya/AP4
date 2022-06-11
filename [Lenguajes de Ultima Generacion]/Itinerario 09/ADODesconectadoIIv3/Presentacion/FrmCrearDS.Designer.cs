@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.Label2 = new System.Windows.Forms.Label();
-            this.grdPaises = new System.Windows.Forms.DataGridView();
+            this.dgvPaises = new System.Windows.Forms.DataGridView();
             this.BtnMostrarDs = new System.Windows.Forms.Button();
             this.Label3 = new System.Windows.Forms.Label();
             this.Label1 = new System.Windows.Forms.Label();
             this.BtnCargarDs = new System.Windows.Forms.Button();
             this.BtnCrearDs = new System.Windows.Forms.Button();
-            this.grdPersonas = new System.Windows.Forms.DataGridView();
+            this.dgvPersonas = new System.Windows.Forms.DataGridView();
             this.groupBoxFiltros = new System.Windows.Forms.GroupBox();
             this.rdbApe = new System.Windows.Forms.RadioButton();
             this.rdbPais = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridfiltros = new System.Windows.Forms.DataGridView();
+            this.dgvFiltros = new System.Windows.Forms.DataGridView();
             this.TxfiltroData = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtInicio = new System.Windows.Forms.TextBox();
@@ -48,10 +51,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_filtro_dataview = new System.Windows.Forms.Button();
             this.btn_FiltroDatatable = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grdPaises)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdPersonas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaises)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
             this.groupBoxFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridfiltros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFiltros)).BeginInit();
             this.SuspendLayout();
             // 
             // Label2
@@ -63,20 +66,23 @@
             this.Label2.TabIndex = 27;
             this.Label2.Text = "Paises:";
             // 
-            // grdPaises
+            // dgvPaises
             // 
-            this.grdPaises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdPaises.Location = new System.Drawing.Point(12, 61);
-            this.grdPaises.Name = "grdPaises";
-            this.grdPaises.Size = new System.Drawing.Size(258, 262);
-            this.grdPaises.TabIndex = 26;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvPaises.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvPaises.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvPaises.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPaises.Location = new System.Drawing.Point(16, 61);
+            this.dgvPaises.Name = "dgvPaises";
+            this.dgvPaises.Size = new System.Drawing.Size(254, 262);
+            this.dgvPaises.TabIndex = 26;
             // 
             // BtnMostrarDs
             // 
             this.BtnMostrarDs.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnMostrarDs.Location = new System.Drawing.Point(736, 12);
+            this.BtnMostrarDs.Location = new System.Drawing.Point(721, 12);
             this.BtnMostrarDs.Name = "BtnMostrarDs";
-            this.BtnMostrarDs.Size = new System.Drawing.Size(113, 23);
+            this.BtnMostrarDs.Size = new System.Drawing.Size(100, 25);
             this.BtnMostrarDs.TabIndex = 25;
             this.BtnMostrarDs.Text = "Mostrar DataSet";
             this.BtnMostrarDs.UseVisualStyleBackColor = true;
@@ -86,7 +92,7 @@
             // 
             this.Label3.AutoSize = true;
             this.Label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label3.Location = new System.Drawing.Point(12, 10);
+            this.Label3.Location = new System.Drawing.Point(12, 13);
             this.Label3.Name = "Label3";
             this.Label3.Size = new System.Drawing.Size(440, 20);
             this.Label3.TabIndex = 24;
@@ -103,9 +109,9 @@
             // 
             // BtnCargarDs
             // 
-            this.BtnCargarDs.Location = new System.Drawing.Point(589, 12);
+            this.BtnCargarDs.Location = new System.Drawing.Point(615, 12);
             this.BtnCargarDs.Name = "BtnCargarDs";
-            this.BtnCargarDs.Size = new System.Drawing.Size(113, 23);
+            this.BtnCargarDs.Size = new System.Drawing.Size(100, 25);
             this.BtnCargarDs.TabIndex = 22;
             this.BtnCargarDs.Text = "Cargar DataSet";
             this.BtnCargarDs.UseVisualStyleBackColor = true;
@@ -113,28 +119,31 @@
             // 
             // BtnCrearDs
             // 
-            this.BtnCrearDs.Location = new System.Drawing.Point(458, 12);
+            this.BtnCrearDs.Location = new System.Drawing.Point(509, 12);
             this.BtnCrearDs.Name = "BtnCrearDs";
-            this.BtnCrearDs.Size = new System.Drawing.Size(113, 23);
+            this.BtnCrearDs.Size = new System.Drawing.Size(100, 25);
             this.BtnCrearDs.TabIndex = 21;
             this.BtnCrearDs.Text = "Crear DataSet";
             this.BtnCrearDs.UseVisualStyleBackColor = true;
             this.BtnCrearDs.Click += new System.EventHandler(this.BtnCrearDs_Click);
             // 
-            // grdPersonas
+            // dgvPersonas
             // 
-            this.grdPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdPersonas.Location = new System.Drawing.Point(289, 61);
-            this.grdPersonas.Name = "grdPersonas";
-            this.grdPersonas.Size = new System.Drawing.Size(629, 262);
-            this.grdPersonas.TabIndex = 20;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.dgvPersonas.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPersonas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersonas.Location = new System.Drawing.Point(289, 61);
+            this.dgvPersonas.Name = "dgvPersonas";
+            this.dgvPersonas.Size = new System.Drawing.Size(532, 262);
+            this.dgvPersonas.TabIndex = 20;
             // 
             // groupBoxFiltros
             // 
             this.groupBoxFiltros.Controls.Add(this.rdbApe);
             this.groupBoxFiltros.Controls.Add(this.rdbPais);
             this.groupBoxFiltros.Controls.Add(this.button1);
-            this.groupBoxFiltros.Controls.Add(this.dataGridfiltros);
+            this.groupBoxFiltros.Controls.Add(this.dgvFiltros);
             this.groupBoxFiltros.Controls.Add(this.TxfiltroData);
             this.groupBoxFiltros.Controls.Add(this.label5);
             this.groupBoxFiltros.Controls.Add(this.txtInicio);
@@ -179,15 +188,18 @@
             this.button1.TabIndex = 30;
             this.button1.Text = "Limpiar Filtro";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.LimpiarFiltro_ButtonClick);
             // 
-            // dataGridfiltros
+            // dgvFiltros
             // 
-            this.dataGridfiltros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridfiltros.Location = new System.Drawing.Point(30, 89);
-            this.dataGridfiltros.Name = "dataGridfiltros";
-            this.dataGridfiltros.Size = new System.Drawing.Size(629, 168);
-            this.dataGridfiltros.TabIndex = 29;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dgvFiltros.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvFiltros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvFiltros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvFiltros.Location = new System.Drawing.Point(30, 89);
+            this.dgvFiltros.Name = "dgvFiltros";
+            this.dgvFiltros.Size = new System.Drawing.Size(629, 168);
+            this.dgvFiltros.TabIndex = 29;
             // 
             // TxfiltroData
             // 
@@ -236,7 +248,7 @@
             this.btn_filtro_dataview.TabIndex = 3;
             this.btn_filtro_dataview.Text = "Filtrar por DataView";
             this.btn_filtro_dataview.UseVisualStyleBackColor = true;
-            this.btn_filtro_dataview.Click += new System.EventHandler(this.btn_filtro_dataview_Click);
+            this.btn_filtro_dataview.Click += new System.EventHandler(this.FiltrarDataView_ButtonClick);
             // 
             // btn_FiltroDatatable
             // 
@@ -246,7 +258,7 @@
             this.btn_FiltroDatatable.TabIndex = 0;
             this.btn_FiltroDatatable.Text = "Filtrar por DataTable";
             this.btn_FiltroDatatable.UseVisualStyleBackColor = true;
-            this.btn_FiltroDatatable.Click += new System.EventHandler(this.btn_FiltroDatatable_Click);
+            this.btn_FiltroDatatable.Click += new System.EventHandler(this.FiltrarDataTable_ButtonClick);
             // 
             // FrmCrearDS
             // 
@@ -255,22 +267,22 @@
             this.ClientSize = new System.Drawing.Size(930, 595);
             this.Controls.Add(this.groupBoxFiltros);
             this.Controls.Add(this.Label2);
-            this.Controls.Add(this.grdPaises);
+            this.Controls.Add(this.dgvPaises);
             this.Controls.Add(this.BtnMostrarDs);
             this.Controls.Add(this.Label3);
             this.Controls.Add(this.Label1);
             this.Controls.Add(this.BtnCargarDs);
             this.Controls.Add(this.BtnCrearDs);
-            this.Controls.Add(this.grdPersonas);
+            this.Controls.Add(this.dgvPersonas);
             this.Name = "FrmCrearDS";
             this.Text = "CrearDS - Sin Base de Datos";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCrearDS_FormClosing);
             this.Load += new System.EventHandler(this.FrmCrearDS_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.grdPaises)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.grdPersonas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPaises)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).EndInit();
             this.groupBoxFiltros.ResumeLayout(false);
             this.groupBoxFiltros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridfiltros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvFiltros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,15 +291,15 @@
         #endregion
 
         internal System.Windows.Forms.Label Label2;
-        internal System.Windows.Forms.DataGridView grdPaises;
+        internal System.Windows.Forms.DataGridView dgvPaises;
         internal System.Windows.Forms.Button BtnMostrarDs;
         internal System.Windows.Forms.Label Label3;
         internal System.Windows.Forms.Label Label1;
         internal System.Windows.Forms.Button BtnCargarDs;
         internal System.Windows.Forms.Button BtnCrearDs;
-        internal System.Windows.Forms.DataGridView grdPersonas;
+        internal System.Windows.Forms.DataGridView dgvPersonas;
         private System.Windows.Forms.GroupBox groupBoxFiltros;
-        internal System.Windows.Forms.DataGridView dataGridfiltros;
+        internal System.Windows.Forms.DataGridView dgvFiltros;
         internal System.Windows.Forms.TextBox TxfiltroData;
         private System.Windows.Forms.Label label5;
         internal System.Windows.Forms.TextBox txtInicio;

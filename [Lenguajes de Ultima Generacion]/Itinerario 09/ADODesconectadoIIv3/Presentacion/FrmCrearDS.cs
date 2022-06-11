@@ -36,110 +36,105 @@ namespace Presentacion
         private void BtnMostrarDs_Click(object sender, EventArgs e)
         {
             //1RA FORMA DE CARGAR.
-            grdPersonas.DataSource = null;
-            grdPersonas.DataSource = dataset;
-            grdPersonas.DataMember = "Persona";
+            dgvPersonas.DataSource = null;
+            dgvPersonas.DataSource = dataset;
+            dgvPersonas.DataMember = "Persona";
 
             //2DA FORMA DE CARGAR.
-            grdPaises.DataSource = null;
-            grdPaises.DataSource = dataset.Tables["Pais"];
+            dgvPaises.DataSource = null;
+            dgvPaises.DataSource = dataset.Tables["Pais"];
 
             //HABILITAR FILTROS.
             this.groupBoxFiltros.Enabled = true;
         }
 
-        private void btn_filtro_dataview_Click(object sender, EventArgs e)
-        {
-            try
-            {   //cargo la tabla teporal
-                DataTable TablaTemporal = dataset.Tables["Persona"];
-                DataView dv = new DataView(TablaTemporal);
 
-                if ((rdbPais.Checked) && (TxfiltroData.Text != string.Empty))
-                {
-                    //rowfilter es el filtro que se quiere realizar
-                    dv.RowFilter = "Persona_Pais_Id =" + this.TxfiltroData.Text.Trim();
+        // *-------------------------------------------------------=> 2DA PARTE
 
-                    //el campo por el que quiero ordenar
-                    dv.Sort = "FechaNac";
 
-                    //como estoy en memoria limpio las columnas, sino aparecen 2 grillas
-                    this.dataGridfiltros.Columns.Clear();
-                    this.dataGridfiltros.DataSource = null;
-                    this.dataGridfiltros.DataSource = dv;
-                    this.dataGridfiltros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-
-                    //cambio color alternando las filas de la grilla
-                    this.dataGridfiltros.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
-                }
-                else if ((rdbApe.Checked) && (TxfiltroData.Text != string.Empty))
-
-                {
-                    //rowfilter es el filtro que se quiere realizar
-                    // dv.RowFilter = String.Format("Apellido = '{0}'" , this.TxfiltroData.Text.Trim());
-                    dv.RowFilter = "Apellido = '" + this.TxfiltroData.Text.Trim() + "'";
-
-                    //el campo por el que quiero ordenar
-                    dv.Sort = "FechaNac";
-
-                    //como estoy en memoria limpio las columnas, sino aparecen 2 grillas
-                    this.dataGridfiltros.Columns.Clear();
-                    this.dataGridfiltros.DataSource = null;
-                    this.dataGridfiltros.DataSource = dv;
-
-                    this.dataGridfiltros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-
-                    //cambio color alternando las filas de la grilla
-                    this.dataGridfiltros.AlternatingRowsDefaultCellStyle.BackColor = Color.Yellow;
-                }
-                else
-                { MessageBox.Show("Debe seleccionar una opcion y llenar el campo de busqueda"); }
-            }
-            catch (Exception ex)
-            { MessageBox.Show(ex.Message); }
-        }
-
-        private void btn_FiltroDatatable_Click(object sender, EventArgs e)
+        private void FiltrarDataTable_ButtonClick(object sender, EventArgs e)
         {
             try
             {
-
                 if ((txtInicio.Text == string.Empty) || (txtFin.Text == string.Empty))
                 { MessageBox.Show("Debe ingresar las fechas para la busqueda"); }
                 else
                 {
-                    DataTable TablaTmp = dataset.Tables["Persona"];
+                    DataTable datatable = dataset.Tables["Persona"];
                     string Filtro = null;
-                    Filtro = "FechaNac >=#1/1/" + this.txtInicio.Text.Trim() + "# and FechaNac <=#12/31/" + this.txtFin.Text.Trim() + "#";
+                    Filtro =
+                        "FechaNac >= #1/1/" + 
+                        this.txtInicio.Text.Trim() + 
+                        "# AND FechaNac <= #12/31/" + 
+                        this.txtFin.Text.Trim() + 
+                        "#";
 
-                    //borro todas las columnas de la grilla
-                    this.dataGridfiltros.Columns.Clear();
+                    //LIMPIO GRILLA
+                    this.dgvFiltros.Columns.Clear();
 
-                    //this.dataGridfiltros.Columns.Add("Nombre de la columna, y el encabezado de la columna");
-                    this.dataGridfiltros.Columns.Add("Codigo_Persona", "Codigo_Persona");
-                    this.dataGridfiltros.Columns.Add("Nombre", "Nombre");
-                    this.dataGridfiltros.Columns.Add("Apellido", "Apellido");
-                    this.dataGridfiltros.Columns.Add("FechaNac", "FechaNac");
-                    this.dataGridfiltros.Columns.Add("Persona_Pais_Id", "Persona_Pais_Id");
-                    this.dataGridfiltros.DataSource = null;
+                    //this.DGV.Columns.Add(nombre_columna, encabezado_columna);
+                    this.dgvFiltros.Columns.Add("Codigo_Persona", "Codigo_Persona");
+                    this.dgvFiltros.Columns.Add("Nombre", "Nombre");
+                    this.dgvFiltros.Columns.Add("Apellido", "Apellido");
+                    this.dgvFiltros.Columns.Add("FechaNac", "FechaNac");
+                    this.dgvFiltros.Columns.Add("Persona_Pais_Id", "Persona_Pais_Id");
+                    this.dgvFiltros.DataSource = null;
 
-                    //se pasa el Filtro y puedo agregar xq columna se quiere ordenar
-                    foreach (DataRow fila in TablaTmp.Select(Filtro, "FechaNac"))
+                    //FILTRADO ( SE PUEDE AGREGAR COLUMNA DE ORDEN)
+                    foreach (DataRow fila in datatable.Select(Filtro, "FechaNac"))
                     {
-                        this.dataGridfiltros.Rows.Add(fila["Codigo_Persona"], fila["Apellido"], fila["Nombre"], Convert.ToDateTime(fila["FechaNac"]).ToShortDateString(), fila["Persona_Pais_Id"]);
-
+                        this.dgvFiltros.Rows.Add(
+                            fila["Codigo_Persona"], 
+                            fila["Apellido"], 
+                            fila["Nombre"], 
+                            Convert.ToDateTime(fila["FechaNac"]).ToShortDateString(), 
+                            fila["Persona_Pais_Id"]);
                     }
-                    this.dataGridfiltros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
-
-                    //cambio color alternando las filas de la grilla
-                    this.dataGridfiltros.AlternatingRowsDefaultCellStyle.BackColor = Color.Aquamarine;
                 }
             }
-            catch (Exception ex)
-            { MessageBox.Show(ex.Message); }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+
+
+        private void FiltrarDataView_ButtonClick(object sender, EventArgs e)
+        {
+            try
+            {   //CREAR Y CARGAR UNA TABLA  Y VISTA TEMPORALES.
+                DataTable datatable = dataset.Tables["Persona"];
+                DataView dataview = new DataView(datatable);
+
+                if ((rdbPais.Checked) && (TxfiltroData.Text != string.Empty))
+                {
+                    //ROWFILTER ES EL FILTRO.
+                    dataview.RowFilter = "Persona_Pais_Id = " + this.TxfiltroData.Text.Trim();
+
+                    //ESPECIFICAR LA COLUMNA QUE QUIERO ORDENAR.
+                    dataview.Sort = "FechaNac";
+
+                    //LIMPIAR (MEMORIA Y CONTROL) Y CARGAR NUEVA DATA.
+                    this.dgvFiltros.Columns.Clear();
+                    this.dgvFiltros.DataSource = null;
+                    this.dgvFiltros.DataSource = dataview;
+                }
+                else if ((rdbApe.Checked) && (TxfiltroData.Text != string.Empty))
+                {
+                    dataview.RowFilter = "Apellido = '" + this.TxfiltroData.Text.Trim() + "'";
+                    dataview.Sort = "FechaNac";
+
+                    this.dgvFiltros.Columns.Clear();
+                    this.dgvFiltros.DataSource = null;
+                    this.dgvFiltros.DataSource = dataview;
+                }
+                else { MessageBox.Show("Debe seleccionar una opción y llenar el campo de búsqueda."); }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+
+        private void LimpiarFiltro_ButtonClick(object sender, EventArgs e)
         {
             this.txtFin.Text = string.Empty;
             this.txtInicio.Text = string.Empty;
@@ -147,8 +142,9 @@ namespace Presentacion
             this.rdbApe.Checked = false;
             this.rdbPais.Checked = false;
 
-            //como estoy en memoria, debo borrar la grilla completa sino quedan las columnas 
-            this.dataGridfiltros.Columns.Clear();
+            //COMO ESTOY EN MEMORIA, DEBO BORRAR LA GRILLA COMPLETA SINO QUEDAN
+            //LAS COLUMNAS.
+            this.dgvFiltros.Columns.Clear();
         }
 
         private void FrmCrearDS_FormClosing(object sender, FormClosingEventArgs e)

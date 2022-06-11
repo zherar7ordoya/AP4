@@ -50,8 +50,9 @@ namespace BLL
             //AGREGAMOS OTRA TABLA PARA LOS PAISES
             dataset.Tables.Add("Pais");
 
-            //UNA TABLA TAMBIEN SE PUEDE CREAR Y AGREGAR DIRECTAMENTE EN LA MISMA LINEA
-            //AGREGAMOS LAS COLUMNAS PARA LA TABLA PAIS
+            //UNA TABLA TAMBIEN SE PUEDE CREAR Y AGREGAR DIRECTAMENTE EN LA
+            //MISMA LINEA. 
+            //AGREGAMOS LAS COLUMNAS PARA LA TABLA PAIS.
             DataColumnCollection columnas = dataset.Tables["Pais"].Columns;
             columnas.Add("Codigo_Pais", typeof(Int32));
             columnas.Add("Pais_Nombre", typeof(String));
@@ -106,7 +107,6 @@ namespace BLL
                 fila["FechaNac"] = Convert.ToDateTime(FechaAleatoria());
                 fila["Persona_Pais_Id"] = PaisAleatorio();
                 dataset.Tables[tabla].Rows.Add(fila);
-                fila = null;
             }
         }
 
@@ -208,9 +208,10 @@ namespace BLL
         }
 
 
-        // *******************************************************************************
-        //     ABM SIMPLE
-        // *******************************************************************************
+        //*********************************************************************
+        //                                                           ABM SIMPLE
+        //*********************************************************************
+
         public void DescartarCambios(DataSet Dset)
         {
             // SE DESCARTAN TODOS LOS CAMBIOS DEL DATASET

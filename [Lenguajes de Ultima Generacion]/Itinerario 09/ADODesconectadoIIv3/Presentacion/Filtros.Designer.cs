@@ -28,26 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.LinkLabel = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
-            // linkLabel1
+            // LinkLabel
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(48, 39);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(79, 13);
-            this.linkLabel1.TabIndex = 0;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "LINK FILTROS";
-            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.LinkLabel.AutoSize = true;
+            this.LinkLabel.Location = new System.Drawing.Point(48, 39);
+            this.LinkLabel.Name = "LinkLabel";
+            this.LinkLabel.Size = new System.Drawing.Size(79, 13);
+            this.LinkLabel.TabIndex = 0;
+            this.LinkLabel.TabStop = true;
+            this.LinkLabel.Text = "LINK FILTROS";
+            this.LinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Filtros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.linkLabel1);
+            this.ClientSize = new System.Drawing.Size(174, 101);
+            this.Controls.Add(this.LinkLabel);
             this.Name = "Filtros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtros";
@@ -60,6 +60,6 @@
 
         #endregion
 
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel LinkLabel;
     }
 }

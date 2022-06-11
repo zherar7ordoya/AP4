@@ -23,7 +23,7 @@ namespace Presentacion
             {
                 LinkData = "https://www.csharp-examples.net/dataview-rowfilter/"
             };
-            linkLabel1.Links.Add(link);
+            LinkLabel.Links.Add(link);
         }
 
         private void Filtros_FormClosing(object sender, FormClosingEventArgs e)
