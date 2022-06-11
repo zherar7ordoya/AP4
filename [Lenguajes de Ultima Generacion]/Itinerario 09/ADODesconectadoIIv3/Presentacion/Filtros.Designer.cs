@@ -49,7 +49,9 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.linkLabel1);
             this.Name = "Filtros";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtros";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Filtros_FormClosing);
             this.Load += new System.EventHandler(this.Filtros_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

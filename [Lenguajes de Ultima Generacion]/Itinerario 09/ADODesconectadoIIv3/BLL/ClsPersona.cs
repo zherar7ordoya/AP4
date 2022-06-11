@@ -1,16 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using DAL;
+﻿using System.Data;
 
 namespace BLL
 {
     public class ClsPersona
     {
-
          public int Id {get; set;}
          public string Nombre { get; set; }
          public string Apellido { get; set; }
@@ -20,7 +13,9 @@ namespace BLL
          public DataSet Listar()
          {
              DAL.Datos ODatos = new DAL.Datos();
-             dynamic query = "select * From Persona";
+             dynamic query =
+                "SELECT * " +
+                "FROM Persona";
              return ODatos.Leer(query);
          }
 
@@ -28,7 +23,10 @@ namespace BLL
          {
              DAL.Datos ODatos = new DAL.Datos();
 
-             dynamic query = "SELECT Persona_id, Persona_nombre,Persona_apellido, Persona_direccion FROM Persona; SELECT MAX(persona_id) FROM Persona";
+             dynamic query = "SELECT Persona_id, Persona_nombre, Persona_apellido, Persona_direccion " +
+                "FROM Persona; " +
+                "SELECT MAX(persona_id) " +
+                "FROM Persona";
              return ODatos.Leer(query);
          }
     }

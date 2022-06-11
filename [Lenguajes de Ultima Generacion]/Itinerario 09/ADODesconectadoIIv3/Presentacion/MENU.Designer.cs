@@ -63,28 +63,28 @@
             // crearDSEnMemoriaToolStripMenuItem1
             // 
             this.crearDSEnMemoriaToolStripMenuItem1.Name = "crearDSEnMemoriaToolStripMenuItem1";
-            this.crearDSEnMemoriaToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
+            this.crearDSEnMemoriaToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
             this.crearDSEnMemoriaToolStripMenuItem1.Text = "Crear DS en Memoria";
             this.crearDSEnMemoriaToolStripMenuItem1.Click += new System.EventHandler(this.crearDSEnMemoriaToolStripMenuItem1_Click);
             // 
             // aBMSimpleToolStripMenuItem1
             // 
             this.aBMSimpleToolStripMenuItem1.Name = "aBMSimpleToolStripMenuItem1";
-            this.aBMSimpleToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
+            this.aBMSimpleToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
             this.aBMSimpleToolStripMenuItem1.Text = "ABM Simple";
             this.aBMSimpleToolStripMenuItem1.Click += new System.EventHandler(this.aBMSimpleToolStripMenuItem1_Click);
             // 
             // aBMToolStripMenuItem1
             // 
             this.aBMToolStripMenuItem1.Name = "aBMToolStripMenuItem1";
-            this.aBMToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
+            this.aBMToolStripMenuItem1.Size = new System.Drawing.Size(191, 22);
             this.aBMToolStripMenuItem1.Text = "ABM - Simple Textbox";
             this.aBMToolStripMenuItem1.Click += new System.EventHandler(this.aBMToolStripMenuItem1_Click);
             // 
             // aBMStateToolStripMenuItem
             // 
             this.aBMStateToolStripMenuItem.Name = "aBMStateToolStripMenuItem";
-            this.aBMStateToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.aBMStateToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.aBMStateToolStripMenuItem.Text = "ABM - State";
             this.aBMStateToolStripMenuItem.Click += new System.EventHandler(this.aBMStateToolStripMenuItem_Click);
             // 
@@ -93,7 +93,7 @@
             this.filtrosToolStripMenuItem.Name = "filtrosToolStripMenuItem";
             this.filtrosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.filtrosToolStripMenuItem.Text = "Filtros";
-            this.filtrosToolStripMenuItem.Click += new System.EventHandler(this.filtrosToolStripMenuItem_Click_1);
+            this.filtrosToolStripMenuItem.Click += new System.EventHandler(this.filtrosToolStripMenuItem_Click);
             // 
             // MENU
             // 
@@ -103,8 +103,8 @@
             this.Controls.Add(this.menuStrip2);
             this.IsMdiContainer = true;
             this.Name = "MENU";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADO Desconectado ";
-            this.Load += new System.EventHandler(this.MENU_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.ResumeLayout(false);

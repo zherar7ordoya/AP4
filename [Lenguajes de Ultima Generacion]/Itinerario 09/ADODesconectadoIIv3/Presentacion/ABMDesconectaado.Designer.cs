@@ -238,7 +238,9 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnNuevo);
             this.Name = "ABMDesconectaado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABMDesconectaado";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ABMDesconectaado_FormClosing);
             this.Load += new System.EventHandler(this.ABMDesconectaado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mGrilla)).EndInit();
             this.ResumeLayout(false);

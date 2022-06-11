@@ -1,14 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using BLL;
 
 namespace Presentacion
 {
@@ -158,7 +151,9 @@ namespace Presentacion
             Limpiar();
         }
 
-
-
+        private void ABMSimple_TextBox_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MENU.formulario_ABMSimple_TextBox = false;
+        }
     }
 }

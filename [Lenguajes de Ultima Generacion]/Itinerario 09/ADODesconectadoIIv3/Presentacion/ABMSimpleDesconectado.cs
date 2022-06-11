@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
 
@@ -40,15 +34,14 @@ namespace Presentacion
                 //Cargo con la Tabla 
                 mGrilla.DataSource = null;
                 mGrilla.DataSource = Dset.Tables[0];
-
+                mGrilla.Columns[4].DefaultCellStyle.Format = "C";
             }
             else if (NombreTabla == "Auto")
             { Dset = oAuto.Listar();
                 //Cargo con la Tabla 
                 mGrilla.DataSource = null;
                 mGrilla.DataSource = Dset.Tables[0];
-
-             }
+            }
             else
             { Dset = null; }
 
@@ -101,6 +94,11 @@ namespace Presentacion
             { MessageBox.Show("Seleccione una tabla"); }
 
             return null;
+        }
+
+        private void ABMSimpleDesconectado_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            MENU.formulario_ABMSimpleDesconectado = false;
         }
     }
 }

@@ -71,10 +71,11 @@
             // 
             // mGrilla
             // 
+            this.mGrilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.mGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.mGrilla.Location = new System.Drawing.Point(62, 26);
+            this.mGrilla.Location = new System.Drawing.Point(32, 26);
             this.mGrilla.Name = "mGrilla";
-            this.mGrilla.Size = new System.Drawing.Size(560, 255);
+            this.mGrilla.Size = new System.Drawing.Size(615, 255);
             this.mGrilla.TabIndex = 41;
             // 
             // rdbPersona
@@ -132,7 +133,9 @@
             this.Controls.Add(this.btnGrabar);
             this.Controls.Add(this.mGrilla);
             this.Name = "ABMSimpleDesconectado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABMSimpleDesconectado";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ABMSimpleDesconectado_FormClosing);
             this.Load += new System.EventHandler(this.ABMSimpleDesconectado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mGrilla)).EndInit();
             this.ResumeLayout(false);

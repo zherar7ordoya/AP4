@@ -190,7 +190,7 @@
             this.btnNuevo.UseVisualStyleBackColor = true;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // ADO_Simple_TextBox
+            // ABMSimple_TextBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,8 +211,10 @@
             this.Controls.Add(this.mGrilla);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnNuevo);
-            this.Name = "ADO_Simple_TextBox";
+            this.Name = "ABMSimple_TextBox";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ADO_Simple_TextBox";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ABMSimple_TextBox_FormClosing);
             this.Load += new System.EventHandler(this.ADO_Simple_TextBox_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mGrilla)).EndInit();
             this.ResumeLayout(false);

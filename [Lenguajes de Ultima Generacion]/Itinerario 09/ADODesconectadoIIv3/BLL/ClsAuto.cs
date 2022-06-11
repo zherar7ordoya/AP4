@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data;
-using DAL;
+﻿using System.Data;
 
 namespace BLL
 {
@@ -19,7 +13,9 @@ namespace BLL
         public DataSet Listar()
         {
             DAL.Datos ODatos = new DAL.Datos();
-            dynamic query = "select * From Auto";
+            dynamic query =
+                "SELECT * " +
+                "FROM Auto";
             return ODatos.Leer(query);
         }
 

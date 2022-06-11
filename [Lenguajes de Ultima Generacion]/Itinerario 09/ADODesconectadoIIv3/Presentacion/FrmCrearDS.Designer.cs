@@ -37,6 +37,9 @@
             this.BtnCrearDs = new System.Windows.Forms.Button();
             this.grdPersonas = new System.Windows.Forms.DataGridView();
             this.groupBoxFiltros = new System.Windows.Forms.GroupBox();
+            this.rdbApe = new System.Windows.Forms.RadioButton();
+            this.rdbPais = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridfiltros = new System.Windows.Forms.DataGridView();
             this.TxfiltroData = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -45,9 +48,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btn_filtro_dataview = new System.Windows.Forms.Button();
             this.btn_FiltroDatatable = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.rdbPais = new System.Windows.Forms.RadioButton();
-            this.rdbApe = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.grdPaises)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPersonas)).BeginInit();
             this.groupBoxFiltros.SuspendLayout();
@@ -78,7 +78,7 @@
             this.BtnMostrarDs.Name = "BtnMostrarDs";
             this.BtnMostrarDs.Size = new System.Drawing.Size(113, 23);
             this.BtnMostrarDs.TabIndex = 25;
-            this.BtnMostrarDs.Text = "Mostrar Dataset";
+            this.BtnMostrarDs.Text = "Mostrar DataSet";
             this.BtnMostrarDs.UseVisualStyleBackColor = true;
             this.BtnMostrarDs.Click += new System.EventHandler(this.BtnMostrarDs_Click);
             // 
@@ -107,7 +107,7 @@
             this.BtnCargarDs.Name = "BtnCargarDs";
             this.BtnCargarDs.Size = new System.Drawing.Size(113, 23);
             this.BtnCargarDs.TabIndex = 22;
-            this.BtnCargarDs.Text = "Cargar Dataset";
+            this.BtnCargarDs.Text = "Cargar DataSet";
             this.BtnCargarDs.UseVisualStyleBackColor = true;
             this.BtnCargarDs.Click += new System.EventHandler(this.BtnCargarDs_Click);
             // 
@@ -117,7 +117,7 @@
             this.BtnCrearDs.Name = "BtnCrearDs";
             this.BtnCrearDs.Size = new System.Drawing.Size(113, 23);
             this.BtnCrearDs.TabIndex = 21;
-            this.BtnCrearDs.Text = "Crear Dataset";
+            this.BtnCrearDs.Text = "Crear DataSet";
             this.BtnCrearDs.UseVisualStyleBackColor = true;
             this.BtnCrearDs.Click += new System.EventHandler(this.BtnCrearDs_Click);
             // 
@@ -148,6 +148,38 @@
             this.groupBoxFiltros.TabIndex = 28;
             this.groupBoxFiltros.TabStop = false;
             this.groupBoxFiltros.Text = "Filtros";
+            // 
+            // rdbApe
+            // 
+            this.rdbApe.AutoSize = true;
+            this.rdbApe.Location = new System.Drawing.Point(322, 64);
+            this.rdbApe.Name = "rdbApe";
+            this.rdbApe.Size = new System.Drawing.Size(62, 17);
+            this.rdbApe.TabIndex = 33;
+            this.rdbApe.TabStop = true;
+            this.rdbApe.Text = "Apellido";
+            this.rdbApe.UseVisualStyleBackColor = true;
+            // 
+            // rdbPais
+            // 
+            this.rdbPais.AutoSize = true;
+            this.rdbPais.Location = new System.Drawing.Point(200, 64);
+            this.rdbPais.Name = "rdbPais";
+            this.rdbPais.Size = new System.Drawing.Size(96, 17);
+            this.rdbPais.TabIndex = 32;
+            this.rdbPais.TabStop = true;
+            this.rdbPais.Text = "Código de Pais";
+            this.rdbPais.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(648, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 53);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Limpiar Filtro";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridfiltros
             // 
@@ -190,11 +222,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(199, 24);
+            this.label4.Location = new System.Drawing.Point(197, 27);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(199, 13);
+            this.label4.Size = new System.Drawing.Size(187, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Todos los que nacieron entre los años ...";
+            this.label4.Text = "Todos los que nacieron entre los años";
             // 
             // btn_filtro_dataview
             // 
@@ -202,7 +234,7 @@
             this.btn_filtro_dataview.Name = "btn_filtro_dataview";
             this.btn_filtro_dataview.Size = new System.Drawing.Size(151, 23);
             this.btn_filtro_dataview.TabIndex = 3;
-            this.btn_filtro_dataview.Text = "Filtrar x  Dataview";
+            this.btn_filtro_dataview.Text = "Filtrar por DataView";
             this.btn_filtro_dataview.UseVisualStyleBackColor = true;
             this.btn_filtro_dataview.Click += new System.EventHandler(this.btn_filtro_dataview_Click);
             // 
@@ -212,41 +244,9 @@
             this.btn_FiltroDatatable.Name = "btn_FiltroDatatable";
             this.btn_FiltroDatatable.Size = new System.Drawing.Size(151, 23);
             this.btn_FiltroDatatable.TabIndex = 0;
-            this.btn_FiltroDatatable.Text = "Filtrar x  Datatable";
+            this.btn_FiltroDatatable.Text = "Filtrar por DataTable";
             this.btn_FiltroDatatable.UseVisualStyleBackColor = true;
             this.btn_FiltroDatatable.Click += new System.EventHandler(this.btn_FiltroDatatable_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(648, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 53);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "Limpiar Filtro";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // rdbPais
-            // 
-            this.rdbPais.AutoSize = true;
-            this.rdbPais.Location = new System.Drawing.Point(202, 62);
-            this.rdbPais.Name = "rdbPais";
-            this.rdbPais.Size = new System.Drawing.Size(96, 17);
-            this.rdbPais.TabIndex = 32;
-            this.rdbPais.TabStop = true;
-            this.rdbPais.Text = "Código de Pais";
-            this.rdbPais.UseVisualStyleBackColor = true;
-            // 
-            // rdbApe
-            // 
-            this.rdbApe.AutoSize = true;
-            this.rdbApe.Location = new System.Drawing.Point(317, 63);
-            this.rdbApe.Name = "rdbApe";
-            this.rdbApe.Size = new System.Drawing.Size(62, 17);
-            this.rdbApe.TabIndex = 33;
-            this.rdbApe.TabStop = true;
-            this.rdbApe.Text = "Apellido";
-            this.rdbApe.UseVisualStyleBackColor = true;
             // 
             // FrmCrearDS
             // 
@@ -264,6 +264,7 @@
             this.Controls.Add(this.grdPersonas);
             this.Name = "FrmCrearDS";
             this.Text = "CrearDS - Sin Base de Datos";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmCrearDS_FormClosing);
             this.Load += new System.EventHandler(this.FrmCrearDS_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdPaises)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdPersonas)).EndInit();
