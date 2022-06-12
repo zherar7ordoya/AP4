@@ -136,7 +136,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABMSimpleDesconectado";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ABMSimpleDesconectado_FormClosing);
-            this.Load += new System.EventHandler(this.ABMSimpleDesconectado_Load);
             ((System.ComponentModel.ISupportInitialize)(this.mGrilla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

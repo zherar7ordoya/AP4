@@ -8,24 +8,17 @@ namespace Presentacion
 {
     public partial class ABMSimpleDesconectado : Form
     {
-        public ABMSimpleDesconectado()
-        {
-            InitializeComponent();
-        }
+        public ABMSimpleDesconectado() => InitializeComponent();
 
-        Metodos OBLL = new BLL.Metodos();
-        ClsPersona OPersona = new BLL.ClsPersona();
-        ClsAuto oAuto = new BLL.ClsAuto();
+        Metodos OBLL = new Metodos();
+        ClsPersona OPersona = new ClsPersona();
+        ClsAuto oAuto = new ClsAuto();
         DataSet Dset = new DataSet();
 
         //CON SOLO CAMBIAR ESTA CONSTANTE SE ADMINISTRA OTRA TABLA
         const string NombreTabla = "Persona";
         //const string  NombreTabla = "Auto"
 
-        private void ABMSimpleDesconectado_Load(object sender, EventArgs e)
-        {
-         
-        }
 
         void Cargargrilla(String NombreTabla)
         {
