@@ -7,7 +7,7 @@ namespace BLL
     public class Metodos
     {
 
-        SqlDataAdapter Da;
+        SqlDataAdapter DATA_ADAPTER;
 
         public DataSet ArmarDataSet()
         {
@@ -212,29 +212,36 @@ namespace BLL
         //                                                           ABM SIMPLE
         //*********************************************************************
 
-        public void DescartarCambios(DataSet Dset)
+
+        public void DescartarCambios(DataSet dataset)
         {
             // SE DESCARTAN TODOS LOS CAMBIOS DEL DATASET
-            Dset.RejectChanges();
+            dataset.RejectChanges();
         }
 
-        public void GrabarCambios(string NombreTabla, DataSet Dset)
+
+        public void GrabarCambios(string tabla, DataSet dataset)
         {
-            string Str =
+            string conexion =
                 @"Data Source=(LocalDB)\MSSQLLocalDB;
                 Initial Catalog=Ejemplos_LUG;
                 Integrated Security=True";
-            Da = new SqlDataAdapter(("SELECT * FROM " + NombreTabla), Str);
-            //SE SETEAN LOS METODOS PARA GUARDAR DATOS EN BASE DE DATOS
-            SqlCommandBuilder Cb = new SqlCommandBuilder(Da);
-            Da.UpdateCommand = Cb.GetUpdateCommand();
-            Da.DeleteCommand = Cb.GetDeleteCommand();
-            Da.InsertCommand = Cb.GetInsertCommand();
-            Da.ContinueUpdateOnError = true;
-            Da.Fill(Dset);
+
+            DATA_ADAPTER = new SqlDataAdapter(("SELECT * FROM " + tabla), conexion);
+
+            //SE DEFINEN LOS METODOS PARA GUARDAR DATOS EN BASE DE DATOS
+            SqlCommandBuilder COMMAND_BUILDER = new SqlCommandBuilder(DATA_ADAPTER);
+
+            DATA_ADAPTER.UpdateCommand = COMMAND_BUILDER.GetUpdateCommand();
+            DATA_ADAPTER.DeleteCommand = COMMAND_BUILDER.GetDeleteCommand();
+            DATA_ADAPTER.InsertCommand = COMMAND_BUILDER.GetInsertCommand();
+            DATA_ADAPTER.ContinueUpdateOnError = true;
+            DATA_ADAPTER.Fill(dataset);
 
             //SE INTENTAN PERSISTIR LOS CAMBIOS EN LA BASE DE DATOS
-            Da.Update(Dset.Tables[0]);
+            DATA_ADAPTER.Update(dataset.Tables[0]);
         }
+
+
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnDescartar = new System.Windows.Forms.Button();
             this.btnDeshacer = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
@@ -57,7 +58,7 @@
             this.btnDescartar.TabIndex = 68;
             this.btnDescartar.Text = "Descartar cambios";
             this.btnDescartar.UseVisualStyleBackColor = true;
-            this.btnDescartar.Click += new System.EventHandler(this.btnDescartar_Click);
+            this.btnDescartar.Click += new System.EventHandler(this.Descartar_Click);
             // 
             // btnDeshacer
             // 
@@ -67,7 +68,7 @@
             this.btnDeshacer.TabIndex = 67;
             this.btnDeshacer.Text = "Deshacer cambio";
             this.btnDeshacer.UseVisualStyleBackColor = true;
-            this.btnDeshacer.Click += new System.EventHandler(this.btnDeshacer_Click);
+            this.btnDeshacer.Click += new System.EventHandler(this.Deshacer_Click);
             // 
             // btnCargar
             // 
@@ -77,7 +78,7 @@
             this.btnCargar.TabIndex = 66;
             this.btnCargar.Text = "Cargar datos nuevamente";
             this.btnCargar.UseVisualStyleBackColor = true;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            this.btnCargar.Click += new System.EventHandler(this.Cargar_Click);
             // 
             // btnGrabar
             // 
@@ -87,7 +88,7 @@
             this.btnGrabar.TabIndex = 65;
             this.btnGrabar.Text = "Grabar cambios en Base de datos";
             this.btnGrabar.UseVisualStyleBackColor = true;
-            this.btnGrabar.Click += new System.EventHandler(this.btnGrabar_Click);
+            this.btnGrabar.Click += new System.EventHandler(this.Grabar_Click);
             // 
             // btnEliminar
             // 
@@ -97,7 +98,7 @@
             this.btnEliminar.TabIndex = 64;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.Click += new System.EventHandler(this.Eliminar_Click);
             // 
             // btnModificar
             // 
@@ -107,7 +108,7 @@
             this.btnModificar.TabIndex = 63;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
-            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            this.btnModificar.Click += new System.EventHandler(this.Modificar_Click);
             // 
             // Label4
             // 
@@ -176,13 +177,16 @@
             // 
             // mGrilla
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.YellowGreen;
+            this.mGrilla.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.mGrilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.mGrilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.mGrilla.Location = new System.Drawing.Point(17, 166);
             this.mGrilla.Name = "mGrilla";
+            this.mGrilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.mGrilla.Size = new System.Drawing.Size(615, 243);
             this.mGrilla.TabIndex = 54;
-            this.mGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.mGrilla_CellContentClick);
+            this.mGrilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Grilla_Click);
             // 
             // btnCancelar
             // 
@@ -192,7 +196,7 @@
             this.btnCancelar.TabIndex = 53;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.Cancelar_Click);
             // 
             // btnGuardar
             // 
@@ -202,7 +206,7 @@
             this.btnGuardar.TabIndex = 52;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // btnNuevo
             // 
@@ -212,7 +216,7 @@
             this.btnNuevo.TabIndex = 51;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
+            this.btnNuevo.Click += new System.EventHandler(this.Nuevo_Click);
             // 
             // ABMDesconectaado
             // 
@@ -240,8 +244,8 @@
             this.Name = "ABMDesconectaado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ABMDesconectaado";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ABMDesconectaado_FormClosing);
-            this.Load += new System.EventHandler(this.ABMDesconectaado_Load);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UnloadForm);
+            this.Load += new System.EventHandler(this.LoadForm);
             ((System.ComponentModel.ISupportInitialize)(this.mGrilla)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

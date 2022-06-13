@@ -57,7 +57,7 @@
             this.btnCargar.TabIndex = 43;
             this.btnCargar.Text = "Cargar datos nuevamente";
             this.btnCargar.UseVisualStyleBackColor = true;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            this.btnCargar.Click += new System.EventHandler(this.CargarGrilla_ButtonClick);
             // 
             // btnGrabar
             // 
@@ -117,7 +117,7 @@
             this.button1.TabIndex = 48;
             this.button1.Text = "Cargar Tabla";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.CargarGrilla_ButtonClick);
             // 
             // ABMSimpleDesconectado
             // 

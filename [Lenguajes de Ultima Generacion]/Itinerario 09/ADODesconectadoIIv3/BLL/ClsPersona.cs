@@ -10,7 +10,7 @@ namespace BLL
          public string Direccion { get; set; }
          public int Saldo { get; set; }
 
-         public DataSet Listar()
+         public DataSet ListarConSaldo()
          {
              DAL.Datos ODatos = new DAL.Datos();
              dynamic query =
@@ -19,7 +19,7 @@ namespace BLL
              return ODatos.Leer(query);
          }
 
-         public DataSet Listar2()
+         public DataSet ListarSinSaldo()
          {
              DAL.Datos ODatos = new DAL.Datos();
 

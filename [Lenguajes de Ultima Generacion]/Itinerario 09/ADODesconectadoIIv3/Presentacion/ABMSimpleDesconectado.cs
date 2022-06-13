@@ -10,88 +10,74 @@ namespace Presentacion
     {
         public ABMSimpleDesconectado() => InitializeComponent();
 
-        Metodos OBLL = new Metodos();
+        Metodos metodoBLL = new Metodos();
         ClsPersona OPersona = new ClsPersona();
         ClsAuto oAuto = new ClsAuto();
-        DataSet Dset = new DataSet();
-
-        //CON SOLO CAMBIAR ESTA CONSTANTE SE ADMINISTRA OTRA TABLA
-        const string NombreTabla = "Persona";
-        //const string  NombreTabla = "Auto"
+        DataSet dataset = new DataSet();
 
 
-        void Cargargrilla(String NombreTabla)
+        private void CargarGrilla_ButtonClick(object sender, EventArgs e)
         {
-            if (NombreTabla == "Persona")
-            { Dset = OPersona.Listar();
-                //Cargo con la Tabla 
+            CargarGrilla(CargarTabla());
+        }
+
+
+        string CargarTabla()
+        {
+            if (rdbPersona.Checked) return "Persona";
+            else if (rdbAuto.Checked) return "Auto";
+            else { MessageBox.Show("Seleccione una tabla"); }
+            return null;
+        }
+
+
+        void CargarGrilla(String tabla)
+        {
+            if (tabla == "Persona")
+            { 
+                dataset = OPersona.ListarConSaldo();
+                //CARGAR LA TABLA
                 mGrilla.DataSource = null;
-                mGrilla.DataSource = Dset.Tables[0];
+                mGrilla.DataSource = dataset.Tables[0];
                 mGrilla.Columns[4].DefaultCellStyle.Format = "C";
             }
-            else if (NombreTabla == "Auto")
-            { Dset = oAuto.Listar();
-                //Cargo con la Tabla 
+            else if (tabla == "Auto")
+            { dataset = oAuto.Listar();
+                //CARGAR LA TABLA
                 mGrilla.DataSource = null;
-                mGrilla.DataSource = Dset.Tables[0];
+                mGrilla.DataSource = dataset.Tables[0];
             }
             else
-            { Dset = null; }
-
-            
+            { dataset = null; }
         }
+
 
         private void btnDescartar_Click(object sender, EventArgs e)
         {
-            OBLL.DescartarCambios(Dset);
+            metodoBLL.DescartarCambios(dataset);
         }
 
-        private void btnCargar_Click(object sender, EventArgs e)
-        {
-            Cargargrilla(CargarTabla());
-        }
 
         private void btnGrabar_Click(object sender, EventArgs e)
         {
             if (rdbPersona.Checked)
             {
-                OBLL.GrabarCambios("Persona", Dset);
-                Cargargrilla("Persona");
-
+                metodoBLL.GrabarCambios("Persona", dataset);
+                CargarGrilla("Persona");
             }
             else
             {
-                OBLL.GrabarCambios("Auto", Dset);
-                Cargargrilla("Auto");
+                metodoBLL.GrabarCambios("Auto", dataset);
+                CargarGrilla("Auto");
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            Cargargrilla(CargarTabla());
-
-
-        }
-
-        string CargarTabla()
-        {
-           
-            if (rdbPersona.Checked)
-            { return "Persona"; }
-
-            else if (rdbAuto.Checked)
-            { return "Auto"; }
-
-            else
-            { MessageBox.Show("Seleccione una tabla"); }
-
-            return null;
-        }
 
         private void ABMSimpleDesconectado_FormClosing(object sender, FormClosingEventArgs e)
         {
             MENU.formulario_ABMSimpleDesconectado = false;
         }
+
+
     }
 }

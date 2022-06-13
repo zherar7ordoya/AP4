@@ -17,7 +17,7 @@ namespace Presentacion
         {
             BtnCargarDs.Enabled = false;
             BtnMostrarDs.Enabled = false;
-            this.groupBoxFiltros.Enabled = false;
+            groupBoxFiltros.Enabled = false;
         }
 
         private void BtnCrearDs_Click(object sender, EventArgs e)
@@ -45,7 +45,7 @@ namespace Presentacion
             dgvPaises.DataSource = dataset.Tables["Pais"];
 
             //HABILITAR FILTROS.
-            this.groupBoxFiltros.Enabled = true;
+            groupBoxFiltros.Enabled = true;
         }
 
 
@@ -64,26 +64,26 @@ namespace Presentacion
                     string Filtro = null;
                     Filtro =
                         "FechaNac >= #1/1/" + 
-                        this.txtInicio.Text.Trim() + 
+                        txtInicio.Text.Trim() + 
                         "# AND FechaNac <= #12/31/" + 
-                        this.txtFin.Text.Trim() + 
+                        txtFin.Text.Trim() + 
                         "#";
 
                     //LIMPIO GRILLA
-                    this.dgvFiltros.Columns.Clear();
+                    dgvFiltros.Columns.Clear();
 
                     //this.DGV.Columns.Add(nombre_columna, encabezado_columna);
-                    this.dgvFiltros.Columns.Add("Codigo_Persona", "Codigo_Persona");
-                    this.dgvFiltros.Columns.Add("Nombre", "Nombre");
-                    this.dgvFiltros.Columns.Add("Apellido", "Apellido");
-                    this.dgvFiltros.Columns.Add("FechaNac", "FechaNac");
-                    this.dgvFiltros.Columns.Add("Persona_Pais_Id", "Persona_Pais_Id");
-                    this.dgvFiltros.DataSource = null;
+                    dgvFiltros.Columns.Add("Codigo_Persona", "Codigo_Persona");
+                    dgvFiltros.Columns.Add("Nombre", "Nombre");
+                    dgvFiltros.Columns.Add("Apellido", "Apellido");
+                    dgvFiltros.Columns.Add("FechaNac", "FechaNac");
+                    dgvFiltros.Columns.Add("Persona_Pais_Id", "Persona_Pais_Id");
+                    dgvFiltros.DataSource = null;
 
                     //FILTRADO ( SE PUEDE AGREGAR COLUMNA DE ORDEN)
                     foreach (DataRow fila in datatable.Select(Filtro, "FechaNac"))
                     {
-                        this.dgvFiltros.Rows.Add(
+                        dgvFiltros.Rows.Add(
                             fila["Codigo_Persona"], 
                             fila["Apellido"], 
                             fila["Nombre"], 
@@ -109,24 +109,24 @@ namespace Presentacion
                 if ((rdbPais.Checked) && (TxfiltroData.Text != string.Empty))
                 {
                     //ROWFILTER ES EL FILTRO.
-                    dataview.RowFilter = "Persona_Pais_Id = " + this.TxfiltroData.Text.Trim();
+                    dataview.RowFilter = "Persona_Pais_Id = " + TxfiltroData.Text.Trim();
 
                     //ESPECIFICAR LA COLUMNA QUE QUIERO ORDENAR.
                     dataview.Sort = "FechaNac";
 
                     //LIMPIAR (MEMORIA Y CONTROL) Y CARGAR NUEVA DATA.
-                    this.dgvFiltros.Columns.Clear();
-                    this.dgvFiltros.DataSource = null;
-                    this.dgvFiltros.DataSource = dataview;
+                    dgvFiltros.Columns.Clear();
+                    dgvFiltros.DataSource = null;
+                    dgvFiltros.DataSource = dataview;
                 }
                 else if ((rdbApe.Checked) && (TxfiltroData.Text != string.Empty))
                 {
-                    dataview.RowFilter = "Apellido = '" + this.TxfiltroData.Text.Trim() + "'";
+                    dataview.RowFilter = "Apellido = '" + TxfiltroData.Text.Trim() + "'";
                     dataview.Sort = "FechaNac";
 
-                    this.dgvFiltros.Columns.Clear();
-                    this.dgvFiltros.DataSource = null;
-                    this.dgvFiltros.DataSource = dataview;
+                    dgvFiltros.Columns.Clear();
+                    dgvFiltros.DataSource = null;
+                    dgvFiltros.DataSource = dataview;
                 }
                 else { MessageBox.Show("Debe seleccionar una opción y llenar el campo de búsqueda."); }
             }
@@ -136,15 +136,15 @@ namespace Presentacion
 
         private void LimpiarFiltro_ButtonClick(object sender, EventArgs e)
         {
-            this.txtFin.Text = string.Empty;
-            this.txtInicio.Text = string.Empty;
-            this.TxfiltroData.Text = string.Empty;
-            this.rdbApe.Checked = false;
-            this.rdbPais.Checked = false;
+            txtFin.Text = string.Empty;
+            txtInicio.Text = string.Empty;
+            TxfiltroData.Text = string.Empty;
+            rdbApe.Checked = false;
+            rdbPais.Checked = false;
 
             //COMO ESTOY EN MEMORIA, DEBO BORRAR LA GRILLA COMPLETA SINO QUEDAN
             //LAS COLUMNAS.
-            this.dgvFiltros.Columns.Clear();
+            dgvFiltros.Columns.Clear();
         }
 
         private void FrmCrearDS_FormClosing(object sender, FormClosingEventArgs e)
