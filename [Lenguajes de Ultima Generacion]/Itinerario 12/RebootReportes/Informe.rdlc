@@ -13,7 +13,9 @@
                 <Style />
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Left</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ExecutionTime</rd:DefaultName>
@@ -35,22 +37,22 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.01021cm</Width>
+              <Width>1cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.6021cm</Width>
+              <Width>2cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.78731cm</Width>
+              <Width>2cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.65481cm</Width>
+              <Width>2cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.53335cm</Width>
+              <Width>3.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.67054cm</Width>
+              <Width>5.5cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -447,10 +449,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.9175cm</Top>
+        <Top>1.79062cm</Top>
         <Left>0.25167cm</Left>
-        <Height>1.70271cm</Height>
-        <Width>16.25833cm</Width>
+        <Height>1.7027cm</Height>
+        <Width>16cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>

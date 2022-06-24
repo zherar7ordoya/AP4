@@ -13,7 +13,7 @@ namespace RebootReportes
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InformeFormulario());
+            Application.Run(new InformeList());
         }
     }
 }
