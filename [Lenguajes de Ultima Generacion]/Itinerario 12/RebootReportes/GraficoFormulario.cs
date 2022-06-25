@@ -14,17 +14,15 @@ namespace RebootReportes
 
         void CargarLista()
         {
-
-            Personas.Add(new Persona() { Codigo = 1, Nombre = "Juan", Apellido = "Perez", Sueldo = 70000 });
-            Personas.Add(new Persona() { Codigo = 2, Nombre = "Pedro", Apellido = "Fernandez", Sueldo = 70000 });
-            Personas.Add(new Persona() { Codigo = 3, Nombre = "Jose", Apellido = "Gonzalez", Sueldo = 50000 });
-            Personas.Add(new Persona() { Codigo = 4, Nombre = "Martin", Apellido = "Garcia", Sueldo = 170000 });
-            Personas.Add(new Persona() { Codigo = 5, Nombre = "Roman", Apellido = "Riquelme", Sueldo = 180000 });
-            Personas.Add(new Persona() { Codigo = 6, Nombre = "Analia", Apellido = "Lopez", Sueldo = 40000 });
-            Personas.Add(new Persona() { Codigo = 7, Nombre = "Lorena", Apellido = "Legrand", Sueldo = 15000 });
-            Personas.Add(new Persona() { Codigo = 8, Nombre = "Maria", Apellido = "DelCerro", Sueldo = 39000 });
-            Personas.Add(new Persona() { Codigo = 9, Nombre = "Fernanda", Apellido = "Parente", Sueldo = 50000 });
-            Personas.Add(new Persona() { Codigo = 10, Nombre = "Ignacio", Apellido = "Claus", Sueldo = 70000 });
+            Personas.Add(new Persona() { Codigo = 1, Nombre = "Gregory", Apellido = "House", Sueldo = 70000 });
+            Personas.Add(new Persona() { Codigo = 2, Nombre = "James", Apellido = "Wilson", Sueldo = 70000 });
+            Personas.Add(new Persona() { Codigo = 3, Nombre = "Eric", Apellido = "Foreman", Sueldo = 50000 });
+            Personas.Add(new Persona() { Codigo = 4, Nombre = "Robert", Apellido = "Chase", Sueldo = 170000 });
+            Personas.Add(new Persona() { Codigo = 5, Nombre = "Lisa", Apellido = "Cuddy", Sueldo = 180000 });
+            Personas.Add(new Persona() { Codigo = 6, Nombre = "Allison", Apellido = "Cameron", Sueldo = 40000 });
+            Personas.Add(new Persona() { Codigo = 7, Nombre = "Chris", Apellido = "Taub", Sueldo = 15000 });
+            Personas.Add(new Persona() { Codigo = 8, Nombre = "Remy", Apellido = "«Trece» Hadley", Sueldo = 39000 });
+            Personas.Add(new Persona() { Codigo = 9, Nombre = "Lawrence", Apellido = "Kutner", Sueldo = 50000 });
         }
 
         void CargarGraficoListas()
@@ -39,34 +37,32 @@ namespace RebootReportes
                 ListaDatos.Add(persona.Apellido, persona.Sueldo);
             }
 
-
             //inicializo los valores del titulo,  area y serie
-            UnicoChart.Titles.Clear();
-            UnicoChart.ChartAreas.Clear();
-            UnicoChart.Series.Clear();
+            Grafico.Titles.Clear();
+            Grafico.ChartAreas.Clear();
+            Grafico.Series.Clear();
 
             //agrego el titulo
-            Title Titulo = new Title("Chart enlazado con Listas")
+            Title titulo = new Title("Chart enlazado con Listas")
             {
-                Font = new Font("Tahoma", 20, FontStyle.Bold)
+                Font = new Font("Agency FB", 40)
             };
-            UnicoChart.Titles.Add(Titulo);
+            Grafico.Titles.Add(titulo);
 
             //creo el area y habilito el gráfico en 3D
-            ChartArea Area = new ChartArea();
-            //Area.Area3DStyle.Enable3D = true;
-            UnicoChart.ChartAreas.Add(Area);
+            ChartArea area = new ChartArea();
+            area.Area3DStyle.Enable3D = true;
+            Grafico.ChartAreas.Add(area);
 
             //agrego la serie
             Series serie = new Series("Sueldo")
             {
                 //digo q tipo de grafico quiero 
-                ChartType = SeriesChartType.Bar
+                ChartType = SeriesChartType.Doughnut
             };
             serie.Points.DataBindXY(ListaDatos.Keys, ListaDatos.Values);
 
-            UnicoChart.Series.Add(serie);
-
+            Grafico.Series.Add(serie);
         }
 
         private void GraficoFormulario_Load(object sender, EventArgs e) => CargarGraficoListas();

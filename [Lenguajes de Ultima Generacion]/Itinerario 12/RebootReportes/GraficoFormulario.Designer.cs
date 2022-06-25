@@ -32,42 +32,43 @@ namespace RebootReportes
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            this.UnicoChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            ((System.ComponentModel.ISupportInitialize)(this.UnicoChart)).BeginInit();
+            this.Grafico = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            ((System.ComponentModel.ISupportInitialize)(this.Grafico)).BeginInit();
             this.SuspendLayout();
             // 
-            // UnicoChart
+            // Grafico
             // 
             chartArea1.Name = "ChartArea1";
-            this.UnicoChart.ChartAreas.Add(chartArea1);
+            this.Grafico.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.UnicoChart.Legends.Add(legend1);
-            this.UnicoChart.Location = new System.Drawing.Point(13, 13);
-            this.UnicoChart.Name = "UnicoChart";
+            this.Grafico.Legends.Add(legend1);
+            this.Grafico.Location = new System.Drawing.Point(13, 13);
+            this.Grafico.Name = "Grafico";
             series1.ChartArea = "ChartArea1";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            this.UnicoChart.Series.Add(series1);
-            this.UnicoChart.Size = new System.Drawing.Size(530, 300);
-            this.UnicoChart.TabIndex = 0;
-            this.UnicoChart.Text = "chart1";
+            this.Grafico.Series.Add(series1);
+            this.Grafico.Size = new System.Drawing.Size(950, 636);
+            this.Grafico.TabIndex = 0;
+            this.Grafico.Text = "chart1";
             // 
             // GraficoFormulario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 323);
-            this.Controls.Add(this.UnicoChart);
+            this.ClientSize = new System.Drawing.Size(977, 661);
+            this.Controls.Add(this.Grafico);
             this.Name = "GraficoFormulario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GraficoFormulario";
             this.Load += new System.EventHandler(this.GraficoFormulario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.UnicoChart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Grafico)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataVisualization.Charting.Chart UnicoChart;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Grafico;
     }
 }
