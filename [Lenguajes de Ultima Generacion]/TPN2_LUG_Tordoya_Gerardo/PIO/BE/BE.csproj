@@ -44,7 +44,7 @@
     <Compile Include="Categoria.cs" />
     <Compile Include="Departamento.cs" />
     <Compile Include="Empleado.cs" />
-    <Compile Include="Entidad.cs" />
+    <Compile Include="ENTIDAD.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="Orden.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

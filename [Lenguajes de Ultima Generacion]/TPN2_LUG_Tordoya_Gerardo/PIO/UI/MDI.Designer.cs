@@ -1,0 +1,188 @@
+﻿
+namespace UI
+{
+    partial class MDI
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.MenuStrip = new System.Windows.Forms.MenuStrip();
+            this.ArchivoMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.Archivo_SalirItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ABMMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ABM_CategoriasItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ABM_DepartamentosItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ABM_EmpleadosItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ABM_ItemsItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ABM_OrdenesItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ABM_ProveedoresItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ABM_RolesItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReportesMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.Reportes_OrdenesItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuStrip.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // MenuStrip
+            // 
+            this.MenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ArchivoMenu,
+            this.ABMMenu,
+            this.ReportesMenu});
+            this.MenuStrip.Location = new System.Drawing.Point(0, 0);
+            this.MenuStrip.Name = "MenuStrip";
+            this.MenuStrip.Size = new System.Drawing.Size(784, 24);
+            this.MenuStrip.TabIndex = 1;
+            this.MenuStrip.Text = "menuStrip1";
+            // 
+            // ArchivoMenu
+            // 
+            this.ArchivoMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Archivo_SalirItem});
+            this.ArchivoMenu.Name = "ArchivoMenu";
+            this.ArchivoMenu.Size = new System.Drawing.Size(60, 20);
+            this.ArchivoMenu.Text = "Archivo";
+            // 
+            // Archivo_SalirItem
+            // 
+            this.Archivo_SalirItem.Name = "Archivo_SalirItem";
+            this.Archivo_SalirItem.Size = new System.Drawing.Size(96, 22);
+            this.Archivo_SalirItem.Text = "Salir";
+            this.Archivo_SalirItem.Click += new System.EventHandler(this.Archivo_SalirItem_Click);
+            // 
+            // ABMMenu
+            // 
+            this.ABMMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ABM_CategoriasItem,
+            this.ABM_DepartamentosItem,
+            this.ABM_EmpleadosItem,
+            this.ABM_ItemsItem,
+            this.ABM_OrdenesItem,
+            this.ABM_ProveedoresItem,
+            this.ABM_RolesItem});
+            this.ABMMenu.Name = "ABMMenu";
+            this.ABMMenu.Size = new System.Drawing.Size(45, 20);
+            this.ABMMenu.Text = "ABM";
+            // 
+            // ABM_CategoriasItem
+            // 
+            this.ABM_CategoriasItem.Name = "ABM_CategoriasItem";
+            this.ABM_CategoriasItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_CategoriasItem.Text = "Categorías";
+            this.ABM_CategoriasItem.Click += new System.EventHandler(this.ABM_CategoriasItem_Click);
+            // 
+            // ABM_DepartamentosItem
+            // 
+            this.ABM_DepartamentosItem.Name = "ABM_DepartamentosItem";
+            this.ABM_DepartamentosItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_DepartamentosItem.Text = "Departamentos";
+            this.ABM_DepartamentosItem.Click += new System.EventHandler(this.ABM_DepartamentosItem_Click);
+            // 
+            // ABM_EmpleadosItem
+            // 
+            this.ABM_EmpleadosItem.Name = "ABM_EmpleadosItem";
+            this.ABM_EmpleadosItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_EmpleadosItem.Text = "Empleados";
+            this.ABM_EmpleadosItem.Click += new System.EventHandler(this.ABM_EmpleadosItem_Click);
+            // 
+            // ABM_ItemsItem
+            // 
+            this.ABM_ItemsItem.Name = "ABM_ItemsItem";
+            this.ABM_ItemsItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_ItemsItem.Text = "Ítems";
+            this.ABM_ItemsItem.Click += new System.EventHandler(this.ABM_ItemsItem_Click);
+            // 
+            // ABM_OrdenesItem
+            // 
+            this.ABM_OrdenesItem.Name = "ABM_OrdenesItem";
+            this.ABM_OrdenesItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_OrdenesItem.Text = "Órdenes";
+            this.ABM_OrdenesItem.Click += new System.EventHandler(this.ABM_OrdenesItem_Click);
+            // 
+            // ABM_ProveedoresItem
+            // 
+            this.ABM_ProveedoresItem.Name = "ABM_ProveedoresItem";
+            this.ABM_ProveedoresItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_ProveedoresItem.Text = "Proveedores";
+            this.ABM_ProveedoresItem.Click += new System.EventHandler(this.ABM_ProveedoresItem_Click);
+            // 
+            // ABM_RolesItem
+            // 
+            this.ABM_RolesItem.Name = "ABM_RolesItem";
+            this.ABM_RolesItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_RolesItem.Text = "Roles";
+            this.ABM_RolesItem.Click += new System.EventHandler(this.ABM_RolesItem_Click);
+            // 
+            // ReportesMenu
+            // 
+            this.ReportesMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Reportes_OrdenesItem});
+            this.ReportesMenu.Name = "ReportesMenu";
+            this.ReportesMenu.Size = new System.Drawing.Size(65, 20);
+            this.ReportesMenu.Text = "Reportes";
+            // 
+            // Reportes_OrdenesItem
+            // 
+            this.Reportes_OrdenesItem.Name = "Reportes_OrdenesItem";
+            this.Reportes_OrdenesItem.Size = new System.Drawing.Size(180, 22);
+            this.Reportes_OrdenesItem.Text = "Órdenes";
+            this.Reportes_OrdenesItem.Click += new System.EventHandler(this.Reportes_OrdenesItem_Click);
+            // 
+            // MDI
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.MenuStrip);
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.MenuStrip;
+            this.Name = "MDI";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Menú";
+            this.MenuStrip.ResumeLayout(false);
+            this.MenuStrip.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.MenuStrip MenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem ArchivoMenu;
+        private System.Windows.Forms.ToolStripMenuItem Archivo_SalirItem;
+        private System.Windows.Forms.ToolStripMenuItem ABMMenu;
+        private System.Windows.Forms.ToolStripMenuItem ABM_CategoriasItem;
+        private System.Windows.Forms.ToolStripMenuItem ABM_DepartamentosItem;
+        private System.Windows.Forms.ToolStripMenuItem ABM_EmpleadosItem;
+        private System.Windows.Forms.ToolStripMenuItem ABM_ItemsItem;
+        private System.Windows.Forms.ToolStripMenuItem ABM_OrdenesItem;
+        private System.Windows.Forms.ToolStripMenuItem ABM_ProveedoresItem;
+        private System.Windows.Forms.ToolStripMenuItem ABM_RolesItem;
+        private System.Windows.Forms.ToolStripMenuItem ReportesMenu;
+        private System.Windows.Forms.ToolStripMenuItem Reportes_OrdenesItem;
+    }
+}
+

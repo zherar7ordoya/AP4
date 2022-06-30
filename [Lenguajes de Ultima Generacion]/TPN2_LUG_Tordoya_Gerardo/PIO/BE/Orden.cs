@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Orden : Entidad
+    public class Orden : ENTIDAD
     {
         public int OrdenID { get; set; }
         public int Legajo { get; set; }

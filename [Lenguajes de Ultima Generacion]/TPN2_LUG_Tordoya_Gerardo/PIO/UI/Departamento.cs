@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class MultipleDocumentInterface : Form
+    public partial class Departamento : Form
     {
-        public MultipleDocumentInterface() => InitializeComponent();
-        private void SalirMenuItem_Click(object sender, EventArgs e) => Application.Exit();
+        public Departamento()
+        {
+            InitializeComponent();
+        }
     }
 }

@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Rol : Entidad
+    public class Rol : ENTIDAD
     {
-        public string RolID { get; set}
-        public string Nombre { get; set}
+        public string RolID { get; set; }
+        public string Nombre { get; set; }
     }
 }
