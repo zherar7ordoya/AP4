@@ -88,7 +88,7 @@ namespace MPP
             if (cliente.Id == 0)
             {
                 tabla.Add("@DNI", cliente.DNI);
-                return conexion.LeerScalar("s_Cliente_Existe_DNI", tabla);
+                return conexion.LeerEscalar("s_Cliente_Existe_DNI", tabla);
             }
             else
             {

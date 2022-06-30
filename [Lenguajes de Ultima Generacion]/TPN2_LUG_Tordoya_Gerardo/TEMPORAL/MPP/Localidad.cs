@@ -67,7 +67,7 @@ namespace MPP
                 { "@IdLoc", localidad.Id }
             };
 
-            return conexion.LeerScalar("s_Localidad_Asociada", htabla);
+            return conexion.LeerEscalar("s_Localidad_Asociada", htabla);
         }
 
 
