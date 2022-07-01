@@ -11,7 +11,7 @@ namespace BL
 
         //|||||||||||||||*****************************
 
-        readonly MAPEO.Cliente cliente;
+        //readonly MAPEO.Cliente cliente;
 
 
         public bool Eliminar(BE.Categoria _categoria)

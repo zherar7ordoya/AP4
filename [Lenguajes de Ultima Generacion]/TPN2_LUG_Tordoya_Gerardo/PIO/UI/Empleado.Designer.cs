@@ -78,98 +78,98 @@ namespace UI
             this.EmpleadoDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmpleadoDGV.Location = new System.Drawing.Point(218, 12);
             this.EmpleadoDGV.Name = "EmpleadoDGV";
-            this.EmpleadoDGV.Size = new System.Drawing.Size(400, 162);
+            this.EmpleadoDGV.Size = new System.Drawing.Size(400, 386);
             this.EmpleadoDGV.TabIndex = 11;
             // 
             // NombreTextBox
             // 
             this.NombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.NombreTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.NombreTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.NombreTextBox.Location = new System.Drawing.Point(12, 68);
             this.NombreTextBox.Multiline = true;
             this.NombreTextBox.Name = "NombreTextBox";
-            this.NombreTextBox.TextoPlaceHolder = "Nombre";
             this.NombreTextBox.Size = new System.Drawing.Size(200, 50);
             this.NombreTextBox.TabIndex = 5;
             this.NombreTextBox.Text = "Nombre";
+            this.NombreTextBox.TextoPlaceHolder = "Nombre";
             // 
             // LegajoIDTextBox
             // 
             this.LegajoIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.LegajoIDTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.LegajoIDTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.LegajoIDTextBox.Location = new System.Drawing.Point(12, 12);
             this.LegajoIDTextBox.Multiline = true;
             this.LegajoIDTextBox.Name = "LegajoIDTextBox";
-            this.LegajoIDTextBox.TextoPlaceHolder = "LegajoID";
             this.LegajoIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.LegajoIDTextBox.TabIndex = 4;
             this.LegajoIDTextBox.Text = "LegajoID";
+            this.LegajoIDTextBox.TextoPlaceHolder = "LegajoID";
             // 
             // ApellidoTextBox
             // 
             this.ApellidoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.ApellidoTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.ApellidoTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.ApellidoTextBox.Location = new System.Drawing.Point(12, 124);
             this.ApellidoTextBox.Multiline = true;
             this.ApellidoTextBox.Name = "ApellidoTextBox";
-            this.ApellidoTextBox.TextoPlaceHolder = "Apellido";
             this.ApellidoTextBox.Size = new System.Drawing.Size(200, 50);
             this.ApellidoTextBox.TabIndex = 6;
             this.ApellidoTextBox.Text = "Apellido";
+            this.ApellidoTextBox.TextoPlaceHolder = "Apellido";
             // 
             // UsuarioTextBox
             // 
             this.UsuarioTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.UsuarioTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.UsuarioTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.UsuarioTextBox.Location = new System.Drawing.Point(12, 180);
             this.UsuarioTextBox.Multiline = true;
             this.UsuarioTextBox.Name = "UsuarioTextBox";
-            this.UsuarioTextBox.TextoPlaceHolder = "Usuario";
             this.UsuarioTextBox.Size = new System.Drawing.Size(200, 50);
             this.UsuarioTextBox.TabIndex = 7;
             this.UsuarioTextBox.Text = "Usuario";
+            this.UsuarioTextBox.TextoPlaceHolder = "Usuario";
             // 
             // ContraseñaTextBox
             // 
             this.ContraseñaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.ContraseñaTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.ContraseñaTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.ContraseñaTextBox.Location = new System.Drawing.Point(12, 236);
             this.ContraseñaTextBox.Multiline = true;
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
-            this.ContraseñaTextBox.TextoPlaceHolder = "Contraseña";
             this.ContraseñaTextBox.Size = new System.Drawing.Size(200, 50);
             this.ContraseñaTextBox.TabIndex = 8;
             this.ContraseñaTextBox.Text = "Contraseña";
+            this.ContraseñaTextBox.TextoPlaceHolder = "Contraseña";
             // 
             // DepartamentoIDTextBox
             // 
             this.DepartamentoIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.DepartamentoIDTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.DepartamentoIDTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.DepartamentoIDTextBox.Location = new System.Drawing.Point(12, 292);
             this.DepartamentoIDTextBox.Multiline = true;
             this.DepartamentoIDTextBox.Name = "DepartamentoIDTextBox";
-            this.DepartamentoIDTextBox.TextoPlaceHolder = "DepartamentoID";
             this.DepartamentoIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.DepartamentoIDTextBox.TabIndex = 9;
             this.DepartamentoIDTextBox.Text = "DepartamentoID";
+            this.DepartamentoIDTextBox.TextoPlaceHolder = "DepartamentoID";
             // 
             // RolIDTextBox
             // 
             this.RolIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.RolIDTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.RolIDTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.RolIDTextBox.Location = new System.Drawing.Point(12, 348);
             this.RolIDTextBox.Multiline = true;
             this.RolIDTextBox.Name = "RolIDTextBox";
-            this.RolIDTextBox.TextoPlaceHolder = "RolID";
             this.RolIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.RolIDTextBox.TabIndex = 10;
             this.RolIDTextBox.Text = "RolID";
+            this.RolIDTextBox.TextoPlaceHolder = "RolID";
             // 
             // Empleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 461);
+            this.ClientSize = new System.Drawing.Size(734, 411);
             this.Controls.Add(this.RolIDTextBox);
             this.Controls.Add(this.DepartamentoIDTextBox);
             this.Controls.Add(this.ContraseñaTextBox);

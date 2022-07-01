@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class ENTIDAD : ABSTRACCION.IEntidad
+    public class Entidad : ABSTRACCION.IEntidad
     {
         public int ID { get; set; }
     }

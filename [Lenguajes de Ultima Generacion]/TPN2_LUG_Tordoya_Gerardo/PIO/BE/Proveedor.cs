@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Proveedor : ENTIDAD
+    public class Proveedor : Entidad
     {
         public string ProveedorID { get; set; }
         public string Nombre { get; set; }

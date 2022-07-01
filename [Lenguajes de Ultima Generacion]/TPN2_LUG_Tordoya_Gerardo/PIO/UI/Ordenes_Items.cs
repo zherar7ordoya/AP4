@@ -12,32 +12,77 @@ namespace UI
 {
     public partial class Ordenes_Items : Form
     {
-        public Ordenes_Items()
+        #region |||||||||||||||||||||||||||||||||||||||||||||||||||| AUTOMÁTICO
+
+        public Ordenes_Items() => InitializeComponent();
+
+        private void MostrarEnReporte(DateTime desde, DateTime hasta)
         {
-            InitializeComponent();
+            MAPEO.Reporte datos = new MAPEO.Reporte();
+            datos.MapearReporte(desde, hasta);
+
+            ReporteBindingSource.DataSource = datos;
+            ReporteListadoBindingSource.DataSource = datos.REPORTE_LISTADO;
+            ReportePeriodoBindingSource.DataSource = datos.REPORTE_PERIODO;
+
+            this.ReportViewer.RefreshReport();
         }
 
         private void Ordenes_Items_Load(object sender, EventArgs e)
         {
+            var desde = new DateTime(2020, 1, 1);
+            var hasta = new DateTime(2022, 7, 1);
+            MostrarEnReporte(desde, hasta);
+        }
+
+        #endregion
+
+        //-------------------------------------------------------------------//
+
+        #region ||||||||||||||||||||||||||||||||||||||||||||||||||| INTERACTIVO
+
+        private void HoyButton_Click(object sender, EventArgs e)
+        {
+            var desde = DateTime.Today;
+            var hasta = DateTime.Now;
+            MostrarEnReporte(desde, hasta);
+        }
+
+        private void UltimosSieteButton_Click(object sender, EventArgs e)
+        {
+            var desde = DateTime.Today.AddDays(-7);
+            var hasta = DateTime.Now;
+            MostrarEnReporte(desde, hasta);
+        }
+
+        private void EsteMesButton_Click(object sender, EventArgs e)
+        {
+            var desde = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            var hasta = DateTime.Now;
+            MostrarEnReporte(desde, hasta);
+        }
+
+        private void UltimosTreintaButton_Click(object sender, EventArgs e)
+        {
+            var desde = DateTime.Today.AddDays(-30);
+            var hasta = DateTime.Now;
+            MostrarEnReporte(desde, hasta);
+        }
+
+        private void EsteAñoButton_Click(object sender, EventArgs e)
+        {
             var desde = new DateTime(DateTime.Now.Year, 1, 1);
             var hasta = DateTime.Now;
-            CargarReporte(desde, hasta);
-            
+            MostrarEnReporte(desde, hasta);
         }
 
-
-        private void CargarReporte(DateTime desde, DateTime hasta)
+        private void MostrarButton_Click(object sender, EventArgs e)
         {
-            MAPEO.Reporte modelo_de_reporte = new MAPEO.Reporte();
-            modelo_de_reporte.MapearReporte(desde, hasta);
-
-            ReporteBindingSource.DataSource = modelo_de_reporte;
-            ReporteListadoBindingSource.DataSource = modelo_de_reporte.REPORTE_LISTADO;
-            ReportePeriodoBindingSource.DataSource = modelo_de_reporte.REPORTE_PERIODO;
-
-            this.reportViewer1.RefreshReport();
+            var desde = DesdeDTP.Value;
+            var hasta = HastaDTP.Value;
+            MostrarEnReporte(desde, new DateTime(hasta.Year, hasta.Month, hasta.Day, 23, 59, 59));
         }
 
-
+        #endregion
     }
 }

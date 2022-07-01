@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class MDI : Form
+    public partial class MultipleDocumentInterface : Form
     {
-        public MDI() => InitializeComponent();
+        public MultipleDocumentInterface() => InitializeComponent();
         private void Archivo_SalirItem_Click(object sender, EventArgs e) => Application.Exit();
 
         private void ABM_CategoriasItem_Click(object sender, EventArgs e)

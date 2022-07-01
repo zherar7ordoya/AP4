@@ -43,14 +43,14 @@ namespace UI
             // EstadoTextBox
             // 
             this.EstadoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.EstadoTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.EstadoTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.EstadoTextBox.Location = new System.Drawing.Point(12, 180);
             this.EstadoTextBox.Multiline = true;
             this.EstadoTextBox.Name = "EstadoTextBox";
-            this.EstadoTextBox.TextoPlaceHolder = "Estado";
             this.EstadoTextBox.Size = new System.Drawing.Size(200, 50);
             this.EstadoTextBox.TabIndex = 29;
             this.EstadoTextBox.Text = "Estado";
+            this.EstadoTextBox.TextoPlaceHolder = "Estado";
             // 
             // BajaButton
             // 
@@ -93,44 +93,44 @@ namespace UI
             // LegajoTextBox
             // 
             this.LegajoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.LegajoTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.LegajoTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.LegajoTextBox.Location = new System.Drawing.Point(12, 68);
             this.LegajoTextBox.Multiline = true;
             this.LegajoTextBox.Name = "LegajoTextBox";
-            this.LegajoTextBox.TextoPlaceHolder = "Legajo";
             this.LegajoTextBox.Size = new System.Drawing.Size(200, 50);
             this.LegajoTextBox.TabIndex = 27;
             this.LegajoTextBox.Text = "Legajo";
+            this.LegajoTextBox.TextoPlaceHolder = "Legajo";
             // 
             // OrdenIDTextBox
             // 
             this.OrdenIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.OrdenIDTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.OrdenIDTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.OrdenIDTextBox.Location = new System.Drawing.Point(12, 12);
             this.OrdenIDTextBox.Multiline = true;
             this.OrdenIDTextBox.Name = "OrdenIDTextBox";
-            this.OrdenIDTextBox.TextoPlaceHolder = "OrdenID";
             this.OrdenIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.OrdenIDTextBox.TabIndex = 26;
             this.OrdenIDTextBox.Text = "OrdenID";
+            this.OrdenIDTextBox.TextoPlaceHolder = "OrdenID";
             // 
             // FechaTextBox
             // 
             this.FechaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.FechaTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.FechaTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.FechaTextBox.Location = new System.Drawing.Point(12, 124);
             this.FechaTextBox.Multiline = true;
             this.FechaTextBox.Name = "FechaTextBox";
-            this.FechaTextBox.TextoPlaceHolder = "Fecha";
             this.FechaTextBox.Size = new System.Drawing.Size(200, 50);
             this.FechaTextBox.TabIndex = 28;
             this.FechaTextBox.Text = "Fecha";
+            this.FechaTextBox.TextoPlaceHolder = "Fecha";
             // 
             // Orden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(734, 461);
+            this.ClientSize = new System.Drawing.Size(734, 261);
             this.Controls.Add(this.EstadoTextBox);
             this.Controls.Add(this.BajaButton);
             this.Controls.Add(this.ModificacionButton);

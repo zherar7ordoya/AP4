@@ -79,26 +79,26 @@ namespace UI
             // NombreTextBox
             // 
             this.NombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.NombreTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.NombreTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.NombreTextBox.Location = new System.Drawing.Point(12, 68);
             this.NombreTextBox.Multiline = true;
             this.NombreTextBox.Name = "NombreTextBox";
-            this.NombreTextBox.TextoPlaceHolder = "Nombre";
             this.NombreTextBox.Size = new System.Drawing.Size(200, 50);
             this.NombreTextBox.TabIndex = 12;
             this.NombreTextBox.Text = "Nombre";
+            this.NombreTextBox.TextoPlaceHolder = "Nombre";
             // 
             // ProveedorIDTextBox
             // 
             this.ProveedorIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.ProveedorIDTextBox.ForeColor = System.Drawing.Color.Gray;
+            this.ProveedorIDTextBox.ForeColor = System.Drawing.Color.DarkBlue;
             this.ProveedorIDTextBox.Location = new System.Drawing.Point(12, 12);
             this.ProveedorIDTextBox.Multiline = true;
             this.ProveedorIDTextBox.Name = "ProveedorIDTextBox";
-            this.ProveedorIDTextBox.TextoPlaceHolder = "ProveedorID";
             this.ProveedorIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.ProveedorIDTextBox.TabIndex = 11;
             this.ProveedorIDTextBox.Text = "ProveedorID";
+            this.ProveedorIDTextBox.TextoPlaceHolder = "ProveedorID";
             // 
             // Proveedor
             // 

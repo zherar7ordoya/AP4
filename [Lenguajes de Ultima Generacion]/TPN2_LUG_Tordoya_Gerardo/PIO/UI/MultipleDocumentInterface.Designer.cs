@@ -1,7 +1,7 @@
 ﻿
 namespace UI
 {
-    partial class MDI
+    partial class MultipleDocumentInterface
     {
         /// <summary>
         /// Required designer variable.
@@ -89,49 +89,49 @@ namespace UI
             // ABM_CategoriasItem
             // 
             this.ABM_CategoriasItem.Name = "ABM_CategoriasItem";
-            this.ABM_CategoriasItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_CategoriasItem.Size = new System.Drawing.Size(155, 22);
             this.ABM_CategoriasItem.Text = "Categorías";
             this.ABM_CategoriasItem.Click += new System.EventHandler(this.ABM_CategoriasItem_Click);
             // 
             // ABM_DepartamentosItem
             // 
             this.ABM_DepartamentosItem.Name = "ABM_DepartamentosItem";
-            this.ABM_DepartamentosItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_DepartamentosItem.Size = new System.Drawing.Size(155, 22);
             this.ABM_DepartamentosItem.Text = "Departamentos";
             this.ABM_DepartamentosItem.Click += new System.EventHandler(this.ABM_DepartamentosItem_Click);
             // 
             // ABM_EmpleadosItem
             // 
             this.ABM_EmpleadosItem.Name = "ABM_EmpleadosItem";
-            this.ABM_EmpleadosItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_EmpleadosItem.Size = new System.Drawing.Size(155, 22);
             this.ABM_EmpleadosItem.Text = "Empleados";
             this.ABM_EmpleadosItem.Click += new System.EventHandler(this.ABM_EmpleadosItem_Click);
             // 
             // ABM_ItemsItem
             // 
             this.ABM_ItemsItem.Name = "ABM_ItemsItem";
-            this.ABM_ItemsItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_ItemsItem.Size = new System.Drawing.Size(155, 22);
             this.ABM_ItemsItem.Text = "Ítems";
             this.ABM_ItemsItem.Click += new System.EventHandler(this.ABM_ItemsItem_Click);
             // 
             // ABM_OrdenesItem
             // 
             this.ABM_OrdenesItem.Name = "ABM_OrdenesItem";
-            this.ABM_OrdenesItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_OrdenesItem.Size = new System.Drawing.Size(155, 22);
             this.ABM_OrdenesItem.Text = "Órdenes";
             this.ABM_OrdenesItem.Click += new System.EventHandler(this.ABM_OrdenesItem_Click);
             // 
             // ABM_ProveedoresItem
             // 
             this.ABM_ProveedoresItem.Name = "ABM_ProveedoresItem";
-            this.ABM_ProveedoresItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_ProveedoresItem.Size = new System.Drawing.Size(155, 22);
             this.ABM_ProveedoresItem.Text = "Proveedores";
             this.ABM_ProveedoresItem.Click += new System.EventHandler(this.ABM_ProveedoresItem_Click);
             // 
             // ABM_RolesItem
             // 
             this.ABM_RolesItem.Name = "ABM_RolesItem";
-            this.ABM_RolesItem.Size = new System.Drawing.Size(180, 22);
+            this.ABM_RolesItem.Size = new System.Drawing.Size(155, 22);
             this.ABM_RolesItem.Text = "Roles";
             this.ABM_RolesItem.Click += new System.EventHandler(this.ABM_RolesItem_Click);
             // 
@@ -146,11 +146,11 @@ namespace UI
             // Reportes_OrdenesItem
             // 
             this.Reportes_OrdenesItem.Name = "Reportes_OrdenesItem";
-            this.Reportes_OrdenesItem.Size = new System.Drawing.Size(180, 22);
+            this.Reportes_OrdenesItem.Size = new System.Drawing.Size(118, 22);
             this.Reportes_OrdenesItem.Text = "Órdenes";
             this.Reportes_OrdenesItem.Click += new System.EventHandler(this.Reportes_OrdenesItem_Click);
             // 
-            // MDI
+            // MultipleDocumentInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -158,9 +158,9 @@ namespace UI
             this.Controls.Add(this.MenuStrip);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.MenuStrip;
-            this.Name = "MDI";
+            this.Name = "MultipleDocumentInterface";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Menú";
+            this.Text = "Principal";
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
             this.ResumeLayout(false);
