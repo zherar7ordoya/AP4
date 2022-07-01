@@ -84,7 +84,7 @@ namespace UI
             this.NombreTextBox.Location = new System.Drawing.Point(12, 68);
             this.NombreTextBox.Multiline = true;
             this.NombreTextBox.Name = "NombreTextBox";
-            this.NombreTextBox.PlaceHolderText = "Nombre";
+            this.NombreTextBox.TextoPlaceHolder = "Nombre";
             this.NombreTextBox.Size = new System.Drawing.Size(200, 50);
             this.NombreTextBox.TabIndex = 5;
             this.NombreTextBox.Text = "Nombre";
@@ -96,7 +96,7 @@ namespace UI
             this.CategoriaIDTextBox.Location = new System.Drawing.Point(12, 12);
             this.CategoriaIDTextBox.Multiline = true;
             this.CategoriaIDTextBox.Name = "CategoriaIDTextBox";
-            this.CategoriaIDTextBox.PlaceHolderText = "CategoriaID";
+            this.CategoriaIDTextBox.TextoPlaceHolder = "CategoriaID";
             this.CategoriaIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.CategoriaIDTextBox.TabIndex = 4;
             this.CategoriaIDTextBox.Text = "CategoriaID";
@@ -108,7 +108,7 @@ namespace UI
             this.DescripcionTextBox.Location = new System.Drawing.Point(12, 124);
             this.DescripcionTextBox.Multiline = true;
             this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.PlaceHolderText = "Descripción";
+            this.DescripcionTextBox.TextoPlaceHolder = "Descripción";
             this.DescripcionTextBox.Size = new System.Drawing.Size(200, 50);
             this.DescripcionTextBox.TabIndex = 6;
             this.DescripcionTextBox.Text = "Descripción";

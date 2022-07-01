@@ -127,5 +127,54 @@ namespace DA
             finally { CONEXION_OBJECT.Close(); }
         }
         #endregion
+
+        //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| REPORTE
+
+        public DataTable ConsultaParaReporte(DateTime desde, DateTime hasta)
+        {
+            try
+            {
+                var conexion = Conectar();
+                conexion.Open();
+
+                var comando = new SqlCommand
+                {
+                    Connection = conexion,
+                    CommandText = @"ConsultaParaReporte"
+                };
+                comando.Parameters.AddWithValue("@Desde", desde);
+                comando.Parameters.AddWithValue("@Hasta", hasta);
+                comando.CommandType = CommandType.StoredProcedure;
+
+                var lector = comando.ExecuteReader();
+                var tabla = new DataTable();
+
+                tabla.Load(lector);
+                lector.Dispose();
+
+                return tabla;
+            }
+            catch (SqlException ex) { throw ex; }
+            catch (Exception ex) { throw ex; }
+        }
+
+
+        protected SqlConnection Conectar()
+        {
+            try
+            {
+                return new SqlConnection
+            (
+                "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                "Initial Catalog=PedidosDeInsumosDeOficina;" +
+                "Integrated Security=True;" +
+                "Connection Timeout=60"
+            );
+            }
+            catch (SqlException ex) { throw ex; }
+            catch (Exception ex) { throw ex; }
+        }
+
+
     }
 }

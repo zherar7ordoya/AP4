@@ -49,6 +49,8 @@
     <Compile Include="Orden.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proveedor.cs" />
+    <Compile Include="ReporteListado.cs" />
+    <Compile Include="ReportePeriodo.cs" />
     <Compile Include="Rol.cs" />
   </ItemGroup>
   <ItemGroup>

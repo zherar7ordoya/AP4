@@ -49,7 +49,7 @@ namespace UI
             this.ProveedorIDTextBox.Location = new System.Drawing.Point(12, 292);
             this.ProveedorIDTextBox.Multiline = true;
             this.ProveedorIDTextBox.Name = "ProveedorIDTextBox";
-            this.ProveedorIDTextBox.PlaceHolderText = "ProveedorID";
+            this.ProveedorIDTextBox.TextoPlaceHolder = "ProveedorID";
             this.ProveedorIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.ProveedorIDTextBox.TabIndex = 20;
             this.ProveedorIDTextBox.Text = "ProveedorID";
@@ -61,7 +61,7 @@ namespace UI
             this.PrecioUnitarioTextBox.Location = new System.Drawing.Point(12, 236);
             this.PrecioUnitarioTextBox.Multiline = true;
             this.PrecioUnitarioTextBox.Name = "PrecioUnitarioTextBox";
-            this.PrecioUnitarioTextBox.PlaceHolderText = "Precio Unitario";
+            this.PrecioUnitarioTextBox.TextoPlaceHolder = "Precio Unitario";
             this.PrecioUnitarioTextBox.Size = new System.Drawing.Size(200, 50);
             this.PrecioUnitarioTextBox.TabIndex = 19;
             this.PrecioUnitarioTextBox.Text = "Precio Unitario";
@@ -73,7 +73,7 @@ namespace UI
             this.DescripcionTextBox.Location = new System.Drawing.Point(12, 180);
             this.DescripcionTextBox.Multiline = true;
             this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.PlaceHolderText = "Descripción";
+            this.DescripcionTextBox.TextoPlaceHolder = "Descripción";
             this.DescripcionTextBox.Size = new System.Drawing.Size(200, 50);
             this.DescripcionTextBox.TabIndex = 18;
             this.DescripcionTextBox.Text = "Descripción";
@@ -123,7 +123,7 @@ namespace UI
             this.CategoriaIDTextBox.Location = new System.Drawing.Point(12, 68);
             this.CategoriaIDTextBox.Multiline = true;
             this.CategoriaIDTextBox.Name = "CategoriaIDTextBox";
-            this.CategoriaIDTextBox.PlaceHolderText = "CategoriaID";
+            this.CategoriaIDTextBox.TextoPlaceHolder = "CategoriaID";
             this.CategoriaIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.CategoriaIDTextBox.TabIndex = 16;
             this.CategoriaIDTextBox.Text = "CategoriaID";
@@ -135,7 +135,7 @@ namespace UI
             this.ItemIDTextBox.Location = new System.Drawing.Point(12, 12);
             this.ItemIDTextBox.Multiline = true;
             this.ItemIDTextBox.Name = "ItemIDTextBox";
-            this.ItemIDTextBox.PlaceHolderText = "ItemID";
+            this.ItemIDTextBox.TextoPlaceHolder = "ItemID";
             this.ItemIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.ItemIDTextBox.TabIndex = 15;
             this.ItemIDTextBox.Text = "ItemID";
@@ -147,7 +147,7 @@ namespace UI
             this.NombreTextBox.Location = new System.Drawing.Point(12, 124);
             this.NombreTextBox.Multiline = true;
             this.NombreTextBox.Name = "NombreTextBox";
-            this.NombreTextBox.PlaceHolderText = "Nombre";
+            this.NombreTextBox.TextoPlaceHolder = "Nombre";
             this.NombreTextBox.Size = new System.Drawing.Size(200, 50);
             this.NombreTextBox.TabIndex = 17;
             this.NombreTextBox.Text = "Nombre";

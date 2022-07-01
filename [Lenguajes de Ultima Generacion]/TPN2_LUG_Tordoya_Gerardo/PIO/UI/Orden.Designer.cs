@@ -47,7 +47,7 @@ namespace UI
             this.EstadoTextBox.Location = new System.Drawing.Point(12, 180);
             this.EstadoTextBox.Multiline = true;
             this.EstadoTextBox.Name = "EstadoTextBox";
-            this.EstadoTextBox.PlaceHolderText = "Estado";
+            this.EstadoTextBox.TextoPlaceHolder = "Estado";
             this.EstadoTextBox.Size = new System.Drawing.Size(200, 50);
             this.EstadoTextBox.TabIndex = 29;
             this.EstadoTextBox.Text = "Estado";
@@ -97,7 +97,7 @@ namespace UI
             this.LegajoTextBox.Location = new System.Drawing.Point(12, 68);
             this.LegajoTextBox.Multiline = true;
             this.LegajoTextBox.Name = "LegajoTextBox";
-            this.LegajoTextBox.PlaceHolderText = "Legajo";
+            this.LegajoTextBox.TextoPlaceHolder = "Legajo";
             this.LegajoTextBox.Size = new System.Drawing.Size(200, 50);
             this.LegajoTextBox.TabIndex = 27;
             this.LegajoTextBox.Text = "Legajo";
@@ -109,7 +109,7 @@ namespace UI
             this.OrdenIDTextBox.Location = new System.Drawing.Point(12, 12);
             this.OrdenIDTextBox.Multiline = true;
             this.OrdenIDTextBox.Name = "OrdenIDTextBox";
-            this.OrdenIDTextBox.PlaceHolderText = "OrdenID";
+            this.OrdenIDTextBox.TextoPlaceHolder = "OrdenID";
             this.OrdenIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.OrdenIDTextBox.TabIndex = 26;
             this.OrdenIDTextBox.Text = "OrdenID";
@@ -121,7 +121,7 @@ namespace UI
             this.FechaTextBox.Location = new System.Drawing.Point(12, 124);
             this.FechaTextBox.Multiline = true;
             this.FechaTextBox.Name = "FechaTextBox";
-            this.FechaTextBox.PlaceHolderText = "Fecha";
+            this.FechaTextBox.TextoPlaceHolder = "Fecha";
             this.FechaTextBox.Size = new System.Drawing.Size(200, 50);
             this.FechaTextBox.TabIndex = 28;
             this.FechaTextBox.Text = "Fecha";

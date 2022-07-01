@@ -88,7 +88,7 @@ namespace UI
             this.NombreTextBox.Location = new System.Drawing.Point(12, 68);
             this.NombreTextBox.Multiline = true;
             this.NombreTextBox.Name = "NombreTextBox";
-            this.NombreTextBox.PlaceHolderText = "Nombre";
+            this.NombreTextBox.TextoPlaceHolder = "Nombre";
             this.NombreTextBox.Size = new System.Drawing.Size(200, 50);
             this.NombreTextBox.TabIndex = 5;
             this.NombreTextBox.Text = "Nombre";
@@ -100,7 +100,7 @@ namespace UI
             this.LegajoIDTextBox.Location = new System.Drawing.Point(12, 12);
             this.LegajoIDTextBox.Multiline = true;
             this.LegajoIDTextBox.Name = "LegajoIDTextBox";
-            this.LegajoIDTextBox.PlaceHolderText = "LegajoID";
+            this.LegajoIDTextBox.TextoPlaceHolder = "LegajoID";
             this.LegajoIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.LegajoIDTextBox.TabIndex = 4;
             this.LegajoIDTextBox.Text = "LegajoID";
@@ -112,7 +112,7 @@ namespace UI
             this.ApellidoTextBox.Location = new System.Drawing.Point(12, 124);
             this.ApellidoTextBox.Multiline = true;
             this.ApellidoTextBox.Name = "ApellidoTextBox";
-            this.ApellidoTextBox.PlaceHolderText = "Apellido";
+            this.ApellidoTextBox.TextoPlaceHolder = "Apellido";
             this.ApellidoTextBox.Size = new System.Drawing.Size(200, 50);
             this.ApellidoTextBox.TabIndex = 6;
             this.ApellidoTextBox.Text = "Apellido";
@@ -124,7 +124,7 @@ namespace UI
             this.UsuarioTextBox.Location = new System.Drawing.Point(12, 180);
             this.UsuarioTextBox.Multiline = true;
             this.UsuarioTextBox.Name = "UsuarioTextBox";
-            this.UsuarioTextBox.PlaceHolderText = "Usuario";
+            this.UsuarioTextBox.TextoPlaceHolder = "Usuario";
             this.UsuarioTextBox.Size = new System.Drawing.Size(200, 50);
             this.UsuarioTextBox.TabIndex = 7;
             this.UsuarioTextBox.Text = "Usuario";
@@ -136,7 +136,7 @@ namespace UI
             this.ContraseñaTextBox.Location = new System.Drawing.Point(12, 236);
             this.ContraseñaTextBox.Multiline = true;
             this.ContraseñaTextBox.Name = "ContraseñaTextBox";
-            this.ContraseñaTextBox.PlaceHolderText = "Contraseña";
+            this.ContraseñaTextBox.TextoPlaceHolder = "Contraseña";
             this.ContraseñaTextBox.Size = new System.Drawing.Size(200, 50);
             this.ContraseñaTextBox.TabIndex = 8;
             this.ContraseñaTextBox.Text = "Contraseña";
@@ -148,7 +148,7 @@ namespace UI
             this.DepartamentoIDTextBox.Location = new System.Drawing.Point(12, 292);
             this.DepartamentoIDTextBox.Multiline = true;
             this.DepartamentoIDTextBox.Name = "DepartamentoIDTextBox";
-            this.DepartamentoIDTextBox.PlaceHolderText = "DepartamentoID";
+            this.DepartamentoIDTextBox.TextoPlaceHolder = "DepartamentoID";
             this.DepartamentoIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.DepartamentoIDTextBox.TabIndex = 9;
             this.DepartamentoIDTextBox.Text = "DepartamentoID";
@@ -160,7 +160,7 @@ namespace UI
             this.RolIDTextBox.Location = new System.Drawing.Point(12, 348);
             this.RolIDTextBox.Multiline = true;
             this.RolIDTextBox.Name = "RolIDTextBox";
-            this.RolIDTextBox.PlaceHolderText = "RolID";
+            this.RolIDTextBox.TextoPlaceHolder = "RolID";
             this.RolIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.RolIDTextBox.TabIndex = 10;
             this.RolIDTextBox.Text = "RolID";

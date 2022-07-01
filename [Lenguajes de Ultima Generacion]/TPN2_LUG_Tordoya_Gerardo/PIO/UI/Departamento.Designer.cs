@@ -83,7 +83,7 @@ namespace UI
             this.NombreTextBox.Location = new System.Drawing.Point(12, 68);
             this.NombreTextBox.Multiline = true;
             this.NombreTextBox.Name = "NombreTextBox";
-            this.NombreTextBox.PlaceHolderText = "Nombre";
+            this.NombreTextBox.TextoPlaceHolder = "Nombre";
             this.NombreTextBox.Size = new System.Drawing.Size(200, 50);
             this.NombreTextBox.TabIndex = 12;
             this.NombreTextBox.Text = "Nombre";
@@ -95,7 +95,7 @@ namespace UI
             this.DepartamentoIDTextBox.Location = new System.Drawing.Point(12, 12);
             this.DepartamentoIDTextBox.Multiline = true;
             this.DepartamentoIDTextBox.Name = "DepartamentoIDTextBox";
-            this.DepartamentoIDTextBox.PlaceHolderText = "DepartamentoID";
+            this.DepartamentoIDTextBox.TextoPlaceHolder = "DepartamentoID";
             this.DepartamentoIDTextBox.Size = new System.Drawing.Size(200, 50);
             this.DepartamentoIDTextBox.TabIndex = 11;
             this.DepartamentoIDTextBox.Text = "DepartamentoID";

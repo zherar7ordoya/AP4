@@ -80,7 +80,11 @@ namespace UI
 
         private void Reportes_OrdenesItem_Click(object sender, EventArgs e)
         {
-
+            Ordenes_Items formulario = new Ordenes_Items
+            {
+                MdiParent = this
+            };
+            formulario.Show();
         }
     }
 }

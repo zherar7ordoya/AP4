@@ -10,62 +10,64 @@ namespace UI
 {
     class PlaceHolderTextBox : TextBox
     {
-        bool isPlaceHolder = true;
-        string _placeHolderText;
-        public string PlaceHolderText
+        //------------------------------------------------- EVENTOS Y DELEGADOS
+
+        private void MostrarPlaceHolder(object sender, EventArgs e) => MostrarPlaceHolder();
+        private void OcultarPlaceHolder(object sender, EventArgs e) => OcultarPlaceHolder();
+
+        //------------------------------------------------------- CONSTRUCTORES
+
+        public PlaceHolderTextBox()
         {
-            get { return _placeHolderText; }
+            GotFocus += OcultarPlaceHolder;
+            LostFocus += MostrarPlaceHolder;
+        }
+
+        //--------------------------------------------- ATRIBUTOS Y PROPIEDADES
+
+        bool EsPlaceHolder = true;
+        string _textoPlaceHolder;
+
+        public string TextoPlaceHolder
+        {
+            get => _textoPlaceHolder;
             set
             {
-                _placeHolderText = value;
-                setPlaceholder();
+                _textoPlaceHolder = value;
+                MostrarPlaceHolder();
             }
         }
 
         public new string Text
         {
-            get => isPlaceHolder ? string.Empty : base.Text;
+            get => EsPlaceHolder ? string.Empty : base.Text;
             set => base.Text = value;
         }
 
-        //when the control loses focus, the placeholder is shown
-        private void setPlaceholder()
+        //------------------------------------------------------------- MÉTODOS
+
+        // El marcador se muestra cuando el TextBox pierde foco.
+        private void MostrarPlaceHolder()
         {
             if (string.IsNullOrEmpty(base.Text))
             {
-                base.Text = PlaceHolderText;
-                this.ForeColor = Color.Gray;
-                this.Font = new Font(this.Font, FontStyle.Italic);
-                isPlaceHolder = true;
+                base.Text = TextoPlaceHolder;
+                ForeColor = Color.DarkBlue;
+                Font = new Font(Font, FontStyle.Italic);
+                EsPlaceHolder = true;
             }
         }
 
-        //when the control is focused, the placeholder is removed
-        private void removePlaceHolder()
+        // El marcador se elimina cuando el TextBox adquiere foco.
+        private void OcultarPlaceHolder()
         {
-
-            if (isPlaceHolder)
+            if (EsPlaceHolder)
             {
-                base.Text = "";
-                this.ForeColor = System.Drawing.SystemColors.WindowText;
-                this.Font = new Font(this.Font, FontStyle.Regular);
-                isPlaceHolder = false;
+                base.Text = string.Empty;
+                ForeColor = SystemColors.WindowText;
+                Font = new Font(Font, FontStyle.Regular);
+                EsPlaceHolder = false;
             }
-        }
-        public PlaceHolderTextBox()
-        {
-            GotFocus += removePlaceHolder;
-            LostFocus += setPlaceholder;
-        }
-
-        private void setPlaceholder(object sender, EventArgs e)
-        {
-            setPlaceholder();
-        }
-
-        private void removePlaceHolder(object sender, EventArgs e)
-        {
-            removePlaceHolder();
         }
     }
 }
