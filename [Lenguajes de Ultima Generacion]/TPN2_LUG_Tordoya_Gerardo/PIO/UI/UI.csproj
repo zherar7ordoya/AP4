@@ -200,6 +200,10 @@
       <Project>{c6836d80-0345-4f8e-bc16-a02be44ff57e}</Project>
       <Name>MAPEO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SECURITY\SECURITY.csproj">
+      <Project>{ff6d71bb-487b-4d3f-b2e0-61b2be668f8e}</Project>
+      <Name>SECURITY</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />

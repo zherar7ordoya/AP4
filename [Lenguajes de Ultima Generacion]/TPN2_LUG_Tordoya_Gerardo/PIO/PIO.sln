@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MAPEO", "MAPEO\MAPEO.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI", "UI\UI.csproj", "{155B54E1-8FDE-4D5D-9983-6F17F61CED41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SECURITY", "SECURITY\SECURITY.csproj", "{FF6D71BB-487B-4D3F-B2E0-61B2BE668F8E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{155B54E1-8FDE-4D5D-9983-6F17F61CED41}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{155B54E1-8FDE-4D5D-9983-6F17F61CED41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{155B54E1-8FDE-4D5D-9983-6F17F61CED41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF6D71BB-487B-4D3F-B2E0-61B2BE668F8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF6D71BB-487B-4D3F-B2E0-61B2BE668F8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF6D71BB-487B-4D3F-B2E0-61B2BE668F8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF6D71BB-487B-4D3F-B2E0-61B2BE668F8E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

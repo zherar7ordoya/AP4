@@ -13,7 +13,17 @@ namespace UI
     public partial class MultipleDocumentInterface : Form
     {
         public MultipleDocumentInterface() => InitializeComponent();
+        private void MultipleDocumentInterface_Load(object sender, EventArgs e)
+        {
+            Login formulario = new Login
+            {
+                MdiParent = this
+            };
+            formulario.Show();
+        }
         private void Archivo_SalirItem_Click(object sender, EventArgs e) => Application.Exit();
+
+        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
         private void ABM_CategoriasItem_Click(object sender, EventArgs e)
         {

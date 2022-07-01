@@ -291,7 +291,9 @@
                         <Style>None</Style>
                       </Border>
                       <FontSize>8pt</FontSize>
+                      <Format>'$' #,0.00;('$' #,0.00)</Format>
                       <Color>#5c5c5c</Color>
+                      <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
                     </Style>
                     <ChartAxisTitle>
                       <Caption />
@@ -421,7 +423,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Chart Title</Caption>
+                <Caption>Reporte de pedidos dosificado por periodos</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -452,8 +454,8 @@
             </ChartNoDataMessage>
             <DataSetName>Periodo</DataSetName>
             <Top>0.17639cm</Top>
-            <Height>7.1223cm</Height>
-            <Width>16.51cm</Width>
+            <Height>6.83126cm</Height>
+            <Width>15.50396cm</Width>
             <Style>
               <Border>
                 <Color>LightGrey</Color>
@@ -467,12 +469,78 @@
         <Height>2.8735in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>6.15625in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="ReporteFechaTextBox">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=First(Fields!FECHA.Value, "Reporte")</Value>
+                      <Style>
+                        <Format>f</Format>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <Top>0.34396cm</Top>
+              <Height>0.6cm</Height>
+              <Width>6cm</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+            <Textbox Name="Textbox2">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>REPORTE DE PEDIDOS</Value>
+                      <Style>
+                        <FontSize>20pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Right</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox2</rd:DefaultName>
+              <Top>0.34396cm</Top>
+              <Left>6.17639cm</Left>
+              <Height>0.6cm</Height>
+              <Width>9.32757cm</Width>
+              <ZIndex>1</ZIndex>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
           <Style>
             <Border>
               <Style>None</Style>
