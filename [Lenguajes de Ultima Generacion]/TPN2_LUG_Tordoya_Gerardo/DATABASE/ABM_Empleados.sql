@@ -2,7 +2,7 @@ USE PedidosDeInsumosDeOficina
 
 GO
 
-CREATE PROCEDURE ABM_Empleados
+CREATE PROCEDURE Login
 (
     @Legajo         INTEGER,
     @Nombre         VARCHAR(50),

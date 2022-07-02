@@ -41,17 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs" />
-    <Compile Include="Departamento.cs" />
-    <Compile Include="Empleado.cs" />
+    <Compile Include="Categoria_BE.cs" />
+    <Compile Include="Departamento_BE.cs" />
+    <Compile Include="Empleado_BE.cs" />
     <Compile Include="Entidad.cs" />
-    <Compile Include="Item.cs" />
-    <Compile Include="Orden.cs" />
+    <Compile Include="Item_BE.cs" />
+    <Compile Include="Login_BE.cs" />
+    <Compile Include="Orden_BE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proveedor.cs" />
+    <Compile Include="Proveedor_BE.cs" />
     <Compile Include="ReporteListado.cs" />
     <Compile Include="ReportePeriodo.cs" />
-    <Compile Include="Rol.cs" />
+    <Compile Include="Rol_BE.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ABSTRACCION\ABSTRACCION.csproj">

@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria.cs" />
+    <Compile Include="Categoria_BL.cs" />
+    <Compile Include="Login_BL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +53,14 @@
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{5ad2875b-b0e3-4c2b-b4d9-1544f8d67b94}</Project>
       <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MAPEO\MAPEO.csproj">
+      <Project>{c6836d80-0345-4f8e-bc16-a02be44ff57e}</Project>
+      <Name>MAPEO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SECURITY\SECURITY.csproj">
+      <Project>{ff6d71bb-487b-4d3f-b2e0-61b2be668f8e}</Project>
+      <Name>SECURITY</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

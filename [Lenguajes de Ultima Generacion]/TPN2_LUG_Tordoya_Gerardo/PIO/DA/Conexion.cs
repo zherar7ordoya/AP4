@@ -147,12 +147,12 @@ namespace DA
                 comando.CommandType = CommandType.StoredProcedure;
 
                 var lector = comando.ExecuteReader();
-                var tabla = new DataTable();
+                var dtabla = new DataTable();
 
-                tabla.Load(lector);
+                dtabla.Load(lector);
                 lector.Dispose();
 
-                return tabla;
+                return dtabla;
             }
             catch (SqlException ex) { throw ex; }
             catch (Exception ex) { throw ex; }
