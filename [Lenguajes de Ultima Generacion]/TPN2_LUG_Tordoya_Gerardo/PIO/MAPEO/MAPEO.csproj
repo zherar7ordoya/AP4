@@ -41,10 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria_MP.cs" />
+    <Compile Include="CategoriaMAPPER.cs" />
+    <Compile Include="DepartamentoMAPPER.cs" />
+    <Compile Include="EmpleadoMAPPER.cs" />
+    <Compile Include="ItemMAPPER.cs" />
     <Compile Include="Login_MP.cs" />
+    <Compile Include="OrdenMAPPER.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorMAPPER.cs" />
     <Compile Include="Reporte.cs" />
+    <Compile Include="RolMAPPER.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ABSTRACCION\ABSTRACCION.csproj">

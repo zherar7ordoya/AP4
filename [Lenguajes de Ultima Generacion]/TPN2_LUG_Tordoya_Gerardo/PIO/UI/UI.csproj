@@ -130,6 +130,12 @@
       <DependentUpon>RolForm.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="XML_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XML_Form.Designer.cs">
+      <DependentUpon>XML_Form.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="CategoriaForm.resx">
       <DependentUpon>CategoriaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RolForm.resx">
       <DependentUpon>RolForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XML_Form.resx">
+      <DependentUpon>XML_Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BE.ReporteListado.datasource" />

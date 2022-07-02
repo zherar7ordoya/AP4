@@ -41,9 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria_BL.cs" />
+    <Compile Include="CategoriaBL.cs" />
+    <Compile Include="DepartamentoBL.cs" />
+    <Compile Include="EmpleadoBL.cs" />
+    <Compile Include="ItemBL.cs" />
     <Compile Include="Login_BL.cs" />
+    <Compile Include="OrdenBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProveedorBL.cs" />
+    <Compile Include="RolBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ABSTRACCION\ABSTRACCION.csproj">
