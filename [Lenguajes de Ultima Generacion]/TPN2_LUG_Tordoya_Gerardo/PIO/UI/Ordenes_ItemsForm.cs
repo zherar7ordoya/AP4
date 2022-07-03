@@ -18,7 +18,7 @@ namespace UI
 
         private void MostrarEnReporte(DateTime desde, DateTime hasta)
         {
-            MAPEO.Reporte datos = new MAPEO.Reporte();
+            MPP.Reporte datos = new MPP.Reporte();
             datos.MapearReporte(desde, hasta);
 
             ReporteBindingSource.DataSource = datos;

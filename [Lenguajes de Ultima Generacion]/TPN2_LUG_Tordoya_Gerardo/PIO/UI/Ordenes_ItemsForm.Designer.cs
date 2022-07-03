@@ -54,7 +54,7 @@ namespace UI
             // 
             // ReporteBindingSource
             // 
-            this.ReporteBindingSource.DataSource = typeof(MAPEO.Reporte);
+            this.ReporteBindingSource.DataSource = typeof(MPP.Reporte);
             // 
             // ReporteListadoBindingSource
             // 

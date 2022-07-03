@@ -64,29 +64,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoriaForm.cs">
+    <Compile Include="FRM_Categoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CategoriaForm.Designer.cs">
-      <DependentUpon>CategoriaForm.cs</DependentUpon>
+    <Compile Include="FRM_Categoria.Designer.cs">
+      <DependentUpon>FRM_Categoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="DepartamentoForm.cs">
+    <Compile Include="FRM_Departamento.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DepartamentoForm.Designer.cs">
-      <DependentUpon>DepartamentoForm.cs</DependentUpon>
+    <Compile Include="FRM_Departamento.Designer.cs">
+      <DependentUpon>FRM_Departamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="EmpleadoForm.cs">
+    <Compile Include="FRM_Empleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="EmpleadoForm.Designer.cs">
-      <DependentUpon>EmpleadoForm.cs</DependentUpon>
+    <Compile Include="FRM_Empleado.Designer.cs">
+      <DependentUpon>FRM_Empleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="ItemForm.cs">
+    <Compile Include="FRM_Item.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ItemForm.Designer.cs">
-      <DependentUpon>ItemForm.cs</DependentUpon>
+    <Compile Include="FRM_Item.Designer.cs">
+      <DependentUpon>FRM_Item.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -100,11 +100,11 @@
     <Compile Include="PrincipalForm.Designer.cs">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="OrdenForm.cs">
+    <Compile Include="FRM_Orden.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OrdenForm.Designer.cs">
-      <DependentUpon>OrdenForm.cs</DependentUpon>
+    <Compile Include="FRM_Orden.Designer.cs">
+      <DependentUpon>FRM_Orden.cs</DependentUpon>
     </Compile>
     <Compile Include="Ordenes_ItemsForm.cs">
       <SubType>Form</SubType>
@@ -117,17 +117,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ProveedorForm.cs">
+    <Compile Include="FRM_Proveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProveedorForm.Designer.cs">
-      <DependentUpon>ProveedorForm.cs</DependentUpon>
+    <Compile Include="FRM_Proveedor.Designer.cs">
+      <DependentUpon>FRM_Proveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="RolForm.cs">
+    <Compile Include="FRM_Rol.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RolForm.Designer.cs">
-      <DependentUpon>RolForm.cs</DependentUpon>
+    <Compile Include="FRM_Rol.Designer.cs">
+      <DependentUpon>FRM_Rol.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="XML_Form.cs">
@@ -136,17 +136,17 @@
     <Compile Include="XML_Form.Designer.cs">
       <DependentUpon>XML_Form.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CategoriaForm.resx">
-      <DependentUpon>CategoriaForm.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Categoria.resx">
+      <DependentUpon>FRM_Categoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DepartamentoForm.resx">
-      <DependentUpon>DepartamentoForm.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Departamento.resx">
+      <DependentUpon>FRM_Departamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EmpleadoForm.resx">
-      <DependentUpon>EmpleadoForm.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Empleado.resx">
+      <DependentUpon>FRM_Empleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ItemForm.resx">
-      <DependentUpon>ItemForm.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Item.resx">
+      <DependentUpon>FRM_Item.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -154,8 +154,8 @@
     <EmbeddedResource Include="PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OrdenForm.resx">
-      <DependentUpon>OrdenForm.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Orden.resx">
+      <DependentUpon>FRM_Orden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes_Items.rdlc" />
     <EmbeddedResource Include="Ordenes_ItemsForm.resx">
@@ -170,11 +170,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="ProveedorForm.resx">
-      <DependentUpon>ProveedorForm.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Proveedor.resx">
+      <DependentUpon>FRM_Proveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="RolForm.resx">
-      <DependentUpon>RolForm.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Rol.resx">
+      <DependentUpon>FRM_Rol.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XML_Form.resx">
       <DependentUpon>XML_Form.cs</DependentUpon>
@@ -197,29 +197,29 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ABSTRACCION\ABSTRACCION.csproj">
+    <ProjectReference Include="..\ABSTRACCION\ABSTRACTA.csproj">
       <Project>{40f40017-9fc3-409d-9d85-ba721462b739}</Project>
-      <Name>ABSTRACCION</Name>
+      <Name>ABSTRACTA</Name>
     </ProjectReference>
     <ProjectReference Include="..\BE\BE.csproj">
       <Project>{5ad2875b-b0e3-4c2b-b4d9-1544f8d67b94}</Project>
       <Name>BE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\BL\BL.csproj">
+    <ProjectReference Include="..\BL\BLL.csproj">
       <Project>{4c9844c2-125c-4d99-8364-23dd8fea2f70}</Project>
-      <Name>BL</Name>
+      <Name>BLL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DA\DA.csproj">
+    <ProjectReference Include="..\DA\DAL.csproj">
       <Project>{4b43ec54-e207-4cea-83fa-45e2bc31ea00}</Project>
-      <Name>DA</Name>
+      <Name>DAL</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MAPEO\MAPEO.csproj">
+    <ProjectReference Include="..\MAPEO\MPP.csproj">
       <Project>{c6836d80-0345-4f8e-bc16-a02be44ff57e}</Project>
-      <Name>MAPEO</Name>
+      <Name>MPP</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SECURITY\SECURITY.csproj">
+    <ProjectReference Include="..\SECURITY\SEGURIDAD.csproj">
       <Project>{ff6d71bb-487b-4d3f-b2e0-61b2be668f8e}</Project>
-      <Name>SECURITY</Name>
+      <Name>SEGURIDAD</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

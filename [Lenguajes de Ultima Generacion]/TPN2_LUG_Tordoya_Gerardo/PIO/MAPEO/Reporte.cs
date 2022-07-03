@@ -5,9 +5,9 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DA;
+using DAL;
 
-namespace MAPEO
+namespace MPP
 {
     public class Reporte
     {
@@ -24,7 +24,7 @@ namespace MAPEO
             this.FECHA = DateTime.Now;
             this.DESDE = desde;
             this.HASTA = hasta;
-            var conexion = new DA.Conexion();
+            var conexion = new DAL.Conexion();
             var dtabla = conexion.ConsultaParaReporte(desde, hasta);
             REPORTE_LISTADO = new List<BE.ReporteListado>();
 

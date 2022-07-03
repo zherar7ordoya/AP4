@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MAPEO
+namespace MPP
 {
-    public class Login_MP : ABSTRACCION.IGestor<BE.Login_BE>
+    public class Login_MP : ABSTRACTA.IGestor<BE.Login_BE>
     {
-        readonly DA.Conexion CONEXION;
+        readonly DAL.Conexion CONEXION;
         Hashtable HTABLA;
-        public Login_MP() => CONEXION = new DA.Conexion();
+        public Login_MP() => CONEXION = new DAL.Conexion();
 
         // *---------------------------------------------=> IMPLEMENTA INTERFAZ
 

@@ -29,7 +29,7 @@ namespace UI
 
         private void ABM_CategoriasItem_Click(object sender, EventArgs e)
         {
-            CategoriaForm formulario = new CategoriaForm
+            FRM_Categoria formulario = new FRM_Categoria
             {
                 MdiParent = this
             };
@@ -38,7 +38,7 @@ namespace UI
 
         private void ABM_DepartamentosItem_Click(object sender, EventArgs e)
         {
-            DepartamentoForm formulario = new DepartamentoForm
+            FRM_Departamento formulario = new FRM_Departamento
             {
                 MdiParent = this
             };
@@ -47,7 +47,7 @@ namespace UI
 
         private void ABM_EmpleadosItem_Click(object sender, EventArgs e)
         {
-            EmpleadoForm formulario = new EmpleadoForm
+            FRM_Empleado formulario = new FRM_Empleado
             {
                 MdiParent = this
             };
@@ -56,7 +56,7 @@ namespace UI
 
         private void ABM_ItemsItem_Click(object sender, EventArgs e)
         {
-            ItemForm formulario = new ItemForm
+            FRM_Item formulario = new FRM_Item
             {
                 MdiParent = this
             };
@@ -65,7 +65,7 @@ namespace UI
 
         private void ABM_OrdenesItem_Click(object sender, EventArgs e)
         {
-            OrdenForm formulario = new OrdenForm
+            FRM_Orden formulario = new FRM_Orden
             {
                 MdiParent = this
             };
@@ -74,7 +74,7 @@ namespace UI
 
         private void ABM_ProveedoresItem_Click(object sender, EventArgs e)
         {
-            ProveedorForm formulario = new ProveedorForm
+            FRM_Proveedor formulario = new FRM_Proveedor
             {
                 MdiParent = this
             };
@@ -83,7 +83,7 @@ namespace UI
 
         private void ABM_RolesItem_Click(object sender, EventArgs e)
         {
-            RolForm formulario = new RolForm
+            FRM_Rol formulario = new FRM_Rol
             {
                 MdiParent = this
             };

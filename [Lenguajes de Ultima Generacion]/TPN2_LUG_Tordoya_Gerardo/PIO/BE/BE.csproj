@@ -41,23 +41,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Categoria_BE.cs" />
-    <Compile Include="Departamento_BE.cs" />
-    <Compile Include="Empleado_BE.cs" />
+    <Compile Include="BE_Categoria.cs" />
+    <Compile Include="BE_Departamento.cs" />
+    <Compile Include="BE_Empleado.cs" />
     <Compile Include="Entidad.cs" />
-    <Compile Include="Item_BE.cs" />
+    <Compile Include="BE_Item.cs" />
     <Compile Include="Login_BE.cs" />
-    <Compile Include="Orden_BE.cs" />
+    <Compile Include="BE_Orden.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proveedor_BE.cs" />
+    <Compile Include="BE_Proveedor.cs" />
     <Compile Include="ReporteListado.cs" />
     <Compile Include="ReportePeriodo.cs" />
-    <Compile Include="Rol_BE.cs" />
+    <Compile Include="BE_Rol.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ABSTRACCION\ABSTRACCION.csproj">
+    <ProjectReference Include="..\ABSTRACCION\ABSTRACTA.csproj">
       <Project>{40f40017-9fc3-409d-9d85-ba721462b739}</Project>
-      <Name>ABSTRACCION</Name>
+      <Name>ABSTRACTA</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

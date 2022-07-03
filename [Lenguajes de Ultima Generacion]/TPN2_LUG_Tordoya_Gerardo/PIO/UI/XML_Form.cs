@@ -21,7 +21,7 @@ namespace UI
         {
             var desde = DesdeDTP.Value;
             var hasta = HastaDTP.Value;
-            dataGridView1.DataSource = DA.Conexion.ConsultaParaReporte(desde, hasta);
+            //dataGridView1.DataSource = DAL.Conexion.ConsultaParaReporte(desde, hasta);
         }
     }
 }

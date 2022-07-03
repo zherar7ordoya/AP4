@@ -16,13 +16,13 @@ namespace UI
     {
         // *-----------------------------------------------------------=> ROBOT
         readonly BE.Login_BE BE_LOGIN;
-        readonly BL.Login_BL BL_LOGIN;
+        readonly BLL.Login_BL BL_LOGIN;
 
         public LoginForm()
         {
             InitializeComponent();
             BE_LOGIN = new BE.Login_BE();
-            BL_LOGIN = new BL.Login_BL();
+            BL_LOGIN = new BLL.Login_BL();
         }
 
         private void XButton_Click(object sender, EventArgs e) => this.Close();
@@ -39,7 +39,7 @@ namespace UI
                 $"CONTRASEÑA{Environment.NewLine}" +
                 $"{ContraseñaTextBox.Text}{Environment.NewLine}{Environment.NewLine}" +
                 $"ENCRIPTADO{Environment.NewLine}" +
-                $"{SECURITY.Criptografia.Encriptar(ContraseñaTextBox.Text)}";
+                $"{SEGURIDAD.Criptografia.Encriptar(ContraseñaTextBox.Text)}";
         }
 
         // *-----------------------------------------------------------=> LOGIN
@@ -54,7 +54,7 @@ namespace UI
                 try
                 {
                     BE_LOGIN.Usuario = UsuarioTextBox.Text;
-                    BE_LOGIN.Contraseña = SECURITY.Criptografia.Encriptar(ContraseñaTextBox.Text);
+                    BE_LOGIN.Contraseña = SEGURIDAD.Criptografia.Encriptar(ContraseñaTextBox.Text);
 
                     bool respuesta = BL_LOGIN.VerificarLogin(BE_LOGIN.Usuario, BE_LOGIN.Contraseña);
 

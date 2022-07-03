@@ -11,16 +11,16 @@ namespace UI
             InitializeComponent();
 
             //instancio los objetos en el constructor del formulario
-            oBECli = new BE.Cliente();
+            oBECli = new BE.BE_Cliente();
             oBELoc = new BE.Localidad();
             oBLLLoc = new BLL.Localidad();
-            oBLLCli = new BLL.Cliente();
+            oBLLCli = new BLL.BLL_Cliente();
         }
 
-        BE.Cliente oBECli;
+        BE.BE_Cliente oBECli;
         BE.Localidad oBELoc;
         readonly BLL.Localidad oBLLLoc;
-        readonly BLL.Cliente oBLLCli;
+        readonly BLL.BLL_Cliente oBLLCli;
 
 
         private void FrmParametros_Load(object sender, EventArgs e)
@@ -48,7 +48,7 @@ namespace UI
             if (e.ColumnIndex != 0)
             {
 
-                oBECli = (BE.Cliente)dgvclientes.CurrentRow.DataBoundItem;
+                oBECli = (BE.BE_Cliente)dgvclientes.CurrentRow.DataBoundItem;
                 this.TxtID.Text = oBECli.Id.ToString();
                 this.txtNombre.Text = oBECli.Nombre;
                 this.TxtApellido.Text = oBECli.Apellido;
@@ -77,6 +77,7 @@ namespace UI
                 oBECli.DNI = Convert.ToInt32(TxtDNI.Text);
                 oBELoc = (BE.Localidad)ComboBox1.SelectedItem;
                 oBECli.Localidad = oBELoc;
+
                 if (oBLLCli.Guardar(oBECli) == false)
                 { MessageBox.Show("Existe un cliente con el DNI ingresado"); }
                 limpiar();
@@ -131,6 +132,7 @@ namespace UI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            // BOTÓN "BUSCAR"
             oBECli.Apellido = textBox1.Text;
             this.dgvclientes.DataSource = null;
             this.dgvclientes.DataSource = oBLLCli.BuscarClienteXApellido(oBECli);

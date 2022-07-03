@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BL
+namespace BLL
 {
-    public class Login_BL : ABSTRACCION.IGestor<BE.Login_BE>
+    public class Login_BL : ABSTRACTA.IGestor<BE.Login_BE>
     {
-        readonly MAPEO.Login_MP LOGIN;
-        public Login_BL() => LOGIN = new MAPEO.Login_MP();
+        readonly MPP.Login_MP LOGIN;
+        public Login_BL() => LOGIN = new MPP.Login_MP();
 
         // *---------------------------------------------=> IMPLEMENTA INTERFAZ
 
@@ -37,7 +37,7 @@ namespace BL
 
         public bool VerificarLogin(string usuario, string encriptado)
         {
-            string contraseña = SECURITY.Criptografia.Desencriptar(encriptado);
+            string contraseña = SEGURIDAD.Criptografia.Desencriptar(encriptado);
             return LOGIN.VerificarLogin(usuario, contraseña);
         }
     }
