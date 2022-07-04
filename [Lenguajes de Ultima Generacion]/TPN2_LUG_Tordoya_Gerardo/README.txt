@@ -2,6 +2,7 @@ En carpeta DATABASE
 	Backup
 	Archivo MDF
 	Archivos SQL (usados para crear los procedimientos almacenados)
+	Script integral de la base de datos (archivo SQL)
 	Archivo Excel (usado para crear los datos de la base de datos)
 
 En la carpeta DOCS
