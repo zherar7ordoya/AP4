@@ -47,6 +47,7 @@
     <Compile Include="BLL_Item.cs" />
     <Compile Include="BLL_Login.cs" />
     <Compile Include="BLL_Orden.cs" />
+    <Compile Include="Informacion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BLL_Proveedor.cs" />
     <Compile Include="BLL_Rol.cs" />

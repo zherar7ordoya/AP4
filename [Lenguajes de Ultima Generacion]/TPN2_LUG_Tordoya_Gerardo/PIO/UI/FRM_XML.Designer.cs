@@ -209,7 +209,7 @@ namespace UI
             this.Controls.Add(this.GenerarXMLButton);
             this.Name = "FRM_XML";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Auditoría de importes pagados";
+            this.Text = "Auditoría de importes declarados";
             ((System.ComponentModel.ISupportInitialize)(this.AuditoriaDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

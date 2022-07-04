@@ -4,10 +4,22 @@ using System.Collections.Generic;
 
 namespace BLL
 {
-    public class BLL_Categoria : ABSTRACTA.IGestor<BE.BE_Categoria>
+    public class BLL_Categoria : Informacion, ABSTRACTA.IGestor<BE.BE_Categoria>
     {
         readonly MPP.MPP_Categoria MPP_CATEGORIA;
-        public BLL_Categoria() => MPP_CATEGORIA = new MPP.MPP_Categoria();
+        public BLL_Categoria()
+        {
+            MPP_CATEGORIA = new MPP.MPP_Categoria();
+            Informar();
+        }
+        public BLL_Categoria(string mensaje = "Soy un constructor huérfano.")
+        {
+            MPP_CATEGORIA = new MPP.MPP_Categoria();
+            System
+                .Diagnostics
+                .Debug
+                .WriteLine(mensaje + "Existo, pero sin uso.");
+        }
 
         //__________________________________________________IMPLEMENTA INTERFAZ
 
@@ -32,6 +44,18 @@ namespace BLL
         public List<BE_Categoria> ListarTodo()
         {
             return MPP_CATEGORIA.ListarTodo();
+        }
+
+        //*********************************************************************
+
+        public override void Informar()
+        {
+            System
+                .Diagnostics
+                .Debug
+                .WriteLine(
+                "Soy la clase CATEGORÍA " +
+                "y soy la elite de la aplicación .");
         }
     }
 }

@@ -4,10 +4,17 @@ using System.Collections.Generic;
 
 namespace BLL
 {
-    public class BLL_Rol : ABSTRACTA.IGestor<BE.BE_Rol>
+    public class BLL_Rol : Informacion, ABSTRACTA.IGestor<BE.BE_Rol>
     {
         readonly MPP.MPP_Rol MPP_ROL;
+        string MENSAJE;
         public BLL_Rol() => MPP_ROL = new MPP.MPP_Rol();
+        public BLL_Rol(string mensaje = "Soy la clase ROL y sé calcular. ")
+        {
+            MPP_ROL = new MPP.MPP_Rol();
+            MENSAJE = mensaje;
+            Informar();
+        }
 
         //              ▂▃▄▅▆▇█▓▒░ IMPLEMENTA INTERFAZ ░▒▓█▇▆▅▄▃▂
 
@@ -35,6 +42,16 @@ namespace BLL
         }
 
         // •°*”˜˜”*°•.ƸӜƷ.•°*”˜˜”*°•.ƸӜƷ•°*”˜˜”*°•.ƸӜƷ.•°*”˜˜”*°•.ƸӜƷ•°*”˜˜”*°•
+
+        public override void Informar()
+        {
+            int calculo = 10;
+            string mensaje = MENSAJE + $"Por ejemplo: 1 + 2 + 3 + 4 = {calculo}";
+            System
+                .Diagnostics
+                .Debug
+                .WriteLine(mensaje);
+        }
 
     }
 }

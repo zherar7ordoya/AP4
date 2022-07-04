@@ -129,13 +129,13 @@
     <Compile Include="FRM_Rol.Designer.cs">
       <DependentUpon>FRM_Rol.cs</DependentUpon>
     </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="FRM_XML.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRM_XML.Designer.cs">
       <DependentUpon>FRM_XML.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="FRM_Categoria.resx">
       <DependentUpon>FRM_Categoria.cs</DependentUpon>
     </EmbeddedResource>
