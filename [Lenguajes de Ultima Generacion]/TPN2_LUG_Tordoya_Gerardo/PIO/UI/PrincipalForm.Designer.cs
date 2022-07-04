@@ -42,6 +42,8 @@ namespace UI
             this.ABM_RolesItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportesMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.Reportes_OrdenesItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AuditoriaMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.Auditoria_EmpleadosItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PrincipalMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +53,8 @@ namespace UI
             this.PrincipalMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ArchivoMenu,
             this.ABMMenu,
-            this.ReportesMenu});
+            this.ReportesMenu,
+            this.AuditoriaMenu});
             this.PrincipalMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.PrincipalMenuStrip.Name = "PrincipalMenuStrip";
             this.PrincipalMenuStrip.Size = new System.Drawing.Size(784, 24);
@@ -147,11 +150,26 @@ namespace UI
             // Reportes_OrdenesItem
             // 
             this.Reportes_OrdenesItem.Name = "Reportes_OrdenesItem";
-            this.Reportes_OrdenesItem.Size = new System.Drawing.Size(118, 22);
+            this.Reportes_OrdenesItem.Size = new System.Drawing.Size(180, 22);
             this.Reportes_OrdenesItem.Text = "Órdenes";
             this.Reportes_OrdenesItem.Click += new System.EventHandler(this.Reportes_OrdenesItem_Click);
             // 
-            // MultipleDocumentInterface
+            // AuditoriaMenu
+            // 
+            this.AuditoriaMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Auditoria_EmpleadosItem});
+            this.AuditoriaMenu.Name = "AuditoriaMenu";
+            this.AuditoriaMenu.Size = new System.Drawing.Size(68, 20);
+            this.AuditoriaMenu.Text = "Auditoría";
+            // 
+            // Auditoria_EmpleadosItem
+            // 
+            this.Auditoria_EmpleadosItem.Name = "Auditoria_EmpleadosItem";
+            this.Auditoria_EmpleadosItem.Size = new System.Drawing.Size(180, 22);
+            this.Auditoria_EmpleadosItem.Text = "Empleados";
+            this.Auditoria_EmpleadosItem.Click += new System.EventHandler(this.Auditoria_EmpleadosItem_Click);
+            // 
+            // PrincipalForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,7 +180,7 @@ namespace UI
             this.MainMenuStrip = this.PrincipalMenuStrip;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "MultipleDocumentInterface";
+            this.Name = "PrincipalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.MultipleDocumentInterface_Load);
@@ -187,6 +205,8 @@ namespace UI
         private System.Windows.Forms.ToolStripMenuItem ReportesMenu;
         private System.Windows.Forms.ToolStripMenuItem Reportes_OrdenesItem;
         private System.Windows.Forms.MenuStrip PrincipalMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem AuditoriaMenu;
+        private System.Windows.Forms.ToolStripMenuItem Auditoria_EmpleadosItem;
     }
 }
 

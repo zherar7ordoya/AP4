@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -16,7 +9,7 @@ namespace UI
 
         private void MultipleDocumentInterface_Load(object sender, EventArgs e)
         {
-            LoginForm formulario = new LoginForm()
+            FRM_Login formulario = new FRM_Login()
             {
                 MdiParent = this
             };
@@ -93,6 +86,15 @@ namespace UI
         private void Reportes_OrdenesItem_Click(object sender, EventArgs e)
         {
             Ordenes_ItemsForm formulario = new Ordenes_ItemsForm
+            {
+                MdiParent = this
+            };
+            formulario.Show();
+        }
+
+        private void Auditoria_EmpleadosItem_Click(object sender, EventArgs e)
+        {
+            FRM_XML formulario = new FRM_XML
             {
                 MdiParent = this
             };

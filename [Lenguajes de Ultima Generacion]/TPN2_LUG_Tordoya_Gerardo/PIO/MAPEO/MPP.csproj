@@ -45,7 +45,7 @@
     <Compile Include="MPP_Departamento.cs" />
     <Compile Include="MPP_Empleado.cs" />
     <Compile Include="MPP_Item.cs" />
-    <Compile Include="Login_MP.cs" />
+    <Compile Include="MPP_Login.cs" />
     <Compile Include="MPP_Orden.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="MPP_Proveedor.cs" />

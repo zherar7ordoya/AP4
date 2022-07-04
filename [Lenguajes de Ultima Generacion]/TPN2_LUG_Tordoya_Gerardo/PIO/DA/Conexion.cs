@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DAL
 {
@@ -151,6 +147,7 @@ namespace DAL
 
                 dtabla.Load(lector);
                 lector.Dispose();
+                conexion.Close();
 
                 return dtabla;
             }
@@ -164,12 +161,12 @@ namespace DAL
             try
             {
                 return new SqlConnection
-            (
-                "Data Source=(LocalDB)\\MSSQLLocalDB;" +
-                "Initial Catalog=PedidosDeInsumosDeOficina;" +
-                "Integrated Security=True;" +
-                "Connection Timeout=60"
-            );
+                (
+                    "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+                    "Initial Catalog=PedidosDeInsumosDeOficina;" +
+                    "Integrated Security=True;" +
+                    "Connection Timeout=60"
+                );
             }
             catch (SqlException ex) { throw ex; }
             catch (Exception ex) { throw ex; }

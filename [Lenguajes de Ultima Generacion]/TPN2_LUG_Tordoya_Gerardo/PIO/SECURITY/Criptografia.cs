@@ -1,10 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿/**
+ * Ejemplo dado por el profesor. Lo uso porque no encuentro material donde
+ * ampliar los conceptos de modo que haga una implementación diferente del
+ * tema.
+ */
+
+using System;
 using System.Text;
-using System.Threading.Tasks;
 using System.Security.Cryptography;
-using System.IO;
 
 namespace SEGURIDAD
 {
@@ -57,10 +59,12 @@ namespace SEGURIDAD
                 hashmd5.Clear();
 
                 //Algoritmo TripleDES
-                TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider();
-                tdes.Key = keyArray;
-                tdes.Mode = CipherMode.ECB;
-                tdes.Padding = PaddingMode.PKCS7;
+                TripleDESCryptoServiceProvider tdes = new TripleDESCryptoServiceProvider
+                {
+                    Key = keyArray,
+                    Mode = CipherMode.ECB,
+                    Padding = PaddingMode.PKCS7
+                };
                 ICryptoTransform cTransform = tdes.CreateEncryptor();
                 byte[] ArrayResultado = cTransform.TransformFinalBlock(Arreglo_a_Cifrar, 0, Arreglo_a_Cifrar.Length);
                 tdes.Clear();
@@ -72,7 +76,6 @@ namespace SEGURIDAD
 
             return texto;
         }
-
 
         public static string Desencriptar(string textoEncriptado)
         {
@@ -106,6 +109,5 @@ namespace SEGURIDAD
 
             return textoEncriptado;
         }
-
     }
 }

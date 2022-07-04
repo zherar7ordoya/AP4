@@ -88,11 +88,11 @@
     <Compile Include="FRM_Item.Designer.cs">
       <DependentUpon>FRM_Item.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginForm.cs">
+    <Compile Include="FRM_Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <Compile Include="FRM_Login.Designer.cs">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="PrincipalForm.cs">
       <SubType>Form</SubType>
@@ -130,11 +130,11 @@
       <DependentUpon>FRM_Rol.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="XML_Form.cs">
+    <Compile Include="FRM_XML.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="XML_Form.Designer.cs">
-      <DependentUpon>XML_Form.cs</DependentUpon>
+    <Compile Include="FRM_XML.Designer.cs">
+      <DependentUpon>FRM_XML.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="FRM_Categoria.resx">
       <DependentUpon>FRM_Categoria.cs</DependentUpon>
@@ -148,8 +148,8 @@
     <EmbeddedResource Include="FRM_Item.resx">
       <DependentUpon>FRM_Item.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_Login.resx">
+      <DependentUpon>FRM_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrincipalForm.resx">
       <DependentUpon>PrincipalForm.cs</DependentUpon>
@@ -176,8 +176,8 @@
     <EmbeddedResource Include="FRM_Rol.resx">
       <DependentUpon>FRM_Rol.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="XML_Form.resx">
-      <DependentUpon>XML_Form.cs</DependentUpon>
+    <EmbeddedResource Include="FRM_XML.resx">
+      <DependentUpon>FRM_XML.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BE.ReporteListado.datasource" />
