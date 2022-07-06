@@ -7,7 +7,7 @@ namespace BLL
     public class BLL_Rol : Informacion, ABSTRACTA.IGestor<BE.BE_Rol>
     {
         readonly MPP.MPP_Rol MPP_ROL;
-        string MENSAJE;
+        readonly string MENSAJE;
         public BLL_Rol() => MPP_ROL = new MPP.MPP_Rol();
         public BLL_Rol(string mensaje = "Soy la clase ROL y sé calcular. ")
         {
