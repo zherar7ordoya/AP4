@@ -1,5 +1,3 @@
-using System;
-
 namespace CosmosDbPeliculas.Models
 {
     public class ErrorViewModel

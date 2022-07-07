@@ -15,9 +15,9 @@ namespace CosmosDbPeliculas.Services
     {
         //todo funciona con un client de cosmos
         //hemos creado una cuenta en un endpoint llamada cochescls
-        DocumentClient client;
-        String bbdd;
-        String collection;
+        readonly DocumentClient client;
+        readonly String bbdd;
+        readonly String collection;
         public ServiceCosmosDb(IConfiguration configuration)
         {
             String endpoint = configuration["CosmosDb:endPoint"];
@@ -62,14 +62,12 @@ namespace CosmosDbPeliculas.Services
             //este documento es un stream
             //guardamos en el objeto stream en memoria lo que recuperamos, para luego leerlo en memoria
             MemoryStream memory = new MemoryStream();
-            using (var stream = new StreamReader(memory))
-            {
-                document.SaveTo(memory);
-                memory.Position = 0;
-                //deserializamos con JsonConvert
-                Pelicula pelicula = JsonConvert.DeserializeObject<Pelicula>(await stream.ReadToEndAsync());
-                return pelicula;
-            }
+            using var stream = new StreamReader(memory);
+            document.SaveTo(memory);
+            memory.Position = 0;
+            //deserializamos con JsonConvert
+            Pelicula pelicula = JsonConvert.DeserializeObject<Pelicula>(await stream.ReadToEndAsync());
+            return pelicula;
         }
         public async Task ModificarPelicula(Pelicula pelicula)
         {
@@ -100,13 +98,23 @@ namespace CosmosDbPeliculas.Services
             List<Pelicula> peliculas = new List<Pelicula>() {
             new Pelicula
             {
-                Id="1",Categoria="Romantica", Titulo="The Notebook",
-                Director= "Pete Docter", Estreno = "2002"
+                Id="1",Categoria="Romántica", Titulo="La Mujer Maravilla",
+                Director= "Orsingher, Pamela", Estreno = "2019"
+            },
+            new Pelicula
+            {
+                Id="2",Categoria="Acción", Titulo="Iron Man",
+                Director= "Pereiro, Rodrigo", Estreno = "2020"
+            },
+            new Pelicula
+            {
+                Id="3",Categoria="Animación", Titulo="El Increíble Hulk",
+                Director= "Riviello, Eugenio", Estreno = "2021"
             },
              new Pelicula
             {
-               Id="2",Categoria="Accion", Titulo="Taken",
-                Director= "Pete Docter", Estreno = "2008"
+               Id="4",Categoria="Thriller", Titulo="El Caballero de la Noche",
+                Director= "Tordoya, Gerardo", Estreno = "2022"
             }
             };
             return peliculas;
