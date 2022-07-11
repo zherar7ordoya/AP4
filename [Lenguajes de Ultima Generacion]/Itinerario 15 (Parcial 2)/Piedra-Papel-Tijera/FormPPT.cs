@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,191 +13,175 @@ namespace Piedra_Papel_Tijera
 {
     public partial class FormPPT : Form
     {
-        //declaring the variables for this game
-
-        public int rounds = 3; // 3 rounds per game
-        public int timePerRound = 6; // 5 seconds per rounds
-        //enemy choice options stored inside an array for easy access
-        string[] AIchoice = { "rock", "paper", "scissor", "rock", "scissor", "paper" };
-        public int randomNumber;
-        string command;
-        Random rnd = new Random();
-        string playerChoice;
-        int playerWins = 0;
-        int AIwins = 0;
-
-        // end of declaring variables
-
-
-        public FormPPT()
+        private int
+            GanadasPorUsuario = 0,
+            GanadasPorComputadora = 0,
+            rondas = 3,
+            segundos = 4,
+            aleatorio;
+        private string
+            JugadaDeUsuario,
+            comando;
+        readonly Random semilla = new Random();
+        readonly string[] JugadaDeComputadora =
         {
-            InitializeComponent();
-        }
+            "piedra",
+            "papel",
+            "tijera",
+        };
+
+        public FormPPT() => InitializeComponent();
+
         private void FormPPT_Load(object sender, EventArgs e)
         {
-            timer1.Enabled = true;
-            playerChoice = "none";
+            CronometroTimer.Enabled = true;
+            JugadaDeUsuario = "ninguna";
         }
+
+        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+        private void PiedraButton_Click(object sender, EventArgs e)
+        {
+            JugadaDeUsuario = "piedra";
+            IzquierdaPicturebox.Image = Properties.Resources.Piedra;
+        }
+
+        private void PapelButton_Click(object sender, EventArgs e)
+        {
+            JugadaDeUsuario = "papel";
+            IzquierdaPicturebox.Image = Properties.Resources.Papel;
+        }
+
+        private void TijeraButton_Click(object sender, EventArgs e)
+        {
+            JugadaDeUsuario = "tijera";
+            IzquierdaPicturebox.Image = Properties.Resources.Tijera;
+        }
+
+        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
         private void Cronometro_Tick(object sender, EventArgs e)
         {
+            segundos--;
+            SegundosLabel.Text = Convert.ToString(segundos);
 
-
-
-
-
-
-            label6.Text = Convert.ToString(rounds);
-
-            timePerRound--; // reduce the time by 1
-            label4.Text = Convert.ToString(timePerRound); // show the time on the screen
-            if (timePerRound < 1) // if the time is less then one second 
+            if (segundos < 1)
             {
+                CronometroTimer.Enabled = false;
+                segundos = 4;
+                aleatorio = semilla.Next(0, 2);
+                comando = JugadaDeComputadora[aleatorio];
 
-                timer1.Enabled = false; // we disable the timer if less then one second left 
-
-                timePerRound = 6; // set the timer back to 6 seconds 
-                randomNumber = rnd.Next(0, 5); // randomize the number again 
-                command = AIchoice[randomNumber];
-                // we set up the AI choice according to the random number 
-
-                // the switch statement below will show the AI choice and change the picture box images 
-
-                switch (command)
+                switch (comando)
                 {
-                    case "rock":
-                        pictureBox2.Image = Properties.Resources.piedra;
+                    case "piedra":
+                        DerechaPicturebox.Image = Properties.Resources.Piedra;
                         break;
-
-                    case "paper":
-                        pictureBox2.Image = Properties.Resources.papel;
+                    case "papel":
+                        DerechaPicturebox.Image = Properties.Resources.Papel;
                         break;
-
-                    case "scissor":
-                        pictureBox2.Image = Properties.Resources.tijera;
+                    case "tijera":
+                        DerechaPicturebox.Image = Properties.Resources.Tijera;
                         break;
-
                     default:
                         break;
-
                 }
-
-                // if we have more rounds to the play then we run the check game function 
-
-                if (rounds > 1)
-                {
-                    checkGame();
-                }
-                // if we dont have any more rounds to play then we go to the final decision engine
-                else
-                {
-                    decisionEngine();
-                }
-
+                if (rondas > 0) ComputarRonda();
+                else { DeclararVictoria(); }
             }
         }
 
 
-
-
-        private void checkGame()
+        private void ComputarRonda()
         {
-            if (playerChoice == "rock" && command == "paper")
+            if (JugadaDeUsuario == "piedra" && comando == "papel")
             {
-                MessageBox.Show("AI Wins");
-                AIwins++;
-                rounds--;
-                nextRound();
+                GanadorLabel.Text = "Ronda para Computadora";
+                MessageBox.Show("Ronda para Computadora");
+                GanadasPorComputadora++;
+                rondas--;
+                ProximaRonda();
             }
-            else if (playerChoice == "paper" && command == "rock")
+            else if (JugadaDeUsuario == "papel" && comando == "piedra")
             {
-                MessageBox.Show("player Wins");
-                playerWins++;
-                rounds--;
-                nextRound();
+                GanadorLabel.Text = "Ronda para Usuario";
+                MessageBox.Show("Ronda para Usuario");
+                GanadasPorUsuario++;
+                rondas--;
+                ProximaRonda();
             }
-            else if (playerChoice == "paper" && command == "scissor")
+            else if (JugadaDeUsuario == "papel" && comando == "tijera")
             {
-                MessageBox.Show("AI Wins");
-                AIwins++;
-                rounds--;
-                nextRound();
+                GanadorLabel.Text ="Ronda para Computadora";
+                MessageBox.Show("Ronda para Computadora");
+                GanadasPorComputadora++;
+                rondas--;
+                ProximaRonda();
             }
-            else if (playerChoice == "scissor" && command == "paper")
+            else if (JugadaDeUsuario == "tijera" && comando == "papel")
             {
-                MessageBox.Show("player Wins");
-                playerWins++;
-                rounds--;
-                nextRound();
+                GanadorLabel.Text = "Ronda para Usuario";
+                MessageBox.Show("Ronda para Usuario");
+                GanadasPorUsuario++;
+                rondas--;
+                ProximaRonda();
             }
-            else if (playerChoice == "scissor" && command == "rock")
+            else if (JugadaDeUsuario == "tijera" && comando == "piedra")
             {
-                MessageBox.Show("AI Wins");
-                AIwins++;
-                rounds--;
-                nextRound();
+                GanadorLabel.Text = "Ronda para Computadora";
+                MessageBox.Show("Ronda para Computadora");
+                GanadasPorComputadora++;
+                rondas--;
+                ProximaRonda();
             }
-            else if (playerChoice == "rock" && command == "scissor")
+            else if (JugadaDeUsuario == "piedra" && comando == "tijera")
             {
-                MessageBox.Show("player Wins");
-                playerWins++;
-                rounds--;
-                nextRound();
+                GanadorLabel.Text = "Ronda para Usuario";
+                MessageBox.Show("Ronda para Usuario");
+                GanadasPorUsuario++;
+                rondas--;
+                ProximaRonda();
             }
-            else if (playerChoice == "none")
+            else if (JugadaDeUsuario == "ninguna")
             {
-                MessageBox.Show(label1.Text + " Make a choice");
-                nextRound();
+                GanadorLabel.Text = "Juegue";
+                MessageBox.Show("Juegue");
+                ProximaRonda();
             }
             else
             {
-                MessageBox.Show("Draw");
-                nextRound();
+                GanadorLabel.Text = "Empate";
+                MessageBox.Show("Empate");
+                ProximaRonda();
             }
+            if (rondas == 0) DeclararVictoria();
         }
 
 
-
-
-        private void decisionEngine()
+        private void DeclararVictoria()
         {
-            if (playerWins > AIwins)
+            if (GanadasPorUsuario > GanadasPorComputadora)
             {
-                label3.Text = label1.Text + " Wins the game";
+                GanadorLabel.Text = "Victoria para Usuario";
+                MessageBox.Show("Victoria para Usuario");
             }
-            else
-            {
-                label3.Text = "AI Wins the game";
+                
+            else { 
+                GanadorLabel.Text = "Victoria para Computadora";
+                MessageBox.Show("Victoria para Computadora");
             }
         }
 
 
-
-        private void nextRound()
+        private void ProximaRonda()
         {
-            playerChoice = "none";
-            pictureBox1.Image = Properties.Resources.pregunta;
-            timer1.Enabled = true;
-            pictureBox2.Image = Properties.Resources.pregunta;
-
+            RondasLabel.Text = "Ronda " + Convert.ToString(rondas);
+            JugadaDeUsuario = "ninguna";
+            IzquierdaPicturebox.Image = Properties.Resources.Pregunta;
+            CronometroTimer.Enabled = true;
+            DerechaPicturebox.Image = Properties.Resources.Pregunta;
         }
 
-        private void Piedra_Click(object sender, EventArgs e)
-        {
-            playerChoice = "rock";
-            pictureBox1.Image = Properties.Resources.piedra;
-        }
 
-        private void Papel_Click(object sender, EventArgs e)
-        {
-            playerChoice = "paper";
-            pictureBox1.Image = Properties.Resources.papel;
-        }
-
-        private void Tijera_Click(object sender, EventArgs e)
-        {
-            playerChoice = "scissor";
-            pictureBox1.Image = Properties.Resources.tijera;
-        }
     }
 }

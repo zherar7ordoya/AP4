@@ -81,16 +81,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\papel.png" />
+    <None Include="Resources\Papel.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\piedra.png" />
+    <None Include="Resources\Piedra.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pregunta.png" />
+    <None Include="Resources\Pregunta.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\tijera.png" />
+    <None Include="Resources\Tijera.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

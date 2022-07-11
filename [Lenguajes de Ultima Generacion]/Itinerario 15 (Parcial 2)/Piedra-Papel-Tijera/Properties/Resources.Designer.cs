@@ -63,9 +63,9 @@ namespace Piedra_Papel_Tijera.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap papel {
+        internal static System.Drawing.Bitmap Papel {
             get {
-                object obj = ResourceManager.GetObject("papel", resourceCulture);
+                object obj = ResourceManager.GetObject("Papel", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Piedra_Papel_Tijera.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap piedra {
+        internal static System.Drawing.Bitmap Piedra {
             get {
-                object obj = ResourceManager.GetObject("piedra", resourceCulture);
+                object obj = ResourceManager.GetObject("Piedra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Piedra_Papel_Tijera.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap pregunta {
+        internal static System.Drawing.Bitmap Pregunta {
             get {
-                object obj = ResourceManager.GetObject("pregunta", resourceCulture);
+                object obj = ResourceManager.GetObject("Pregunta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace Piedra_Papel_Tijera.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap tijera {
+        internal static System.Drawing.Bitmap Tijera {
             get {
-                object obj = ResourceManager.GetObject("tijera", resourceCulture);
+                object obj = ResourceManager.GetObject("Tijera", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

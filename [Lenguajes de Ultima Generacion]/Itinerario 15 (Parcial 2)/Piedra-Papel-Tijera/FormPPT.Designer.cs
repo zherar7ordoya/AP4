@@ -30,164 +30,153 @@ namespace Piedra_Papel_Tijera
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.Piedra = new System.Windows.Forms.Button();
-            this.Papel = new System.Windows.Forms.Button();
-            this.Tijera = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.IzquierdaPicturebox = new System.Windows.Forms.PictureBox();
+            this.DerechaPicturebox = new System.Windows.Forms.PictureBox();
+            this.PiedraButton = new System.Windows.Forms.Button();
+            this.PapelButton = new System.Windows.Forms.Button();
+            this.TijeraButton = new System.Windows.Forms.Button();
+            this.UsuarioLabel = new System.Windows.Forms.Label();
+            this.ComputadoraLabel = new System.Windows.Forms.Label();
+            this.GanadorLabel = new System.Windows.Forms.Label();
+            this.SegundosLabel = new System.Windows.Forms.Label();
+            this.RondasLabel = new System.Windows.Forms.Label();
+            this.CronometroTimer = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this.IzquierdaPicturebox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DerechaPicturebox)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // IzquierdaPicturebox
             // 
-            this.pictureBox1.Image = global::Piedra_Papel_Tijera.Properties.Resources.pregunta;
-            this.pictureBox1.Location = new System.Drawing.Point(164, 70);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 130);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.IzquierdaPicturebox.Image = global::Piedra_Papel_Tijera.Properties.Resources.Pregunta;
+            this.IzquierdaPicturebox.Location = new System.Drawing.Point(177, 29);
+            this.IzquierdaPicturebox.Name = "IzquierdaPicturebox";
+            this.IzquierdaPicturebox.Size = new System.Drawing.Size(130, 130);
+            this.IzquierdaPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.IzquierdaPicturebox.TabIndex = 0;
+            this.IzquierdaPicturebox.TabStop = false;
             // 
-            // pictureBox2
+            // DerechaPicturebox
             // 
-            this.pictureBox2.Image = global::Piedra_Papel_Tijera.Properties.Resources.pregunta;
-            this.pictureBox2.Location = new System.Drawing.Point(479, 70);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(130, 130);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
+            this.DerechaPicturebox.Image = global::Piedra_Papel_Tijera.Properties.Resources.Pregunta;
+            this.DerechaPicturebox.Location = new System.Drawing.Point(452, 29);
+            this.DerechaPicturebox.Name = "DerechaPicturebox";
+            this.DerechaPicturebox.Size = new System.Drawing.Size(130, 130);
+            this.DerechaPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.DerechaPicturebox.TabIndex = 1;
+            this.DerechaPicturebox.TabStop = false;
             // 
-            // Piedra
+            // PiedraButton
             // 
-            this.Piedra.Location = new System.Drawing.Point(12, 12);
-            this.Piedra.Name = "Piedra";
-            this.Piedra.Size = new System.Drawing.Size(75, 23);
-            this.Piedra.TabIndex = 2;
-            this.Piedra.Text = "Piedra";
-            this.Piedra.UseVisualStyleBackColor = true;
-            this.Piedra.Click += new System.EventHandler(this.Piedra_Click);
+            this.PiedraButton.Location = new System.Drawing.Point(3, 3);
+            this.PiedraButton.Name = "PiedraButton";
+            this.PiedraButton.Size = new System.Drawing.Size(75, 23);
+            this.PiedraButton.TabIndex = 2;
+            this.PiedraButton.Text = "Piedra";
+            this.PiedraButton.UseVisualStyleBackColor = true;
+            this.PiedraButton.Click += new System.EventHandler(this.PiedraButton_Click);
             // 
-            // Papel
+            // PapelButton
             // 
-            this.Papel.Location = new System.Drawing.Point(12, 41);
-            this.Papel.Name = "Papel";
-            this.Papel.Size = new System.Drawing.Size(75, 23);
-            this.Papel.TabIndex = 3;
-            this.Papel.Text = "Papel";
-            this.Papel.UseVisualStyleBackColor = true;
-            this.Papel.Click += new System.EventHandler(this.Papel_Click);
+            this.PapelButton.Location = new System.Drawing.Point(3, 32);
+            this.PapelButton.Name = "PapelButton";
+            this.PapelButton.Size = new System.Drawing.Size(75, 23);
+            this.PapelButton.TabIndex = 3;
+            this.PapelButton.Text = "Papel";
+            this.PapelButton.UseVisualStyleBackColor = true;
+            this.PapelButton.Click += new System.EventHandler(this.PapelButton_Click);
             // 
-            // Tijera
+            // TijeraButton
             // 
-            this.Tijera.Location = new System.Drawing.Point(12, 70);
-            this.Tijera.Name = "Tijera";
-            this.Tijera.Size = new System.Drawing.Size(75, 23);
-            this.Tijera.TabIndex = 4;
-            this.Tijera.Text = "Tijera";
-            this.Tijera.UseVisualStyleBackColor = true;
-            this.Tijera.Click += new System.EventHandler(this.Tijera_Click);
+            this.TijeraButton.Location = new System.Drawing.Point(3, 61);
+            this.TijeraButton.Name = "TijeraButton";
+            this.TijeraButton.Size = new System.Drawing.Size(75, 23);
+            this.TijeraButton.TabIndex = 4;
+            this.TijeraButton.Text = "Tijera";
+            this.TijeraButton.UseVisualStyleBackColor = true;
+            this.TijeraButton.Click += new System.EventHandler(this.TijeraButton_Click);
             // 
-            // button4
+            // UsuarioLabel
             // 
-            this.button4.Location = new System.Drawing.Point(534, 337);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            this.UsuarioLabel.AutoSize = true;
+            this.UsuarioLabel.Location = new System.Drawing.Point(174, 13);
+            this.UsuarioLabel.Name = "UsuarioLabel";
+            this.UsuarioLabel.Size = new System.Drawing.Size(43, 13);
+            this.UsuarioLabel.TabIndex = 8;
+            this.UsuarioLabel.Text = "Usuario";
             // 
-            // label1
+            // ComputadoraLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(199, 41);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Jugador";
+            this.ComputadoraLabel.AutoSize = true;
+            this.ComputadoraLabel.Location = new System.Drawing.Point(459, 13);
+            this.ComputadoraLabel.Name = "ComputadoraLabel";
+            this.ComputadoraLabel.Size = new System.Drawing.Size(70, 13);
+            this.ComputadoraLabel.TabIndex = 9;
+            this.ComputadoraLabel.Text = "Computadora";
             // 
-            // label2
+            // GanadorLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(522, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "CPU";
+            this.GanadorLabel.Location = new System.Drawing.Point(313, 50);
+            this.GanadorLabel.Name = "GanadorLabel";
+            this.GanadorLabel.Size = new System.Drawing.Size(133, 13);
+            this.GanadorLabel.TabIndex = 10;
+            this.GanadorLabel.Text = "Ganador";
+            this.GanadorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // SegundosLabel
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(350, 96);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "label3";
+            this.SegundosLabel.Location = new System.Drawing.Point(313, 146);
+            this.SegundosLabel.Name = "SegundosLabel";
+            this.SegundosLabel.Size = new System.Drawing.Size(133, 13);
+            this.SegundosLabel.TabIndex = 11;
+            this.SegundosLabel.Text = "Segundos";
+            this.SegundosLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // RondasLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(350, 155);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "label4";
+            this.RondasLabel.Location = new System.Drawing.Point(3, 133);
+            this.RondasLabel.Name = "RondasLabel";
+            this.RondasLabel.Size = new System.Drawing.Size(75, 13);
+            this.RondasLabel.TabIndex = 13;
+            this.RondasLabel.Text = "Ronda 3";
+            this.RondasLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // CronometroTimer
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(52, 347);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "label5";
+            this.CronometroTimer.Interval = 1000;
+            this.CronometroTimer.Tick += new System.EventHandler(this.Cronometro_Tick);
             // 
-            // label6
+            // panel1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(291, 347);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "label6";
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            this.timer1.Tick += new System.EventHandler(this.Cronometro_Tick);
+            this.panel1.Controls.Add(this.PiedraButton);
+            this.panel1.Controls.Add(this.RondasLabel);
+            this.panel1.Controls.Add(this.PapelButton);
+            this.panel1.Controls.Add(this.TijeraButton);
+            this.panel1.Location = new System.Drawing.Point(13, 13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(82, 155);
+            this.panel1.TabIndex = 14;
             // 
             // FormPPT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.Tijera);
-            this.Controls.Add(this.Papel);
-            this.Controls.Add(this.Piedra);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
+            this.ClientSize = new System.Drawing.Size(633, 176);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.SegundosLabel);
+            this.Controls.Add(this.GanadorLabel);
+            this.Controls.Add(this.ComputadoraLabel);
+            this.Controls.Add(this.UsuarioLabel);
+            this.Controls.Add(this.DerechaPicturebox);
+            this.Controls.Add(this.IzquierdaPicturebox);
             this.Name = "FormPPT";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Piedra-Papel-Tijera";
             this.Load += new System.EventHandler(this.FormPPT_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.IzquierdaPicturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DerechaPicturebox)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,19 +184,18 @@ namespace Piedra_Papel_Tijera
 
         #endregion
 
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button Piedra;
-        private System.Windows.Forms.Button Papel;
-        private System.Windows.Forms.Button Tijera;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.PictureBox IzquierdaPicturebox;
+        private System.Windows.Forms.PictureBox DerechaPicturebox;
+        private System.Windows.Forms.Button PiedraButton;
+        private System.Windows.Forms.Button PapelButton;
+        private System.Windows.Forms.Button TijeraButton;
+        private System.Windows.Forms.Label UsuarioLabel;
+        private System.Windows.Forms.Label ComputadoraLabel;
+        private System.Windows.Forms.Label GanadorLabel;
+        private System.Windows.Forms.Label SegundosLabel;
+        private System.Windows.Forms.Label RondasLabel;
+        private System.Windows.Forms.Timer CronometroTimer;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
