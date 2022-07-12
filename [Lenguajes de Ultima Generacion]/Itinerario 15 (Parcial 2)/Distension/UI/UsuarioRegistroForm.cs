@@ -1,149 +1,104 @@
 ﻿using System;
+using System.Data;
+using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace UI
 {
     public partial class UsuarioRegistroForm : Form
     {
-        // ************************************************************** CARGA
-
-        //BE.BE_Empleado BE_EMPLEADO;
-        //readonly BLL.BLL_Empleado BLL_EMPLEADO;
-
+        private XDocument xmldoc;
+        private string URL_XML_FILE = "Usuarios.xml";
         public UsuarioRegistroForm()
         {
             InitializeComponent();
-            //BE_EMPLEADO = new BE.BE_Empleado();
-            //BLL_EMPLEADO = new BLL.BLL_Empleado();
         }
 
-        private void FRM_Empleado_Load(object sender, EventArgs e) => CargarDGV();
-
-        // ********************************************************** CONTROLES
-
-        private void EmpleadoDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            try
+            LoadDataEmployees();
+        }
+
+        public void LoadDataEmployees()
+        {
+            xmldoc = XDocument.Load(URL_XML_FILE);
+            var data = xmldoc.Descendants("Employee").Select(p => new
             {
-                if (EmpleadoDGV.CurrentRow != null)
+                Id = p.Element("id").Value,
+                FullName = p.Element("fullname").Value,
+                Salary = p.Element("salary").Value,
+                Email = p.Element("email").Value,
+                Address = p.Element("address").Value
+            }).OrderBy(p => p.Id).ToList();
+           
+
+            txt_id.DataBindings.Clear();
+            txt_fullname.DataBindings.Clear();
+            txt_salary.DataBindings.Clear();
+            txt_email.DataBindings.Clear();
+            txt_address.DataBindings.Clear();
+
+            txt_id.DataBindings.Add("text", data, "id");
+            txt_fullname.DataBindings.Add("text", data, "fullname");
+            txt_salary.DataBindings.Add("text", data, "salary");
+            txt_email.DataBindings.Add("text", data, "email");
+            txt_address.DataBindings.Add("text", data, "address");
+            dataGridView1.DataSource = data;
+
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            foreach (var item in group_info.Controls)
+            {
+                if(item is TextBox)
                 {
-                    //BE_EMPLEADO = (BE.BE_Empleado)EmpleadoDGV.CurrentRow.DataBoundItem;
-                    //LegajoTextBox.Text = BE_EMPLEADO.Legajo.ToString();
-                    //NombreTextBox.Text = BE_EMPLEADO.Nombre;
-                    //ApellidoTextBox.Text = BE_EMPLEADO.Apellido;
-                    //UsuarioTextBox.Text = BE_EMPLEADO.Usuario;
-                    //ContraseñaTextBox.Text = BE_EMPLEADO.Contraseña;
-                    //DepartamentoIDTextBox.Text = BE_EMPLEADO.DepartamentoID;
-                    //RolIDTextBox.Text = BE_EMPLEADO.RolID;
+                    (item as TextBox).Clear();
                 }
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            txt_id.Focus();
         }
 
-
-        private void AltaButton_Click(object sender, EventArgs e)
+        private void btn_save_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Asignar();
-                //BE_EMPLEADO.Instruccion = "Alta";
-
-                DialogResult resultado = MessageBox.Show("¿Agregar?", "Confirmar", MessageBoxButtons.YesNo);
-
-                if (resultado == DialogResult.Yes)
-                {
-                    //if (BLL_EMPLEADO.Guardar(BE_EMPLEADO) == false)
-                    //{
-                    //    MessageBox.Show("Ya existe el empleado");
-                    //}
-                    LimpiarTextBoxes();
-                    CargarDGV();
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
+            XElement emp = new XElement("Employee",
+                new XElement("id", txt_id.Text),
+                new XElement("fullname", txt_fullname.Text),
+                new XElement("salary", txt_salary.Text),
+                new XElement("email", txt_email.Text),
+                new XElement("address", txt_address.Text));
+            xmldoc.Root.Add(emp);
+            xmldoc.Save(URL_XML_FILE);
+            LoadDataEmployees();
+            btn_add_Click(null, null);
         }
 
-
-        private void BajaButton_Click(object sender, EventArgs e)
+        private void btn_update_Click(object sender, EventArgs e)
         {
-            try
+            XElement emp = xmldoc.Descendants("Employee").FirstOrDefault(p => p.Element("id").Value == txt_id.Text);
+            if (emp != null)
             {
-                Asignar();
-
-                DialogResult resultado = MessageBox.Show("¿Eliminar?", "Confirmar", MessageBoxButtons.YesNo);
-
-                if (resultado == DialogResult.Yes)
-                {
-                    //BLL_EMPLEADO.Eliminar(BE_EMPLEADO);
-                    LimpiarTextBoxes();
-                    CargarDGV();
-                }
+                emp.Element("fullname").Value = txt_fullname.Text;
+                emp.Element("salary").Value = txt_salary.Text;
+                emp.Element("email").Value = txt_email.Text;
+                emp.Element("address").Value = txt_address.Text;          
+                xmldoc.Save(URL_XML_FILE);
+                LoadDataEmployees();
+                btn_add_Click(null, null);
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
 
-        private void ModificacionButton_Click(object sender, EventArgs e)
+        private void btn_delete_Click(object sender, EventArgs e)
         {
-            try
+            XElement emp = xmldoc.Descendants("Employee").FirstOrDefault(p => p.Element("id").Value == txt_id.Text);
+            if (emp != null)
             {
-                Asignar();
-
-                DialogResult resultado = MessageBox.Show("¿Modificar?", "Confirmar", MessageBoxButtons.YesNo);
-
-                if (resultado == DialogResult.Yes)
-                {
-                    //BLL_EMPLEADO.Guardar(BE_EMPLEADO);
-                    LimpiarTextBoxes();
-                    CargarDGV();
-                }
+                emp.Remove();
+                xmldoc.Save(URL_XML_FILE);
+                LoadDataEmployees();
+                btn_add_Click(null, null);
             }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
-        // ************************************************************ MÉTODOS
-
-        private void CargarDGV()
-        {
-            try
-            {
-                EmpleadoDGV.DataSource = null;
-                //EmpleadoDGV.DataSource = BLL_EMPLEADO.ListarTodo();
-                EmpleadoDGV.Columns["ID"].Visible = false;
-                EmpleadoDGV.Columns["Instruccion"].Visible = false;
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-
-
-        private void LimpiarTextBoxes()
-        {
-            try
-            {
-                foreach (Control ctrl in this.Controls)
-                {
-                    if (ctrl is TextBox box) box.Text = string.Empty;
-                }
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-
-
-        private void Asignar()
-        {
-            try
-            {
-                //BE_EMPLEADO.Legajo = Convert.ToInt32(LegajoTextBox.Text);
-                //BE_EMPLEADO.Nombre = NombreTextBox.Text;
-                //BE_EMPLEADO.Apellido = ApellidoTextBox.Text;
-                //BE_EMPLEADO.Usuario = UsuarioTextBox.Text;
-                //BE_EMPLEADO.Contraseña = ContraseñaTextBox.Text;
-                //BE_EMPLEADO.DepartamentoID = DepartamentoIDTextBox.Text;
-                //BE_EMPLEADO.RolID = RolIDTextBox.Text;
-            }
-            catch (Exception ex) { MessageBox.Show(ex.Message); }
-        }
-
-        //                    ▂▃▄▅▆▇█▓▒░ THE END ░▒▓█▇▆▅▄▃▂
-
     }
 }

@@ -49,7 +49,6 @@ namespace UI
             // 
             // PrincipalMenuStrip
             // 
-            this.PrincipalMenuStrip.Enabled = false;
             this.PrincipalMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ArchivoMenu,
             this.ABMMenu,
@@ -150,7 +149,7 @@ namespace UI
             // Reportes_OrdenesItem
             // 
             this.Reportes_OrdenesItem.Name = "Reportes_OrdenesItem";
-            this.Reportes_OrdenesItem.Size = new System.Drawing.Size(180, 22);
+            this.Reportes_OrdenesItem.Size = new System.Drawing.Size(118, 22);
             this.Reportes_OrdenesItem.Text = "Órdenes";
             this.Reportes_OrdenesItem.Click += new System.EventHandler(this.Reportes_OrdenesItem_Click);
             // 
@@ -165,11 +164,11 @@ namespace UI
             // Auditoria_EmpleadosItem
             // 
             this.Auditoria_EmpleadosItem.Name = "Auditoria_EmpleadosItem";
-            this.Auditoria_EmpleadosItem.Size = new System.Drawing.Size(180, 22);
+            this.Auditoria_EmpleadosItem.Size = new System.Drawing.Size(132, 22);
             this.Auditoria_EmpleadosItem.Text = "Empleados";
             this.Auditoria_EmpleadosItem.Click += new System.EventHandler(this.Auditoria_EmpleadosItem_Click);
             // 
-            // PrincipalForm
+            // MDIForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -180,7 +179,7 @@ namespace UI
             this.MainMenuStrip = this.PrincipalMenuStrip;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "PrincipalForm";
+            this.Name = "MDIForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Principal";
             this.Load += new System.EventHandler(this.MultipleDocumentInterface_Load);

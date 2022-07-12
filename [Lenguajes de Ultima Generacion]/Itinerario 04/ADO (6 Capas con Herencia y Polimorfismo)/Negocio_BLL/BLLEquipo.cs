@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BE;
 using Abstraccion;
 using MPP;
 
 namespace Negocio_BLL
 {
-    public class BLLEquipo:IGestor<BEEquipo>
+    public class BLLEquipo:IGestor<EquipoBE>
     {
         public BLLEquipo()
         {
@@ -19,11 +16,11 @@ namespace Negocio_BLL
         MPPEquipo oMPPEquipo;
 
         #region "Metodo Propio"
-        public int ObtenerPuntajeEquipo(BEEquipo oBEEquipo)
+        public int ObtenerPuntajeEquipo(EquipoBE oBEEquipo)
         {
             int ptos = 0;
 
-            foreach (BEJugador jugador in oBEEquipo.ListaJugadores)
+            foreach (JugadorBE jugador in oBEEquipo.ListaJugadores)
             {
                 if (jugador is BEPrincipiante)
                 {
@@ -42,22 +39,22 @@ namespace Negocio_BLL
         }
         #endregion
 
-        public List<BEEquipo> ListarTodo()
+        public List<EquipoBE> ListarTodo()
         {
             return oMPPEquipo.ListarTodo();
         }
 
-        public bool Guardar(BEEquipo oBEEquipo)
+        public bool Guardar(EquipoBE oBEEquipo)
         {
             return oMPPEquipo.Guardar(oBEEquipo);
         }
 
-        public bool Baja(BEEquipo Objeto)
+        public bool Baja(EquipoBE Objeto)
         {
             throw new NotImplementedException();
         }
 
-        public BEEquipo ListarObjeto(BEEquipo Objeto)
+        public EquipoBE ListarObjeto(EquipoBE Objeto)
         {
             throw new NotImplementedException();
         }

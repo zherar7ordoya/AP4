@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DAL;
 using Abstraccion;
 using BE;
@@ -50,7 +47,7 @@ namespace MPP
             return null;
         }
 
-        public bool Guardar_JugadorXEquipo(BEEquipo oBEEq, BEProfesional oBEEProf)
+        public bool Guardar_JugadorXEquipo(EquipoBE oBEEq, BEProfesional oBEEProf)
         { //para graabar en la tabla intermedia necesito el codigo de equipo y el codigo de jugador
           //como al jugador lo di de alta recien, necesito el codigo, por eso listo el obejto por DNI
           //si se grabo lo recupero y escribo en la tabla intermedia

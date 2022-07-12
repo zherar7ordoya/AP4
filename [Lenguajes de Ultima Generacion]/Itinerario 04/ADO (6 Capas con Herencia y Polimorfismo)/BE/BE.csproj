@@ -41,11 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BEEquipo.cs" />
-    <Compile Include="BEJugador.cs" />
+    <Compile Include="EquipoBE.cs" />
+    <Compile Include="JugadorBE.cs" />
     <Compile Include="BEPrincipiante.cs" />
     <Compile Include="BEProfesional.cs" />
-    <Compile Include="BETecnico.cs" />
+    <Compile Include="TecnicoBE.cs" />
     <Compile Include="Entidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

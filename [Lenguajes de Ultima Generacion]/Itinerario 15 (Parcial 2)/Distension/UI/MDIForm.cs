@@ -9,11 +9,11 @@ namespace UI
 
         private void MultipleDocumentInterface_Load(object sender, EventArgs e)
         {
-            UsuarioIngresoForm formulario = new UsuarioIngresoForm()
-            {
-                MdiParent = this
-            };
-            formulario.Show();
+            //UsuarioIngresoForm formulario = new UsuarioIngresoForm()
+            //{
+            //    MdiParent = this
+            //};
+            //formulario.Show();
         }
 
         private void Archivo_SalirItem_Click(object sender, EventArgs e) => Application.Exit();

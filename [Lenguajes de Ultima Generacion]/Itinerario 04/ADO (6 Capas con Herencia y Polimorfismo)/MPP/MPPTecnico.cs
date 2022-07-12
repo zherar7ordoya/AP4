@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BE;
 using Abstraccion;
 using DAL;
@@ -10,7 +7,7 @@ using System.Data;
 
 namespace MPP
 {
-    public class MPPTecnico : IGestor<BETecnico>
+    public class MPPTecnico : IGestor<TecnicoBE>
     {
         public MPPTecnico()
         {
@@ -18,10 +15,10 @@ namespace MPP
         }
 
        Datos oDatos;
-        public List<BETecnico> ListarTodo()
+        public List<TecnicoBE> ListarTodo()
         {
             //instancio un objeto de la clase datos para operar con la BD
-            List<BETecnico> ListaTecnicos = new List<BETecnico>();
+            List<TecnicoBE> ListaTecnicos = new List<TecnicoBE>();
      
             string Consulta = "Select Codigo,Nombre,Apellido,DNI From Tecnico where Estado = 'False'";
     
@@ -32,7 +29,7 @@ namespace MPP
             {
                 foreach (DataRow fila in Tabla.Rows)
                 {
-                    BETecnico oBETec = new BETecnico();
+                    TecnicoBE oBETec = new TecnicoBE();
                     oBETec.Codigo = Convert.ToInt32(fila[0]);
                     oBETec.Nombre = fila[1].ToString();
                     oBETec.Apellido = fila["Apellido"].ToString();
@@ -44,7 +41,7 @@ namespace MPP
         }
  
 
-        public bool Guardar(BETecnico oBETec)
+        public bool Guardar(TecnicoBE oBETec)
         {
              //hago el update del campo estado cuando se asigna el tecnico a un equipo
             oBETec.Estado = true;
@@ -52,11 +49,11 @@ namespace MPP
             return oDatos.Escribir(Consulta_SQL);
         }
 
-        public bool Baja(BETecnico Objeto)
+        public bool Baja(TecnicoBE Objeto)
         {
             throw new NotImplementedException();
         }
-        public BETecnico ListarObjeto(BETecnico Objeto)
+        public TecnicoBE ListarObjeto(TecnicoBE Objeto)
         {
             throw new NotImplementedException();
         }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BE;
 using Abstraccion;
 using DAL;
@@ -10,7 +7,7 @@ using System.Data;
 
 namespace MPP
 {
-    public class MPPEquipo : IGestor<BEEquipo>
+    public class MPPEquipo : IGestor<EquipoBE>
     {
         public MPPEquipo()
         {
@@ -20,9 +17,9 @@ namespace MPP
         Datos oDatos;
 
 
-        public List<BEEquipo> ListarTodo()
+        public List<EquipoBE> ListarTodo()
         {
-            List<BEEquipo> LEquipo = new List<BEEquipo>();
+            List<EquipoBE> LEquipo = new List<EquipoBE>();
          
             string Consulta_SQL = "Select Equipo.Codigo,Equipo.Nombre as Equipo, Equipo.Color, Tecnico.Nombre,Tecnico.Apellido,Tecnico.DNI  from Equipo,Tecnico where Equipo.CodTecnico= Tecnico.Codigo";
 
@@ -33,12 +30,12 @@ namespace MPP
             {
                 foreach (DataRow fila in Tabla.Rows)
                 {
-                    BEEquipo oBEEquipo = new BEEquipo();
+                    EquipoBE oBEEquipo = new EquipoBE();
                     oBEEquipo.Codigo = Convert.ToInt32(fila["Codigo"]);
                     oBEEquipo.Nombre = fila["Equipo"].ToString();
                     oBEEquipo.Color = fila["Color"].ToString();
                     //busco al tecnico
-                    BETecnico oBETec = new BETecnico();
+                    TecnicoBE oBETec = new TecnicoBE();
                     oBETec.Nombre = fila["Nombre"].ToString();
                     oBETec.Apellido = fila["Apellido"].ToString();
                     oBETec.DNI = Convert.ToInt32(fila["DNI"]);
@@ -48,7 +45,7 @@ namespace MPP
                     DataTable Tabla2 = oDatos2.Leer("Select J.Codigo,J.Nombre,J.Apellido,J.DNI,J.Rapado, J.TRoja, J.TAmarilla,J.Goles" +
                                                     " from Equipo_Jugador, Jugador as J, Equipo as E " +
                                                      "Where Equipo_Jugador.CodJugador = J.Codigo and Equipo_Jugador.CodEquipo= E.Codigo and E.Codigo=" + oBEEquipo.Codigo);
-                    List<BEJugador> LJugador = new List<BEJugador>();
+                    List<JugadorBE> LJugador = new List<JugadorBE>();
                     if (Tabla2.Rows.Count > 0)
                     {
                         foreach (DataRow fila2 in Tabla2.Rows)
@@ -95,17 +92,17 @@ namespace MPP
 
 
 
-        public bool Guardar(BEEquipo oBEEq)
+        public bool Guardar(EquipoBE oBEEq)
         {
             string Consulta_SQL = string.Format("Insert into Equipo(Nombre, Color, CodTecnico) values ('{0}','{1}',{2})", oBEEq.Nombre, oBEEq.Color, oBEEq.Tecnico.Codigo);
             return oDatos.Escribir(Consulta_SQL);
         }
-        public bool Baja(BEEquipo Objeto)
+        public bool Baja(EquipoBE Objeto)
         {
             throw new NotImplementedException();
         }
 
-        public BEEquipo ListarObjeto(BEEquipo Objeto)
+        public EquipoBE ListarObjeto(EquipoBE Objeto)
         {
             throw new NotImplementedException();
         }

@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio_BLL;
 using BE;
@@ -14,40 +9,36 @@ namespace Presentacion_IU
 {
     public partial class FrmEquipo : Form
     {
+        // Defino los objetos.
+        BLLTecnico oBLLTecnico;
+        BLLEquipo oBLLEquipo;
+        BLLPrincipiante oBLLPrin;
+        BLLProfesional oBLLProf;
+
+        EquipoBE oBEEquipo;
+        BEProfesional oJugadorPro;
+        BEPrincipiante oJugadorprin;
+        List<EquipoBE> LBEEquipo;
+
         public FrmEquipo()
         {
             InitializeComponent();
-            //instancio los objetos en el constructo del form
+
+            // Instancio los objetos.
             oBLLTecnico = new BLLTecnico();
             oBLLEquipo = new BLLEquipo();
             oBLLPrin = new BLLPrincipiante();
             oBLLProf = new BLLProfesional();
 
-
             CargarEquipoDatagrid();
-
-
         }
 
-        //defino los objetos a utilizar
-        BLLTecnico oBLLTecnico;
-        BLLEquipo oBLLEquipo;
-        BLLPrincipiante oBLLPrin;
-        BLLProfesional oBLLProf;
-        BEEquipo oBEEquipo;
-        BEProfesional oJugadorPro;
-        BEPrincipiante oJugadorprin; 
-
-        List<BEEquipo> LBEEquipo;
-
-
+        //*******************************************************************//
+        
         private void FrmEquipo_Load(object sender, EventArgs e)
-        {    //caro la lista de equipos
+        {
             CargarEquipoDatagrid();
-            //cargo la lista de tecnicos
             CargarTecnico();
-
-            //vacio lo que se encuentre en el label
             Label14.Text = string.Empty;
         }
 
@@ -79,25 +70,24 @@ namespace Presentacion_IU
             this.dataGridEquipo.AlternatingRowsDefaultCellStyle.BackColor = Color.LightGreen;
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void AgregarEquipoButton_Click(object sender, EventArgs e)
         {
             //instancio el objeto equipo en el bloque
-            oBEEquipo = new BEEquipo();
+            oBEEquipo = new EquipoBE();
             //asigno los valores en el bloque para el Objeto Equipo
             oBEEquipo.Nombre = this.TxtNombreEquipo.Text;
             oBEEquipo.Color = this.TxtColoresEquipo.Text;
-            oBEEquipo.Tecnico = (BETecnico)comboBox1.SelectedItem;
+            oBEEquipo.Tecnico = (TecnicoBE)comboBox1.SelectedItem;
 
             //llama a la BLL y cargo al equipo
-
             if(oBLLEquipo.Guardar(oBEEquipo))
             {
-                //si se guarda OK Equipo, entonces actualizo el estado del tecnico para que no aparezca en el combo
-                //y asi no pueda estar asginado a otro equipo
-
+                // Si se guarda OK Equipo, entonces actualizo el estado del
+                // técnico para que no aparezca en el combo y asi no pueda
+                // estar asginado a otro equipo.
                 oBLLTecnico.Guardar(oBEEquipo.Tecnico);
-
             }
+
             //actualizo el combo de tecnicos
            CargarTecnico();
 
@@ -114,7 +104,7 @@ namespace Presentacion_IU
 
             if (dataGridEquipo.SelectedRows.Count > 0)
             {
-                oBEEquipo = (BEEquipo)dataGridEquipo.CurrentRow.DataBoundItem;
+                oBEEquipo = (EquipoBE)dataGridEquipo.CurrentRow.DataBoundItem;
                
                 //depende el tipo de jugador instancio una clase u otra
                 if (comboBox2.Text == "Profesional")
@@ -182,7 +172,7 @@ namespace Presentacion_IU
 
         private void dataGridEquipo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            oBEEquipo = (BEEquipo)this.dataGridEquipo.CurrentRow.DataBoundItem;
+            oBEEquipo = (EquipoBE)this.dataGridEquipo.CurrentRow.DataBoundItem;
 
 
              dataGridJugadores.DataSource = null;
@@ -206,7 +196,7 @@ namespace Presentacion_IU
 
             LBEEquipo = oBLLEquipo.ListarTodo();
 
-            foreach (BEEquipo oBEEquipo in LBEEquipo)
+            foreach (EquipoBE oBEEquipo in LBEEquipo)
             {
                 if (oBLLEquipo.ObtenerPuntajeEquipo(oBEEquipo) > MaxPtje)
                 {

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BE;
 using Abstraccion;
 using MPP;
@@ -10,7 +7,7 @@ using MPP;
 namespace Negocio_BLL
 {
 
-    public class BLLTecnico : IGestor<BETecnico>
+    public class BLLTecnico : IGestor<TecnicoBE>
     {
         public BLLTecnico()
         {
@@ -19,22 +16,22 @@ namespace Negocio_BLL
 
        MPPTecnico oMPPTec;
 
-        public List<BETecnico> ListarTodo()
+        public List<TecnicoBE> ListarTodo()
         {
             return oMPPTec.ListarTodo();
         }
 
-        public bool Baja(BETecnico Objeto)
+        public bool Baja(TecnicoBE Objeto)
         {
             throw new NotImplementedException();
         }
 
-        public bool Guardar(BETecnico oBETec)
+        public bool Guardar(TecnicoBE oBETec)
         {
             return oMPPTec.Guardar(oBETec);
         }
 
-        public BETecnico ListarObjeto(BETecnico Objeto)
+        public TecnicoBE ListarObjeto(TecnicoBE Objeto)
         {
             throw new NotImplementedException();
         }

@@ -58,7 +58,7 @@ namespace Presentacion_IU
             this.TxtNombreEquipo = new System.Windows.Forms.TextBox();
             this.Label12 = new System.Windows.Forms.Label();
             this.Label11 = new System.Windows.Forms.Label();
-            this.Button1 = new System.Windows.Forms.Button();
+            this.AgregarEquipoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridJugadores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridEquipo)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -130,7 +130,7 @@ namespace Presentacion_IU
             this.groupBox1.Controls.Add(this.TxtNombreEquipo);
             this.groupBox1.Controls.Add(this.Label12);
             this.groupBox1.Controls.Add(this.Label11);
-            this.groupBox1.Controls.Add(this.Button1);
+            this.groupBox1.Controls.Add(this.AgregarEquipoButton);
             this.groupBox1.Location = new System.Drawing.Point(11, 11);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(460, 369);
@@ -339,15 +339,15 @@ namespace Presentacion_IU
             this.Label11.TabIndex = 30;
             this.Label11.Text = "Nombre del Equipo";
             // 
-            // Button1
+            // AgregarEquipoButton
             // 
-            this.Button1.Location = new System.Drawing.Point(354, 29);
-            this.Button1.Name = "Button1";
-            this.Button1.Size = new System.Drawing.Size(86, 85);
-            this.Button1.TabIndex = 28;
-            this.Button1.Text = "Agregar Equipo";
-            this.Button1.UseVisualStyleBackColor = true;
-            this.Button1.Click += new System.EventHandler(this.Button1_Click);
+            this.AgregarEquipoButton.Location = new System.Drawing.Point(354, 29);
+            this.AgregarEquipoButton.Name = "AgregarEquipoButton";
+            this.AgregarEquipoButton.Size = new System.Drawing.Size(86, 85);
+            this.AgregarEquipoButton.TabIndex = 28;
+            this.AgregarEquipoButton.Text = "Agregar Equipo";
+            this.AgregarEquipoButton.UseVisualStyleBackColor = true;
+            this.AgregarEquipoButton.Click += new System.EventHandler(this.AgregarEquipoButton_Click);
             // 
             // FrmEquipo
             // 
@@ -402,7 +402,7 @@ namespace Presentacion_IU
         internal System.Windows.Forms.TextBox TxtNombreEquipo;
         internal System.Windows.Forms.Label Label12;
         internal System.Windows.Forms.Label Label11;
-        internal System.Windows.Forms.Button Button1;
+        internal System.Windows.Forms.Button AgregarEquipoButton;
         internal System.Windows.Forms.Label label5;
         internal System.Windows.Forms.TextBox textBox5;
         internal System.Windows.Forms.TextBox textBox6;

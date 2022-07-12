@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BE
+﻿namespace BE
 {
-    public class BEPrincipiante: BEJugador
+    public class BEPrincipiante: JugadorBE
     {
         public bool Rapado { get; set; }
     }

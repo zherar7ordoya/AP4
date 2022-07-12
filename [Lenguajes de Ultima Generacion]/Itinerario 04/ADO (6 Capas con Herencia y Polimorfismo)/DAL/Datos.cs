@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -11,7 +7,11 @@ namespace DAL
     public class Datos
     {
         //declaro el objeto del tipo conection y uso el constructor para pasar el ConnectionString
-        private SqlConnection oCnn = new SqlConnection(@"Data Source=.\SQLEXPRESS02;Initial Catalog=Equipo;Integrated Security=True");
+        private SqlConnection oCnn = 
+            new SqlConnection(
+  @"Data Source=(LocalDB)\MSSQLLocalDB;
+                Initial Catalog=Equipo;
+                Integrated Security=True");
 
         //Creo el objeto command
         SqlCommand cmd;

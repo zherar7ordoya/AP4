@@ -1,16 +1,12 @@
 ﻿using BE;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BE;
 using Abstraccion;
 using MPP;
 
 namespace Negocio_BLL
 {
-   public class BLLProfesional: BLLJugador, IGestor<BEProfesional>
+    public class BLLProfesional: BLLJugador, IGestor<BEProfesional>
     {
         public BLLProfesional()
         {
@@ -18,14 +14,14 @@ namespace Negocio_BLL
         }
 
         MPPProfesional oMPPJProf;
-        public override int ObtenerPuntaje(BEJugador oBEJug)
+        public override int ObtenerPuntaje(JugadorBE oBEJug)
         {
             int puntaje = 0;
             puntaje = 20 * oBEJug.GolesRealizados - 4 * oBEJug.CantidadRojas - 2 * oBEJug.CantidadAmarillas;
             return puntaje;
         }
 
-        public bool Guardar_JugadorXEquipo(BEProfesional oBEProf, BEEquipo oBEEqui)
+        public bool Guardar_JugadorXEquipo(BEProfesional oBEProf, EquipoBE oBEEqui)
         {
             return oMPPJProf.Guardar_JugadorXEquipo(oBEEqui, oBEProf);
 

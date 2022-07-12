@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using BE;
 using Abstraccion;
 using MPP;
 
 namespace Negocio_BLL
 {
-   public class BLLPrincipiante: BLLJugador,IGestor<BEPrincipiante>
+    public class BLLPrincipiante: BLLJugador,IGestor<BEPrincipiante>
     {
         public BLLPrincipiante()
         {
@@ -17,14 +14,14 @@ namespace Negocio_BLL
         }
 
         MPPPrincipiante oMPPJPrin;
-      public override int ObtenerPuntaje(BEJugador oBEJug)
+      public override int ObtenerPuntaje(JugadorBE oBEJug)
         {
             int puntaje = 0;
             puntaje = 10 * oBEJug.GolesRealizados - 2 * oBEJug.CantidadRojas - 2 * oBEJug.CantidadAmarillas;
             return puntaje;
         }
 
-        public bool Guardar_JugadorXEquipo(BEPrincipiante oBEPrin, BEEquipo oBEEqui)
+        public bool Guardar_JugadorXEquipo(BEPrincipiante oBEPrin, EquipoBE oBEEqui)
         {    
              return oMPPJPrin.Guardar_JugadorXEquipo(oBEEqui, oBEPrin);
           
