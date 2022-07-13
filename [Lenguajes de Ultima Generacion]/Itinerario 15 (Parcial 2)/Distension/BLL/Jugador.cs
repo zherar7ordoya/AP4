@@ -8,24 +8,35 @@ namespace BLL
 {
     public class Jugador : ABSTRACTA.IGestor<BE.Jugador>
     {
+        /* ----------------------------------------------------------------- *\
+         * ARRANQUE                                                          *
+        \* ----------------------------------------------------------------- */
+
+        public MPP.Jugador JUGADOR;
+        public Jugador() => JUGADOR = new MPP.Jugador();
+
+        /* ----------------------------------------------------------------- *\
+         * IMPLEMENTACIÓN                                                    *
+        \* ----------------------------------------------------------------- */
+
         public BE.Jugador DetallarObjeto(BE.Jugador objeto)
         {
             throw new NotImplementedException();
         }
 
-        public bool Guardar(BE.Jugador objeto)
+        public bool Guardar(BE.Jugador jugador)
         {
-            throw new NotImplementedException();
+            return JUGADOR.Guardar(jugador);
         }
 
         public List<BE.Jugador> RecopilarObjetos()
         {
-            throw new NotImplementedException();
+            return JUGADOR.RecopilarObjetos();
         }
 
-        public bool Remover(BE.Jugador objeto)
+        public bool Remover(BE.Jugador jugador)
         {
-            throw new NotImplementedException();
+            return JUGADOR.Remover(jugador);
         }
     }
 }

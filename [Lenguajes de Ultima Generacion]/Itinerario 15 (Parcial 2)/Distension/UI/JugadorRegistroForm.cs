@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
@@ -13,16 +14,18 @@ namespace UI
          * ARRANQUE                                                          *
         \* ----------------------------------------------------------------- */
 
-        private XDocument documentox;
-        private readonly string archivo = "Jugadores.xml";
-        private List<BE.Jugador> jugadores;
+        private BE.Jugador BE_JUGADOR;
+        private BLL.Jugador BLL_JUGADOR;
+        private List<BE.Jugador> JUGADORES;
 
         //
 
         public JugadorRegistroForm()
         {
             InitializeComponent();
-            jugadores = new List<BE.Jugador>();
+            JUGADORES = new List<BE.Jugador>();
+            BE_JUGADOR = new BE.Jugador();
+            BLL_JUGADOR = new BLL.Jugador();
         }
 
         private void JugadorRegistroForm_Load(object sender, EventArgs e) => CargarJugadores();
@@ -35,29 +38,7 @@ namespace UI
         {
             try
             {
-                documentox = XDocument.Load(archivo);
-
-                //var datos = documentox.Descendants("Jugador").Select(x => new
-                //{
-                //    Codigo = x.Attribute("Codigo").Value,
-                //    Nombre = x.Element("Nombre").Value,
-                //    Apellido = x.Element("Apellido").Value,
-                //    DNI = x.Element("DNI").Value,
-                //    Email = x.Element("Email").Value,
-                //    FechaNacimiento = x.Element("FechaNacimiento").Value,
-                //    LocalidadResidencia = x.Element("LocalidadResidencia").Value
-                //}).OrderBy(x => Convert.ToInt32(x.Codigo)).ToList();
-
-                jugadores = (List<BE.Jugador>)documentox.Descendants("Jugador").Select(x => new BE.Jugador
-                {
-                    Codigo = Convert.ToInt32(x.Attribute("Codigo").Value),
-                    Nombre = x.Element("Nombre").Value,
-                    Apellido = x.Element("Apellido").Value,
-                    DNI = Convert.ToInt32(x.Element("DNI").Value),
-                    Email = x.Element("Email").Value,
-                    FechaNacimiento = Convert.ToDateTime(x.Element("FechaNacimiento").Value),
-                    LocalidadResidencia = x.Element("LocalidadResidencia").Value
-                }).OrderBy(x => Convert.ToInt32(x.Codigo)).ToList();
+                JUGADORES = BLL_JUGADOR.RecopilarObjetos();
 
                 CodigoTextbox.DataBindings.Clear();
                 NombreTextbox.DataBindings.Clear();
@@ -67,28 +48,18 @@ namespace UI
                 NacimientoDTP.DataBindings.Clear();
                 LocalidadTextbox.DataBindings.Clear();
 
+                CodigoTextbox.DataBindings.Add("text", JUGADORES, "Codigo");
+                NombreTextbox.DataBindings.Add("text", JUGADORES, "Nombre");
+                ApellidoTextbox.DataBindings.Add("text", JUGADORES, "Apellido");
+                DniTextbox.DataBindings.Add("text", JUGADORES, "DNI");
+                EmailTextbox.DataBindings.Add("text", JUGADORES, "Email");
+                NacimientoDTP.DataBindings.Add("text", JUGADORES, "FechaNacimiento");
+                LocalidadTextbox.DataBindings.Add("text", JUGADORES, "LocalidadResidencia");
 
-
-                CodigoTextbox.DataBindings.Add("text", jugadores, "Codigo");
-                NombreTextbox.DataBindings.Add("text", jugadores, "Nombre");
-                ApellidoTextbox.DataBindings.Add("text", jugadores, "Apellido");
-                DniTextbox.DataBindings.Add("text", jugadores, "DNI");
-                EmailTextbox.DataBindings.Add("text", jugadores, "Email");
-                NacimientoDTP.DataBindings.Add("text", jugadores, "FechaNacimiento");
-                LocalidadTextbox.DataBindings.Add("text", jugadores, "LocalidadResidencia");
-
-                //JugadoresDGV.DataSource = datos;
-                JugadoresDGV.DataSource = jugadores;
+                JugadoresDGV.DataSource = JUGADORES;
                 JugadoresDGV.Columns["Codigo"].DisplayIndex = 0;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         //
@@ -107,17 +78,9 @@ namespace UI
                 BajaButton.Enabled = false;
                 AltaButton.Enabled = true;
                 CancelarButton.Enabled = true;
-                CodigoTextbox.Enabled = true;
-                CodigoTextbox.Focus();
+                NombreTextbox.Focus();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         //
@@ -131,17 +94,40 @@ namespace UI
                 BajaButton.Enabled = true;
                 AltaButton.Enabled = false;
                 CancelarButton.Enabled = false;
-                CodigoTextbox.Enabled = false;
+
                 CargarJugadores();
             }
-            catch (Exception ex)
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
+        }
+
+        //
+
+        private void Asignar()
+        {
+            try
             {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                bool codigo = Regex.IsMatch(CodigoTextbox.Text, "^([0-9]+$)");
+                bool nombre = Regex.IsMatch(NombreTextbox.Text, "^([a-zA-Z]+$)");
+                bool apellido = Regex.IsMatch(ApellidoTextbox.Text, "^([a-zA-Z]+$)");
+                bool dni = Regex.IsMatch(DniTextbox.Text, "^([0-9]+$)");
+                bool email = Regex.IsMatch(EmailTextbox.Text, "^([a-zA-Z0-9]+$)");
+                bool fecha = Regex.IsMatch(NacimientoDTP.Text, "^([a-zA-Z0-9]+$)");
+                bool localidad = Regex.IsMatch(LocalidadTextbox.Text, "^([a-zA-Z0-9]+$)");
+
+                if (codigo && nombre && apellido && dni && email && fecha && localidad)
+                {
+                    if (CodigoTextbox.Text == string.Empty) BE_JUGADOR.Codigo = 0;
+                    else { BE_JUGADOR.Codigo = Convert.ToInt32(CodigoTextbox.Text); }
+
+                    BE_JUGADOR.Nombre = NombreTextbox.Text;
+                    BE_JUGADOR.Apellido = ApellidoTextbox.Text;
+                    BE_JUGADOR.DNI = Convert.ToInt32(DniTextbox.Text);
+                    BE_JUGADOR.Email = EmailTextbox.Text;
+                    BE_JUGADOR.FechaNacimiento = Convert.ToDateTime(NacimientoDTP.Text);
+                    BE_JUGADOR.LocalidadResidencia = LocalidadTextbox.Text;
+                }
             }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         /* ----------------------------------------------------------------- *\
@@ -152,53 +138,19 @@ namespace UI
         {
             try
             {
-                XElement registro =
-                    documentox
-                    .Descendants("Jugador")
-                    .FirstOrDefault
-                    (x => x.Attribute("Codigo").Value == CodigoTextbox.Text);
-
-                if (registro is null)
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Agregar?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo);
+                if (respuesta == DialogResult.Yes)
                 {
-                    XElement jugador =
-                    new XElement("Jugador",
-                    new XAttribute("Codigo", CodigoTextbox.Text),
-                    new XElement("Nombre", NombreTextbox.Text),
-                    new XElement("Apellido", ApellidoTextbox.Text),
-                    new XElement("DNI", DniTextbox.Text),
-                    new XElement("Email", EmailTextbox.Text),
-                    new XElement("FechaNacimiento", NacimientoDTP.Text),
-                    new XElement("LocalidadResidencia", LocalidadTextbox.Text)
-                    );
-
-                    documentox.Root.Add(jugador);
-                    documentox.Save(archivo);
-
-                    JugadoresDGV.Enabled = true;
-                    ModificacionButton.Enabled = true;
-                    BajaButton.Enabled = true;
-                    AltaButton.Enabled = false;
-                    CancelarButton.Enabled = false;
-                    CodigoTextbox.Enabled = false;
+                    Asignar();
+                    BLL_JUGADOR.Guardar(BE_JUGADOR);
+                    CancelarButton_Click(this, null);
                     CargarJugadores();
                 }
-                else
-                {
-                    MessageBox.Show(
-                        "Existe registro",
-                        "Error",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error);
-                }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         //
@@ -207,27 +159,18 @@ namespace UI
         {
             try
             {
-                XElement jugador =
-                    documentox
-                    .Descendants("Jugador")
-                    .FirstOrDefault
-                    (x => x.Attribute("Codigo").Value == CodigoTextbox.Text);
-
-                if (jugador != null)
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Remover?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo);
+                if (respuesta == DialogResult.Yes)
                 {
-                    jugador.Remove();
-                    documentox.Save(archivo);
+                    Asignar();
+                    BLL_JUGADOR.Remover(BE_JUGADOR);
                     CargarJugadores();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            catch (Exception ex)  { MessageBox.Show(ex.Message, "Error"); }
         }
 
         //
@@ -236,32 +179,18 @@ namespace UI
         {
             try
             {
-                XElement jugador =
-                    documentox
-                    .Descendants("Jugador")
-                    .FirstOrDefault
-                    (x => x.Attribute("Codigo").Value == CodigoTextbox.Text);
-
-                if (jugador != null)
+                DialogResult respuesta = MessageBox.Show(
+                    "¿Editar?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo);
+                if (respuesta == DialogResult.Yes)
                 {
-                    jugador.Element("Nombre").Value = NombreTextbox.Text;
-                    jugador.Element("Apellido").Value = ApellidoTextbox.Text;
-                    jugador.Element("DNI").Value = DniTextbox.Text;
-                    jugador.Element("Email").Value = EmailTextbox.Text;
-                    jugador.Element("FechaNacimiento").Value = NacimientoDTP.Text;
-                    jugador.Element("LocalidadResidencia").Value = LocalidadTextbox.Text;
-                    documentox.Save(archivo);
+                    Asignar();
+                    BLL_JUGADOR.Guardar(BE_JUGADOR);
                     CargarJugadores();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    ex.Message,
-                    "Error",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
+            catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }
 
         /* ----------------------------------------------------------------- *\

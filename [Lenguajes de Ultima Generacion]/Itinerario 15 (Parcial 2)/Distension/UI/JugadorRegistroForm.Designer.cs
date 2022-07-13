@@ -61,7 +61,7 @@ namespace UI
             this.JugadoresDGV.Location = new System.Drawing.Point(12, 261);
             this.JugadoresDGV.Name = "JugadoresDGV";
             this.JugadoresDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.JugadoresDGV.Size = new System.Drawing.Size(696, 210);
+            this.JugadoresDGV.Size = new System.Drawing.Size(725, 210);
             this.JugadoresDGV.TabIndex = 0;
             // 
             // CodigoLabel
@@ -157,7 +157,7 @@ namespace UI
             // 
             // NuevoButton
             // 
-            this.NuevoButton.Location = new System.Drawing.Point(63, 232);
+            this.NuevoButton.Location = new System.Drawing.Point(90, 232);
             this.NuevoButton.Name = "NuevoButton";
             this.NuevoButton.Size = new System.Drawing.Size(75, 23);
             this.NuevoButton.TabIndex = 12;
@@ -168,7 +168,7 @@ namespace UI
             // AltaButton
             // 
             this.AltaButton.Enabled = false;
-            this.AltaButton.Location = new System.Drawing.Point(397, 232);
+            this.AltaButton.Location = new System.Drawing.Point(424, 232);
             this.AltaButton.Name = "AltaButton";
             this.AltaButton.Size = new System.Drawing.Size(75, 23);
             this.AltaButton.TabIndex = 13;
@@ -178,7 +178,7 @@ namespace UI
             // 
             // ModificacionButton
             // 
-            this.ModificacionButton.Location = new System.Drawing.Point(559, 232);
+            this.ModificacionButton.Location = new System.Drawing.Point(586, 232);
             this.ModificacionButton.Name = "ModificacionButton";
             this.ModificacionButton.Size = new System.Drawing.Size(75, 23);
             this.ModificacionButton.TabIndex = 15;
@@ -188,7 +188,7 @@ namespace UI
             // 
             // BajaButton
             // 
-            this.BajaButton.Location = new System.Drawing.Point(478, 232);
+            this.BajaButton.Location = new System.Drawing.Point(505, 232);
             this.BajaButton.Name = "BajaButton";
             this.BajaButton.Size = new System.Drawing.Size(75, 23);
             this.BajaButton.TabIndex = 14;
@@ -212,7 +212,7 @@ namespace UI
             this.DetalleGroupbox.Controls.Add(this.NombreLabel);
             this.DetalleGroupbox.Controls.Add(this.CodigoTextbox);
             this.DetalleGroupbox.Controls.Add(this.CodigoLabel);
-            this.DetalleGroupbox.Location = new System.Drawing.Point(54, 12);
+            this.DetalleGroupbox.Location = new System.Drawing.Point(81, 12);
             this.DetalleGroupbox.Name = "DetalleGroupbox";
             this.DetalleGroupbox.Size = new System.Drawing.Size(591, 214);
             this.DetalleGroupbox.TabIndex = 16;
@@ -258,7 +258,7 @@ namespace UI
             // CancelarButton
             // 
             this.CancelarButton.Enabled = false;
-            this.CancelarButton.Location = new System.Drawing.Point(144, 232);
+            this.CancelarButton.Location = new System.Drawing.Point(171, 232);
             this.CancelarButton.Name = "CancelarButton";
             this.CancelarButton.Size = new System.Drawing.Size(75, 23);
             this.CancelarButton.TabIndex = 17;
@@ -270,7 +270,7 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 498);
+            this.ClientSize = new System.Drawing.Size(749, 498);
             this.Controls.Add(this.CancelarButton);
             this.Controls.Add(this.DetalleGroupbox);
             this.Controls.Add(this.BajaButton);
