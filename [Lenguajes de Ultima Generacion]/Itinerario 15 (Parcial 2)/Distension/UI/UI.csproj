@@ -76,12 +76,6 @@
     <Compile Include="PiedraPapelTijera1JugadorForm.Designer.cs">
       <DependentUpon>PiedraPapelTijera1JugadorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="JugadorIngresoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="JugadorIngresoForm.Designer.cs">
-      <DependentUpon>JugadorIngresoForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="PlaceHolderTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -101,9 +95,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PiedraPapelTijera1JugadorForm.resx">
       <DependentUpon>PiedraPapelTijera1JugadorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="JugadorIngresoForm.resx">
-      <DependentUpon>JugadorIngresoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIForm.resx">
       <DependentUpon>MDIForm.cs</DependentUpon>

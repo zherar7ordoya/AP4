@@ -106,15 +106,14 @@ namespace UI
         {
             try
             {
-                bool codigo = Regex.IsMatch(CodigoTextbox.Text, "^([0-9]+$)");
                 bool nombre = Regex.IsMatch(NombreTextbox.Text, "^([a-zA-Z]+$)");
                 bool apellido = Regex.IsMatch(ApellidoTextbox.Text, "^([a-zA-Z]+$)");
                 bool dni = Regex.IsMatch(DniTextbox.Text, "^([0-9]+$)");
-                bool email = Regex.IsMatch(EmailTextbox.Text, "^([a-zA-Z0-9]+$)");
-                bool fecha = Regex.IsMatch(NacimientoDTP.Text, "^([a-zA-Z0-9]+$)");
-                bool localidad = Regex.IsMatch(LocalidadTextbox.Text, "^([a-zA-Z0-9]+$)");
+                bool email = Regex.IsMatch(EmailTextbox.Text, "^([\\w\\.\\-]+)@([\\w\\-]+)((\\.(\\w){2,3})+)$");
+                bool fecha = Regex.IsMatch(NacimientoDTP.Text, "^\\d{1,2}/\\d{1,2}/\\d{4}$");
+                bool localidad = Regex.IsMatch(LocalidadTextbox.Text, "^[a-zA-Z0-9 ]+$");
 
-                if (codigo && nombre && apellido && dni && email && fecha && localidad)
+                if (nombre && apellido && dni && email && fecha && localidad)
                 {
                     if (CodigoTextbox.Text == string.Empty) BE_JUGADOR.Codigo = 0;
                     else { BE_JUGADOR.Codigo = Convert.ToInt32(CodigoTextbox.Text); }
@@ -126,6 +125,7 @@ namespace UI
                     BE_JUGADOR.FechaNacimiento = Convert.ToDateTime(NacimientoDTP.Text);
                     BE_JUGADOR.LocalidadResidencia = LocalidadTextbox.Text;
                 }
+                else { MessageBox.Show("Revise datos ingresados", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
             }
             catch (Exception ex) { MessageBox.Show(ex.Message, "Error"); }
         }

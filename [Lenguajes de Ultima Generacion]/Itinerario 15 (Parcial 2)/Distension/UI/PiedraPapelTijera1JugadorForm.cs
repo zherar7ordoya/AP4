@@ -8,11 +8,15 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml;
 
 namespace UI
 {
     public partial class PiedraPapelTijera1JugadorForm : Form
     {
+        BLL.Jugador JUGADOR;
+
+
         private int
             GanadasPorUsuario = 0,
             GanadasPorComputadora = 0,
@@ -30,11 +34,15 @@ namespace UI
             "tijera",
         };
 
-        public PiedraPapelTijera1JugadorForm() => InitializeComponent();
-
-        private void FormPPT_Load(object sender, EventArgs e)
+        public PiedraPapelTijera1JugadorForm()
         {
-            CronometroTimer.Enabled = true;
+            InitializeComponent();
+            JUGADOR = new BLL.Jugador();
+        }
+
+        private void PiedraPapelTijera1JugadorForm_Load(object sender, EventArgs e)
+        {
+            CargarComboBox();
             JugadaDeUsuario = "ninguna";
         }
 
@@ -57,6 +65,8 @@ namespace UI
             JugadaDeUsuario = "tijera";
             IzquierdaPicturebox.Image = Properties.Resources.Tijera;
         }
+
+        
 
         //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
@@ -91,6 +101,11 @@ namespace UI
             }
         }
 
+        private void IniciarButton_Click(object sender, EventArgs e)
+        {
+            rondas = 3;
+            CronometroTimer.Enabled = true;
+        }
 
         private void ComputarRonda()
         {
@@ -165,11 +180,12 @@ namespace UI
                 GanadorLabel.Text = "Victoria para Usuario";
                 MessageBox.Show("Victoria para Usuario");
             }
-                
-            else { 
+            else
+            { 
                 GanadorLabel.Text = "Victoria para Computadora";
                 MessageBox.Show("Victoria para Computadora");
             }
+            CronometroTimer.Enabled = false;
         }
 
 
@@ -182,6 +198,29 @@ namespace UI
             DerechaPicturebox.Image = Properties.Resources.Pregunta;
         }
 
+
+        ///////////////////////////////////////////////////////////////////////
+
+
+        private void CargarComboBox()
+        {
+            try
+            {
+                XmlNodeList jugadores = JUGADOR.ListarJugadores();
+                
+                foreach (XmlNode jugador in jugadores)
+                {
+                    JugadorCombobox.Items.Add(jugador.InnerText);
+                }
+            }
+            catch (Exception ex) { MessageBox.Show(ex.Message); }
+        }
+
+
+        private void JugadorCombobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CronometroTimer.Enabled = true;
+        }
 
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace BLL
 {
@@ -38,5 +39,15 @@ namespace BLL
         {
             return JUGADOR.Remover(jugador);
         }
+
+        /* ----------------------------------------------------------------- *\
+         * MÉTODOS                                                           *
+        \* ----------------------------------------------------------------- */
+
+        public XmlNodeList ListarJugadores()
+        {
+            return JUGADOR.ListarJugadores();
+        }
+
     }
 }

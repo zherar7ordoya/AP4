@@ -42,6 +42,8 @@ namespace UI
             this.RondasLabel = new System.Windows.Forms.Label();
             this.CronometroTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
+            this.JugadorCombobox = new System.Windows.Forms.ComboBox();
+            this.IniciarButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IzquierdaPicturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DerechaPicturebox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -158,11 +160,32 @@ namespace UI
             this.panel1.Size = new System.Drawing.Size(82, 155);
             this.panel1.TabIndex = 14;
             // 
-            // FormPPT
+            // JugadorCombobox
+            // 
+            this.JugadorCombobox.FormattingEnabled = true;
+            this.JugadorCombobox.Location = new System.Drawing.Point(220, 207);
+            this.JugadorCombobox.Name = "JugadorCombobox";
+            this.JugadorCombobox.Size = new System.Drawing.Size(121, 21);
+            this.JugadorCombobox.TabIndex = 15;
+            this.JugadorCombobox.SelectedIndexChanged += new System.EventHandler(this.JugadorCombobox_SelectedIndexChanged);
+            // 
+            // IniciarButton
+            // 
+            this.IniciarButton.Location = new System.Drawing.Point(487, 232);
+            this.IniciarButton.Name = "IniciarButton";
+            this.IniciarButton.Size = new System.Drawing.Size(75, 23);
+            this.IniciarButton.TabIndex = 16;
+            this.IniciarButton.Text = "Iniciar Juego";
+            this.IniciarButton.UseVisualStyleBackColor = true;
+            this.IniciarButton.Click += new System.EventHandler(this.IniciarButton_Click);
+            // 
+            // PiedraPapelTijera1JugadorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 176);
+            this.ClientSize = new System.Drawing.Size(633, 287);
+            this.Controls.Add(this.IniciarButton);
+            this.Controls.Add(this.JugadorCombobox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.SegundosLabel);
             this.Controls.Add(this.GanadorLabel);
@@ -170,10 +193,10 @@ namespace UI
             this.Controls.Add(this.UsuarioLabel);
             this.Controls.Add(this.DerechaPicturebox);
             this.Controls.Add(this.IzquierdaPicturebox);
-            this.Name = "FormPPT";
+            this.Name = "PiedraPapelTijera1JugadorForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Piedra-Papel-Tijera";
-            this.Load += new System.EventHandler(this.FormPPT_Load);
+            this.Load += new System.EventHandler(this.PiedraPapelTijera1JugadorForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.IzquierdaPicturebox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DerechaPicturebox)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -196,6 +219,8 @@ namespace UI
         private System.Windows.Forms.Label RondasLabel;
         private System.Windows.Forms.Timer CronometroTimer;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ComboBox JugadorCombobox;
+        private System.Windows.Forms.Button IniciarButton;
     }
 }
 

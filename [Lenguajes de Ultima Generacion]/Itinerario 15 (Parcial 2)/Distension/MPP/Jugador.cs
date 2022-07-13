@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
+using System.Data;
+using System.Text.RegularExpressions;
 
 namespace MPP
 {
@@ -125,6 +128,18 @@ namespace MPP
                 return true;
             }
             catch (Exception) { throw; }
+        }
+
+        /* ----------------------------------------------------------------- *\
+         * MÉTODOS                                                           *
+        \* ----------------------------------------------------------------- */
+
+        public XmlNodeList ListarJugadores()
+        {
+            XmlDocument archivo = new XmlDocument();
+            archivo.Load("Jugadores.xml");
+            XmlNodeList jugadores = archivo.SelectNodes("Jugadores/Jugador/Nombre");
+            return jugadores;
         }
 
         /* ----------------------------------------------------------------- *\
