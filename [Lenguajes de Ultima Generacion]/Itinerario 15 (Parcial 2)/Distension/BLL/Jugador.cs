@@ -6,24 +6,24 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Usuario : ABSTRACTA.IGestor<BE.Usuario>
+    public class Jugador : ABSTRACTA.IGestor<BE.Jugador>
     {
-        public BE.Usuario DetallarObjeto(BE.Usuario objeto)
+        public BE.Jugador DetallarObjeto(BE.Jugador objeto)
         {
             throw new NotImplementedException();
         }
 
-        public bool Guardar(BE.Usuario objeto)
+        public bool Guardar(BE.Jugador objeto)
         {
             throw new NotImplementedException();
         }
 
-        public List<BE.Usuario> RecopilarObjetos()
+        public List<BE.Jugador> RecopilarObjetos()
         {
             throw new NotImplementedException();
         }
 
-        public bool Remover(BE.Usuario objeto)
+        public bool Remover(BE.Jugador objeto)
         {
             throw new NotImplementedException();
         }

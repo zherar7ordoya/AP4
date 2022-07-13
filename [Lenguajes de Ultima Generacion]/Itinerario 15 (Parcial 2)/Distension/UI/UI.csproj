@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UsuarioRegistroForm.cs">
+    <Compile Include="JugadorRegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsuarioRegistroForm.Designer.cs">
-      <DependentUpon>UsuarioRegistroForm.cs</DependentUpon>
+    <Compile Include="JugadorRegistroForm.Designer.cs">
+      <DependentUpon>JugadorRegistroForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PiedraPapelTijera2JugadoresForm.cs">
       <SubType>Form</SubType>
@@ -76,11 +76,11 @@
     <Compile Include="PiedraPapelTijera1JugadorForm.Designer.cs">
       <DependentUpon>PiedraPapelTijera1JugadorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsuarioIngresoForm.cs">
+    <Compile Include="JugadorIngresoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsuarioIngresoForm.Designer.cs">
-      <DependentUpon>UsuarioIngresoForm.cs</DependentUpon>
+    <Compile Include="JugadorIngresoForm.Designer.cs">
+      <DependentUpon>JugadorIngresoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="PlaceHolderTextBox.cs">
       <SubType>Component</SubType>
@@ -93,8 +93,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="UsuarioRegistroForm.resx">
-      <DependentUpon>UsuarioRegistroForm.cs</DependentUpon>
+    <EmbeddedResource Include="JugadorRegistroForm.resx">
+      <DependentUpon>JugadorRegistroForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaTeTi1JugadorForm.resx">
       <DependentUpon>TaTeTi1JugadorForm.cs</DependentUpon>
@@ -102,8 +102,8 @@
     <EmbeddedResource Include="PiedraPapelTijera1JugadorForm.resx">
       <DependentUpon>PiedraPapelTijera1JugadorForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsuarioIngresoForm.resx">
-      <DependentUpon>UsuarioIngresoForm.cs</DependentUpon>
+    <EmbeddedResource Include="JugadorIngresoForm.resx">
+      <DependentUpon>JugadorIngresoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIForm.resx">
       <DependentUpon>MDIForm.cs</DependentUpon>
@@ -144,9 +144,23 @@
     <None Include="Resources\Tijera.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Usuarios.xml">
+    <Content Include="Jugadores.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BE\BE.csproj">
+      <Project>{a3c42872-7105-4700-b803-d9a04d83b949}</Project>
+      <Name>BE</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{446949a7-1046-451e-86ec-9ad00cba3337}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPP\MPP.csproj">
+      <Project>{6c83fffd-4184-4a79-b058-8c38da3dbcb6}</Project>
+      <Name>MPP</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace UI
 {
-    public partial class UsuarioIngresoForm : Form
+    public partial class JugadorIngresoForm : Form
     {
         // *-----------------------------------------------------------=> ROBOT
         //readonly BE.BE_Login BE_LOGIN;
         //readonly BLL.BLL_Login BL_LOGIN;
 
-        public UsuarioIngresoForm()
+        public JugadorIngresoForm()
         {
             InitializeComponent();
             //BE_LOGIN = new BE.BE_Login();

@@ -1,7 +1,7 @@
 ﻿
 namespace UI
 {
-    partial class UsuarioIngresoForm
+    partial class JugadorIngresoForm
     {
         /// <summary>
         /// Required designer variable.

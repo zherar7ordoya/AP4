@@ -8,6 +8,6 @@ namespace BLL
 {
     public abstract class Juego
     {
-        public abstract int CalcularPuntos(string estado);
+        public abstract int CalcularPuntaje(string estado);
     }
 }

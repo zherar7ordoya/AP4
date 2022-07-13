@@ -8,7 +8,7 @@ namespace BLL
 {
     public class PiedraPapelTijera : Juego
     {
-        public override int CalcularPuntos(string estado)
+        public override int CalcularPuntaje(string estado)
         {
             switch (estado)
             {

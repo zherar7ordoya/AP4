@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Ingreso
+    public class Juego : Entidad
     {
-        public string Usuario { get; set; }
-        public string Contrasenia { get; set; }
+        public string Nombre { get; set; }
+        public List<Jugador> Jugadores { get; set; }
     }
 }
