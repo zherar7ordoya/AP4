@@ -16,7 +16,6 @@ namespace UI
     {
         BLL.Jugador JUGADOR;
 
-
         private int
             GanadasPorUsuario = 0,
             GanadasPorComputadora = 0,

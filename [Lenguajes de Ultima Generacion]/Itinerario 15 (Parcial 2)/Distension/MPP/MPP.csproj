@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Historial.cs" />
     <Compile Include="Juego.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Jugador.cs" />
@@ -56,7 +57,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="JuegosHistorial.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Jugadores.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JugadoresHistorialTTT.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JugadoresHistorialPPT.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

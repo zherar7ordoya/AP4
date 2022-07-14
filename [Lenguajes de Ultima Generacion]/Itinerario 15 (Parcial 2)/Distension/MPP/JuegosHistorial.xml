@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Juegos>
+
+	<Juego Nombre="Ta-Te-Ti">
+		<Contador>10</Contador>
+	</Juego>
+
+	<Juego Nombre="Piedra-Papel-Tijera">
+		<Contador>5</Contador>
+	</Juego>
+
+</Juegos>
