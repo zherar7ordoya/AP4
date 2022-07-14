@@ -191,9 +191,7 @@
       <Name>MPP</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\Debug\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\BEClases.png" />
   </ItemGroup>
