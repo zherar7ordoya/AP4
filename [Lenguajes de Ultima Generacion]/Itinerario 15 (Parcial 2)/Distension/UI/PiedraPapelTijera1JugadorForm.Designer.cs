@@ -35,7 +35,6 @@ namespace UI
             this.PiedraButton = new System.Windows.Forms.Button();
             this.PapelButton = new System.Windows.Forms.Button();
             this.TijeraButton = new System.Windows.Forms.Button();
-            this.UsuarioLabel = new System.Windows.Forms.Label();
             this.ComputadoraLabel = new System.Windows.Forms.Label();
             this.GanadorLabel = new System.Windows.Forms.Label();
             this.SegundosLabel = new System.Windows.Forms.Label();
@@ -43,7 +42,7 @@ namespace UI
             this.CronometroTimer = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.JugadorCombobox = new System.Windows.Forms.ComboBox();
-            this.IniciarButton = new System.Windows.Forms.Button();
+            this.IniciarJuegoButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.IzquierdaPicturebox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DerechaPicturebox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -52,7 +51,7 @@ namespace UI
             // IzquierdaPicturebox
             // 
             this.IzquierdaPicturebox.Image = global::UI.Properties.Resources.Pregunta;
-            this.IzquierdaPicturebox.Location = new System.Drawing.Point(177, 29);
+            this.IzquierdaPicturebox.Location = new System.Drawing.Point(182, 38);
             this.IzquierdaPicturebox.Name = "IzquierdaPicturebox";
             this.IzquierdaPicturebox.Size = new System.Drawing.Size(130, 130);
             this.IzquierdaPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -62,7 +61,7 @@ namespace UI
             // DerechaPicturebox
             // 
             this.DerechaPicturebox.Image = global::UI.Properties.Resources.Pregunta;
-            this.DerechaPicturebox.Location = new System.Drawing.Point(452, 29);
+            this.DerechaPicturebox.Location = new System.Drawing.Point(452, 38);
             this.DerechaPicturebox.Name = "DerechaPicturebox";
             this.DerechaPicturebox.Size = new System.Drawing.Size(130, 130);
             this.DerechaPicturebox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -99,15 +98,6 @@ namespace UI
             this.TijeraButton.UseVisualStyleBackColor = true;
             this.TijeraButton.Click += new System.EventHandler(this.TijeraButton_Click);
             // 
-            // UsuarioLabel
-            // 
-            this.UsuarioLabel.AutoSize = true;
-            this.UsuarioLabel.Location = new System.Drawing.Point(174, 13);
-            this.UsuarioLabel.Name = "UsuarioLabel";
-            this.UsuarioLabel.Size = new System.Drawing.Size(43, 13);
-            this.UsuarioLabel.TabIndex = 8;
-            this.UsuarioLabel.Text = "Usuario";
-            // 
             // ComputadoraLabel
             // 
             this.ComputadoraLabel.AutoSize = true;
@@ -119,7 +109,7 @@ namespace UI
             // 
             // GanadorLabel
             // 
-            this.GanadorLabel.Location = new System.Drawing.Point(313, 50);
+            this.GanadorLabel.Location = new System.Drawing.Point(313, 38);
             this.GanadorLabel.Name = "GanadorLabel";
             this.GanadorLabel.Size = new System.Drawing.Size(133, 13);
             this.GanadorLabel.TabIndex = 10;
@@ -128,7 +118,7 @@ namespace UI
             // 
             // SegundosLabel
             // 
-            this.SegundosLabel.Location = new System.Drawing.Point(313, 146);
+            this.SegundosLabel.Location = new System.Drawing.Point(313, 84);
             this.SegundosLabel.Name = "SegundosLabel";
             this.SegundosLabel.Size = new System.Drawing.Size(133, 13);
             this.SegundosLabel.TabIndex = 11;
@@ -163,34 +153,33 @@ namespace UI
             // JugadorCombobox
             // 
             this.JugadorCombobox.FormattingEnabled = true;
-            this.JugadorCombobox.Location = new System.Drawing.Point(220, 207);
+            this.JugadorCombobox.Location = new System.Drawing.Point(182, 5);
             this.JugadorCombobox.Name = "JugadorCombobox";
-            this.JugadorCombobox.Size = new System.Drawing.Size(121, 21);
+            this.JugadorCombobox.Size = new System.Drawing.Size(130, 21);
             this.JugadorCombobox.TabIndex = 15;
             this.JugadorCombobox.SelectedIndexChanged += new System.EventHandler(this.JugadorCombobox_SelectedIndexChanged);
             // 
-            // IniciarButton
+            // IniciarJuegoButton
             // 
-            this.IniciarButton.Location = new System.Drawing.Point(487, 232);
-            this.IniciarButton.Name = "IniciarButton";
-            this.IniciarButton.Size = new System.Drawing.Size(75, 23);
-            this.IniciarButton.TabIndex = 16;
-            this.IniciarButton.Text = "Iniciar Juego";
-            this.IniciarButton.UseVisualStyleBackColor = true;
-            this.IniciarButton.Click += new System.EventHandler(this.IniciarButton_Click);
+            this.IniciarJuegoButton.Location = new System.Drawing.Point(343, 145);
+            this.IniciarJuegoButton.Name = "IniciarJuegoButton";
+            this.IniciarJuegoButton.Size = new System.Drawing.Size(75, 23);
+            this.IniciarJuegoButton.TabIndex = 16;
+            this.IniciarJuegoButton.Text = "Iniciar Juego";
+            this.IniciarJuegoButton.UseVisualStyleBackColor = true;
+            this.IniciarJuegoButton.Click += new System.EventHandler(this.IniciarButton_Click);
             // 
             // PiedraPapelTijera1JugadorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(633, 287);
-            this.Controls.Add(this.IniciarButton);
+            this.ClientSize = new System.Drawing.Size(633, 194);
+            this.Controls.Add(this.IniciarJuegoButton);
             this.Controls.Add(this.JugadorCombobox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.SegundosLabel);
             this.Controls.Add(this.GanadorLabel);
             this.Controls.Add(this.ComputadoraLabel);
-            this.Controls.Add(this.UsuarioLabel);
             this.Controls.Add(this.DerechaPicturebox);
             this.Controls.Add(this.IzquierdaPicturebox);
             this.Name = "PiedraPapelTijera1JugadorForm";
@@ -212,7 +201,6 @@ namespace UI
         private System.Windows.Forms.Button PiedraButton;
         private System.Windows.Forms.Button PapelButton;
         private System.Windows.Forms.Button TijeraButton;
-        private System.Windows.Forms.Label UsuarioLabel;
         private System.Windows.Forms.Label ComputadoraLabel;
         private System.Windows.Forms.Label GanadorLabel;
         private System.Windows.Forms.Label SegundosLabel;
@@ -220,7 +208,7 @@ namespace UI
         private System.Windows.Forms.Timer CronometroTimer;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox JugadorCombobox;
-        private System.Windows.Forms.Button IniciarButton;
+        private System.Windows.Forms.Button IniciarJuegoButton;
     }
 }
 

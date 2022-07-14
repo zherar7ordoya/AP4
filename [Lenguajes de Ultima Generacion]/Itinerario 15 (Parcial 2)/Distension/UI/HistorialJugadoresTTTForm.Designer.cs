@@ -74,6 +74,7 @@ namespace UI
             this.Controls.Add(this.EstadoCombobox);
             this.Controls.Add(this.BarrasChart);
             this.Name = "HistorialJugadoresTTTForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ta-Te-Ti: Historial Jugadores";
             this.Load += new System.EventHandler(this.HistorialJugadoresTTTForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BarrasChart)).EndInit();

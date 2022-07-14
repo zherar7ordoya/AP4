@@ -5,100 +5,58 @@ namespace UI
 {
     public partial class MDIForm : Form
     {
-        public MDIForm() => InitializeComponent();
-
-        private void MultipleDocumentInterface_Load(object sender, EventArgs e)
+        public MDIForm()
         {
-            //UsuarioIngresoForm formulario = new UsuarioIngresoForm()
-            //{
-            //    MdiParent = this
-            //};
-            //formulario.Show();
+            InitializeComponent();
         }
-
-        private void Archivo_SalirItem_Click(object sender, EventArgs e) => Application.Exit();
-
-        //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
-
-        private void ABM_CategoriasItem_Click(object sender, EventArgs e)
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FRM_Categoria formulario = new FRM_Categoria
-            //{
-            //    MdiParent = this
-            //};
-            //formulario.Show();
+            Application.Exit();
         }
-
-        private void ABM_DepartamentosItem_Click(object sender, EventArgs e)
+        private void ABMJugadoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FRM_Departamento formulario = new FRM_Departamento
-            //{
-            //    MdiParent = this
-            //};
-            //formulario.Show();
+            JugadorRegistroForm formulario = new JugadorRegistroForm { MdiParent = this };
+            formulario.Show();
         }
-
-        private void ABM_EmpleadosItem_Click(object sender, EventArgs e)
+        private void PPP1JugadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FRM_Empleado formulario = new FRM_Empleado
-            //{
-            //    MdiParent = this
-            //};
-            //formulario.Show();
+            PiedraPapelTijera1JugadorForm formulario = new PiedraPapelTijera1JugadorForm { MdiParent = this };
+            formulario.Show();
         }
-
-        private void ABM_ItemsItem_Click(object sender, EventArgs e)
+        private void PPP2JugadoresToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //FRM_Item formulario = new FRM_Item
-            //{
-            //    MdiParent = this
-            //};
-            //formulario.Show();
+            PiedraPapelTijera2JugadoresForm formulario = new PiedraPapelTijera2JugadoresForm { MdiParent = this };
+            formulario.Show();
         }
-
-        private void ABM_OrdenesItem_Click(object sender, EventArgs e)
+        private void TTT1JugadorToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            //FRM_Orden formulario = new FRM_Orden
-            //{
-            //    MdiParent = this
-            //};
-            //formulario.Show();
+            TaTeTi1JugadorForm formulario = new TaTeTi1JugadorForm { MdiParent = this };
+            formulario.Show();
         }
-
-        private void ABM_ProveedoresItem_Click(object sender, EventArgs e)
+        private void TTT2JugadoresToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            //FRM_Proveedor formulario = new FRM_Proveedor
-            //{
-            //    MdiParent = this
-            //};
-            //formulario.Show();
+            TaTeTi2JugadoresForm formulario = new TaTeTi2JugadoresForm { MdiParent = this };
+            formulario.Show();
         }
-
-        private void ABM_RolesItem_Click(object sender, EventArgs e)
+        private void HistorialJMJToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FRM_Rol formulario = new FRM_Rol
-            //{
-            //    MdiParent = this
-            //};
-            //formulario.Show();
+            HistorialJuegosForm formulario = new HistorialJuegosForm { MdiParent = this };
+            formulario.Show();
         }
-
-        private void Reportes_OrdenesItem_Click(object sender, EventArgs e)
+        private void HistorialPPTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Ordenes_ItemsForm formulario = new Ordenes_ItemsForm
-            //{
-            //    MdiParent = this
-            //};
-            //formulario.Show();
+            HistorialJugadoresPPTForm formulario = new HistorialJugadoresPPTForm { MdiParent = this };
+            formulario.Show();
         }
-
-        private void Auditoria_EmpleadosItem_Click(object sender, EventArgs e)
+        private void HistorialTTTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FRM_XML formulario = new FRM_XML
-            //{
-            //    MdiParent = this
-            //};
-            //formulario.Show();
+            HistorialJugadoresTTTForm formulario = new HistorialJugadoresTTTForm { MdiParent = this };
+            formulario.Show();
+        }
+        private void DiagramaDeClasesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DiagramaForm formulario = new DiagramaForm { MdiParent = this };
+            formulario.Show();
         }
     }
 }

@@ -63,6 +63,16 @@ namespace UI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap BEClases {
+            get {
+                object obj = ResourceManager.GetObject("BEClases", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Papel {
             get {
                 object obj = ResourceManager.GetObject("Papel", resourceCulture);

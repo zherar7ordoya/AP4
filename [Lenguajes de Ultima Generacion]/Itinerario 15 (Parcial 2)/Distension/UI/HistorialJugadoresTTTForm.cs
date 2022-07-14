@@ -31,7 +31,7 @@ namespace UI
 
         void CargarDatosXML()
         {
-            BE_HISTORIAL.Archivo = "JugadoresHistorialTTT.xml";
+            BE_HISTORIAL.ArchivoXML = "JugadoresHistorialTTT.xml";
             BarrasChart.DataSource = BLL_HISTORIAL.CargarDatosXML(BE_HISTORIAL);
 
             BarrasChart.Series[0].XValueMember = "Nombre";

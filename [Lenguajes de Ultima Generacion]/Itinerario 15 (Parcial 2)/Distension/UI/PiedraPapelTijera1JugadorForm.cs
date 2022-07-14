@@ -15,6 +15,9 @@ namespace UI
     public partial class PiedraPapelTijera1JugadorForm : Form
     {
         BLL.Jugador JUGADOR;
+        BE.Historial BE_HISTORIAL;
+        BLL.Historial BLL_HISTORIAL;
+        BLL.PiedraPapelTijera PPT;
 
         private int
             GanadasPorUsuario = 0,
@@ -37,6 +40,9 @@ namespace UI
         {
             InitializeComponent();
             JUGADOR = new BLL.Jugador();
+            BE_HISTORIAL= new BE.Historial();
+            BLL_HISTORIAL= new BLL.Historial();
+            PPT = new BLL.PiedraPapelTijera();
         }
 
         private void PiedraPapelTijera1JugadorForm_Load(object sender, EventArgs e)
@@ -64,8 +70,6 @@ namespace UI
             JugadaDeUsuario = "tijera";
             IzquierdaPicturebox.Image = Properties.Resources.Tijera;
         }
-
-        
 
         //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
@@ -177,12 +181,32 @@ namespace UI
             if (GanadasPorUsuario > GanadasPorComputadora)
             {
                 GanadorLabel.Text = "Victoria para Usuario";
-                MessageBox.Show("Victoria para Usuario");
+                MessageBox.Show("Victoria para " + JugadorCombobox.Text);
+
+                BE_HISTORIAL.ArchivoXML = "JuegosHistorial.xml";
+                BE_HISTORIAL.NombreJuego = "Piedra-Papel-Tijera";
+                BE_HISTORIAL.Jugador = JugadorCombobox.Text;
+                BE_HISTORIAL.Estado = "Ganados";
+                BE_HISTORIAL.Puntos = PPT.CalcularPuntaje("gana");
+
+                BLL_HISTORIAL.ActualizarHistorial(BE_HISTORIAL);
+                BE_HISTORIAL.ArchivoXML = "JugadoresHistorialPPT.xml";
+                BLL_HISTORIAL.ActualizarHistorial(BE_HISTORIAL);
             }
             else
             { 
                 GanadorLabel.Text = "Victoria para Computadora";
                 MessageBox.Show("Victoria para Computadora");
+
+                BE_HISTORIAL.ArchivoXML = "JuegosHistorial.xml";
+                BE_HISTORIAL.NombreJuego = "Piedra-Papel-Tijera";
+                BE_HISTORIAL.Jugador = JugadorCombobox.Text;
+                BE_HISTORIAL.Estado = "Perdidos";
+                BE_HISTORIAL.Puntos = PPT.CalcularPuntaje("pierde");
+
+                BLL_HISTORIAL.ActualizarHistorial(BE_HISTORIAL);
+                BE_HISTORIAL.ArchivoXML = "JugadoresHistorialPPT.xml";
+                BLL_HISTORIAL.ActualizarHistorial(BE_HISTORIAL);
             }
             CronometroTimer.Enabled = false;
         }
@@ -197,9 +221,7 @@ namespace UI
             DerechaPicturebox.Image = Properties.Resources.Pregunta;
         }
 
-
         ///////////////////////////////////////////////////////////////////////
-
 
         private void CargarComboBox()
         {
@@ -214,7 +236,6 @@ namespace UI
             }
             catch (Exception ex) { MessageBox.Show(ex.Message); }
         }
-
 
         private void JugadorCombobox_SelectedIndexChanged(object sender, EventArgs e)
         {

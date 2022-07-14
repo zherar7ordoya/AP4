@@ -3,11 +3,11 @@
 <Juegos>
 
 	<Juego Nombre="Ta-Te-Ti">
-		<Contador>10</Contador>
+		<Contador>25</Contador>
 	</Juego>
 
 	<Juego Nombre="Piedra-Papel-Tijera">
-		<Contador>5</Contador>
+		<Contador>15</Contador>
 	</Juego>
 
 </Juegos>

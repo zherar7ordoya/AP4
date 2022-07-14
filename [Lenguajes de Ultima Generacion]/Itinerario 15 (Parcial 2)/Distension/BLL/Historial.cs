@@ -20,5 +20,10 @@ namespace BLL
         {
             return HISTORIAL.CargarDatosXML(objeto);
         }
+
+        public void ActualizarHistorial(BE.Historial objeto)
+        {
+            HISTORIAL.ActualizarHistorial(objeto);
+        }
     }
 }

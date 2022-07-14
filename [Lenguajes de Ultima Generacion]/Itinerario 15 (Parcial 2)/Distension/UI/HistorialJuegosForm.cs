@@ -33,7 +33,7 @@ namespace UI
         {
             try
             {
-                BE_HISTORIAL.Archivo = "JuegosHistorial.xml";
+                BE_HISTORIAL.ArchivoXML = "JuegosHistorial.xml";
                 BarrasChart.DataSource = BLL_HISTORIAL.CargarDatosXML(BE_HISTORIAL);
 
                 BarrasChart.Series[0].XValueMember = "Nombre";

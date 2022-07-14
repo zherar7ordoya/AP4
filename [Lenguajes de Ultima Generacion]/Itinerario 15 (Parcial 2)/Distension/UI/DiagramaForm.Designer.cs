@@ -35,9 +35,11 @@ namespace UI
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::UI.Properties.Resources.BEClases;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(460, 437);
+            this.pictureBox1.Size = new System.Drawing.Size(460, 537);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -45,10 +47,11 @@ namespace UI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(484, 461);
+            this.ClientSize = new System.Drawing.Size(484, 561);
             this.Controls.Add(this.pictureBox1);
             this.Name = "DiagramaForm";
-            this.Text = "Diagrama de Clases";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Diagrama de Clases (Capa BE)";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

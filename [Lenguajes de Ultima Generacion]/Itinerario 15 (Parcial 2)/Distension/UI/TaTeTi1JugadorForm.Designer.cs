@@ -1,96 +1,149 @@
-﻿namespace UI {
-  partial class TaTeTi1JugadorForm {
-    /// <summary>
-    /// Required designer variable.
-    /// </summary>
-    private System.ComponentModel.IContainer components = null;
+﻿
+namespace UI
+{
+    partial class TaTeTi1JugadorForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
 
-    /// <summary>
-    /// Clean up any resources being used.
-    /// </summary>
-    /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose(bool disposing) {
-      if (disposing && (components != null)) {
-        components.Dispose();
-      }
-      base.Dispose(disposing);
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.IniciarJuegoButton = new System.Windows.Forms.Button();
+            this.OLabel = new System.Windows.Forms.Label();
+            this.XLabel = new System.Windows.Forms.Label();
+            this.XCombobox = new System.Windows.Forms.ComboBox();
+            this.OCombobox = new System.Windows.Forms.ComboBox();
+            this.JugarButton = new System.Windows.Forms.Button();
+            this.JugadorLabel = new System.Windows.Forms.Label();
+            this.TableroPanel = new System.Windows.Forms.Panel();
+            this.SuspendLayout();
+            // 
+            // IniciarJuegoButton
+            // 
+            this.IniciarJuegoButton.Enabled = false;
+            this.IniciarJuegoButton.Location = new System.Drawing.Point(118, 439);
+            this.IniciarJuegoButton.Name = "IniciarJuegoButton";
+            this.IniciarJuegoButton.Size = new System.Drawing.Size(90, 23);
+            this.IniciarJuegoButton.TabIndex = 38;
+            this.IniciarJuegoButton.Text = "Iniciar Juego";
+            this.IniciarJuegoButton.UseVisualStyleBackColor = true;
+            // 
+            // OLabel
+            // 
+            this.OLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OLabel.Location = new System.Drawing.Point(224, 215);
+            this.OLabel.Name = "OLabel";
+            this.OLabel.Size = new System.Drawing.Size(100, 31);
+            this.OLabel.TabIndex = 37;
+            this.OLabel.Text = "O";
+            this.OLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XLabel
+            // 
+            this.XLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.XLabel.Location = new System.Drawing.Point(12, 215);
+            this.XLabel.Name = "XLabel";
+            this.XLabel.Size = new System.Drawing.Size(100, 31);
+            this.XLabel.TabIndex = 36;
+            this.XLabel.Text = "X";
+            this.XLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // XCombobox
+            // 
+            this.XCombobox.Enabled = false;
+            this.XCombobox.FormattingEnabled = true;
+            this.XCombobox.Location = new System.Drawing.Point(12, 249);
+            this.XCombobox.Name = "XCombobox";
+            this.XCombobox.Size = new System.Drawing.Size(100, 21);
+            this.XCombobox.TabIndex = 35;
+            // 
+            // OCombobox
+            // 
+            this.OCombobox.Enabled = false;
+            this.OCombobox.FormattingEnabled = true;
+            this.OCombobox.Location = new System.Drawing.Point(224, 249);
+            this.OCombobox.Name = "OCombobox";
+            this.OCombobox.Size = new System.Drawing.Size(100, 21);
+            this.OCombobox.TabIndex = 34;
+            // 
+            // JugarButton
+            // 
+            this.JugarButton.Enabled = false;
+            this.JugarButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JugarButton.Location = new System.Drawing.Point(118, 184);
+            this.JugarButton.Name = "JugarButton";
+            this.JugarButton.Size = new System.Drawing.Size(100, 100);
+            this.JugarButton.TabIndex = 31;
+            this.JugarButton.Text = "X";
+            this.JugarButton.UseVisualStyleBackColor = true;
+            // 
+            // JugadorLabel
+            // 
+            this.JugadorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JugadorLabel.Location = new System.Drawing.Point(118, 150);
+            this.JugadorLabel.Name = "JugadorLabel";
+            this.JugadorLabel.Size = new System.Drawing.Size(100, 31);
+            this.JugadorLabel.TabIndex = 33;
+            this.JugadorLabel.Text = "Jugador";
+            this.JugadorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TableroPanel
+            // 
+            this.TableroPanel.Location = new System.Drawing.Point(330, 12);
+            this.TableroPanel.Name = "TableroPanel";
+            this.TableroPanel.Size = new System.Drawing.Size(450, 450);
+            this.TableroPanel.TabIndex = 32;
+            // 
+            // TaTeTi1JugadorForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 479);
+            this.Controls.Add(this.IniciarJuegoButton);
+            this.Controls.Add(this.OLabel);
+            this.Controls.Add(this.XLabel);
+            this.Controls.Add(this.XCombobox);
+            this.Controls.Add(this.OCombobox);
+            this.Controls.Add(this.JugarButton);
+            this.Controls.Add(this.JugadorLabel);
+            this.Controls.Add(this.TableroPanel);
+            this.Name = "TaTeTi1JugadorForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ta-Te-Tí para 1 jugador";
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Button IniciarJuegoButton;
+        private System.Windows.Forms.Label OLabel;
+        private System.Windows.Forms.Label XLabel;
+        private System.Windows.Forms.ComboBox XCombobox;
+        private System.Windows.Forms.ComboBox OCombobox;
+        private System.Windows.Forms.Button JugarButton;
+        private System.Windows.Forms.Label JugadorLabel;
+        private System.Windows.Forms.Panel TableroPanel;
     }
-
-    #region Windows Form Designer generated code
-
-    /// <summary>
-    /// Required method for Designer support - do not modify
-    /// the contents of this method with the code editor.
-    /// </summary>
-    private void InitializeComponent() {
-      this.Portada = new System.Windows.Forms.TextBox();
-      this.panel1 = new System.Windows.Forms.Panel();
-      this.label1 = new System.Windows.Forms.Label();
-      this.btnJugador = new System.Windows.Forms.Button();
-      this.SuspendLayout();
-      // 
-      // Portada
-      // 
-      this.Portada.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.Portada.Font = new System.Drawing.Font("Consolas", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.Portada.Location = new System.Drawing.Point(12, 12);
-      this.Portada.Multiline = true;
-      this.Portada.Name = "Portada";
-      this.Portada.ReadOnly = true;
-      this.Portada.Size = new System.Drawing.Size(237, 60);
-      this.Portada.TabIndex = 1;
-      this.Portada.Text = "Gerardo Tordoya\r\nTrabajo Práctico 3 (2021-05-06)\r\nProgramación I (Comisión 1-ON)\r" +
-    "\nAnalista Programador (UAI)";
-      // 
-      // panel1
-      // 
-      this.panel1.Location = new System.Drawing.Point(255, 12);
-      this.panel1.Name = "panel1";
-      this.panel1.Size = new System.Drawing.Size(450, 450);
-      this.panel1.TabIndex = 2;
-      // 
-      // label1
-      // 
-      this.label1.AutoSize = true;
-      this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.label1.Location = new System.Drawing.Point(62, 150);
-      this.label1.Name = "label1";
-      this.label1.Size = new System.Drawing.Size(112, 31);
-      this.label1.TabIndex = 3;
-      this.label1.Text = "Jugador";
-      // 
-      // btnJugador
-      // 
-      this.btnJugador.Font = new System.Drawing.Font("Microsoft Sans Serif", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnJugador.Location = new System.Drawing.Point(68, 184);
-      this.btnJugador.Name = "btnJugador";
-      this.btnJugador.Size = new System.Drawing.Size(100, 100);
-      this.btnJugador.TabIndex = 1;
-      this.btnJugador.Text = "X";
-      this.btnJugador.UseVisualStyleBackColor = true;
-      // 
-      // Form1
-      // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(716, 474);
-      this.Controls.Add(this.btnJugador);
-      this.Controls.Add(this.label1);
-      this.Controls.Add(this.panel1);
-      this.Controls.Add(this.Portada);
-      this.Name = "Form1";
-      this.Text = "Form1";
-      this.Load += new System.EventHandler(this.Form1_Load);
-      this.ResumeLayout(false);
-      this.PerformLayout();
-
-    }
-
-    #endregion
-    private System.Windows.Forms.TextBox Portada;
-    private System.Windows.Forms.Panel panel1;
-    private System.Windows.Forms.Label label1;
-    private System.Windows.Forms.Button btnJugador;
-  }
 }
-

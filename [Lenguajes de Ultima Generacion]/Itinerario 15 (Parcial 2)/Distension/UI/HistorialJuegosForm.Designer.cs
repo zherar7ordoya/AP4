@@ -59,6 +59,7 @@ namespace UI
             this.ClientSize = new System.Drawing.Size(384, 361);
             this.Controls.Add(this.BarrasChart);
             this.Name = "HistorialJuegosForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Historial Juegos";
             this.Load += new System.EventHandler(this.JuegosReportForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BarrasChart)).EndInit();

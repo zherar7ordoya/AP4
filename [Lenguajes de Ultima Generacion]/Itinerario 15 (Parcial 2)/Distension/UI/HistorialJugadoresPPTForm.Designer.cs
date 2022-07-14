@@ -74,6 +74,7 @@ namespace UI
             this.Controls.Add(this.EstadoCombobox);
             this.Controls.Add(this.BarrasChart);
             this.Name = "HistorialJugadoresPPTForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Piedra-Papel-Tijera: Historial Jugadores ";
             this.Load += new System.EventHandler(this.JugadoresReportForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.BarrasChart)).EndInit();
