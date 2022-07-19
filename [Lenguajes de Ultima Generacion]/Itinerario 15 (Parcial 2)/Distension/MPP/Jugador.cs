@@ -71,7 +71,6 @@ namespace MPP
                         .FirstOrDefault
                         (x => x.Attribute("Codigo").Value == Convert.ToString(jugador.Codigo));
 
-
                     registro.Element("Nombre").Value = jugador.Nombre;
                     registro.Element("Apellido").Value = jugador.Apellido;
                     registro.Element("DNI").Value = Convert.ToString(jugador.DNI);
@@ -94,7 +93,7 @@ namespace MPP
             {
                 DOCUMENTOX = XDocument.Load(ARCHIVO);
 
-                JUGADORES = (List<BE.Jugador>)DOCUMENTOX.Descendants("Jugador").Select(x => new BE.Jugador
+                JUGADORES = DOCUMENTOX.Descendants("Jugador").Select(x => new BE.Jugador
                 {
                     Codigo = Convert.ToInt32(x.Attribute("Codigo").Value),
                     Nombre = x.Element("Nombre").Value,
