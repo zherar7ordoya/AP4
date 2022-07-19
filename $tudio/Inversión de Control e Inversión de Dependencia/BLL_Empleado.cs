@@ -4,9 +4,10 @@
     {
         IDAL_Empleado DAL_EMPLEADO; // PASO 2 - CAMBIO 3/3
 
-        public BLL_Empleado()
+        // PASO 3 - La inyección de constructor
+        public BLL_Empleado(IDAL_Empleado dal)
         {
-            DAL_EMPLEADO = DAL_Fabrica.ObtenerDALEmpleado();
+            DAL_EMPLEADO = dal;
         }
 
         public BEL_Empleado ObtenerDetallesEmpleado(int id)
