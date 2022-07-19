@@ -10,13 +10,13 @@ namespace Inversión_de_Control_e_Inversión_de_Dependencia
             BEL_Empleado BEL_EMPLEADO = BLL_EMPLEADO.ObtenerDetallesEmpleado(1);
 
             Console.WriteLine();
-            Console.WriteLine("Detalles de Empleado:");
+            Console.WriteLine("DETALLES DE EMPLEADO");
 
             Console.WriteLine(
-                "Id: {0}, " +
-                "Nombre: {1}, " +
-                "Departmento: {2}, " +
-                "Sueldo : {3}",
+                "\tId\t\t{0}\n" +
+                "\tNombre\t\t{1}\n" +
+                "\tDepartmento\t{2}\n" +
+                "\tSueldo\t\t{3}",
                 BEL_EMPLEADO.Id,
                     BEL_EMPLEADO.Nombre,
                     BEL_EMPLEADO.Departmento,

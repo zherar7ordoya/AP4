@@ -1,6 +1,6 @@
 ﻿namespace Inversión_de_Control_e_Inversión_de_Dependencia
 {
-    public class DAL_Empleado
+    public class DAL_Empleado : IDAL_Empleado // PASO 2 - CAMBIO 1/3
     {
         public BEL_Empleado ObtenerDetallesEmpleado(int id)
         {

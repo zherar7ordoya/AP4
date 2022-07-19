@@ -2,7 +2,7 @@
 {
     class DAL_Fabrica
     {
-        public static DAL_Empleado ObtenerObjeto_DAL_Empleado()
+        public static IDAL_Empleado ObtenerDALEmpleado() // PASO 2 - CAMBIO 2/3
         {
             return new DAL_Empleado();
         }

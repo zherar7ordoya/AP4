@@ -2,11 +2,11 @@
 {
     public class BLL_Empleado
     {
-        DAL_Empleado DAL_EMPLEADO;
+        IDAL_Empleado DAL_EMPLEADO; // PASO 2 - CAMBIO 3/3
 
         public BLL_Empleado()
         {
-            DAL_EMPLEADO = DAL_Fabrica.ObtenerObjeto_DAL_Empleado();
+            DAL_EMPLEADO = DAL_Fabrica.ObtenerDALEmpleado();
         }
 
         public BEL_Empleado ObtenerDetallesEmpleado(int id)
