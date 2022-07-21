@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PatronEstrategia")]
+[assembly: AssemblyTitle("4 (I)")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PatronEstrategia")]
+[assembly: AssemblyProduct("4 (I)")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("fc0a72b8-c6c7-4a1d-8323-be050bec6074")]
+[assembly: Guid("1047b85f-2ef9-43ee-b17c-c0ef5fe1b1ce")]
 
 // Version information for an assembly consists of the following four values:
 //
