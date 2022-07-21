@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace _1__S_
+﻿namespace _1__S_
 {
     class Empleado
     {
         private string nombre;
-        private string puesto;
-        private int edad;
+        private readonly string puesto;
+        private readonly int edad;
         private double sueldo;
 
         public string Nombre { get => nombre; set => nombre = value; }

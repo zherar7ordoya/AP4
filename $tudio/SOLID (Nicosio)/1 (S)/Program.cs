@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace _1__S_
 {
@@ -10,6 +6,11 @@ namespace _1__S_
     {
         static void Main(string[] args)
         {
+            if (args is null)
+            {
+                throw new ArgumentNullException(nameof(args));
+            }
+
             Empleado empleado = new Empleado("Gerardo", "Facturador", 44, 44000);
 
             Console.WriteLine(empleado);
