@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace _5D
 {
-    class NotaCredito : DocumentoContable
+    public class NotaCredito : DocumentoContable
     {
-        public NotaCredito(int numero, DateTime fecha, double importe) : base(numero,fecha,importe)
+        public NotaCredito(int numero, DateTime fecha, double importe) : base(numero, fecha, importe)
         {
             sigla = "NC";
+        }
+
+        public override void Imprimir()
+        {
+            Console.WriteLine($"Imprimiendo nota de crédito {Numero} del {Fecha} de importe {Importe}");
         }
 
         public override double Total()

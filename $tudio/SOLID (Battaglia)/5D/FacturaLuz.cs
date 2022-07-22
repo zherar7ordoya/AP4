@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _5D
 {
-    class FacturaLuz : Impuesto
+    public class FacturaLuz : Impuesto
     {
         public FacturaLuz(double importe, string codigoPago) : base(importe)
         {
@@ -14,5 +14,10 @@ namespace _5D
         }
 
         public string CodigoPago { get; set; }
+
+        public override void Imprimir()
+        {
+                Console.WriteLine($"Imprimiendo código pago factura luz {CodigoPago} de importe {Importe}");
+        }
     }
 }

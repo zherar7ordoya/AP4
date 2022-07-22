@@ -13,5 +13,10 @@ namespace _5D
             Partida = partida;
         }
         public string Partida { get; set; }
+
+        public override void Imprimir()
+        {
+            Console.WriteLine($"Imprimiendo impuesto municipal partida {Partida} e importe {Importe}");
+        }
     }
 }

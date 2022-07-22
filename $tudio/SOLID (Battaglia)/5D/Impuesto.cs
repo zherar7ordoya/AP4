@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace _5D
 {
-    public abstract class Impuesto
+    public abstract class Impuesto : IImprimible
     {
         public Impuesto(double importe)
         {
             Importe = importe;
         }
         public double Importe { get; set; }
+
+        //\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+        public abstract void Imprimir();
+        
     }
 }

@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace _5D
 {
-    class Factura : DocumentoContable
+    public class Factura : DocumentoContable
     {
         public Factura(int numero, DateTime fecha, double importe) : base(numero, fecha, importe)
         {
             sigla = "FC";
+        }
+
+        public override void Imprimir()
+        {
+                Console.WriteLine($"Imprimiendo factura {Numero} del {Fecha} de importe {Importe}");
         }
 
         public override double Total()

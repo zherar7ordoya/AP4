@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _5D
 {
-    public class ReciboSueldo
+    public class ReciboSueldo : IImprimible
     {
         public ReciboSueldo(int legajo, double total)
         {
@@ -15,6 +15,11 @@ namespace _5D
         }
 
         public double Total { get; set; }
-        public int Legajo { get; set; } 
+        public int Legajo { get; set; }
+
+        public void Imprimir()
+        {
+            Console.WriteLine($"Imprimiendo factura {Legajo} del {Total}");
+        }
     }
 }

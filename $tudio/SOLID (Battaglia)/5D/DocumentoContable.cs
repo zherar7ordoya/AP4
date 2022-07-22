@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _5D
 {
-    public abstract class DocumentoContable
+    public abstract class DocumentoContable: IImprimible
     {
         protected string sigla;
 
@@ -23,8 +23,14 @@ namespace _5D
         public double Importe { get; set; }
         public int Numero { get; set; }
 
+ 
         //||||||||||||||||||||||||||||||||||||
 
         public abstract double Total();
+
+        //||||||||||||||||||||||||||||||||||||
+
+        public abstract void Imprimir();
+
     }
 }
