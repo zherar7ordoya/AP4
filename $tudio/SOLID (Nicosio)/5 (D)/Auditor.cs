@@ -8,18 +8,20 @@ namespace _5__D_
 {
     class Auditor
     {
-        private Almacen almacen;
+        private IAuditable almacen;
 
-        public Auditor(Almacen almacen)
+        public Auditor(IAuditable almacen)
         {
             this.almacen = almacen;
         }
 
-        public double totalesAlimentos()
+        public double TotalesAlimentos()
         {
             double total = 0;
 
-            foreach(Producto producto in almacen.Inventario)
+            IEnumerable<Producto> listado = almacen.ObtenerProductos(0);
+
+            foreach(Producto producto in listado)
             {
                 if (producto.Tipo == 0)
                 {
@@ -27,6 +29,7 @@ namespace _5__D_
                     total += producto.Costo;
                 }
             }
+
             return total;
         }
     }

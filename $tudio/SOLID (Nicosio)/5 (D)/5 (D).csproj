@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Almacen.cs" />
     <Compile Include="Auditor.cs" />
+    <Compile Include="IAuditable.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
