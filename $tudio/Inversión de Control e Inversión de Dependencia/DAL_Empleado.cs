@@ -12,7 +12,7 @@
                 Id = id,
                 Nombre = "Gerardo",
                 Departmento = "Facturación",
-                Sueldo = 10000
+                Sueldo = 45000
             };
             return empleado;
         }
