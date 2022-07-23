@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Inversión de Control e Inversión de Dependencia")]
+[assembly: AssemblyTitle("Step2")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Inversión de Control e Inversión de Dependencia")]
+[assembly: AssemblyProduct("Step2")]
 [assembly: AssemblyCopyright("Copyright ©  2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("a630d912-d930-4a86-bd85-b871e6558281")]
+[assembly: Guid("3e9e9949-79c0-4dec-adba-8e7bf58d397e")]
 
 // Version information for an assembly consists of the following four values:
 //

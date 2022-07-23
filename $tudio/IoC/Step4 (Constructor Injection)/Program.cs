@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace Step1
+namespace Step4CI
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            BLL_Employee BLL_EMPLOYEE = new BLL_Employee();
+            BLL_Employee BLL_EMPLOYEE = new BLL_Employee(new DAL_Employee());
             BEL_Employee BEL_EMPLOYEE = BLL_EMPLOYEE.GetEmployeeDetails(1);
 
             Console.WriteLine();

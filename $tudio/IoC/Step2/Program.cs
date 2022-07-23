@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Step1
+namespace Step2
 {
     internal class Program
     {

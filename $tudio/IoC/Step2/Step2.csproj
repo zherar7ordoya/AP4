@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8CAE1FF8-5738-4755-9D20-5852C7FCA746}</ProjectGuid>
+    <ProjectGuid>{3E9E9949-79C0-4DEC-ADBA-8E7BF58D397E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Step1</RootNamespace>
-    <AssemblyName>Step1</AssemblyName>
+    <RootNamespace>Step2</RootNamespace>
+    <AssemblyName>Step2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,6 +46,7 @@
     <Compile Include="BEL_Employee.cs" />
     <Compile Include="BLL_Employee.cs" />
     <Compile Include="DAL_Employee.cs" />
+    <Compile Include="DAL_Factory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

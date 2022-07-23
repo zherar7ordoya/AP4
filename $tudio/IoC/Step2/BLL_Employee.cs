@@ -1,4 +1,4 @@
-﻿namespace Step1
+﻿namespace Step2
 {
     public class BLL_Employee
     {
@@ -8,7 +8,7 @@
 
         public BLL_Employee()
         {
-            DAL_EMPLOYEE = new DAL_Employee();
+            DAL_EMPLOYEE = DAL_Factory.GetDAL_EmployeeObject();
         }
 
         //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
