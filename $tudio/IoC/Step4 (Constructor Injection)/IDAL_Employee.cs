@@ -1,6 +1,6 @@
-﻿namespace Step4PI
+﻿namespace Step4CI
 {
-    public interface IGestor
+    public interface IDAL_Employee
     {
         BEL_Employee GetEmployeeDetails(int id);
     }

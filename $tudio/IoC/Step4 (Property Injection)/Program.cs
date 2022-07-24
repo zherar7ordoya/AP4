@@ -2,11 +2,12 @@
 
 namespace Step4PI
 {
-    internal class Program
+    internal class Program // SERVICE
     {
         static void Main(string[] args)
         {
             BLL_Employee BLL_EMPLOYEE = new BLL_Employee();
+            BLL_EMPLOYEE.IDAL_EMPLOYEE = new DAL_Employee();
             BEL_Employee BEL_EMPLOYEE = BLL_EMPLOYEE.GetEmployeeDetails(1);
 
             Console.WriteLine();

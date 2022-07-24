@@ -4,9 +4,10 @@ namespace Step4MI
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             BLL_Employee BLL_EMPLOYEE = new BLL_Employee();
+            BLL_EMPLOYEE.SetDependency(new DAL_Employee());
             BEL_Employee BEL_EMPLOYEE = BLL_EMPLOYEE.GetEmployeeDetails(1);
 
             Console.WriteLine();

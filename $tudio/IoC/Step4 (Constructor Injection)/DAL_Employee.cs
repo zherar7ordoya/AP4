@@ -1,7 +1,7 @@
 ﻿namespace Step4CI
 {
     // LOW-LEVEL MODULE (CLASS)
-    public class DAL_Employee : IGestor
+    public class DAL_Employee : IDAL_Employee
     {
         public BEL_Employee GetEmployeeDetails(int id)
         {

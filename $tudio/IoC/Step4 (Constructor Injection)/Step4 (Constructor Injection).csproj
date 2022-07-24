@@ -47,7 +47,7 @@
     <Compile Include="BLL_Employee.cs" />
     <Compile Include="DAL_Employee.cs" />
     <Compile Include="DAL_Factory.cs" />
-    <Compile Include="IGestor.cs" />
+    <Compile Include="IDAL_Employee.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
