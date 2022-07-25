@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.32602.291
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Video1S", "Video1S\Video1S.csproj", "{AE74DB61-5E23-4EE7-8B96-8E68E7BDF80B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Video2OConsole", "Video2OConsole\Video2OConsole.csproj", "{3EDBA5EF-F243-4188-B55C-9A29B0079EF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Video2OLibrary", "Video2OLibrary\Video2OLibrary.csproj", "{3E1261C5-51E8-42AA-8CBA-8DAFBD6D3814}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{AE74DB61-5E23-4EE7-8B96-8E68E7BDF80B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE74DB61-5E23-4EE7-8B96-8E68E7BDF80B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE74DB61-5E23-4EE7-8B96-8E68E7BDF80B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EDBA5EF-F243-4188-B55C-9A29B0079EF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EDBA5EF-F243-4188-B55C-9A29B0079EF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EDBA5EF-F243-4188-B55C-9A29B0079EF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EDBA5EF-F243-4188-B55C-9A29B0079EF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E1261C5-51E8-42AA-8CBA-8DAFBD6D3814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E1261C5-51E8-42AA-8CBA-8DAFBD6D3814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E1261C5-51E8-42AA-8CBA-8DAFBD6D3814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E1261C5-51E8-42AA-8CBA-8DAFBD6D3814}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
