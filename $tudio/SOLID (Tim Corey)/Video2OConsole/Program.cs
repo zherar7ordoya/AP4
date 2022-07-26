@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Video2OLibrary;
 
 namespace Video2OConsole
@@ -12,20 +9,21 @@ namespace Video2OConsole
         static void Main(string[] args)
         {
 
-            List<PersonModel> applicants = new List<PersonModel>
+            List<IApplicantModel> applicants = new List<IApplicantModel>
 
             {
                 new PersonModel{FirstName="Tim", LastName="Corey"},
-                new PersonModel{FirstName="Sue", LastName="Storm", TypeOfEmployee=EmployeeType.Manager},
-                new PersonModel{FirstName="Nancy", LastName="Roman", TypeOfEmployee=EmployeeType.Executive},
+                new ManagerModel{FirstName="Sue", LastName="Storm"},
+                new ExecutiveModel{FirstName="Nancy", LastName="Roman"}
             };
 
             List<EmployeeModel> employees = new List<EmployeeModel>();
-            Accounts accountProcessor = new Accounts();
+            //Accounts accountProcessor = new Accounts();
 
             foreach (var person in applicants)
             {
-                employees.Add(accountProcessor.Create(person));
+                //employees.Add(accountProcessor.Create(person));
+                employees.Add(person.AccountProcessor.Create(person));
             }
 
             foreach (var emp in employees)
