@@ -8,9 +8,7 @@ namespace Video2OConsole
     {
         static void Main(string[] args)
         {
-
             List<IApplicantModel> applicants = new List<IApplicantModel>
-
             {
                 new PersonModel{FirstName="Tim", LastName="Corey"},
                 new ManagerModel{FirstName="Sue", LastName="Storm"},
@@ -18,11 +16,9 @@ namespace Video2OConsole
             };
 
             List<EmployeeModel> employees = new List<EmployeeModel>();
-            //Accounts accountProcessor = new Accounts();
 
             foreach (var person in applicants)
             {
-                //employees.Add(accountProcessor.Create(person));
                 employees.Add(person.AccountProcessor.Create(person));
             }
 
