@@ -1,6 +1,6 @@
 ﻿namespace Video2OLibrary
 {
-    public class ExecutiveAccounts : IAccounts
+    public class ManagerAccount : IAccount
     {
         public EmployeeModel Create(IApplicantModel person)
         {
@@ -9,10 +9,9 @@
                 FirstName = person.FirstName,
                 LastName = person.LastName,
                 EmailAddress =
-                $"{person.FirstName}." +
+                $"{person.FirstName.Substring(0, 1)}" +
                 $"{person.LastName}@acmecorp.com",
-                IsManager = true,
-                IsExecutive = true
+                IsManager = true
             };
 
             return output;

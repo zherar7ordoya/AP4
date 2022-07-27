@@ -4,6 +4,6 @@
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public IAccounts AccountProcessor { get; set; } = new ExecutiveAccounts();
+        public IAccount AccountProcessor { get; set; } = new ExecutiveAccount();
     }
 }

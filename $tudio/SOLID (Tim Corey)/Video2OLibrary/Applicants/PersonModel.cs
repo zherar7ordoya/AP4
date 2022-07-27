@@ -5,6 +5,6 @@
         public string FirstName { get; set; }
         public string LastName { get; set; }
         // public EmployeeType TypeOfEmployee { get; set; } = EmployeeType.Staff;
-        public IAccounts AccountProcessor { get; set; } = new Accounts();
+        public IAccount AccountProcessor { get; set; } = new Account();
     }
 }

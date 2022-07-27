@@ -12,7 +12,7 @@ namespace Video2OConsole
             {
                 new PersonModel{FirstName="Tim", LastName="Corey"},
                 new ManagerModel{FirstName="Sue", LastName="Storm"},
-                new ExecutiveModel{FirstName="Nancy", LastName="Roman"}
+                new ExecutiveModel{FirstName="Sid", LastName="Roman"}
             };
 
             List<EmployeeModel> employees = new List<EmployeeModel>();

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3E1261C5-51E8-42AA-8CBA-8DAFBD6D3814}</ProjectGuid>
+    <ProjectGuid>{1D454B13-8ADA-4020-8B1D-863D9C79857C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Video2OLibrary</RootNamespace>
-    <AssemblyName>Video2OLibrary</AssemblyName>
+    <RootNamespace>Video3LLibrary</RootNamespace>
+    <AssemblyName>Video3LLibrary</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,16 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Accounts\Account.cs" />
-    <Compile Include="Applicants\TechnicianModel.cs" />
-    <Compile Include="EmployeeModel.cs" />
-    <Compile Include="Accounts\ExecutiveAccount.cs" />
-    <Compile Include="Applicants\ExecutiveModel.cs" />
-    <Compile Include="Accounts\IAccount.cs" />
-    <Compile Include="Applicants\IApplicantModel.cs" />
-    <Compile Include="Accounts\ManagerAccount.cs" />
-    <Compile Include="Applicants\ManagerModel.cs" />
-    <Compile Include="Applicants\PersonModel.cs" />
+    <Compile Include="CEO.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="IEmployee.cs" />
+    <Compile Include="IManaged.cs" />
+    <Compile Include="IManager.cs" />
+    <Compile Include="Manager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,6 @@
 ﻿namespace Video2OLibrary
 {
-    public interface IAccounts
+    public interface IAccount
     {
         EmployeeModel Create(IApplicantModel person);
     }
