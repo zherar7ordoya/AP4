@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Video4ILibrary
+﻿namespace Video4ILibrary
 {
     public class ReferenceBook : IBook
     {

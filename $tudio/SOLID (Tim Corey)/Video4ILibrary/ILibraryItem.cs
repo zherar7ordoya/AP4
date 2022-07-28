@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace Video4ILibrary
+﻿namespace Video4ILibrary
 {
     public interface ILibraryItem
     {
@@ -19,26 +17,5 @@ namespace Video4ILibrary
         DateTime GetDueDate();
         */
     }
-
-
-    public interface IAudioBook : ILibraryItem
-    {
-        int RuntimeInMinutes { get; set; }
-    }
-
-
-    public interface IBorrowableAudiobook : IAudioBook, IBorrowable
-    {
-
-    }
-
-    public interface IDVD
-    {
-        List<string> Actors { get; set; }
-        int RuntimeInMinutes { get; set; }
-    }
-
-
-    public interface IBorrowableDVD :IDVD, IBorrowable
 
 }

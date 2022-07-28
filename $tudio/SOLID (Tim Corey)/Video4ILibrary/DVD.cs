@@ -24,6 +24,11 @@ namespace Video4ILibrary
             BorrowDate=DateTime.Now;
         }
 
+        public void CheckOut()
+        {
+            throw new NotImplementedException();
+        }
+
         public DateTime GetDueDate()
         {
             throw new NotImplementedException();

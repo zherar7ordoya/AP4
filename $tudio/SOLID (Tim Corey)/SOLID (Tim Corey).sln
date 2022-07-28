@@ -17,6 +17,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Video4IConsole", "Video4ICo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Video4ILibrary", "Video4ILibrary\Video4ILibrary.csproj", "{4781C465-2CAE-4232-902E-34EDF07438C8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Video5DConsole", "Video5DConsole\Video5DConsole.csproj", "{CF63EE51-3B47-4A2F-91D8-747474487869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Video5DLibrary", "Video5DLibrary\Video5DLibrary.csproj", "{BE4888A8-1A7A-4C9F-AF4F-DFBAEE0C51A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{4781C465-2CAE-4232-902E-34EDF07438C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4781C465-2CAE-4232-902E-34EDF07438C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4781C465-2CAE-4232-902E-34EDF07438C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF63EE51-3B47-4A2F-91D8-747474487869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF63EE51-3B47-4A2F-91D8-747474487869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF63EE51-3B47-4A2F-91D8-747474487869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF63EE51-3B47-4A2F-91D8-747474487869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4888A8-1A7A-4C9F-AF4F-DFBAEE0C51A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4888A8-1A7A-4C9F-AF4F-DFBAEE0C51A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4888A8-1A7A-4C9F-AF4F-DFBAEE0C51A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4888A8-1A7A-4C9F-AF4F-DFBAEE0C51A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

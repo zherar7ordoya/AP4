@@ -7,9 +7,11 @@ namespace Video4IConsole
     {
         static void Main()
         {
-            IBorrowableDVD dividi = new DVD();
+            IBorrowableDVD dvd = new DVD();
 
-            
+            // La prueba: acceder a las propiedades de "dvd".
+
+            dvd.Borrower = "Tim Corey";
 
             ReadKey();
         }

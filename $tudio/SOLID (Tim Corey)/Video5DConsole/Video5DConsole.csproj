@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4781C465-2CAE-4232-902E-34EDF07438C8}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Video4ILibrary</RootNamespace>
-    <AssemblyName>Video4ILibrary</AssemblyName>
+    <ProjectGuid>{CF63EE51-3B47-4A2F-91D8-747474487869}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Video5DConsole</RootNamespace>
+    <AssemblyName>Video5DConsole</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -41,19 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AudioBook.cs" />
-    <Compile Include="Book.cs" />
-    <Compile Include="DVD.cs" />
-    <Compile Include="IAudioBook.cs" />
-    <Compile Include="IBook.cs" />
-    <Compile Include="IBorrowable.cs" />
-    <Compile Include="IBorrowableAudiobook.cs" />
-    <Compile Include="IBorrowableBook.cs" />
-    <Compile Include="IBorrowableDVD.cs" />
-    <Compile Include="IDVD.cs" />
-    <Compile Include="ILibraryItem.cs" />
-    <Compile Include="ReferenceBook.cs" />
+    <Compile Include="Factory.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Video5DLibrary\Video5DLibrary.csproj">
+      <Project>{be4888a8-1a7a-4c9f-af4f-dfbaee0c51a1}</Project>
+      <Name>Video5DLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
