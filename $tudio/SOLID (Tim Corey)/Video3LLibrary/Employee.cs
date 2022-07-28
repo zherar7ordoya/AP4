@@ -1,23 +1,14 @@
 ﻿namespace Video3LLibrary
 {
-    public class Employee : IEmployee
+    public class Employee : BaseEmployee, IManaged
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public Employee Manager { get; set; } = null;
-        public decimal Salary { get; set; }
+        public IEmployee Manager { get; set; } = null;
 
-        public virtual void AssignManager(Employee manager)
+        public void AssignManager(IEmployee manager)
         {
             // Need other tasks here.
             // Otherwise,it's a property set (not a method).
             Manager = manager;
-        }
-
-        public virtual void CalculatePerHourRate(int rank)
-        {
-            decimal baseAmount = 12.50M;
-            Salary = baseAmount + (rank * 2);
         }
     }
 }

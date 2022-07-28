@@ -1,29 +1,29 @@
-﻿using System;
-using static System.Console;
+﻿using static System.Console;
 using Video3LLibrary;
 
 namespace Video3LConsole
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            Manager accountingVP = new Manager
+            IManager vicepresidente = new CEO
             {
                 FirstName = "Emma",
                 LastName = "Stone"
             };
-            accountingVP.CalculatePerHourRate(4);
+            vicepresidente.CalculatePerHourRate(4);
 
-            Employee emp = new Manager
+            IManaged empleado = new Employee
             {
                 FirstName = "Tim",
                 LastName = "Corey"
             };
-            emp.AssignManager(accountingVP);
-            emp.CalculatePerHourRate(2);
+            empleado.AssignManager(vicepresidente);
+            empleado.CalculatePerHourRate(2);
 
-            WriteLine($"{emp.FirstName}'s salary is ${emp.Salary}/hour.");
+            WriteLine($"{empleado.FirstName}'s salary is ${empleado.Salary}/hour.");
+            WriteLine($"El jefe es {empleado.Manager.FirstName} {empleado.Manager.LastName}.");
 
             ReadKey();
         }
