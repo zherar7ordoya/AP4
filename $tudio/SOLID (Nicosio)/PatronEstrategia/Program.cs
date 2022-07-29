@@ -4,7 +4,7 @@ namespace PatronEstrategia
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             string dato = string.Empty, opcion = string.Empty;
             double x = 0, y = 0, r = 0;
