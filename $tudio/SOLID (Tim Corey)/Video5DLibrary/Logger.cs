@@ -1,4 +1,4 @@
-﻿using System;
+﻿using static System.Console;
 
 namespace Video5DLibrary
 {
@@ -8,11 +8,11 @@ namespace Video5DLibrary
     /// 
     /// LOGGER depende de nadie, es pues, un módulo de bajo nivel.
     /// </summary>
-    public class Logger
+    public class Logger : ILogger
     {
         public void Log(string message)
         {
-            Console.WriteLine($"Write to Console: {message}");
+            WriteLine($"Write to Console: {message}");
         }
     }
 

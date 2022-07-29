@@ -1,4 +1,4 @@
-﻿using System;
+﻿using static System.Console;
 
 namespace Video5DLibrary
 {
@@ -8,11 +8,11 @@ namespace Video5DLibrary
     /// 
     /// EMAILER depende de nadie, es pues, un módulo de bajo nivel.
     /// </summary>
-    public class Emailer
+    public class Emailer : IMessageSender
     {
-        public void SendEmail(IPerson person, string message)
+        public void SendMessage(IPerson person, string message)
         {
-            Console.WriteLine($"Simulating sending an email to {person.EmailAddress}");
+            WriteLine($"Simulating sending an email to {person.EmailAddress}");
         }
     }
 
