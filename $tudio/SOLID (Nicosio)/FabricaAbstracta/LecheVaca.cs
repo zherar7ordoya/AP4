@@ -2,16 +2,16 @@
 
 namespace FabricaAbstracta
 {
-    public class LecheAlmendras : IProductoLeche
+    public class LecheVaca : IProductoLeche
     {
         public string ObtenerDatos()
         {
-            return "Leche orgánica de almendra, 250ml.";
+            return "Lecha de vaca, 250 ml.";
         }
 
         public void Producir()
         {
-            WriteLine("Procesar las almendras.");
+            WriteLine("Ordeñar vaca en la granja.");
         }
     }
 }
