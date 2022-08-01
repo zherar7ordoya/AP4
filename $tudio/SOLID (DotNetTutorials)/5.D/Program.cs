@@ -8,7 +8,7 @@ namespace _5.D
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
         }
     }
@@ -25,13 +25,17 @@ namespace _5.D
 
     //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
+    // HIGH-LEVEL MODULE
+
     public class EmployeeBusinessLogic
     {
-        EmployeeDataAccess _EmployeeDataAccess;
+        IEmployeeDataAccess _EmployeeDataAccess;
+
         public EmployeeBusinessLogic()
         {
             _EmployeeDataAccess = DataAccessFactory.GetEmployeeDataAccessObj();
         }
+
         public Employee GetEmployeeDetails(int id)
         {
             return _EmployeeDataAccess.GetEmployeeDetails(id);
@@ -40,17 +44,19 @@ namespace _5.D
 
     //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-    public class DataAccessFactory
+    // Abstraction (IEmployeeDataAccess) does not depend
+    // on details (EmployeeDataAccess) but details depend on abstraction.
+
+    public interface IEmployeeDataAccess
     {
-        public static EmployeeDataAccess GetEmployeeDataAccessObj()
-        {
-            return new EmployeeDataAccess();
-        }
+        Employee GetEmployeeDetails(int id);
     }
 
     //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 
-    public class EmployeeDataAccess
+    // LOW-LEVEL MODULE
+
+    public class EmployeeDataAccess : IEmployeeDataAccess
     {
         public Employee GetEmployeeDetails(int id)
         {
@@ -68,5 +74,16 @@ namespace _5.D
     }
 
     //|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+
+    public class DataAccessFactory
+    {
+        public static IEmployeeDataAccess GetEmployeeDataAccessObj()
+        {
+            return new EmployeeDataAccess();
+        }
+    }
+
+    //||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| 
+
 
 }
