@@ -7,6 +7,7 @@ namespace DAL
     {
         public BelEmployee GetEmployeeDetails(int id)
         {
+            // Todo: aquí hay un NEW.
             BelEmployee employee = new BelEmployee()
             {
                 ID = id,

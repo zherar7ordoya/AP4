@@ -4,7 +4,7 @@ namespace DAL
 {
     public class DalFactory
     {
-        public static IEmployee GetDAL_EmployeeObject()
+        public static IEmployee GetDalEmployeeObject()
         {
             return new DalEmployee();
         }

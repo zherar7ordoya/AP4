@@ -8,12 +8,14 @@ using static System.Windows.Forms.Application;
 
 namespace UIL
 {
+    // EmployeeService class.
     public partial class Form1 : Form
     {
         public Form1() => InitializeComponent();
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Todo: aquí hay un NEW.
             BllEmployee bllEmployee = new BllEmployee(new DalEmployee());
             BelEmployee belEmployee = bllEmployee.GetEmployeeDetails(1);
 
