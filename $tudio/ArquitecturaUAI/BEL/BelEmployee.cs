@@ -1,6 +1,6 @@
 ﻿namespace BEL
 {
-    public class Employee
+    public class BelEmployee
     {
         public int ID { get; set; }
         public string Name { get; set; }

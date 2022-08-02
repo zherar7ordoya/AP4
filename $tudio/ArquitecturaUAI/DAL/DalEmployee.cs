@@ -1,10 +1,13 @@
-﻿namespace DAL
+﻿using ABS;
+using BEL;
+
+namespace DAL
 {
-    public class Employee : ABS.IEmployee
+    public class DalEmployee : IEmployee
     {
-        public BEL.Employee GetEmployeeDetails(int id)
+        public BelEmployee GetEmployeeDetails(int id)
         {
-            BEL.Employee employee = new BEL.Employee()
+            BelEmployee employee = new BelEmployee()
             {
                 ID = id,
                 Name = "Gerardo Tordoya",

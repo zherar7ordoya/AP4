@@ -1,7 +1,9 @@
-﻿namespace ABS
+﻿using BEL;
+
+namespace ABS
 {
     public interface IEmployee
     {
-        BEL.Employee GetEmployeeDetails(int id);
+        BelEmployee GetEmployeeDetails(int id);
     }
 }
