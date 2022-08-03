@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BllEmployee.cs" />
+    <Compile Include="BllFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +53,10 @@
     <ProjectReference Include="..\BEL\BEL.csproj">
       <Project>{708f5b8c-e21f-45a4-8f50-4a629a5b5bd5}</Project>
       <Name>BEL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MPP\MPP.csproj">
+      <Project>{ad9e4333-a92e-4da8-bbac-7d62a905c95b}</Project>
+      <Name>MPP</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

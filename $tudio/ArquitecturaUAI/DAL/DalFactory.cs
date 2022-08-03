@@ -1,12 +1,12 @@
-﻿using ABS;
+﻿using BEL;
 
 namespace DAL
 {
-    public class DalFactory
+    public static class DalFactory
     {
-        public static IEmployee GetDalEmployeeObject()
+        public static BelEmployee CreateBelEmployee()
         {
-            return new DalEmployee();
+            return new BelEmployee();
         }
     }
 }

@@ -7,15 +7,14 @@ namespace DAL
     {
         public BelEmployee GetEmployeeDetails(int id)
         {
-            // Todo: aquí hay un NEW.
-            BelEmployee employee = new BelEmployee()
-            {
-                ID = id,
-                Name = "Gerardo Tordoya",
-                Department = "Development",
-                Salary = 600 * 1000,
-            };
-            return employee;
+            BelEmployee belEmployee = DalFactory.CreateBelEmployee();
+
+            belEmployee.ID = id;
+            belEmployee.Name = "Gerardo Tordoya";
+            belEmployee.Department = "Development";
+            belEmployee.Salary = 600 * 1000;
+
+            return belEmployee;
         }
     }
 }

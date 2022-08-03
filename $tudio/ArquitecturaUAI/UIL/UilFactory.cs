@@ -1,6 +1,13 @@
-﻿namespace UIL
+﻿using ABS;
+using BLL;
+
+namespace UIL
 {
-    class UilFactory
+    public static class UilFactory
     {
+        public static IEmployee CreateBllEmployee()
+        {
+            return new BllEmployee();
+        }
     }
 }

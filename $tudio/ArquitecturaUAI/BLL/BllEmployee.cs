@@ -3,18 +3,13 @@ using BEL;
 
 namespace BLL
 {
-    public class BllEmployee
+    public class BllEmployee : IEmployee
     {
-        readonly IEmployee iEmployee;
-
-        public BllEmployee(IEmployee employee)
-        {
-            iEmployee = employee;
-        }
+        readonly IEmployee mppEmployee = BllFactory.CreateMppEmployee();
 
         public BelEmployee GetEmployeeDetails(int id)
         {
-            return iEmployee.GetEmployeeDetails(id);
+            return mppEmployee.GetEmployeeDetails(id);
         }
     }
 }
