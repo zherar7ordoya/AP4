@@ -53,7 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelo\Rectangulo.cs" />
-    <Compile Include="PlaceHolderTextBox.cs" />
+    <Compile Include="CajaTextoProvisional.cs" />
     <Compile Include="Presentador\RectanguloPresentador.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

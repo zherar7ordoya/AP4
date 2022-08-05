@@ -29,63 +29,65 @@ namespace UIL
         /// </summary>
         private void InitializeComponent()
         {
-            this.LongitudTextbox = new UI.PlaceHolderTextBox();
-            this.AmplitudTextbox = new UI.PlaceHolderTextBox();
             this.AreaButton = new System.Windows.Forms.Button();
-            this.ResultadoTextbox = new UI.PlaceHolderTextBox();
+            this.LongitudTextbox = new UI.CajaTextoProvisional();
+            this.AmplitudTextbox = new UI.CajaTextoProvisional();
+            this.AreaTextbox = new UI.CajaTextoProvisional();
             this.SuspendLayout();
-            // 
-            // LongitudTextbox
-            // 
-            this.LongitudTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.LongitudTextbox.ForeColor = System.Drawing.Color.DarkBlue;
-            this.LongitudTextbox.Location = new System.Drawing.Point(13, 13);
-            this.LongitudTextbox.Name = "LongitudTextbox";
-            this.LongitudTextbox.Size = new System.Drawing.Size(136, 20);
-            this.LongitudTextbox.TabIndex = 0;
-            this.LongitudTextbox.Text = "Longitud";
-            this.LongitudTextbox.TextoPlaceHolder = "Longitud";
-            // 
-            // AmplitudTextbox
-            // 
-            this.AmplitudTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.AmplitudTextbox.ForeColor = System.Drawing.Color.DarkBlue;
-            this.AmplitudTextbox.Location = new System.Drawing.Point(13, 39);
-            this.AmplitudTextbox.Name = "AmplitudTextbox";
-            this.AmplitudTextbox.Size = new System.Drawing.Size(136, 20);
-            this.AmplitudTextbox.TabIndex = 1;
-            this.AmplitudTextbox.Text = "Amplitud";
-            this.AmplitudTextbox.TextoPlaceHolder = "Amplitud";
             // 
             // AreaButton
             // 
-            this.AreaButton.Location = new System.Drawing.Point(13, 66);
+            this.AreaButton.Location = new System.Drawing.Point(130, 15);
             this.AreaButton.Name = "AreaButton";
-            this.AreaButton.Size = new System.Drawing.Size(136, 23);
-            this.AreaButton.TabIndex = 2;
+            this.AreaButton.Size = new System.Drawing.Size(49, 49);
+            this.AreaButton.TabIndex = 3;
             this.AreaButton.Text = "Area";
             this.AreaButton.UseVisualStyleBackColor = true;
+            this.AreaButton.Click += new System.EventHandler(this.AreaButton_Click);
             // 
-            // ResultadoTextbox
+            // LongitudTextbox
             // 
-            this.ResultadoTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic);
-            this.ResultadoTextbox.ForeColor = System.Drawing.Color.DarkBlue;
-            this.ResultadoTextbox.Location = new System.Drawing.Point(13, 95);
-            this.ResultadoTextbox.Name = "ResultadoTextbox";
-            this.ResultadoTextbox.Size = new System.Drawing.Size(136, 20);
-            this.ResultadoTextbox.TabIndex = 3;
-            this.ResultadoTextbox.Text = "Resultado";
-            this.ResultadoTextbox.TextoPlaceHolder = "Resultado";
+            this.LongitudTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.LongitudTextbox.ForeColor = System.Drawing.Color.Gray;
+            this.LongitudTextbox.Location = new System.Drawing.Point(24, 17);
+            this.LongitudTextbox.Name = "LongitudTextbox";
+            this.LongitudTextbox.Size = new System.Drawing.Size(100, 20);
+            this.LongitudTextbox.TabIndex = 1;
+            this.LongitudTextbox.Text = "Longitud";
+            this.LongitudTextbox.TextoProvisional = "Longitud";
+            // 
+            // AmplitudTextbox
+            // 
+            this.AmplitudTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.AmplitudTextbox.ForeColor = System.Drawing.Color.Gray;
+            this.AmplitudTextbox.Location = new System.Drawing.Point(24, 44);
+            this.AmplitudTextbox.Name = "AmplitudTextbox";
+            this.AmplitudTextbox.Size = new System.Drawing.Size(100, 20);
+            this.AmplitudTextbox.TabIndex = 2;
+            this.AmplitudTextbox.Text = "Amplitud";
+            this.AmplitudTextbox.TextoProvisional = "Amplitud";
+            // 
+            // AreaTextbox
+            // 
+            this.AreaTextbox.Enabled = false;
+            this.AreaTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.AreaTextbox.ForeColor = System.Drawing.Color.Gray;
+            this.AreaTextbox.Location = new System.Drawing.Point(185, 30);
+            this.AreaTextbox.Name = "AreaTextbox";
+            this.AreaTextbox.Size = new System.Drawing.Size(100, 20);
+            this.AreaTextbox.TabIndex = 4;
+            this.AreaTextbox.Text = "Resultado";
+            this.AreaTextbox.TextoProvisional = "Resultado";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(161, 132);
-            this.Controls.Add(this.ResultadoTextbox);
-            this.Controls.Add(this.AreaButton);
+            this.ClientSize = new System.Drawing.Size(295, 82);
+            this.Controls.Add(this.AreaTextbox);
             this.Controls.Add(this.AmplitudTextbox);
             this.Controls.Add(this.LongitudTextbox);
+            this.Controls.Add(this.AreaButton);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -94,11 +96,10 @@ namespace UIL
         }
 
         #endregion
-
-        private UI.PlaceHolderTextBox LongitudTextbox;
-        private UI.PlaceHolderTextBox AmplitudTextbox;
         private System.Windows.Forms.Button AreaButton;
-        private UI.PlaceHolderTextBox ResultadoTextbox;
+        private UI.CajaTextoProvisional LongitudTextbox;
+        private UI.CajaTextoProvisional AmplitudTextbox;
+        private UI.CajaTextoProvisional AreaTextbox;
     }
 }
 
