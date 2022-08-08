@@ -1,0 +1,52 @@
+name: CI Build
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  # debugging_logging_nlogutility:
+  #   runs-on: windows-latest
+  #   defaults:
+  #     run:
+  #       working-directory: ./Debugging/Logging/NLogUtility
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - name: Setup .NET
+  #     uses: actions/setup-dotnet@v1
+  #     with:
+  #       dotnet-version: 5.0.x
+  #   - name: Build
+  #     run: dotnet build
+
+  testing_mvp:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: ./Testing/MVP
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet build
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+
+  threading_asyncawait:
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: ./Threading/AsyncAwait
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Build
+      run: dotnet build
