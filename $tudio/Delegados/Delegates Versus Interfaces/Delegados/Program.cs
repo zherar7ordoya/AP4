@@ -19,6 +19,9 @@
  *  (Ver ejemplo en C# 9.0 IN A NUTSHELL, p178)
  */
 
+// .NET Framework 4.8
+// C# 7.3
+
 using static System.Console;
 
 namespace Delegados
