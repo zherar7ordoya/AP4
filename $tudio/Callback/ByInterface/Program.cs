@@ -28,69 +28,56 @@ namespace ByInterface
     {
         static void Main()
         {
-            MeetingExecution meetingExecution = new MeetingExecution();
+            RealizarEncuentro meetingExecution = new RealizarEncuentro();
             meetingExecution.PerformMeeting();
-
             ReadLine();
         }
     }
 
     //=========================================================================
 
-    public interface IMeeting
+    public interface IEncuentro
     {
-        void ShowAgenda(string agenda);
-        void EmployeeAttendedMeeting(string employee);
-        void EmployeeLeftMeeting(string employee);
+        void MostrarAgenda(string agenda);
+        void EmpleadoAsisteEncuentro(string empleado);
+        void EmpleadoAbandonaEncuentro(string empleado);
     }
 
     //=========================================================================
 
-    public class Meeting : IMeeting
+    public class Encuentro : IEncuentro
     {
-        public void ShowAgenda(string agenda)
-        {
-            WriteLine("Agenda Details: " + agenda);
-        }
+        public void MostrarAgenda(string agenda) => WriteLine("Agenda Details: " + agenda);
 
-        public void EmployeeAttendedMeeting(string employee)
-        {
-            WriteLine("Employee Attended Meeting: " + employee);
-        }
+        public void EmpleadoAsisteEncuentro(string empleado) => WriteLine("Employee Attended Meeting: " + empleado);
 
-        public void EmployeeLeftMeeting(string employee)
-        {
-            WriteLine("Employee Left Meeting: " + employee);
-        }
+        public void EmpleadoAbandonaEncuentro(string empleado) => WriteLine("Employee Left Meeting: " + empleado);
     }
 
     //=========================================================================
 
-    public class MeetingRoom
+    public class SalonEncuentro
     {
-        private string message;
-        public MeetingRoom(string message)
-        {
-            this.message = message;
-        }
+        private readonly string mensaje;
 
-        public void StartMeeting(IMeeting meeting)
+        public SalonEncuentro(string mensaje) => this.mensaje = mensaje;
+
+        public void ComenzarEncuentro(IEncuentro encuentro)
         {
             // Its a callback
-            if (meeting != null) meeting.ShowAgenda(message);
-
+            if (encuentro != null) encuentro.MostrarAgenda(mensaje);
         }
     }
 
     //=========================================================================
 
-    public class MeetingExecution
+    public class RealizarEncuentro
     {
         public void PerformMeeting()
         {
-            IMeeting meeging = new Meeting();
-            MeetingRoom meetingStarted = new MeetingRoom("Code Quality Improvement.");
-            meetingStarted.StartMeeting(meeging);
+            IEncuentro encuentro = new Encuentro();
+            SalonEncuentro ReunionComienza = new SalonEncuentro("Code Quality Improvement.");
+            ReunionComienza.ComenzarEncuentro(encuentro);
         }
     }
 

@@ -24,47 +24,42 @@ using static System.Console;
 /// </summary>
 namespace ByDelegate
 {
+    public delegate void DCompletarTarea(string texto);
+
+    //=========================================================================
+
     class Program
     {
         static void Main()
         {
-            CLASE_CallbackTest callbackTest = new CLASE_CallbackTest();
-            callbackTest.Test();
+            CPrueba callback = new CPrueba();
+            callback.Probar();
             ReadLine();
         }
     }
 
     //=========================================================================
 
-    public delegate void DELEGADO(string resultado);
-
-    public class CLASE_Callback
+    public class CPrueba
     {
-        public void StartNewTask(DELEGADO callback)
+        public void Probar()
         {
-            WriteLine("I have started a new task.");
-            // if (taskCompletedCallBack != null) taskCompletedCallBack("I have completed Task.");
-            callback?.Invoke("I have completed the task.");
+            DCompletarTarea callback = ProbarCallback;
+            CTarea tarea = new CTarea();
+            tarea.ComenzarTarea(callback);
         }
+
+        public void ProbarCallback(string texto) => WriteLine(texto);
     }
 
     //=========================================================================
 
-    public class CLASE_CallbackTest
+    public class CTarea
     {
-        public void Test()
+        public void ComenzarTarea(DCompletarTarea callback)
         {
-            DELEGADO callback = TestCallback;
-            CLASE_Callback testCallback = new CLASE_Callback();
-            testCallback.StartNewTask(callback);
-        }
-
-        public void TestCallback(string result)
-        {
-            WriteLine(result);
+            WriteLine("I have started a new task.");
+            callback?.Invoke("I have completed the task.");
         }
     }
-
-    ///////////////////////////////////////////////////////////////////////////
-
 }
