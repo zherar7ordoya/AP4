@@ -17,6 +17,11 @@ namespace MVPExample
         {
             InitializeComponent();
 
+            /**
+             * I also took the button click event handlers out of the designer
+             * file (where they automatically get created), and made those part
+             * of the interface as well.
+             */
             btnAdd.Click += delegate { Add?.Invoke(this, EventArgs.Empty); };
             btnReset.Click += delegate
             {

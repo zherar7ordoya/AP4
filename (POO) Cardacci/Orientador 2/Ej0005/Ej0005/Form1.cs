@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.VisualBasic;
 
@@ -13,51 +6,53 @@ namespace Ej0005
 {
     public partial class Form1 : Form
     {
+        public Alumno alumno;
+        EventHandler<CambiaNombreEventArgs> evento = delegate (object o, CambiaNombreEventArgs e)
+        {
+            MessageBox.Show("Se produjo un cambio en el nombre, ahora es: " + e.Nombre + "\n\r" +
+                            "El evento se desencadenó a las: " + e.HoraEvento);
+        };
+
         public Form1()
         {
             InitializeComponent();
+            alumno = new Alumno();
+            alumno.CambiaNombre += evento;
         }
-        public Alumno A;
-        EventHandler<DatosCambioEnNombreEventArgs> F = delegate (object o, DatosCambioEnNombreEventArgs ev)
-        {
-            MessageBox.Show("Se produjo un cambio en el nombre, ahora es: " + ev.Nombre + "\n\r" +
-                            "El evento sTe desencadenó a las: " + ev.HoraEvento);
-        };
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            A = new Alumno();
-            // Suscripción al Evento          
-            A.CambioEnNombre += F;
-        }
+
         private void Button1_Click(object sender, EventArgs e)
         {
-            A.Nombre = Interaction.InputBox("Ingrese el Nombre:");
-            A.CambioEnNombre -= F;
+            alumno.Nombre = Interaction.InputBox("Ingrese el Nombre:");
+            alumno.CambiaNombre -= evento;
         }  
     }
+
+
     public class Alumno
     {
-        public event EventHandler<DatosCambioEnNombreEventArgs> CambioEnNombre;
-        private string Vnombre = "";
+        public event EventHandler<CambiaNombreEventArgs> CambiaNombre;
+        private string nombre = "";
         public string Nombre
         {
-            get { return Vnombre; }
+            get { return nombre; }
             set
             {
-                this.Vnombre = value;
-                CambioEnNombre?.Invoke(this, new DatosCambioEnNombreEventArgs(this.Nombre));
+                this.nombre = value;
+                CambiaNombre?.Invoke(this, new CambiaNombreEventArgs(this.Nombre));
             }
         }
     }
-    public class DatosCambioEnNombreEventArgs : EventArgs
+    public class CambiaNombreEventArgs : EventArgs
     {
         private string vNombre = "";
         private string vHora = "";
-        public DatosCambioEnNombreEventArgs(string pNombre)
+
+        public CambiaNombreEventArgs(string pNombre)
         {
             this.vNombre = pNombre;
             this.vHora = DateTime.Now.ToShortTimeString();
         }
+
         public string Nombre { get { return this.vNombre; } }
         public string HoraEvento { get { return this.vHora; } }
     }
