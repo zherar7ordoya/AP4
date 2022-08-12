@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6653719E-D0D4-4701-996E-1A855CE52939}</ProjectGuid>
+    <ProjectGuid>{00BEC8D2-3ED9-45D5-9AA5-900D8609421E}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>ByDelegate</RootNamespace>
-    <AssemblyName>ByDelegate</AssemblyName>
+    <RootNamespace>ConUnDato</RootNamespace>
+    <AssemblyName>ConUnDato</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,8 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CPrueba.cs" />
-    <Compile Include="CTarea.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

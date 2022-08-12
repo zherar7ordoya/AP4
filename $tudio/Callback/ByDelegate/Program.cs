@@ -22,9 +22,11 @@ using static System.Console;
 /// If you need more than one Callback method, then callback mechanism with the
 /// use of delegate doesn't makes sense.
 /// </summary>
+
 namespace ByDelegate
 {
-    public delegate void DCompletarTarea(string texto);
+    // Declarado a nivel espacio de nombres (pues se usa en dos clases).
+    public delegate void DTarea(string texto);
 
     //=========================================================================
 
@@ -35,31 +37,6 @@ namespace ByDelegate
             CPrueba callback = new CPrueba();
             callback.Probar();
             ReadLine();
-        }
-    }
-
-    //=========================================================================
-
-    public class CPrueba
-    {
-        public void Probar()
-        {
-            DCompletarTarea callback = ProbarCallback;
-            CTarea tarea = new CTarea();
-            tarea.ComenzarTarea(callback);
-        }
-
-        public void ProbarCallback(string texto) => WriteLine(texto);
-    }
-
-    //=========================================================================
-
-    public class CTarea
-    {
-        public void ComenzarTarea(DCompletarTarea callback)
-        {
-            WriteLine("I have started a new task.");
-            callback?.Invoke("I have completed the task.");
         }
     }
 }
